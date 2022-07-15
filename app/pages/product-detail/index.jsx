@@ -6,6 +6,7 @@
  */
 
 import React, {useEffect, useState} from 'react'
+import {BuilderComponent, builder} from '@builder.io/react'
 import PropTypes from 'prop-types'
 import {Helmet} from 'react-helmet'
 import {FormattedMessage, useIntl} from 'react-intl'
@@ -56,6 +57,7 @@ const ProductDetail = ({category, product, isLoading}) => {
     const toast = useToast()
     const navigate = useNavigation()
     const [primaryCategory, setPrimaryCategory] = useState(category)
+    const [productFooter, setProductFooter] = useState()
 
     // This page uses the `primaryCategoryId` to retrieve the category data. This attribute
     // is only available on `master` products. Since a variation will be loaded once all the
@@ -67,6 +69,15 @@ const ProductDetail = ({category, product, isLoading}) => {
             setPrimaryCategory(category)
         }
     }, [category])
+
+    // fetch content for product footer
+    useEffect(() => {
+        async function fetchContent() {
+            const content = await builder.get('product-footer').toPromise()
+            setProductFooter(content)
+        }
+        fetchContent()
+    }, [])
 
     /**************** Product Variant ****************/
     useEffect(() => {
@@ -254,6 +265,7 @@ const ProductDetail = ({category, product, isLoading}) => {
                     </Accordion>
                     <Box display={['none', 'none', 'none', 'block']} flex={4}></Box>
                 </Stack>
+                <BuilderComponent content={productFooter} model="product-footer" />
 
                 {/* Product Recommendations */}
                 <Stack spacing={16}>
