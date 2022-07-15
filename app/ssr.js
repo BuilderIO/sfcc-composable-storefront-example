@@ -39,13 +39,20 @@ const {handler} = runtime.createHandler(options, (app) => {
             contentSecurityPolicy: {
                 useDefaults: true,
                 directives: {
-                    'img-src': ["'self'", '*.commercecloud.salesforce.com', 'data:'],
+                    'img-src': [
+                        "'self'",
+                        '*.commercecloud.salesforce.com',
+                        'data:',
+                        'https://*.builder.io',
+                        'https://builder.io'
+                    ],
                     'script-src': ["'self'", "'unsafe-eval'", 'storage.googleapis.com'],
 
                     // Do not upgrade insecure requests for local development
                     'upgrade-insecure-requests': isRemote() ? [] : null,
                     'frame-ancestors':
-                        'https://*.builder.io https://builder.io http://localhost:1234'
+                        'https://*.builder.io https://builder.io http://localhost:1234',
+                    'connect-src': 'https://*.builder.io https://builder.io http://localhost:3000'
                 }
             },
             hsts: isRemote()
