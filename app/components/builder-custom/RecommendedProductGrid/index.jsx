@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import RecommendedProducts from '../../recommended-products'
 
 export function RecommendedProductGrid({recommender, title}) {
-    console.log('props aqui ', recommender, title)
     return (
         <div>
             <RecommendedProducts
