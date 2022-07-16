@@ -130,6 +130,7 @@ const Header = ({
 
     return (
         <Box {...styles.container} {...props}>
+            <BuilderComponent content={announcement} model="announcement-bar" options={{ includeRefs: true}}/>
             <Box {...styles.content}>
                 {showLoading && <LoadingSpinner wrapperStyles={{height: '100vh'}} />}
                 <Flex wrap="wrap" alignItems={['baseline', 'baseline', 'baseline', 'center']}>
@@ -285,7 +286,6 @@ const Header = ({
                         onClick={onMyCartClick}
                     />
                 </Flex>
-                <BuilderComponent content={announcement} model="announcement-bar" />
             </Box>
         </Box>
     )

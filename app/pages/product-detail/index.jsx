@@ -6,7 +6,7 @@
  */
 
 import React, {useEffect, useState} from 'react'
-import {BuilderComponent, builder} from '@builder.io/react'
+import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
 import PropTypes from 'prop-types'
 import {Helmet} from 'react-helmet'
 import {FormattedMessage, useIntl} from 'react-intl'
@@ -48,7 +48,7 @@ import {rebuildPathWithParams} from '../../utils/url'
 import {useHistory} from 'react-router-dom'
 import {useToast} from '../../hooks/use-toast'
 
-const ProductDetail = ({category, product, isLoading}) => {
+const ProductDetail = ({category, product, isLoading, productFooter}) => {
     const {formatMessage} = useIntl()
     const basket = useBasket()
     const history = useHistory()
@@ -57,7 +57,7 @@ const ProductDetail = ({category, product, isLoading}) => {
     const toast = useToast()
     const navigate = useNavigation()
     const [primaryCategory, setPrimaryCategory] = useState(category)
-    const [productFooter, setProductFooter] = useState()
+    const isPreviewing = useIsPreviewing();
 
     // This page uses the `primaryCategoryId` to retrieve the category data. This attribute
     // is only available on `master` products. Since a variation will be loaded once all the
@@ -71,13 +71,6 @@ const ProductDetail = ({category, product, isLoading}) => {
     }, [category])
 
     // fetch content for product footer
-    useEffect(() => {
-        async function fetchContent() {
-            const content = await builder.get('product-footer').toPromise()
-            setProductFooter(content)
-        }
-        fetchContent()
-    }, [])
 
     /**************** Product Variant ****************/
     useEffect(() => {
@@ -265,47 +258,7 @@ const ProductDetail = ({category, product, isLoading}) => {
                     </Accordion>
                     <Box display={['none', 'none', 'none', 'block']} flex={4}></Box>
                 </Stack>
-                <BuilderComponent content={productFooter} model="product-footer" />
-
-                {/* Product Recommendations */}
-                <Stack spacing={16}>
-                    <RecommendedProducts
-                        title={
-                            <FormattedMessage
-                                defaultMessage="Complete the Set"
-                                id="product_detail.recommended_products.title.complete_set"
-                            />
-                        }
-                        recommender={'complete-the-set'}
-                        products={product && [product.id]}
-                        mx={{base: -4, md: -8, lg: 0}}
-                        shouldFetch={() => product?.id}
-                    />
-
-                    <RecommendedProducts
-                        title={
-                            <FormattedMessage
-                                defaultMessage="You might also like"
-                                id="product_detail.recommended_products.title.might_also_like"
-                            />
-                        }
-                        recommender={'pdp-similar-items'}
-                        products={product && [product.id]}
-                        mx={{base: -4, md: -8, lg: 0}}
-                        shouldFetch={() => product?.id}
-                    />
-
-                    <RecommendedProducts
-                        title={
-                            <FormattedMessage
-                                defaultMessage="Recently Viewed"
-                                id="product_detail.recommended_products.title.recently_viewed"
-                            />
-                        }
-                        recommender={'viewed-recently-einstein'}
-                        mx={{base: -4, md: -8, lg: 0}}
-                    />
-                </Stack>
+                { (productFooter || isPreviewing) && <BuilderComponent content={productFooter} model="product-footer" options={{ includeRefs: true}}/>}
             </Stack>
         </Box>
     )
@@ -347,6 +300,16 @@ ProductDetail.getProps = async ({res, params, location, api}) => {
     if (res) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
     }
+    
+
+    const productFooter = await builder.get('product-footer', {
+        options: {
+            includeRefs: true,
+        },
+        userAttributes: {
+            product: urlParams.get('pid') || productId,
+        }
+    }).toPromise()
 
     // The `commerce-isomorphic-sdk` package does not throw errors, so
     // we have to check the returned object type to inconsistencies.
@@ -357,7 +320,7 @@ ProductDetail.getProps = async ({res, params, location, api}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    return {category, product}
+    return {category, product, productFooter}
 }
 
 ProductDetail.propTypes = {

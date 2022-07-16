@@ -1,30 +1,27 @@
-import React, {useEffect, useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import {BuilderComponent, builder, Builder} from '@builder.io/react'
+import React from 'react'
+import {BuilderComponent, builder, useIsPreviewing } from '@builder.io/react'
+import PageNotFound from '../page-not-found';
 
-export const CatchAllPage = () => {
-    const [pageJson, setPage] = useState()
-    const [loading, setLoading] = useState(false)
-    const history = useHistory()
-
-    const isEditingOrPreviewing = Builder.isEditing || Builder.isPreviewing
-
-    useEffect(() => {
-        const fetchPage = async () => {
-            setLoading(true)
-            const content = await builder.get('page', {url: history.location.pathname}).toPromise()
-            setPage(content)
-            setLoading(false)
-        }
-        if (!isEditingOrPreviewing) {
-            fetchPage()
-        }
-    }, [history.location.pathname, isEditingOrPreviewing])
-
-    if (loading) {
-        return <h1>Loading...</h1>
+export const CatchAllPage = ({ page }) => {
+    const isPreviewing = useIsPreviewing();
+    if (!isPreviewing && !page) {
+        return <PageNotFound />
     }
-    return <BuilderComponent model="page" content={pageJson} />
+    return <BuilderComponent model="page" content={page} options={{includeRefs: true}}/>
 }
 
+
+CatchAllPage.getProps = async ({res, params, location, api}) => {
+    const page = await builder.get('page', {
+        url: location.pathname,
+        options: {
+        includeRefs: true,
+    }}).toPromise();
+
+    if (!page && res) {
+        res.status(404)
+    }
+
+    return { page }
+}
 export default CatchAllPage

@@ -22,7 +22,24 @@ import {
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {resolveLocaleFromUrl} from '../../utils/utils'
 import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
+// register builder components
+import '../blocks/einstein-products-grid/einstein-products-grid.builder';
+import '../blocks/product-box/product-box.builder';
+import '../blocks/products-grid/prouducts-grid.builder';
+import { builder, Builder } from '@builder.io/react';
+// todo move to config
+builder.init('d1ed12c3338144da8dd6b63b35d14c30')
 
+Builder.register('insertMenu', {
+    name: 'Salesforce Products Components',
+    items: [
+      { name: 'ProductBox' },
+      { name: 'ProductsGrid' },
+      { name: 'EinsteinProductsGrid' },
+    ],
+  })
+  
+  
 /**
  * Use the AppConfig component to inject extra arguments into the getProps
  * methods for all Route Components in the app – typically you'd want to do this
@@ -34,7 +51,6 @@ import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
 const AppConfig = ({children, locals = {}}) => {
     const [basket, setBasket] = useState(null)
     const [customer, setCustomer] = useState(null)
-
     return (
         <CommerceAPIProvider value={locals.api}>
             <CustomerProvider value={{customer, setCustomer}}>
@@ -72,7 +88,7 @@ AppConfig.freeze = () => undefined
 
 AppConfig.extraGetPropsArgs = (locals = {}) => {
     return {
-        api: locals.api
+        api: locals.api,
     }
 }
 

@@ -51,11 +51,6 @@ import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 
-// register builder components
-import '../blocks//einstein-products-grid/einstein-products-grid.builder';
-import '../blocks/product-box/product-box.builder';
-import '../blocks/products-grid/prouducts-grid.builder';
-
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
 

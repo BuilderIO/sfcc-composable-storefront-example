@@ -92,6 +92,6 @@
     "last 4 ChromeAndroid versions"
   ],
   "dependencies": {
-    "@builder.io/react": "^1.1.50"
+    "@builder.io/react": "^2.0.2-7"
   }
 }

@@ -14,23 +14,23 @@ import useWishlist from '../../../hooks/use-wishlist'
 import {Button} from '@chakra-ui/react'
 import { useCommerceAPI } from '../../../commerce-api/contexts'
 
-export function ProductBox({productId, productObj, initialCategory}) {
+export function ProductBox({productRef, initialCategory}) {
     const {formatMessage} = useIntl()
     const basket = useBasket()
     const toast = useToast()
     const navigate = useNavigation()
-    const [productObject, setProductObject] = useState(productObj);
+    const [productObject, setProductObject] = useState(productRef?.data);
     const [category, setCategory] = useState(initialCategory);
-    const  [isLoading , setIsloading] = useState(!productObj);
+    const  [isLoading , setIsloading] = useState(!productObject);
 
     const api = useCommerceAPI();
     useEffect(() => {
         async function fetchProduct() {
-            setIsloading(true)
-            if (productObj?.id !== productId) {
-                const result = await api.shopperProducts.getProduct({
+            if (productObject?.id !== productRef?.options.product) {
+                setIsloading(true)
+                const result = productRef.data || await api.shopperProducts.getProduct({
                     parameters: {
-                        id: productId,
+                        id: productRef?.options.product,
                         allImages: true
                     }
                 })
@@ -45,7 +45,7 @@ export function ProductBox({productId, productObj, initialCategory}) {
             }    
         }
         fetchProduct()
-    }, [productId])
+    }, [productRef])
 
     const showToast = useToast()
     const showError = () => {
@@ -118,7 +118,7 @@ export function ProductBox({productId, productObj, initialCategory}) {
 
 ProductBox.propTypes = {
     /** product id */
-    productId: PropTypes.string,
+    productRef: PropTypes.object,
     productObj: PropTypes.object,
 }
 

@@ -13,7 +13,7 @@ import {
     TOAST_MESSAGE_REMOVED_FROM_WISHLIST
 } from '../../../constants'
 
-function ProductGrid({productIds, productObjects}) {
+function ProductsGrid({productIds, productObjects}) {
     const [products, setProducts] = useState(productObjects || []);
     const [isLoading ,setIsLoading] = useState(!productObjects);
     const api = useCommerceAPI();
@@ -137,4 +137,4 @@ function ProductGrid({productIds, productObjects}) {
     )
 }
 
-export default ProductGrid
+export default ProductsGrid
