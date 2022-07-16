@@ -27,6 +27,7 @@ import '../blocks/einstein-products-grid/einstein-products-grid.builder';
 import '../blocks/product-box/product-box.builder';
 import '../blocks/products-grid/prouducts-grid.builder';
 import { builder, Builder } from '@builder.io/react';
+import '@builder.io/widgets';
 // todo move to config
 builder.init('d1ed12c3338144da8dd6b63b35d14c30')
 
