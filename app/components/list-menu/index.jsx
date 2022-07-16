@@ -232,7 +232,7 @@ const ListMenu = ({root, maxColumns = MAXIMUM_NUMBER_COLUMNS}) => {
             <Flex {...baseStyle.container}>
                 {items ? (
                     <Stack direction={'row'} spacing={0} {...baseStyle.stackContainer}>
-                        {items.map((item) => {
+                        {items.filter(i => i[itemsKey]?.length > 0).map((item) => {
                             const {id, name} = item
                             const items = item[itemsKey]
 

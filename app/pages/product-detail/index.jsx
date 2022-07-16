@@ -258,7 +258,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                     </Accordion>
                     <Box display={['none', 'none', 'none', 'block']} flex={4}></Box>
                 </Stack>
-                { (productFooter || isPreviewing) && <BuilderComponent content={productFooter} model="product-footer" options={{ includeRefs: true}}/>}
+                { (productFooter || isPreviewing) && <BuilderComponent key={product.id} data={{product}} content={productFooter} model="product-footer" options={{ includeRefs: true}}/>}
             </Stack>
         </Box>
     )
@@ -340,7 +340,8 @@ ProductDetail.propTypes = {
     /**
      * The current react router match object. (Provided internally)
      */
-    match: PropTypes.object
+    match: PropTypes.object,
+    productFooter: PropTypes.object,
 }
 
 export default ProductDetail
