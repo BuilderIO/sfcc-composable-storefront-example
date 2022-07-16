@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import ProductView from '../../../partials/product-view'
 import useBasket from '../../../commerce-api/hooks/useBasket'
@@ -12,12 +12,40 @@ import {
 } from '../../../constants'
 import useWishlist from '../../../hooks/use-wishlist'
 import {Button} from '@chakra-ui/react'
+import { useCommerceAPI } from '../../../commerce-api/contexts'
 
-export function ProductBox({product}) {
+export function ProductBox({productId, productObj, initialCategory}) {
     const {formatMessage} = useIntl()
     const basket = useBasket()
     const toast = useToast()
     const navigate = useNavigation()
+    const [productObject, setProductObject] = useState(productObj);
+    const [category, setCategory] = useState(initialCategory);
+    const  [isLoading , setIsloading] = useState(!productObj);
+
+    const api = useCommerceAPI();
+    useEffect(() => {
+        async function fetchProduct() {
+            setIsloading(true)
+            if (productObj?.id !== productId) {
+                const result = await api.shopperProducts.getProduct({
+                    parameters: {
+                        id: productId,
+                        allImages: true
+                    }
+                })
+            if (result?.primaryCategoryId) {
+                const categoryRes = await api.shopperProducts.getCategory({
+                    parameters: {id: result?.primaryCategoryId, levels: 1}
+                });
+                setCategory(categoryRes)
+            }
+              setProductObject(result);
+              setIsloading(false)
+            }    
+        }
+        fetchProduct()
+    }, [productId])
 
     const showToast = useToast()
     const showError = () => {
@@ -50,7 +78,7 @@ export function ProductBox({product}) {
     const handleAddToWishlist = async (quantity) => {
         try {
             await wishlist.createListItem({
-                id: product.id,
+                id: productObj.id,
                 quantity
             })
             toast({
@@ -77,11 +105,11 @@ export function ProductBox({product}) {
     return (
         <div>
             <ProductView
-                product={product}
-                category={[]}
+                product={productObject}
+                category={category?.parentCategoryTree || []}
                 addToCart={(variant, quantity) => handleAddToCart(variant, quantity)}
                 addToWishlist={(_, quantity) => handleAddToWishlist(quantity)}
-                isProductLoading={false}
+                isProductLoading={isLoading}
                 isCustomerProductListLoading={!wishlist.isInitialized}
             />
         </div>
@@ -90,7 +118,8 @@ export function ProductBox({product}) {
 
 ProductBox.propTypes = {
     /** product id */
-    product: PropTypes.string
+    productId: PropTypes.string,
+    productObj: PropTypes.object,
 }
 
 export default ProductBox

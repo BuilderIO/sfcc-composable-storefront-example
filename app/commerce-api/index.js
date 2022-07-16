@@ -222,7 +222,7 @@ class CommerceAPI {
         if (isError(response)) {
             return {...response, isError: true, message: response.detail}
         }
-
+        console.log(' here got response ', response);
         return response
     }
 }

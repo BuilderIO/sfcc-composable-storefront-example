@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import RecommendedProducts from '../../recommended-products'
 
-export function RecommendedProductGrid({recommender, title}) {
+export function EinsteinProductsGrid({recommender, title}) {
     return (
         <div>
             <RecommendedProducts
@@ -14,11 +14,11 @@ export function RecommendedProductGrid({recommender, title}) {
     )
 }
 
-RecommendedProductGrid.propTypes = {
+EinsteinProductsGrid.propTypes = {
     /** recommender id */
     recommender: PropTypes.string,
 
     title: PropTypes.string
 }
 
-export default RecommendedProductGrid
+export default EinsteinProductsGrid

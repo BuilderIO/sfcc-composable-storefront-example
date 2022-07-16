@@ -46,21 +46,28 @@ const {handler} = runtime.createHandler(options, (app) => {
                         'https://*.builder.io',
                         'https://builder.io'
                     ],
-                    'script-src': ["'self'", "'unsafe-eval'", 'storage.googleapis.com'],
+                    'script-src': ["'self'", "'unsafe-eval'", 'storage.googleapis.com', 'https://*.builder.io'],
 
+                    // Do not upgrade insecure requests for local development
                     // Do not upgrade insecure requests for local development
                     'upgrade-insecure-requests': isRemote() ? [] : null,
                     'frame-ancestors':
                         'https://*.builder.io https://builder.io http://localhost:1234',
-                    'connect-src': 'https://*.builder.io https://builder.io http://localhost:3000'
+                    'connect-src': '*',
+                    // 'Access-Control-Allow-Origin': '*',
+                    // // https://developer.chrome.com/blog/private-network-access-preflight/#new-in-pna
+                    // 'Access-Control-Allow-Private-Network': 'true',      
                 }
             },
             hsts: isRemote()
         })
     )
 
+
     // Handle the redirect from SLAS as to avoid error
     app.get('/callback?*', (req, res) => {
+        res
+        .set('Access-Control-Allow-Origin', 'https://builder.io')
         res.send()
     })
     app.get('/robots.txt', runtime.serveStaticFile('static/robots.txt'))

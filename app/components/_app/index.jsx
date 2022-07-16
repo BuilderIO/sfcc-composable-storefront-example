@@ -52,7 +52,9 @@ import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 
 // register builder components
-import '../builder-custom/RecommendedProductGrid/RecommendedGrid.builder'
+import '../blocks//einstein-products-grid/einstein-products-grid.builder';
+import '../blocks/product-box/product-box.builder';
+import '../blocks/products-grid/prouducts-grid.builder';
 
 const DEFAULT_NAV_DEPTH = 3
 const DEFAULT_ROOT_CATEGORY = 'root'
