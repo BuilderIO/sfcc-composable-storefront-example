@@ -93,21 +93,21 @@ export const useVariationAttributes = (product = {}) => {
                     name: variationAttribute.values.find(
                         ({value}) => value === variationParams?.[variationAttribute.id]
                     )?.name,
-                    value: variationParams?.[variationAttribute.id]
+                    value: variationParams?.[variationAttribute.id],
                 },
                 values: variationAttribute.values.map((value) => {
                     const params = {
                         ...variationParams,
-                        [variationAttribute.id]: value.value
+                        [variationAttribute.id]: value.value,
                     }
 
                     return {
                         ...value,
                         image: getVariantValueSwatch(product, value),
                         href: buildVariantValueHref(product, params, location),
-                        orderable: isVariantValueOrderable(product, params)
+                        orderable: isVariantValueOrderable(product, params),
                     }
-                })
+                }),
             })),
         [location.search, product]
     )

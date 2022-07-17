@@ -72,7 +72,7 @@ const App = (props) => {
 
     const configValues = {
         locale: locale.alias || locale.id,
-        site: site.alias || site.id
+        site: site.alias || site.id,
     }
 
     const {isOpen, onOpen, onClose} = useDisclosure()
@@ -185,7 +185,7 @@ const App = (props) => {
                                     rel="alternate"
                                     hrefLang={locale.id.toLowerCase()}
                                     href={`${appOrigin}${getPathWithLocale(locale.id, {
-                                        location
+                                        location,
                                     })}`}
                                     key={locale.id}
                                 />
@@ -195,7 +195,7 @@ const App = (props) => {
                                 rel="alternate"
                                 hrefLang={site.l10n.defaultLocale.slice(0, 2)}
                                 href={`${appOrigin}${getPathWithLocale(site.l10n.defaultLocale, {
-                                    location
+                                    location,
                                 })}`}
                             />
                             {/* A wider fallback for user locales that the app does not support */}
@@ -241,7 +241,7 @@ const App = (props) => {
                                         display: 'flex',
                                         flexDirection: 'column',
                                         flex: 1,
-                                        outline: 0
+                                        outline: 0,
                                     }}
                                 >
                                     <Box
@@ -300,7 +300,7 @@ App.getProps = async ({api, res}) => {
 
             return [locale]
         },
-        l10nConfig
+        l10nConfig,
     })
     const messages = await fetchTranslations(targetLocale)
 
@@ -311,8 +311,8 @@ App.getProps = async ({api, res}) => {
     const rootCategory = await api.shopperProducts.getCategory({
         parameters: {
             id: DEFAULT_ROOT_CATEGORY,
-            levels: DEFAULT_NAV_DEPTH
-        }
+            levels: DEFAULT_NAV_DEPTH,
+        },
     })
 
     if (rootCategory.isError) {
@@ -334,7 +334,7 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
         targetLocale,
         messages,
         categories,
-        config: res?.locals?.config
+        config: res?.locals?.config,
     }
 }
 
@@ -343,7 +343,7 @@ App.propTypes = {
     targetLocale: PropTypes.string,
     messages: PropTypes.object,
     categories: PropTypes.object,
-    config: PropTypes.object
+    config: PropTypes.object,
 }
 
 export default App

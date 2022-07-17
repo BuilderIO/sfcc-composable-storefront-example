@@ -22,9 +22,9 @@ const messages = defineMessages({
     postalCode: {defaultMessage: 'Postal Code', id: 'use_address_fields.label.postal_code'},
     stateCodeInvalid: {
         defaultMessage: 'Please enter 2-letter state/province.',
-        id: 'use_address_fields.error.state_code_invalid'
+        id: 'use_address_fields.error.state_code_invalid',
     },
-    preferred: {defaultMessage: 'Set as default', id: 'use_address_fields.label.preferred'}
+    preferred: {defaultMessage: 'Set as default', id: 'use_address_fields.label.preferred'},
 })
 
 /**
@@ -48,11 +48,11 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your first name.',
-                    id: 'use_address_fields.error.please_enter_first_name'
-                })
+                    id: 'use_address_fields.error.please_enter_first_name',
+                }),
             },
             error: errors[`${prefix}firstName`],
-            control
+            control,
         },
         lastName: {
             name: `${prefix}lastName`,
@@ -62,11 +62,11 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your last name.',
-                    id: 'use_address_fields.error.please_enter_last_name'
-                })
+                    id: 'use_address_fields.error.please_enter_last_name',
+                }),
             },
             error: errors[`${prefix}lastName`],
-            control
+            control,
         },
         phone: {
             name: `${prefix}phone`,
@@ -76,17 +76,17 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your phone number.',
-                    id: 'use_address_fields.error.please_enter_phone_number'
-                })
+                    id: 'use_address_fields.error.please_enter_phone_number',
+                }),
             },
             error: errors[`${prefix}phone`],
             inputProps: ({onChange}) => ({
                 inputmode: 'numeric',
                 onChange(evt) {
                     onChange(formatPhoneNumber(evt.target.value))
-                }
+                },
             }),
-            control
+            control,
         },
         countryCode: {
             name: `${prefix}countryCode`,
@@ -95,16 +95,16 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             type: 'select',
             options: [
                 {value: 'CA', label: 'Canada'},
-                {value: 'US', label: 'United States'}
+                {value: 'US', label: 'United States'},
             ],
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please select your country.',
-                    id: 'use_address_fields.error.please_select_your_country'
-                })
+                    id: 'use_address_fields.error.please_select_your_country',
+                }),
             },
             error: errors[`${prefix}countryCode`],
-            control
+            control,
         },
         address1: {
             name: `${prefix}address1`,
@@ -114,11 +114,11 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your address.',
-                    id: 'use_address_fields.error.please_select_your_address'
-                })
+                    id: 'use_address_fields.error.please_select_your_address',
+                }),
             },
             error: errors[`${prefix}address1`],
-            control
+            control,
         },
         city: {
             name: `${prefix}city`,
@@ -128,11 +128,11 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your city.',
-                    id: 'use_address_fields.error.please_select_your_city'
-                })
+                    id: 'use_address_fields.error.please_select_your_city',
+                }),
             },
             error: errors[`${prefix}city`],
-            control
+            control,
         },
         stateCode: {
             name: `${prefix}stateCode`,
@@ -141,19 +141,19 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             type: 'select',
             options: [
                 {value: '', label: ''},
-                ...(countryCode === 'CA' ? provinceOptions : stateOptions)
+                ...(countryCode === 'CA' ? provinceOptions : stateOptions),
             ],
             rules: {
                 required: formatMessage(
                     {
                         defaultMessage: 'Please select your {stateOrProvince}.',
-                        id: 'use_address_fields.error.please_select_your_state_or_province'
+                        id: 'use_address_fields.error.please_select_your_state_or_province',
                     },
                     {stateOrProvince: countryCode === 'CA' ? 'province' : 'state'}
-                )
+                ),
             },
             error: errors[`${prefix}stateCode`],
-            control
+            control,
         },
         postalCode: {
             name: `${prefix}postalCode`,
@@ -164,13 +164,13 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
                 required: formatMessage(
                     {
                         defaultMessage: 'Please enter your {postalOrZip}.',
-                        id: 'use_address_fields.error.please_enter_your_postal_or_zip'
+                        id: 'use_address_fields.error.please_enter_your_postal_or_zip',
                     },
                     {postalOrZip: countryCode === 'CA' ? 'postal code' : 'zip code'}
-                )
+                ),
             },
             error: errors[`${prefix}postalCode`],
-            control
+            control,
         },
         preferred: {
             name: `${prefix}preferred`,
@@ -178,8 +178,8 @@ export default function useAddressFields({form: {watch, control, errors}, prefix
             defaultValue: false,
             type: 'checkbox',
             rules: {},
-            control
-        }
+            control,
+        },
     }
 
     return fields

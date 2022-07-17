@@ -38,7 +38,7 @@ const useRefinementToggle = () => {
          */
         setSelectedRefinements(refinements) {
             setState({selectedRefinements: refinements})
-        }
+        },
     }
 }
 

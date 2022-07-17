@@ -11,16 +11,16 @@ export default {
             paddingRight: [4, 4, 6, 6],
             paddingBottom: 1,
             paddingLeft: [4, 4, 6, 6],
-            boxShadow: 'base'
+            boxShadow: 'base',
         },
         body: {
-            padding: [4, 4, 6, 6]
+            padding: [4, 4, 6, 6],
         },
         footer: {
             paddingTop: 6,
             paddingRight: [4, 4, 6, 6],
             paddingBottom: 11,
-            paddingLest: [4, 4, 6, 6]
-        }
-    }
+            paddingLest: [4, 4, 6, 6],
+        },
+    },
 }

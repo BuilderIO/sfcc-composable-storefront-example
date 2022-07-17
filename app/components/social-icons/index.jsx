@@ -14,7 +14,7 @@ import {
     IconButton,
 
     // Hooks
-    useMultiStyleConfig
+    useMultiStyleConfig,
 } from '@chakra-ui/react'
 
 // Icons
@@ -23,7 +23,7 @@ import {
     SocialInstagramIcon,
     SocialPinterestIcon,
     SocialTwitterIcon,
-    SocialYoutubeIcon
+    SocialYoutubeIcon,
 } from '../../components/icons'
 
 /**
@@ -44,28 +44,28 @@ const SocialIcons = ({variant, pinterestInnerColor = 'white', ...otherProps}) =>
                 {
                     href: 'https://www.youtube.com/channel/UCSTGHqzR1Q9yAVbiS3dAFHg',
                     icon: SocialYoutubeIcon,
-                    ariaLabel: 'YouTube'
+                    ariaLabel: 'YouTube',
                 },
                 {
                     href: 'https://www.instagram.com/commercecloud/?hl=en',
                     icon: SocialInstagramIcon,
-                    ariaLabel: 'Instagram'
+                    ariaLabel: 'Instagram',
                 },
                 {
                     href: '/',
                     icon: SocialPinterestIcon,
-                    ariaLabel: 'Pinterest'
+                    ariaLabel: 'Pinterest',
                 },
                 {
                     href: 'https://twitter.com/CommerceCloud',
                     icon: SocialTwitterIcon,
-                    ariaLabel: 'Twitter'
+                    ariaLabel: 'Twitter',
                 },
                 {
                     href: 'https://www.facebook.com/CommerceCloud/',
                     icon: SocialFacebookIcon,
-                    ariaLabel: 'Facebook'
-                }
+                    ariaLabel: 'Facebook',
+                },
             ].map(({href, icon, ariaLabel}) => (
                 <IconButton
                     {...styles.item}
@@ -95,7 +95,7 @@ SocialIcons.propTypes = {
     /**
      * The inverse color of Pinterest icon's `currentColor`. For example, if the pinterest icon is white, then its inner 'p' is black.
      */
-    pinterestInnerColor: PropTypes.string
+    pinterestInnerColor: PropTypes.string,
 }
 
 export default SocialIcons

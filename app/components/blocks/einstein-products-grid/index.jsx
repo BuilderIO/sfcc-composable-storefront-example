@@ -18,7 +18,7 @@ EinsteinProductsGrid.propTypes = {
     /** recommender id */
     recommender: PropTypes.string,
 
-    title: PropTypes.string
+    title: PropTypes.string,
 }
 
 export default EinsteinProductsGrid

@@ -33,7 +33,7 @@ const MockComponent = ({updateCart}) => {
 }
 
 MockComponent.propTypes = {
-    updateCart: PropTypes.func
+    updateCart: PropTypes.func,
 }
 
 test('renders product view modal by default', () => {

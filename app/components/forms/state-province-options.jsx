@@ -55,7 +55,7 @@ export const stateOptions = [
     {value: 'WA', label: 'Washington'},
     {value: 'WV', label: 'West Virginia'},
     {value: 'WI', label: 'Wisconsin'},
-    {value: 'WY', label: 'Wyoming'}
+    {value: 'WY', label: 'Wyoming'},
 ]
 
 export const provinceOptions = [
@@ -71,5 +71,5 @@ export const provinceOptions = [
     {value: 'SK', label: 'Saskatchewan'},
     {value: 'NT', label: 'Northwest Territories'},
     {value: 'NU', label: 'Nunavut'},
-    {value: 'YT', label: 'Yukon'}
+    {value: 'YT', label: 'Yukon'},
 ]

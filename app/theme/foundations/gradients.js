@@ -5,5 +5,5 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 export default {
-    imageBackground: 'linear(270deg, #E6E5EA, #EEEEEE)'
+    imageBackground: 'linear(270deg, #E6E5EA, #EEEEEE)',
 }

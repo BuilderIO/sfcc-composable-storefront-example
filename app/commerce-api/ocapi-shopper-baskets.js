@@ -33,7 +33,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId},
-            body
+            body,
         } = args[0]
         return this.fetch(`baskets/${basketId}`, 'PATCH', args, 'updateBasket', body)
     }
@@ -56,7 +56,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/items`,
@@ -75,7 +75,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId, itemId},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/items/${itemId}`,
@@ -109,7 +109,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/payment_instruments`,
@@ -127,7 +127,7 @@ class OcapiShopperBaskets {
             return requiredParametersError
         }
         let {
-            parameters: {basketId, paymentInstrumentId}
+            parameters: {basketId, paymentInstrumentId},
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/payment_instruments/${paymentInstrumentId}`,
@@ -175,7 +175,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId, useAsShipping = false},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/billing_address?use_as_shipping=${useAsShipping}`,
@@ -194,7 +194,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId, shipmentId, useAsBilling = false},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/shipments/${shipmentId}/shipping_address?use_as_billing=${useAsBilling}`,
@@ -213,7 +213,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId, shipmentId},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/shipments/${shipmentId}/shipping_method`,
@@ -232,7 +232,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/customer`,
@@ -261,7 +261,7 @@ class OcapiShopperBaskets {
         }
         let {
             parameters: {basketId},
-            body
+            body,
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/coupons`,
@@ -279,7 +279,7 @@ class OcapiShopperBaskets {
             return requiredParametersError
         }
         let {
-            parameters: {basketId, couponItemId}
+            parameters: {basketId, couponItemId},
         } = args[0]
         return this.fetch(
             `baskets/${basketId}/coupons/${couponItemId}`,

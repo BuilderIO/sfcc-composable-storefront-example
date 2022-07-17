@@ -27,7 +27,7 @@ const options = {
 
     // The protocol on which the development Express app listens.
     // Note that http://localhost is treated as a secure context for development.
-    protocol: 'http'
+    protocol: 'http',
 }
 
 const runtime = getRuntime()
@@ -44,9 +44,14 @@ const {handler} = runtime.createHandler(options, (app) => {
                         '*.commercecloud.salesforce.com',
                         'data:',
                         'https://*.builder.io',
-                        'https://builder.io'
+                        'https://builder.io',
                     ],
-                    'script-src': ["'self'", "'unsafe-eval'", 'storage.googleapis.com', 'https://*.builder.io'],
+                    'script-src': [
+                        "'self'",
+                        "'unsafe-eval'",
+                        'storage.googleapis.com',
+                        'https://*.builder.io',
+                    ],
 
                     // Do not upgrade insecure requests for local development
                     // Do not upgrade insecure requests for local development
@@ -56,18 +61,16 @@ const {handler} = runtime.createHandler(options, (app) => {
                     'connect-src': '*',
                     // 'Access-Control-Allow-Origin': '*',
                     // // https://developer.chrome.com/blog/private-network-access-preflight/#new-in-pna
-                    // 'Access-Control-Allow-Private-Network': 'true',      
-                }
+                    // 'Access-Control-Allow-Private-Network': 'true',
+                },
             },
-            hsts: isRemote()
+            hsts: isRemote(),
         })
     )
 
-
     // Handle the redirect from SLAS as to avoid error
     app.get('/callback?*', (req, res) => {
-        res
-        .set('Access-Control-Allow-Origin', 'https://builder.io')
+        res.set('Access-Control-Allow-Origin', 'https://builder.io')
         res.send()
     })
     app.get('/robots.txt', runtime.serveStaticFile('static/robots.txt'))

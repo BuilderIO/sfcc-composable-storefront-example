@@ -14,7 +14,7 @@ import {
     AlertDialogHeader,
     AlertDialogContent,
     AlertDialogOverlay,
-    Text
+    Text,
 } from '@chakra-ui/react'
 
 import PropTypes from 'prop-types'
@@ -105,7 +105,7 @@ ConfirmationModal.propTypes = {
     /**
      * Action to execute if user selects alternate or secondary action
      */
-    onAlternateAction: PropTypes.func
+    onAlternateAction: PropTypes.func,
 }
 
 export default ConfirmationModal

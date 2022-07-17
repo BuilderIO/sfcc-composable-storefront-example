@@ -136,7 +136,7 @@ Error.propTypes = {
     // HTTP status code: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
     status: PropTypes.number,
     // A description of the error, if available
-    message: PropTypes.string
+    message: PropTypes.string,
 }
 
 export default Error

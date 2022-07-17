@@ -23,7 +23,7 @@ const Swatch = (props) => {
         variant = 'square',
         onChange,
         value,
-        name
+        name,
     } = props
     const styles = useMultiStyleConfig('SwatchGroup', {variant, disabled, selected})
     return (
@@ -87,7 +87,7 @@ Swatch.propTypes = {
     /**
      * The display value for each swatch
      */
-    name: PropTypes.string
+    name: PropTypes.string,
 }
 
 export default Swatch

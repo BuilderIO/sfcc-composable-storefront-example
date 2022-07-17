@@ -6,6 +6,6 @@
  */
 export default {
     baseStyle: {
-        dialog: {borderRadius: 'base'}
-    }
+        dialog: {borderRadius: 'base'},
+    },
 }

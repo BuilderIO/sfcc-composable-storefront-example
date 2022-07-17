@@ -85,13 +85,13 @@ ToggleCard.propTypes = {
     isLoading: PropTypes.bool,
     disabled: PropTypes.bool,
     onEdit: PropTypes.func,
-    children: PropTypes.any
+    children: PropTypes.any,
 }
 
 ToggleCardEdit.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
 }
 
 ToggleCardSummary.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
 }

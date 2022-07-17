@@ -14,7 +14,7 @@ const mockRoot = {
     categories: [
         {
             id: 't1-1',
-            name: 'Test One One'
+            name: 'Test One One',
         },
         {
             id: 't1-2',
@@ -22,15 +22,15 @@ const mockRoot = {
             categories: [
                 {
                     id: 't1-2-1',
-                    name: 'Test One Two One'
+                    name: 'Test One Two One',
                 },
                 {
                     id: 't1-2-2',
-                    name: 'Test One Two Two'
-                }
-            ]
-        }
-    ]
+                    name: 'Test One Two Two',
+                },
+            ],
+        },
+    ],
 }
 
 test('Renders DrawerMenu with root', () => {

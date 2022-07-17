@@ -6,7 +6,7 @@ const fallback = <Skeleton height="75vh" width="100%" />
 
 const ProductsGrid = loadable(() => import('./index'), {fallback})
 
-Builder.registerComponent(ProductsGrid,{
+Builder.registerComponent(ProductsGrid, {
     name: 'ProductsGrid',
     image: 'https://unpkg.com/css.gg@2.0.0/icons/svg/list.svg',
     inputs: [
@@ -14,7 +14,7 @@ Builder.registerComponent(ProductsGrid,{
             name: 'productIds',
             friendlyName: 'Products',
             type: 'SFCommerceProductsList',
-            required: true
+            required: true,
         },
-    ]
+    ],
 })

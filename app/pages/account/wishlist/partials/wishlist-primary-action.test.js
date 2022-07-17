@@ -23,7 +23,7 @@ const MockedComponent = (variant) => {
 jest.mock('../../../../commerce-api/hooks/useBasket', () => {
     return () => {
         return {
-            addItemToBasket: jest.fn()
+            addItemToBasket: jest.fn(),
         }
     }
 })
@@ -37,7 +37,7 @@ test('renders primary action component', async () => {
         <MockedComponent variant={mockedCustomerProductListsDetails.data[0]} />
     )
     const addToCartButton = getByRole('button', {
-        name: /add to cart/i
+        name: /add to cart/i,
     })
     expect(addToCartButton).toBeInTheDocument()
     user.click(addToCartButton)

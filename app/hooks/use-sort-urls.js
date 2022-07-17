@@ -25,7 +25,7 @@ export const useSortUrls = ({options = []}) => {
                 'sort',
                 options.map(({id}) => id),
                 {
-                    offset: 0
+                    offset: 0,
                 }
             ),
         [location.pathname, location.search, options]

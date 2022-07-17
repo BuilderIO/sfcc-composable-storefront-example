@@ -47,7 +47,7 @@ class EinsteinAPI {
 
         const headers = {
             'Content-Type': 'application/json',
-            'x-cq-client-id': einsteinId
+            'x-cq-client-id': einsteinId,
         }
 
         // Include `userId` and `cookieId` parameters.
@@ -60,8 +60,8 @@ class EinsteinAPI {
             method: method,
             headers: headers,
             ...(body && {
-                body: JSON.stringify(body)
-            })
+                body: JSON.stringify(body),
+            }),
         })
 
         const responseJson = await response.json()
@@ -82,9 +82,9 @@ class EinsteinAPI {
                 id,
                 sku,
                 altId,
-                altIdType
+                altIdType,
             },
-            ...args
+            ...args,
         }
 
         return this.einsteinFetch(endpoint, method, body)
@@ -102,7 +102,7 @@ class EinsteinAPI {
             recommenderName,
             __recoUUID,
             products: products,
-            ...args
+            ...args,
         }
 
         return this.einsteinFetch(endpoint, method, body)
@@ -124,9 +124,9 @@ class EinsteinAPI {
                 id,
                 sku,
                 altId,
-                altIdType
+                altIdType,
             },
-            ...args
+            ...args,
         }
 
         return this.einsteinFetch(endpoint, method, body)
@@ -141,7 +141,7 @@ class EinsteinAPI {
         const method = 'POST'
         const body = {
             products: [product],
-            ...args
+            ...args,
         }
 
         return this.einsteinFetch(endpoint, method, body)
@@ -196,7 +196,7 @@ class EinsteinAPI {
         if (ids?.length > 0) {
             // Fetch the product details for the recommendations
             const products = await this.commerceAPI.shopperProducts.getProducts({
-                parameters: {ids: ids.join(',')}
+                parameters: {ids: ids.join(',')},
             })
 
             // Merge the product detail into the recommendations response
@@ -208,9 +208,9 @@ class EinsteinAPI {
                         ...rec,
                         ...product,
                         productId: rec.id,
-                        image: {disBaseLink: rec.imageUrl, alt: rec.productName}
+                        image: {disBaseLink: rec.imageUrl, alt: rec.productName},
                     }
-                })
+                }),
             }
         }
         return reco

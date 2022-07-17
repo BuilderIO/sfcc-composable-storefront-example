@@ -50,7 +50,7 @@ const RadioRefinements = ({filter, toggleFilter, selectedFilters}) => {
 RadioRefinements.propTypes = {
     filter: PropTypes.object,
     toggleFilter: PropTypes.func,
-    selectedFilters: PropTypes.array
+    selectedFilters: PropTypes.array,
 }
 
 export default RadioRefinements

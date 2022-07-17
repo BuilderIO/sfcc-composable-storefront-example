@@ -30,7 +30,7 @@ export const findImageGroupBy = (imageGroups = [], options) => {
             imageGroups
                 .reduce((acc, {variationAttributes = []}) => [...acc, ...variationAttributes], [])
                 .map(({id}) => id)
-        )
+        ),
     ]
 
     // Update the `selectedVariationAttributes` by filtering out the attributes that have no
@@ -39,7 +39,7 @@ export const findImageGroupBy = (imageGroups = [], options) => {
         return refinableAttributeIds.includes(curr)
             ? {
                   ...acc,
-                  [`${curr}`]: selectedVariationAttributes[curr]
+                  [`${curr}`]: selectedVariationAttributes[curr],
               }
             : acc
     }, {})

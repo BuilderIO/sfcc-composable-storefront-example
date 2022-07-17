@@ -14,6 +14,6 @@ export default {
         color: 'whiteAlpha.900',
         borderRadius: 'base',
         maxW: '280px',
-        lineHeight: '1.5em'
-    }
+        lineHeight: '1.5em',
+    },
 }

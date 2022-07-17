@@ -57,7 +57,7 @@ export const getCreditCardIcon = (type) => {
         amex: AmexIcon,
 
         // Discover
-        discover: DiscoverIcon
+        discover: DiscoverIcon,
     }[type.toLowerCase()]
 }
 
@@ -74,7 +74,7 @@ export const getPaymentInstrumentCardType = (type) => {
         visa: 'Visa',
         mastercard: 'Master Card',
         'american-express': 'Amex',
-        discover: 'Discover'
+        discover: 'Discover',
     }[type]
 }
 
@@ -100,7 +100,7 @@ export const createCreditCardPaymentBodyFromForm = (paymentFormData) => {
             // we're just passing some values to make it work. Need to investigate.
             issueNumber: '',
             validFromMonth: 1,
-            validFromYear: 2020
-        }
+            validFromYear: 2020,
+        },
     }
 }

@@ -25,7 +25,7 @@ ResetPasswordFields.propTypes = {
     form: PropTypes.object.isRequired,
 
     /** Optional prefix for field names */
-    prefix: PropTypes.string
+    prefix: PropTypes.string,
 }
 
 export default ResetPasswordFields

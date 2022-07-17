@@ -13,7 +13,7 @@ import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
 
 jest.mock('pwa-kit-runtime/utils/ssr-config', () => {
     return {
-        getConfig: jest.fn()
+        getConfig: jest.fn(),
     }
 })
 
@@ -28,9 +28,9 @@ jest.mock('react-router', () => {
         useHistory: jest.fn().mockImplementation(() => {
             return {
                 push: mockHistoryPush,
-                replace: mockHistoryReplace
+                replace: mockHistoryReplace,
             }
-        })
+        }),
     }
 })
 
@@ -69,9 +69,9 @@ test('append locale as path and site as query and calls history.push', () => {
             url: {
                 locale: 'path',
                 site: 'query_param',
-                showDefaults: true
-            }
-        }
+                showDefaults: true,
+            },
+        },
     }
     getConfig.mockImplementation(() => newConfig)
     const {getByTestId} = renderWithProviders(<TestComponent />)

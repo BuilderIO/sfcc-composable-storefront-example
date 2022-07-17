@@ -10,8 +10,8 @@ export default {
             container: {
                 borderColor: `${props.colorScheme || 'green'}.600`,
                 borderWidth: 1,
-                borderStyle: 'solid'
-            }
-        })
-    }
+                borderStyle: 'solid',
+            },
+        }),
+    },
 }

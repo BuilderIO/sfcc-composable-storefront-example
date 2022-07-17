@@ -21,14 +21,14 @@ import {
     mockedGuestCustomer,
     mockedRegisteredCustomer,
     mockedCustomerProductLists,
-    productsResponse
+    productsResponse,
 } from '../../commerce-api/mock-data'
 
 jest.setTimeout(60000)
 
 // Make sure fetch is defined in test env
 Object.defineProperty(window, 'fetch', {
-    value: require('cross-fetch')
+    value: require('cross-fetch'),
 })
 
 jest.mock('../../commerce-api/utils', () => {
@@ -41,15 +41,15 @@ jest.mock('../../commerce-api/utils', () => {
             code: 'test',
             usid: 'test',
             codeVerifier: 'test',
-            redirectUri: 'http://localhost/test'
-        })
+            redirectUri: 'http://localhost/test',
+        }),
     }
 })
 
 jest.mock('../../commerce-api/pkce', () => {
     return {
         createCodeVerifier: jest.fn().mockReturnValue('codeverifier'),
-        generateCodeChallenge: jest.fn().mockReturnValue('codechallenge')
+        generateCodeChallenge: jest.fn().mockReturnValue('codechallenge'),
     }
 })
 
@@ -79,7 +79,7 @@ const server = setupMockServer(
     rest.get('*/customers/:customerId/baskets', (req, res, ctx) => {
         return res(
             ctx.json({
-                baskets: [keysToCamel(ocapiBasketWithItem)]
+                baskets: [keysToCamel(ocapiBasketWithItem)],
             })
         )
     }),
@@ -115,7 +115,7 @@ const server = setupMockServer(
                 // Mocked customer ID should match the mocked basket's customer ID as
                 // it would with real usage, otherwise, the useShopper hook will detect
                 // the mismatch and attempt to refetch a new basket for the customer.
-                customerId: ocapiBasketWithItem.customer_info.customer_id
+                customerId: ocapiBasketWithItem.customer_info.customer_id,
             })
         )
     })
@@ -167,7 +167,7 @@ test('Can proceed through checkout steps as guest', async () => {
                 phone: '(727) 555-1234',
                 postal_code: '33610',
                 state_code: 'FL',
-                _type: 'order_address'
+                _type: 'order_address',
             }
             currentBasket.shipments[0].shipping_address = shippingBillingAddress
             currentBasket.billing_address = shippingBillingAddress
@@ -187,7 +187,7 @@ test('Can proceed through checkout steps as guest', async () => {
                 phone: '(727) 555-1234',
                 postal_code: '33610',
                 state_code: 'FL',
-                _type: 'order_address'
+                _type: 'order_address',
             }
             currentBasket.shipments[0].shipping_address = shippingBillingAddress
             currentBasket.billing_address = shippingBillingAddress
@@ -216,12 +216,12 @@ test('Can proceed through checkout steps as guest', async () => {
                         number_last_digits: '1111',
                         valid_from_month: 1,
                         valid_from_year: 2020,
-                        _type: 'payment_card'
+                        _type: 'payment_card',
                     },
                     payment_instrument_id: '875cae2724408c9a3eb45715ba',
                     payment_method_id: 'CREDIT_CARD',
-                    _type: 'order_payment_instrument'
-                }
+                    _type: 'order_payment_instrument',
+                },
             ]
             return res(ctx.json(currentBasket))
         }),
@@ -230,7 +230,7 @@ test('Can proceed through checkout steps as guest', async () => {
         rest.post('*/orders', (req, res, ctx) => {
             currentBasket = {
                 ...ocapiOrderResponse,
-                customer_info: {...ocapiOrderResponse.customer_info, email: 'test@test.com'}
+                customer_info: {...ocapiOrderResponse.customer_info, email: 'test@test.com'},
             }
             return res(ctx.json(currentBasket))
         })
@@ -286,7 +286,7 @@ test('Can proceed through checkout steps as guest', async () => {
     const shippingOptionsForm = screen.getByTestId('sf-checkout-shipping-options-form')
     await waitFor(() =>
         expect(shippingOptionsForm).toHaveFormValues({
-            'shipping-options-radiogroup': 'DefaultShippingMethod'
+            'shipping-options-radiogroup': 'DefaultShippingMethod',
         })
     )
 
@@ -371,7 +371,7 @@ test('Can proceed through checkout as registered customer', async () => {
                 phone: '(727) 555-1234',
                 postal_code: '33712',
                 state_code: 'FL',
-                _type: 'order_address'
+                _type: 'order_address',
             }
             currentBasket.shipments[0].shipping_address = shippingBillingAddress
             currentBasket.billing_address = shippingBillingAddress
@@ -391,7 +391,7 @@ test('Can proceed through checkout as registered customer', async () => {
                 phone: '(727) 555-1234',
                 postal_code: '33712',
                 state_code: 'FL',
-                _type: 'order_address'
+                _type: 'order_address',
             }
             currentBasket.shipments[0].shipping_address = shippingBillingAddress
             currentBasket.billing_address = shippingBillingAddress
@@ -419,12 +419,12 @@ test('Can proceed through checkout as registered customer', async () => {
                         maskedNumber: '************5454',
                         numberLastDigits: '5454',
                         validFromMonth: 1,
-                        validFromYear: 2020
+                        validFromYear: 2020,
                     },
                     payment_instrument_id: 'testcard1',
                     payment_method_id: 'CREDIT_CARD',
-                    _type: 'order_payment_instrument'
-                }
+                    _type: 'order_payment_instrument',
+                },
             ]
             return res(ctx.json(currentBasket))
         }),
@@ -438,7 +438,7 @@ test('Can proceed through checkout as registered customer', async () => {
         rest.post('*/orders', (req, res, ctx) => {
             currentBasket = {
                 ...ocapiOrderResponse,
-                customer_info: {...ocapiOrderResponse.customer_info, email: 'customer@test.com'}
+                customer_info: {...ocapiOrderResponse.customer_info, email: 'customer@test.com'},
             }
             return res(ctx.json(currentBasket))
         })
@@ -487,7 +487,7 @@ test('Can proceed through checkout as registered customer', async () => {
     const shippingOptionsForm = screen.getByTestId('sf-checkout-shipping-options-form')
     await waitFor(() =>
         expect(shippingOptionsForm).toHaveFormValues({
-            'shipping-options-radiogroup': 'DefaultShippingMethod'
+            'shipping-options-radiogroup': 'DefaultShippingMethod',
         })
     )
 
@@ -565,7 +565,7 @@ test('Can edit address during checkout as a registered customer', async () => {
                 phone: '(727) 555-1234',
                 postal_code: '33712',
                 state_code: 'FL',
-                _type: 'order_address'
+                _type: 'order_address',
             }
             currentBasket.shipments[0].shipping_address = shippingBillingAddress
             currentBasket.billing_address = shippingBillingAddress
@@ -657,7 +657,7 @@ test('Can add address during checkout as a registered customer', async () => {
                 phone: req.body.phone,
                 postal_code: req.body.postal_code,
                 state_code: req.body.state_code,
-                _type: 'order_address'
+                _type: 'order_address',
             }
             currentBasket.shipments[0].shipping_address = shippingBillingAddress
             currentBasket.billing_address = shippingBillingAddress
@@ -677,7 +677,7 @@ test('Can add address during checkout as a registered customer', async () => {
                     phone: '(727) 555-1234',
                     postalCode: '33712',
                     preferred: false,
-                    stateCode: 'FL'
+                    stateCode: 'FL',
                 })
             )
         })

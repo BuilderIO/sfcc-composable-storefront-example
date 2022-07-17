@@ -30,10 +30,10 @@ export const RadioCard = (props) => {
                 borderRadius="base"
                 height="full"
                 _checked={{
-                    borderColor: 'blue.600'
+                    borderColor: 'blue.600',
                 }}
                 _focus={{
-                    boxShadow: 'outline'
+                    boxShadow: 'outline',
                 }}
                 px={4}
                 py={4}

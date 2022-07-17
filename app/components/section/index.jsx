@@ -62,7 +62,7 @@ Section.propTypes = {
     /**
      * Section maximum width
      */
-    maxWidth: PropTypes.string
+    maxWidth: PropTypes.string,
 }
 
 export default Section

@@ -44,7 +44,7 @@ PageActionPlaceHolder.propTypes = {
     buttonText: PropTypes.string,
     icon: PropTypes.any,
     buttonProps: PropTypes.object,
-    onButtonClick: PropTypes.func
+    onButtonClick: PropTypes.func,
 }
 
 export default PageActionPlaceHolder

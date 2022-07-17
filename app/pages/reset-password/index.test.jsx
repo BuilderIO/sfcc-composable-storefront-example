@@ -20,7 +20,7 @@ const mockRegisteredCustomer = {
     email: 'darek@test.com',
     firstName: 'Tester',
     lastName: 'Testing',
-    login: 'darek@test.com'
+    login: 'darek@test.com',
 }
 
 jest.mock('commerce-sdk-isomorphic', () => {
@@ -36,7 +36,7 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 if (args.parameters.customerId === 'customerid') {
                     return {
                         authType: 'guest',
-                        customerId: 'customerid'
+                        customerId: 'customerid',
                     }
                 }
                 return mockRegisteredCustomer
@@ -47,15 +47,15 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     headers: {
                         get(key) {
                             return {authorization: 'guestToken'}[key]
-                        }
+                        },
                     },
                     json: async () => ({
                         authType: 'guest',
-                        customerId: 'customerid'
-                    })
+                        customerId: 'customerid',
+                    }),
                 }
             }
-        }
+        },
     }
 })
 
@@ -73,7 +73,7 @@ const server = setupMockServer()
 beforeEach(() => {
     jest.resetModules()
     server.listen({
-        onUnhandledRequest: 'error'
+        onUnhandledRequest: 'error',
     })
 
     window.history.pushState({}, 'Reset Password', createPathWithDefaults('/reset-password'))
@@ -105,7 +105,7 @@ test('Allows customer to generate password token', async () => {
                     email: 'foo@test.com',
                     expiresInMinutes: 10,
                     login: 'foo@test.com',
-                    resetToken: 'testresettoken'
+                    resetToken: 'testresettoken',
                 })
             )
         )
@@ -136,7 +136,7 @@ test('Renders error message from server', async () => {
                 ctx.json({
                     detail: 'Something went wrong',
                     title: 'Error',
-                    type: '/error'
+                    type: '/error',
                 })
             )
         )

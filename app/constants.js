@@ -36,7 +36,7 @@ export const cssColorGroups = {
     white: '#FFFFFFF',
     yellow: '#fbe85a',
     gold: '#ffd700',
-    miscellaneous: 'linear-gradient(to right, orange , yellow, green, cyan, blue, violet)'
+    miscellaneous: 'linear-gradient(to right, orange , yellow, green, cyan, blue, violet)',
 }
 
 // Color to use for the UI surrounding the page in browsers.
@@ -46,7 +46,7 @@ export const FILTER_ACCORDION_SATE = 'filters-expanded-index'
 
 export const API_ERROR_MESSAGE = defineMessage({
     id: 'global.error.something_went_wrong',
-    defaultMessage: 'Something went wrong. Try again!'
+    defaultMessage: 'Something went wrong. Try again!',
 })
 
 export const HOME_HREF = '/'
@@ -56,7 +56,7 @@ export const MAX_ORDER_QUANTITY = 10
 export const urlPartPositions = {
     PATH: 'path',
     QUERY_PARAM: 'query_param',
-    NONE: 'none'
+    NONE: 'none',
 }
 
 export const DEFAULT_SITE_TITLE = 'Retail React App'
@@ -71,15 +71,15 @@ export const MAX_CACHE_AGE = 60 * 15 // 15 min
 
 export const TOAST_MESSAGE_ADDED_TO_WISHLIST = defineMessage({
     id: 'global.info.added_to_wishlist',
-    defaultMessage: '{quantity} {quantity, plural, one {item} other {items}} added to wishlist'
+    defaultMessage: '{quantity} {quantity, plural, one {item} other {items}} added to wishlist',
 })
 
 export const TOAST_ACTION_VIEW_WISHLIST = defineMessage({
     defaultMessage: 'View',
-    id: 'global.link.added_to_wishlist.view_wishlist'
+    id: 'global.link.added_to_wishlist.view_wishlist',
 })
 
 export const TOAST_MESSAGE_REMOVED_FROM_WISHLIST = defineMessage({
     id: 'global.info.removed_from_wishlist',
-    defaultMessage: 'Item removed from wishlist'
+    defaultMessage: 'Item removed from wishlist',
 })

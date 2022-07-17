@@ -20,7 +20,7 @@ const usePaymentForms = () => {
         setPayment,
         setBillingAddress,
         isBillingSameAsShipping,
-        goToNextStep
+        goToNextStep,
     } = useCheckout()
 
     // This local state value manages the 'checked' state of the billing address form's
@@ -33,7 +33,7 @@ const usePaymentForms = () => {
     const billingAddressForm = useForm({
         mode: 'onChange',
         shouldUnregister: false,
-        defaultValues: {...selectedBillingAddress}
+        defaultValues: {...selectedBillingAddress},
     })
 
     // This effect watches for changes to our basket's shipping/billing address. If they
@@ -88,7 +88,7 @@ const usePaymentForms = () => {
         billingAddressForm,
         billingSameAsShipping,
         setBillingSameAsShipping,
-        reviewOrder
+        reviewOrder,
     }
 }
 

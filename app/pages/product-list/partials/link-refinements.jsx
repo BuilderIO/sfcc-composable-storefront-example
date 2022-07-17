@@ -32,7 +32,7 @@ const LinkRefinements = ({filter}) => {
 }
 
 LinkRefinements.propTypes = {
-    filter: PropTypes.object
+    filter: PropTypes.object,
 }
 
 export default LinkRefinements

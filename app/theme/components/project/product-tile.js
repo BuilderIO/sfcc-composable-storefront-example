@@ -11,22 +11,22 @@ export default {
             position: 'absolute',
             variant: 'unstyled',
             top: 2,
-            right: 2
+            right: 2,
         },
         imageWrapper: {
             position: 'relative',
-            marginBottom: 2
+            marginBottom: 2,
         },
         image: {
             ratio: 1,
-            paddingBottom: 2
+            paddingBottom: 2,
         },
         price: {},
         title: {
-            fontWeight: 600
+            fontWeight: 600,
         },
         rating: {},
-        variations: {}
+        variations: {},
     }),
-    parts: ['container', 'imageWrapper', 'image', 'price', 'title', 'rating', 'variations']
+    parts: ['container', 'imageWrapper', 'image', 'price', 'title', 'rating', 'variations'],
 }

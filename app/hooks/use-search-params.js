@@ -13,7 +13,7 @@ import {DEFAULT_SEARCH_PARAMS} from '../constants'
 
 const PARSE_OPTIONS = {
     parseBooleans: true,
-    parseNumbers: true
+    parseNumbers: true,
 }
 
 /*
@@ -26,7 +26,7 @@ export const useSearchParams = (searchParams = DEFAULT_SEARCH_PARAMS) => {
     // Encode the search query, including preset values.
     const searchParamsObject = {
         ...searchParams,
-        ...parse(search.substring(1))
+        ...parse(search.substring(1)),
     }
 
     return [searchParamsObject, {stringify, parse}]
@@ -49,7 +49,7 @@ export const stringify = (searchParamsObj) => {
             {
                 arrayFormat: 'separator',
                 arrayFormatSeparator: '|',
-                encode: false
+                encode: false,
             }
         )
     )
@@ -81,8 +81,8 @@ export const parse = (searchParamsStr, parseRefine = true) => {
                 ...queryString.parse(curr, {
                     ...PARSE_OPTIONS,
                     arrayFormat: 'separator',
-                    arrayFormatSeparator: '|'
-                })
+                    arrayFormatSeparator: '|',
+                }),
             }
         }, {})
     }

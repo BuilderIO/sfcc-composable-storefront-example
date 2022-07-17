@@ -10,15 +10,15 @@ export default {
     sizes: {
         md: {
             field: {...mdSize, px: 3},
-            addon: mdSize
-        }
+            addon: mdSize,
+        },
     },
     baseStyle: {
         field: {
             _focus: {
-                borderColor: 'blue.600'
-            }
-        }
+                borderColor: 'blue.600',
+            },
+        },
     },
     variants: {
         filled: {
@@ -27,18 +27,18 @@ export default {
             field: {
                 backgroundColor: 'gray.50',
                 _focus: {
-                    backgroundColor: 'white'
+                    backgroundColor: 'white',
                 },
                 _hover: {
                     backgroundColor: 'gray.100',
                     _focus: {
-                        backgroundColor: 'white'
-                    }
+                        backgroundColor: 'white',
+                    },
                 },
                 _placeholder: {
-                    color: 'gray.700'
-                }
-            }
-        }
-    }
+                    color: 'gray.700',
+                },
+            },
+        },
+    },
 }

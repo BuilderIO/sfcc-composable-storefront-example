@@ -35,7 +35,7 @@ const SelectedRefinements = ({toggleFilter, selectedFilterValues, filters}) => {
                           )?.label
                         : filter,
                 value: key,
-                apiLabel: filter
+                apiLabel: filter,
             }
 
             if (selected.value !== 'htype' && selected.value !== 'cgid') {
@@ -101,7 +101,7 @@ const SelectedRefinements = ({toggleFilter, selectedFilterValues, filters}) => {
 SelectedRefinements.propTypes = {
     filters: PropTypes.array,
     selectedFilterValues: PropTypes.object,
-    toggleFilter: PropTypes.func
+    toggleFilter: PropTypes.func,
 }
 
 export default SelectedRefinements

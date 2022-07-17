@@ -17,7 +17,7 @@ jest.mock('./site-utils', () => {
     const origin = jest.requireActual('./site-utils')
     return {
         ...origin,
-        getSites: jest.fn()
+        getSites: jest.fn(),
     }
 })
 
@@ -41,7 +41,7 @@ describe('WatchOnlineStatus', () => {
         const emitter = new EventEmitter()
         const win = {
             addEventListener: emitter.addListener.bind(emitter),
-            removeEventListener: emitter.removeListener.bind(emitter)
+            removeEventListener: emitter.removeListener.bind(emitter),
         }
         const collected = []
         const callback = (isOnline) => collected.push(isOnline)
@@ -84,7 +84,7 @@ describe('flatten', () => {
         const result = flatten({
             id: 1,
             item: 1,
-            children: [{id: 2, item: 2, children: [{id: 3, item: 3}]}]
+            children: [{id: 2, item: 2, children: [{id: 3, item: 3}]}],
         })
 
         expect(JSON.stringify(result)).toEqual(
@@ -93,7 +93,7 @@ describe('flatten', () => {
     })
 })
 
-describe('shallow', function() {
+describe('shallow', function () {
     test('should return false', () => {
         const a = {a: '123'}
         const b = {a: '123', b: '456'}
@@ -102,7 +102,7 @@ describe('shallow', function() {
     })
 })
 
-describe('getParamsFromPath', function() {
+describe('getParamsFromPath', function () {
     const cases = [
         {path: '/us/en-US/', expectedRes: {siteRef: 'us', localeRef: 'en-US'}},
         {path: '/us/en-US', expectedRes: {siteRef: 'us', localeRef: 'en-US'}},
@@ -113,7 +113,7 @@ describe('getParamsFromPath', function() {
         {path: '/us/en-US/category/womens', expectedRes: {siteRef: 'us', localeRef: 'en-US'}},
         {
             path: '/RefArch/en-US/category/womens',
-            expectedRes: {siteRef: 'RefArch', localeRef: 'en-US'}
+            expectedRes: {siteRef: 'RefArch', localeRef: 'en-US'},
         },
         {path: '/en-US/category/womens', expectedRes: {siteRef: undefined, localeRef: 'en-US'}},
         {path: '/en/category/womens', expectedRes: {siteRef: undefined, localeRef: 'en'}},
@@ -128,17 +128,17 @@ describe('getParamsFromPath', function() {
         {path: '/en-US/category/womens?site=us', expectedRes: {siteRef: 'us', localeRef: 'en-US'}},
         {
             path: '/us/category/womens?locale=en-US',
-            expectedRes: {siteRef: 'us', localeRef: 'en-US'}
+            expectedRes: {siteRef: 'us', localeRef: 'en-US'},
         },
         {path: '/us/category/womens?locale=en', expectedRes: {siteRef: 'us', localeRef: 'en'}},
         {
             path: '/category/womens?site=us&locale=en-US',
-            expectedRes: {siteRef: 'us', localeRef: 'en-US'}
+            expectedRes: {siteRef: 'us', localeRef: 'en-US'},
         },
         {
             path: '/category/womens?site=RefArch&locale=en-US',
-            expectedRes: {siteRef: 'RefArch', localeRef: 'en-US'}
-        }
+            expectedRes: {siteRef: 'RefArch', localeRef: 'en-US'},
+        },
     ]
     cases.forEach(({path, expectedRes}) => {
         test(`return expected values when path is ${path}`, () => {
@@ -155,15 +155,15 @@ describe('getParamsFromPath', function() {
                                 {
                                     id: 'en-US',
                                     alias: 'en',
-                                    preferredCurrency: 'USD'
+                                    preferredCurrency: 'USD',
                                 },
                                 {
                                     id: 'en-CA',
                                     alias: 'ca',
-                                    preferredCurrency: 'USD'
-                                }
-                            ]
-                        }
+                                    preferredCurrency: 'USD',
+                                },
+                            ],
+                        },
                     },
                     {
                         id: 'RefArchGlobal',
@@ -174,17 +174,17 @@ describe('getParamsFromPath', function() {
                             supportedLocales: [
                                 {
                                     id: 'de-DE',
-                                    preferredCurrency: 'EUR'
+                                    preferredCurrency: 'EUR',
                                 },
                                 {
                                     id: 'en-GB',
                                     alias: 'uk',
-                                    preferredCurrency: 'GBP'
-                                }
+                                    preferredCurrency: 'GBP',
+                                },
                             ],
-                            defaultLocale: 'en-GB'
-                        }
-                    }
+                            defaultLocale: 'en-GB',
+                        },
+                    },
                 ]
             })
             expect(getParamsFromPath(path)).toEqual(expectedRes)
@@ -192,59 +192,59 @@ describe('getParamsFromPath', function() {
     })
 })
 
-describe('resolveLocaleFromUrl', function() {
+describe('resolveLocaleFromUrl', function () {
     const cases = [
         {
             path: '/',
             expectedRes: {
                 id: 'en-GB',
-                preferredCurrency: 'GBP'
-            }
+                preferredCurrency: 'GBP',
+            },
         },
         {
             path: '/uk/en-GB/women/dresses',
             expectedRes: {
                 id: 'en-GB',
-                preferredCurrency: 'GBP'
-            }
+                preferredCurrency: 'GBP',
+            },
         },
         {
             path: '/women/dresses/?site=uk&locale=en-GB',
             expectedRes: {
                 id: 'en-GB',
-                preferredCurrency: 'GBP'
-            }
+                preferredCurrency: 'GBP',
+            },
         },
         {
             path: '/uk/fr/women/dresses',
             expectedRes: {
                 id: 'fr-FR',
                 alias: 'fr',
-                preferredCurrency: 'EUR'
-            }
+                preferredCurrency: 'EUR',
+            },
         },
         {
             path: '/women/dresses/?site=uk&locale=fr',
             expectedRes: {
                 id: 'fr-FR',
                 alias: 'fr',
-                preferredCurrency: 'EUR'
-            }
+                preferredCurrency: 'EUR',
+            },
         },
         {
             path: '/us/en-US/women/dresses',
             expectedRes: {
                 id: 'en-US',
-                preferredCurrency: 'USD'
-            }
+                preferredCurrency: 'USD',
+            },
         },
         {
             path: '/women/dresses/?site=us&locale=en-US',
             expectedRes: {
                 id: 'en-US',
-                preferredCurrency: 'USD'
-            }
-        }
+                preferredCurrency: 'USD',
+            },
+        },
     ]
     cases.forEach(({path, expectedRes}) => {
         test(`returns expected locale with given path ${path}`, () => {
@@ -258,19 +258,19 @@ describe('resolveLocaleFromUrl', function() {
                             supportedLocales: [
                                 {
                                     id: 'en-GB',
-                                    preferredCurrency: 'GBP'
+                                    preferredCurrency: 'GBP',
                                 },
                                 {
                                     id: 'fr-FR',
                                     alias: 'fr',
-                                    preferredCurrency: 'EUR'
+                                    preferredCurrency: 'EUR',
                                 },
                                 {
                                     id: 'it-IT',
-                                    preferredCurrency: 'EUR'
-                                }
-                            ]
-                        }
+                                    preferredCurrency: 'EUR',
+                                },
+                            ],
+                        },
                     },
                     {
                         id: 'site-2',
@@ -280,15 +280,15 @@ describe('resolveLocaleFromUrl', function() {
                             supportedLocales: [
                                 {
                                     id: 'en-US',
-                                    preferredCurrency: 'USD'
+                                    preferredCurrency: 'USD',
                                 },
                                 {
                                     id: 'en-CA',
-                                    preferredCurrency: 'USD'
-                                }
-                            ]
-                        }
-                    }
+                                    preferredCurrency: 'USD',
+                                },
+                            ],
+                        },
+                    },
                 ]
             })
             const locale = resolveLocaleFromUrl(path)

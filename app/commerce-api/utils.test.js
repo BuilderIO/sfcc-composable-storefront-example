@@ -10,7 +10,7 @@ import {
     isTokenValid,
     keysToCamel,
     convertSnakeCaseToSentenceCase,
-    handleAsyncError
+    handleAsyncError,
 } from './utils'
 
 const createJwt = (secondsToExp) => {
@@ -43,7 +43,7 @@ describe('keysToCamel', () => {
             'numba-two': false,
             number3: 'un-changed',
             c_Custom: 'un_changed',
-            _custom: 'unchanged'
+            _custom: 'unchanged',
         }
 
         const result = keysToCamel(input)
@@ -53,7 +53,7 @@ describe('keysToCamel', () => {
             numbaTwo: false,
             number3: 'un-changed',
             c_Custom: 'un_changed',
-            _custom: 'unchanged'
+            _custom: 'unchanged',
         })
     })
 
@@ -63,11 +63,11 @@ describe('keysToCamel', () => {
                 numba_one: true,
                 number3: 'un-changed',
                 c_Custom: 'un_changed',
-                _custom: 'unchanged'
+                _custom: 'unchanged',
             },
             {
-                'numba-two': false
-            }
+                'numba-two': false,
+            },
         ]
 
         const result = keysToCamel(input)
@@ -77,11 +77,11 @@ describe('keysToCamel', () => {
                 numbaOne: true,
                 number3: 'un-changed',
                 c_Custom: 'un_changed',
-                _custom: 'unchanged'
+                _custom: 'unchanged',
             },
             {
-                numbaTwo: false
-            }
+                numbaTwo: false,
+            },
         ])
     })
 
@@ -90,8 +90,8 @@ describe('keysToCamel', () => {
             numba_one: {
                 sub1: 'unchanged',
                 sub2: {sub_sub_2: 'changed'},
-                sub3: [{sub_sub_3: 'changed', sub3Sub4: 'unchanged'}]
-            }
+                sub3: [{sub_sub_3: 'changed', sub3Sub4: 'unchanged'}],
+            },
         }
 
         const result = keysToCamel(input)
@@ -100,8 +100,8 @@ describe('keysToCamel', () => {
             numbaOne: {
                 sub1: 'unchanged',
                 sub2: {subSub_2: 'changed'},
-                sub3: [{subSub_3: 'changed', sub3Sub4: 'unchanged'}]
-            }
+                sub3: [{subSub_3: 'changed', sub3Sub4: 'unchanged'}],
+            },
         })
     })
 })
@@ -111,18 +111,18 @@ describe('camelCaseKeysToUnderscore', () => {
         const camelCaseObject = {
             testKey: {
                 nestedTestKey: {
-                    deepDownKey: 'value'
-                }
-            }
+                    deepDownKey: 'value',
+                },
+            },
         }
         const underScoreKeys = camelCaseKeysToUnderscore(camelCaseObject)
 
         expect(camelCaseObject).toStrictEqual({
             testKey: {
                 nestedTestKey: {
-                    deepDownKey: 'value'
-                }
-            }
+                    deepDownKey: 'value',
+                },
+            },
         })
         expect(underScoreKeys.test_key).toBeDefined()
         expect(underScoreKeys.test_key.nested_test_key).toBeDefined()
@@ -133,9 +133,9 @@ describe('camelCaseKeysToUnderscore', () => {
         const input = {
             testKey: {
                 nestedTestKey: {
-                    deepDownKey: 'value'
-                }
-            }
+                    deepDownKey: 'value',
+                },
+            },
         }
 
         camelCaseKeysToUnderscore(input)
@@ -143,9 +143,9 @@ describe('camelCaseKeysToUnderscore', () => {
         expect(input).toStrictEqual({
             testKey: {
                 nestedTestKey: {
-                    deepDownKey: 'value'
-                }
-            }
+                    deepDownKey: 'value',
+                },
+            },
         })
     })
 
@@ -153,10 +153,10 @@ describe('camelCaseKeysToUnderscore', () => {
         const input = {
             testKey: {
                 nestedTestKey: {
-                    deepDownKey: 'value'
+                    deepDownKey: 'value',
                 },
-                nestedArr: [{myKey: 'changed', my_key2: 'unchanged'}]
-            }
+                nestedArr: [{myKey: 'changed', my_key2: 'unchanged'}],
+            },
         }
 
         const result = camelCaseKeysToUnderscore(input)
@@ -165,44 +165,44 @@ describe('camelCaseKeysToUnderscore', () => {
             test_key: {
                 nested_arr: [{my_key: 'changed', my_key2: 'unchanged'}],
                 nested_test_key: {
-                    deep_down_key: 'value'
-                }
-            }
+                    deep_down_key: 'value',
+                },
+            },
         })
     })
 
     test('converts keys in array of objects', () => {
         const input = [
             {
-                testKey: 'changed'
+                testKey: 'changed',
             },
             {
-                test_key: 'unchanged'
-            }
+                test_key: 'unchanged',
+            },
         ]
 
         const result = camelCaseKeysToUnderscore(input)
 
         expect(result).toEqual([
             {
-                test_key: 'changed'
+                test_key: 'changed',
             },
             {
-                test_key: 'unchanged'
-            }
+                test_key: 'unchanged',
+            },
         ])
     })
 
     test('avoids collision with existing key name', () => {
         const input = {
             test_key: 'unchanged',
-            testKey: 'unchanged'
+            testKey: 'unchanged',
         }
 
         const result = camelCaseKeysToUnderscore(input)
 
         expect(result).toEqual({
-            test_key: 'unchanged'
+            test_key: 'unchanged',
         })
     })
 })
@@ -227,7 +227,7 @@ describe('handleAsyncError', () => {
         const errorResponse = {
             detail: 'detail',
             title: 'title',
-            type: 'type'
+            type: 'type',
         }
         const func = jest.fn().mockResolvedValue(errorResponse)
         await expect(handleAsyncError(func)()).rejects.toThrow(new Error(errorResponse.detail))

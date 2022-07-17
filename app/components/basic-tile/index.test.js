@@ -14,8 +14,8 @@ test('BasicTile renders without errors', () => {
         href: '/category/womens-outfits',
         img: {
             src: 'src',
-            alt: 'alt'
-        }
+            alt: 'alt',
+        },
     }
     const {getByText} = renderWithProviders(<BasicTile {...data} />)
 

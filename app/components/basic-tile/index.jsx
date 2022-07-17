@@ -39,7 +39,7 @@ const BasicTile = ({img, href, title, ...props}) => {
                     <Text
                         fontWeight="bold"
                         _hover={{
-                            textDecoration: 'underline'
+                            textDecoration: 'underline',
                         }}
                     >
                         {title}
@@ -57,9 +57,9 @@ BasicTile.propTypes = {
     href: PropTypes.string.isRequired,
     img: PropTypes.shape({
         src: PropTypes.string,
-        alt: PropTypes.string
+        alt: PropTypes.string,
     }).isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
 }
 
 export default BasicTile

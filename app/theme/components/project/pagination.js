@@ -7,7 +7,7 @@
 export default {
     baseStyle: {
         button: {
-            color: 'black'
+            color: 'black',
         },
         container: {},
         text: {
@@ -15,8 +15,8 @@ export default {
             paddingLeft: 4,
             paddingRight: 4,
             paddingTop: 2,
-            paddingBottom: 2
-        }
+            paddingBottom: 2,
+        },
     },
-    parts: ['button', 'container', 'text']
+    parts: ['button', 'container', 'text'],
 }

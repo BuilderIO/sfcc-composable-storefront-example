@@ -59,7 +59,7 @@ const Registration = () => {
 Registration.getTemplateName = () => 'registration'
 
 Registration.propTypes = {
-    match: PropTypes.object
+    match: PropTypes.object,
 }
 
 export default Registration

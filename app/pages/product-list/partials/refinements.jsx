@@ -14,7 +14,7 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon
+    AccordionIcon,
 } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import ColorRefinements from './color-refinements'
@@ -29,7 +29,7 @@ const componentMap = {
     cgid: LinkRefinements,
     c_refinementColor: ColorRefinements,
     c_size: SizeRefinements,
-    price: RadioRefinements
+    price: RadioRefinements,
 }
 
 const Refinements = ({filters, toggleFilter, selectedFilters, isLoading}) => {
@@ -133,7 +133,7 @@ Refinements.propTypes = {
     filters: PropTypes.array,
     toggleFilter: PropTypes.func,
     selectedFilters: PropTypes.object,
-    isLoading: PropTypes.bool
+    isLoading: PropTypes.bool,
 }
 
 export default Refinements

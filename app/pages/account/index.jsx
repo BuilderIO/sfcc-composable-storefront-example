@@ -21,7 +21,7 @@ import {
     Heading,
     Stack,
     Text,
-    Divider
+    Divider,
 } from '@chakra-ui/react'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
 import Seo from '../../components/seo'
@@ -79,7 +79,7 @@ const Account = () => {
                     <Text as="span" fontSize={['md', 'md', 'md', 'sm']} fontWeight="normal">
                         {formatMessage({
                             defaultMessage: 'Log Out',
-                            id: 'account.logout_button.button.log_out'
+                            id: 'account.logout_button.button.log_out',
                         })}
                     </Text>
                 </Flex>
@@ -93,7 +93,7 @@ const Account = () => {
     if (customer.authType != null && !customer.isRegistered) {
         const path = buildPathWithUrlConfig('/login', {
             locale: locale.alias || locale.id,
-            site: site.alias || site.id
+            site: site.alias || site.id,
         })
         return <Redirect to={{pathname: path, state: {directedFrom: location.pathname}}} />
     }
@@ -217,7 +217,7 @@ const Account = () => {
 Account.getTemplateName = () => 'account'
 
 Account.propTypes = {
-    match: PropTypes.object
+    match: PropTypes.object,
 }
 
 export default Account

@@ -11,13 +11,13 @@ import {
     mockGetZoneRecommendationsResponse,
     mockProduct,
     mockRecommendationsResponse,
-    mockRecommenderDetails
+    mockRecommenderDetails,
 } from './mocks/einstein-mock-data'
 
 jest.mock('cross-fetch', () => {
     return {
         __esModule: true,
-        default: jest.fn(() => ({json: jest.fn()}))
+        default: jest.fn(() => ({json: jest.fn()})),
     }
 })
 
@@ -27,13 +27,13 @@ const config = {
         einsteinConfig: {
             proxyPath: `/test-path`,
             einsteinId: 'test-id',
-            siteId: 'test-site-id'
-        }
+            siteId: 'test-site-id',
+        },
     },
     auth: {usid: 'test-usid'},
     shopperProducts: {
-        getProducts: getProductsSpy
-    }
+        getProducts: getProductsSpy,
+    },
 }
 
 const einsteinApi = new EinsteinAPI(config)
@@ -52,10 +52,9 @@ describe('EinsteinAPI', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
+                    'x-cq-client-id': 'test-id',
                 },
-                body:
-                    '{"product":{"id":"56736828M","sku":"","altId":"","altIdType":""},"cookieId":"test-usid"}'
+                body: '{"product":{"id":"56736828M","sku":"","altId":"","altIdType":""},"cookieId":"test-usid"}',
             }
         )
     })
@@ -68,10 +67,9 @@ describe('EinsteinAPI', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
+                    'x-cq-client-id': 'test-id',
                 },
-                body:
-                    '{"products":[{"id":"883360544021M","sku":"","price":155,"quantity":1}],"cookieId":"test-usid"}'
+                body: '{"products":[{"id":"883360544021M","sku":"","price":155,"quantity":1}],"cookieId":"test-usid"}',
             }
         )
     })
@@ -84,10 +82,9 @@ describe('EinsteinAPI', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
+                    'x-cq-client-id': 'test-id',
                 },
-                body:
-                    '{"recommenderName":"testRecommender","__recoUUID":"883360544021M","product":{"id":"56736828M","sku":"","altId":"","altIdType":""},"cookieId":"test-usid"}'
+                body: '{"recommenderName":"testRecommender","__recoUUID":"883360544021M","product":{"id":"56736828M","sku":"","altId":"","altIdType":""},"cookieId":"test-usid"}',
             }
         )
     })
@@ -100,10 +97,9 @@ describe('EinsteinAPI', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
+                    'x-cq-client-id': 'test-id',
                 },
-                body:
-                    '{"recommenderName":"testRecommender","__recoUUID":"883360544021M","products":{"id":"test-reco"},"cookieId":"test-usid"}'
+                body: '{"recommenderName":"testRecommender","__recoUUID":"883360544021M","products":{"id":"test-reco"},"cookieId":"test-usid"}',
             }
         )
     })
@@ -113,7 +109,7 @@ describe('EinsteinAPI', () => {
             return {
                 json: async () => {
                     return mockGetZoneRecommendationsResponse
-                }
+                },
             }
         })
 
@@ -121,9 +117,9 @@ describe('EinsteinAPI', () => {
             data: [
                 {
                     id: 'prod_123',
-                    price: 5.99
-                }
-            ]
+                    price: 5.99,
+                },
+            ],
         }))
 
         const res = await einsteinApi.getZoneRecommendations('mockZoneName')
@@ -134,9 +130,9 @@ describe('EinsteinAPI', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
+                    'x-cq-client-id': 'test-id',
                 },
-                body: '{"cookieId":"test-usid"}'
+                body: '{"cookieId":"test-usid"}',
             }
         )
 
@@ -154,10 +150,10 @@ describe('EinsteinAPI', () => {
                     productId: 'prod_123',
                     image: {
                         disBaseLink: 'prod_abc.test.com',
-                        alt: 'Product ABC'
-                    }
-                }
-            ]
+                        alt: 'Product ABC',
+                    },
+                },
+            ],
         })
     })
 
@@ -166,7 +162,7 @@ describe('EinsteinAPI', () => {
             return {
                 json: async () => {
                     return mockRecommendationsResponse
-                }
+                },
             }
         })
 
@@ -174,9 +170,9 @@ describe('EinsteinAPI', () => {
             data: [
                 {
                     id: 'prod_123',
-                    price: 5.99
-                }
-            ]
+                    price: 5.99,
+                },
+            ],
         }))
 
         const res = await einsteinApi.getRecommendations('testRecommenderName')
@@ -187,9 +183,9 @@ describe('EinsteinAPI', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
+                    'x-cq-client-id': 'test-id',
                 },
-                body: '{"cookieId":"test-usid"}'
+                body: '{"cookieId":"test-usid"}',
             }
         )
 
@@ -206,10 +202,10 @@ describe('EinsteinAPI', () => {
                     productId: 'prod_123',
                     image: {
                         disBaseLink: 'prod_abc.test.com',
-                        alt: 'Product ABC'
-                    }
-                }
-            ]
+                        alt: 'Product ABC',
+                    },
+                },
+            ],
         })
     })
 
@@ -222,8 +218,8 @@ describe('EinsteinAPI', () => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-cq-client-id': 'test-id'
-                }
+                    'x-cq-client-id': 'test-id',
+                },
             }
         )
     })

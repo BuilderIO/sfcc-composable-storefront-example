@@ -70,7 +70,7 @@ ActionCard.propTypes = {
     onRemove: PropTypes.func,
 
     /** Content rendered in card */
-    children: PropTypes.node
+    children: PropTypes.node,
 }
 
 export default ActionCard

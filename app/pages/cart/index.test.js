@@ -76,13 +76,13 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     variationValues: {
                         color: 'BLACKFB',
                         size: '050',
-                        width: 'V'
+                        width: 'V',
                     },
                     c_color: 'BLACKFB',
                     c_isNew: true,
                     c_refinementColor: 'black',
                     c_size: '050',
-                    c_width: 'V'
+                    c_width: 'V',
                 }
             }
         },
@@ -95,13 +95,13 @@ jest.mock('commerce-sdk-isomorphic', () => {
                             calloutMsg: "10% off men's suits with coupon",
                             details: 'exceptions apply',
                             id: '10offsuits',
-                            name: "10% off men's suits"
-                        }
+                            name: "10% off men's suits",
+                        },
                     ],
-                    total: 1
+                    total: 1,
                 }
             }
-        }
+        },
     }
 })
 
@@ -159,9 +159,9 @@ test('Can update item quantity in the cart', async () => {
                 ...mockedBasketResponse.productItems[0],
                 quantity: 3,
                 id: mockedBasketResponse.productItems[0].item_id,
-                stepQuantity: 1
-            }
-        ]
+                stepQuantity: 1,
+            },
+        ],
     }
 
     const cartItem = await screen.findByTestId(
@@ -191,9 +191,9 @@ test('Can update item quantity from product view modal', async () => {
             {
                 ...mockedBasketResponse.productItems[0],
                 quantity: 3,
-                id: mockedBasketResponse.productItems[0].item_id
-            }
-        ]
+                id: mockedBasketResponse.productItems[0].item_id,
+            },
+        ],
     }
 
     const cartItem = await screen.findByTestId(
@@ -243,8 +243,8 @@ test('Can apply and remove product-level coupon code with promotion', async () =
                 couponItemId: 'c94c8a130c63caa6f786b89c5f',
                 statusCode: 'applied',
                 valid: true,
-                _type: 'coupon_item'
-            }
+                _type: 'coupon_item',
+            },
         ],
         productItems: [
             keysToCamel({
@@ -263,7 +263,7 @@ test('Can apply and remove product-level coupon code with promotion', async () =
                             _type: 'discount',
                             amount: 0.1,
                             percentage: 10.0,
-                            type: 'percentage'
+                            type: 'percentage',
                         },
                         coupon_code: 'menssuits',
                         creation_date: '2021-06-07T12:31:05.234Z',
@@ -275,8 +275,8 @@ test('Can apply and remove product-level coupon code with promotion', async () =
                         price_adjustment_id: 'eda472de37d9c7fdae7251c4a1',
                         promotion_id: '10offsuits',
                         promotion_link:
-                            'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/promotions/10offsuits'
-                    }
+                            'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/promotions/10offsuits',
+                    },
                 ],
                 price_after_item_discount: 269.99,
                 price_after_order_discount: 269.99,
@@ -287,9 +287,9 @@ test('Can apply and remove product-level coupon code with promotion', async () =
                 tax: 15.0,
                 tax_basis: 299.99,
                 tax_class_id: 'standard',
-                tax_rate: 0.05
-            })
-        ]
+                tax_rate: 0.05,
+            }),
+        ],
     }
 
     // add coupon

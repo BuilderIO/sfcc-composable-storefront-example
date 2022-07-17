@@ -54,18 +54,18 @@ export const configureRoutes = (routes = [], config, {ignoredRoutes = []}) => {
                         // append the route that only has site
                         outputRoutes.push({
                             path: `/${site}${path}`,
-                            ...rest
+                            ...rest,
                         })
                         localeRefs.forEach((locale) => {
                             // app the route that has both site and locale
                             outputRoutes.push({
                                 path: `/${site}/${locale}${path}`,
-                                ...rest
+                                ...rest,
                             })
                             // append the route that only has locale
                             outputRoutes.push({
                                 path: `/${locale}${path}`,
-                                ...rest
+                                ...rest,
                             })
                         })
                     })
@@ -79,7 +79,7 @@ export const configureRoutes = (routes = [], config, {ignoredRoutes = []}) => {
                     siteRefs.forEach((site) => {
                         outputRoutes.push({
                             path: `/${site}${path}`,
-                            ...rest
+                            ...rest,
                         })
                     })
                 }
@@ -91,7 +91,7 @@ export const configureRoutes = (routes = [], config, {ignoredRoutes = []}) => {
                     localeRefs.forEach((locale) => {
                         outputRoutes.push({
                             path: `/${locale}${path}`,
-                            ...rest
+                            ...rest,
                         })
                     })
                 }

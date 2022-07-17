@@ -11,19 +11,19 @@ const messages = defineMessages({
     required: {defaultMessage: 'Required', id: 'use_credit_card_fields.error.required'},
     cardNumberInvalid: {
         defaultMessage: 'Please enter a valid card number.',
-        id: 'use_credit_card_fields.error.valid_card_number'
+        id: 'use_credit_card_fields.error.valid_card_number',
     },
     nameInvalid: {
         defaultMessage: 'Please enter a valid name.',
-        id: 'use_credit_card_fields.error.valid_name'
+        id: 'use_credit_card_fields.error.valid_name',
     },
     dateInvalid: {
         defaultMessage: 'Please enter a valid date.',
-        id: 'use_credit_card_fields.error.valid_date'
+        id: 'use_credit_card_fields.error.valid_date',
     },
     codeInvalid: {
         defaultMessage: 'Please enter a valid security code.',
-        id: 'use_credit_card_fields.error.valid_security_code'
+        id: 'use_credit_card_fields.error.valid_security_code',
     },
     cardNumber: {defaultMessage: 'Card Number', id: 'use_credit_card_fields.label.card_number'},
     cardType: {defaultMessage: 'Card Type', id: 'use_credit_card_fields.label.card_type'},
@@ -31,8 +31,8 @@ const messages = defineMessages({
     expiryDate: {defaultMessage: 'Expiration Date', id: 'use_credit_card_fields.label.expiry'},
     securityCode: {
         defaultMessage: 'Security Code',
-        id: 'use_credit_card_fields.label.security_code'
-    }
+        id: 'use_credit_card_fields.label.security_code',
+    },
 })
 
 /**
@@ -54,16 +54,17 @@ export default function useCreditCardFields({form: {control, errors}, prefix = '
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your card number.',
-                    id: 'use_credit_card_fields.error.required_card_number'
+                    id: 'use_credit_card_fields.error.required_card_number',
                 }),
                 validate: (value) =>
-                    cardValidator.number(value).isValid || formatMessage(messages.cardNumberInvalid)
+                    cardValidator.number(value).isValid ||
+                    formatMessage(messages.cardNumberInvalid),
             },
             error: errors[`${prefix}number`],
             inputProps: {
-                inputmode: 'numeric'
+                inputmode: 'numeric',
             },
-            control
+            control,
         },
         cardType: {
             name: `${prefix}cardType`,
@@ -71,7 +72,7 @@ export default function useCreditCardFields({form: {control, errors}, prefix = '
             defaultValue: '',
             type: 'hidden',
             error: errors[`${prefix}cardType`],
-            control
+            control,
         },
         holder: {
             name: `${prefix}holder`,
@@ -81,14 +82,14 @@ export default function useCreditCardFields({form: {control, errors}, prefix = '
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your name as shown on your card.',
-                    id: 'use_credit_card_fields.error.required_name'
+                    id: 'use_credit_card_fields.error.required_name',
                 }),
                 validate: (value) =>
                     cardValidator.cardholderName(value).isValid ||
-                    formatMessage(messages.nameInvalid)
+                    formatMessage(messages.nameInvalid),
             },
             error: errors[`${prefix}holder`],
-            control
+            control,
         },
         expiry: {
             name: `${prefix}expiry`,
@@ -99,17 +100,17 @@ export default function useCreditCardFields({form: {control, errors}, prefix = '
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your expiration date.',
-                    id: 'use_credit_card_fields.error.required_expiry'
+                    id: 'use_credit_card_fields.error.required_expiry',
                 }),
                 validate: (value) =>
                     cardValidator.expirationDate(value).isValid ||
-                    formatMessage(messages.dateInvalid)
+                    formatMessage(messages.dateInvalid),
             },
             error: errors[`${prefix}expiry`],
             inputProps: {
-                inputmode: 'numeric'
+                inputmode: 'numeric',
             },
-            control
+            control,
         },
         securityCode: {
             name: `${prefix}securityCode`,
@@ -119,10 +120,10 @@ export default function useCreditCardFields({form: {control, errors}, prefix = '
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your security code.',
-                    id: 'use_credit_card_fields.error.required_security_code'
+                    id: 'use_credit_card_fields.error.required_security_code',
                 }),
                 validate: (value) =>
-                    cardValidator.cvv(value).isValid || formatMessage(messages.codeInvalid)
+                    cardValidator.cvv(value).isValid || formatMessage(messages.codeInvalid),
             },
             error: errors[`${prefix}securityCode`],
             inputProps: ({onChange}) => ({
@@ -130,10 +131,10 @@ export default function useCreditCardFields({form: {control, errors}, prefix = '
                 maxLength: 4,
                 onChange(evt) {
                     onChange(evt.target.value.replace(/[^0-9 ]+/, ''))
-                }
+                },
             }),
-            control
-        }
+            control,
+        },
     }
 
     return fields

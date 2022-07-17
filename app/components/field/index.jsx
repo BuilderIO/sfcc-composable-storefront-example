@@ -16,7 +16,7 @@ import {
     InputGroup,
     InputRightElement,
     Select,
-    Checkbox
+    Checkbox,
 } from '@chakra-ui/react'
 import {VisibilityIcon, VisibilityOffIcon} from '../icons'
 
@@ -33,7 +33,7 @@ const Field = ({
     control,
     defaultValue,
     helpText,
-    children
+    children,
 }) => {
     const [hidePassword, setHidePassword] = useState(true)
     const PasswordIcon = hidePassword ? VisibilityIcon : VisibilityOffIcon
@@ -146,7 +146,7 @@ Field.propTypes = {
         'tel',
         'select',
         'checkbox',
-        'hidden'
+        'hidden',
     ]),
     options: PropTypes.arrayOf(PropTypes.shape({label: PropTypes.string, value: PropTypes.any})),
     rules: PropTypes.object,
@@ -156,7 +156,7 @@ Field.propTypes = {
     control: PropTypes.object,
     defaultValue: PropTypes.any,
     helpText: PropTypes.any,
-    children: PropTypes.any
+    children: PropTypes.any,
 }
 
 export default Field

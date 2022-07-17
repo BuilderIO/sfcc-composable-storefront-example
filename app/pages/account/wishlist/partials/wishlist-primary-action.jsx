@@ -32,8 +32,8 @@ const WishlistPrimaryAction = () => {
             {
                 productId: item.id || item.productId,
                 price: item.price,
-                quantity
-            }
+                quantity,
+            },
         ]
         try {
             await basket.addItemToBasket(productItems)
@@ -42,17 +42,17 @@ const WishlistPrimaryAction = () => {
                     {
                         defaultMessage:
                             '{quantity} {quantity, plural, one {item} other {items}} added to cart',
-                        id: 'wishlist_primary_action.info.added_to_cart'
+                        id: 'wishlist_primary_action.info.added_to_cart',
                     },
                     {quantity: quantity}
                 ),
-                status: 'success'
+                status: 'success',
             })
             onClose()
         } catch (error) {
             showToast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error'
+                status: 'error',
             })
         }
         setIsLoading(false)

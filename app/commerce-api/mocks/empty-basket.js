@@ -14,7 +14,7 @@ export default {
     customer_info: {
         _type: 'customer_info',
         customer_id: 'customerid',
-        email: ''
+        email: '',
     },
     order_total: 0.0,
     product_sub_total: 0.0,
@@ -23,17 +23,17 @@ export default {
         {
             _type: 'shipment',
             id: 'me',
-            shipment_id: 'bc5OTaOjgEqUoaaadkvHwbgrP5'
-        }
+            shipment_id: 'bc5OTaOjgEqUoaaadkvHwbgrP5',
+        },
     ],
     shipping_items: [
         {
             shipment_id: 'me',
-            item_id: 'bcwsbaOjgEqUsaaadkvHwbgrP5'
-        }
+            item_id: 'bcwsbaOjgEqUsaaadkvHwbgrP5',
+        },
     ],
     shipping_total: 0.0,
     shipping_total_tax: 0.0,
     taxation: 'net',
-    tax_total: 0.0
+    tax_total: 0.0,
 }

@@ -22,7 +22,7 @@ import {
     password,
     expiredAuthToken,
     ocapiBasketResponse,
-    ocapiFaultResponse
+    ocapiFaultResponse,
 } from './mock-data'
 import Auth from './auth'
 
@@ -33,7 +33,7 @@ const apiConfig = {
     einsteinConfig: appConfig.einsteinAPI,
     proxy: undefined,
     locale: 'en-GB',
-    currency: 'GBP'
+    currency: 'GBP',
 }
 const getAPI = () => new CommerceAPI(apiConfig)
 
@@ -57,27 +57,27 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 return {
                     status: 303,
                     headers: {
-                        get: () => null
+                        get: () => null,
                     },
-                    url: mockExampleRedirectUrl
+                    url: mockExampleRedirectUrl,
                 }
             }
             async authenticateCustomer() {
                 return {
                     status: 303,
                     headers: {
-                        get: () => null
+                        get: () => null,
                     },
-                    url: mockExampleRedirectUrl
+                    url: mockExampleRedirectUrl,
                 }
             }
             async logoutCustomer() {
                 return {
                     status: 200,
                     headers: {
-                        get: () => null
+                        get: () => null,
                     },
-                    url: mockExampleTokenResponse
+                    url: mockExampleTokenResponse,
                 }
             }
         },
@@ -88,17 +88,17 @@ jest.mock('commerce-sdk-isomorphic', () => {
             async authorizeCustomer() {
                 return {
                     headers: {
-                        get: () => `Bearer ${mockExampleTokenResponse.access_token}`
+                        get: () => `Bearer ${mockExampleTokenResponse.access_token}`,
                     },
                     status: 200,
                     json: async () => {
                         return {
-                            customerId: 'testId'
+                            customerId: 'testId',
                         }
-                    }
+                    },
                 }
             }
-        }
+        },
     }
 })
 
@@ -123,7 +123,7 @@ describe('CommerceAPI', () => {
             'shopperOrders',
             'shopperProducts',
             'shopperPromotions',
-            'shopperSearch'
+            'shopperSearch',
         ]
         expect(api.shopperCustomers.clientConfig.parameters).toEqual(apiConfig.parameters)
         apiNames.forEach((name) => expect(api[name]).toBeDefined())
@@ -138,7 +138,7 @@ describe('CommerceAPI', () => {
         const spy = jest.spyOn(api, 'willSendRequest')
         api.shopperProducts.getProduct({parameters: {id: '123'}})
         expect(spy).toHaveBeenCalledWith('getProduct', {
-            parameters: {id: '123', locale: 'en-GB', currency: 'GBP'}
+            parameters: {id: '123', locale: 'en-GB', currency: 'GBP'},
         })
     })
     test('can optionally ignore req/res hooks', () => {
@@ -146,7 +146,7 @@ describe('CommerceAPI', () => {
         const spy = jest.spyOn(api, 'willSendRequest')
         api.shopperProducts.getProduct({
             parameters: {id: '123'},
-            ignoreHooks: true
+            ignoreHooks: true,
         })
         expect(spy).not.toHaveBeenCalled()
     })
@@ -155,17 +155,17 @@ describe('CommerceAPI', () => {
         const spy = jest.spyOn(api, 'willSendRequest')
 
         api.shopperProducts.getProduct({
-            parameters: {id: '123', locale: 'en-US'}
+            parameters: {id: '123', locale: 'en-US'},
         })
         expect(spy).toHaveBeenCalledWith('getProduct', {
-            parameters: {id: '123', locale: 'en-US', currency: 'GBP'}
+            parameters: {id: '123', locale: 'en-US', currency: 'GBP'},
         })
 
         api.shopperProducts.getProduct({
-            parameters: {id: '123', currency: 'EUR'}
+            parameters: {id: '123', currency: 'EUR'},
         })
         expect(spy).toHaveBeenCalledWith('getProduct', {
-            parameters: {id: '123', locale: 'en-GB', currency: 'EUR'}
+            parameters: {id: '123', locale: 'en-GB', currency: 'EUR'},
         })
     })
     test('applies updated options when calling sdk methods', async () => {
@@ -176,7 +176,7 @@ describe('CommerceAPI', () => {
         }
         const myAPI = new MyAPI(apiConfig)
         const result = await myAPI.shopperProducts.getProduct({
-            parameters: {id: '123'}
+            parameters: {id: '123'},
         })
         expect(result).toEqual({parameters: {id: '567'}})
     })
@@ -193,7 +193,7 @@ describe('CommerceAPI', () => {
         }
         const myAPI = new MyAPI(apiConfig)
         const result = await myAPI.shopperProducts.getProducts({
-            parameters: {ids: ['123']}
+            parameters: {ids: ['123']},
         })
         expect(spy).toHaveBeenCalledWith(
             [{id: '123'}],
@@ -274,7 +274,7 @@ describe('CommerceAPI', () => {
         api.auth.authToken = ''
         await Promise.all([
             api.shopperProducts.getProduct({parameters: {id: '10048'}}),
-            api.shopperProducts.getProduct({parameters: {id: '10048'}})
+            api.shopperProducts.getProduct({parameters: {id: '10048'}}),
         ])
         expect(api.auth.authToken).toBeDefined()
     })
@@ -355,7 +355,7 @@ describe('CommerceAPI', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.getBasket({
-            parameters: {basketId: basketId}
+            parameters: {basketId: basketId},
         })
         expect(response).toBeDefined()
         expect(response.customerInfo.customerId).toBeDefined()
@@ -374,12 +374,12 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.addItemToBasket({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
             body: {
                 productId: 'fake-product-id',
-                quantity: 1
-            }
+                quantity: 1,
+            },
         })
         expect(response).toBeDefined()
         expect(response.customerInfo.customerId).toBeDefined()
@@ -390,8 +390,8 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.addItemToBasket({
             parameters: {
-                basketId: basketId
-            }
+                basketId: basketId,
+            },
         })
         expect(response.title).toEqual('Body is required for this request')
         expect(response.type).toEqual('MissingBody')
@@ -402,12 +402,12 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.updateItemInBasket({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
             body: {
                 productId: 'fake-product-id',
-                quantity: 1
-            }
+                quantity: 1,
+            },
         })
         expect(response).toBeDefined()
         expect(response.customerInfo.customerId).toBeDefined()
@@ -418,8 +418,8 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.updateItemInBasket({
             parameters: {
-                basketId: basketId
-            }
+                basketId: basketId,
+            },
         })
         expect(response.title).toEqual('Body is required for this request')
         expect(response.type).toEqual('MissingBody')
@@ -431,8 +431,8 @@ describe('CommerceAPI', () => {
         const basket = await api.shopperBaskets.removeItemFromBasket({
             parameters: {
                 basketId: basketId,
-                itemId: 'fake-product-id'
-            }
+                itemId: 'fake-product-id',
+            },
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -442,8 +442,8 @@ describe('CommerceAPI', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperBaskets.removeItemFromBasket({
             parameters: {
-                itemId: 'fake-product-id'
-            }
+                itemId: 'fake-product-id',
+            },
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: basketId'
@@ -456,9 +456,9 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const basket = await api.shopperBaskets.addPaymentInstrumentToBasket({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -467,7 +467,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperBaskets.addPaymentInstrumentToBasket({
-            parameters: {}
+            parameters: {},
         })
         expect(response.title).toEqual('Body is required for this request')
         expect(response.type).toEqual('MissingBody')
@@ -479,7 +479,7 @@ describe('CommerceAPI', () => {
         const basket = await api.shopperBaskets.removePaymentInstrumentFromBasket({
             parameters: {
                 basketId: basketId,
-                paymentInstrumentId: 'fake-id'
+                paymentInstrumentId: 'fake-id',
             },
             body: {
                 payment_instrument_id: 'ce6QR9aaabmakaaadf1KdLcXoH',
@@ -489,10 +489,10 @@ describe('CommerceAPI', () => {
                     expiration_month: 12,
                     expiration_year: 21.2,
                     holder: 'Jeff Lebowski',
-                    masked_number: '************1111'
+                    masked_number: '************1111',
                 },
-                amount: 0.0
-            }
+                amount: 0.0,
+            },
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -501,7 +501,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperBaskets.removePaymentInstrumentFromBasket({
-            parameters: {body: {}}
+            parameters: {body: {}},
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: basketId,paymentInstrumentId'
@@ -515,8 +515,8 @@ describe('CommerceAPI', () => {
         const basket = await api.shopperBaskets.getShippingMethodsForShipment({
             parameters: {
                 basketId: basketId,
-                shipmentId: 'fake-id'
-            }
+                shipmentId: 'fake-id',
+            },
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -527,8 +527,8 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.getShippingMethodsForShipment({
             parameters: {
-                basketId: basketId
-            }
+                basketId: basketId,
+            },
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: shipmentId'
@@ -541,9 +541,9 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const basket = await api.shopperBaskets.updateBillingAddressForBasket({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -554,8 +554,8 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.updateBillingAddressForBasket({
             parameters: {
-                basketId: basketId
-            }
+                basketId: basketId,
+            },
         })
         expect(response.title).toEqual('Body is required for this request')
         expect(response.type).toEqual('MissingBody')
@@ -567,9 +567,9 @@ describe('CommerceAPI', () => {
         const basket = await api.shopperBaskets.updateShippingAddressForShipment({
             parameters: {
                 basketId: basketId,
-                shipmentId: 'fake-id'
+                shipmentId: 'fake-id',
             },
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -580,9 +580,9 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.updateShippingAddressForShipment({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
-            body: {}
+            body: {},
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: shipmentId'
@@ -596,9 +596,9 @@ describe('CommerceAPI', () => {
         const basket = await api.shopperBaskets.updateShippingMethodForShipment({
             parameters: {
                 basketId: basketId,
-                shipmentId: 'fake-id'
+                shipmentId: 'fake-id',
             },
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -609,9 +609,9 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.updateShippingMethodForShipment({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
-            body: {}
+            body: {},
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: shipmentId'
@@ -624,9 +624,9 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const basket = await api.shopperBaskets.updateCustomerForBasket({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -637,8 +637,8 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const response = await api.shopperBaskets.updateCustomerForBasket({
             parameters: {
-                basketId: basketId
-            }
+                basketId: basketId,
+            },
         })
         expect(response.title).toEqual('Body is required for this request')
         expect(response.type).toEqual('MissingBody')
@@ -650,9 +650,9 @@ describe('CommerceAPI', () => {
         const basketId = 'bczFTaOjgEqUkaaadkvHwbgrP5'
         const respsonse = await api.shopperBaskets.deleteBasket({
             parameters: {
-                basketId: basketId
+                basketId: basketId,
             },
-            body: {}
+            body: {},
         })
         expect(respsonse).toBeDefined()
         expect(respsonse.status).toEqual(204)
@@ -661,7 +661,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperBaskets.deleteBasket({
-            parameters: {}
+            parameters: {},
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: basketId'
@@ -682,7 +682,7 @@ describe('CommerceAPI', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.createOrder({
             parameters: {},
-            body: {basketId: ''}
+            body: {basketId: ''},
         })
         expect(response).toBeDefined()
         expect(response.customerInfo.customerId).toBeDefined()
@@ -691,7 +691,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.createOrder({
-            parameters: {}
+            parameters: {},
         })
         expect(response.title).toEqual('Body is required for this request')
         expect(response.type).toEqual('MissingBody')
@@ -700,7 +700,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.getOrder({
-            parameters: {orderNo: ''}
+            parameters: {orderNo: ''},
         })
         expect(response).toBeDefined()
         expect(response.customerInfo.customerId).toBeDefined()
@@ -709,7 +709,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.getOrder({
-            parameters: {}
+            parameters: {},
         })
         expect(response.title).toEqual(
             'The following parameters were missing from your resquest: orderNo'
@@ -724,7 +724,7 @@ describe('CommerceAPI', () => {
         await expect(
             api.shopperOrders.createOrder({
                 parameters: {},
-                body: {basketId: ''}
+                body: {basketId: ''},
             })
         ).rejects.toThrow(ocapiFaultResponse.fault.message)
     })

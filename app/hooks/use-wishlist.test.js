@@ -28,20 +28,18 @@ const mockData = {
                                     alt: 'Drape Neck Dress., , large',
                                     disBaseLink:
                                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw2bf7e719/images/large/PG.10251589.JJ3WDXX.PZ.jpg',
-                                    link:
-                                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw2bf7e719/images/large/PG.10251589.JJ3WDXX.PZ.jpg',
-                                    title: 'Drape Neck Dress., '
+                                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw2bf7e719/images/large/PG.10251589.JJ3WDXX.PZ.jpg',
+                                    title: 'Drape Neck Dress., ',
                                 },
                                 {
                                     alt: 'Drape Neck Dress., , large',
                                     disBaseLink:
                                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw3bdcd88e/images/large/PG.10251589.JJ3WDXX.BZ.jpg',
-                                    link:
-                                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw3bdcd88e/images/large/PG.10251589.JJ3WDXX.BZ.jpg',
-                                    title: 'Drape Neck Dress., '
-                                }
+                                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw3bdcd88e/images/large/PG.10251589.JJ3WDXX.BZ.jpg',
+                                    title: 'Drape Neck Dress., ',
+                                },
                             ],
-                            viewType: 'large'
+                            viewType: 'large',
                         },
                         {
                             images: [
@@ -49,20 +47,18 @@ const mockData = {
                                     alt: 'Drape Neck Dress., , medium',
                                     disBaseLink:
                                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw06ea3ef5/images/medium/PG.10251589.JJ3WDXX.PZ.jpg',
-                                    link:
-                                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw06ea3ef5/images/medium/PG.10251589.JJ3WDXX.PZ.jpg',
-                                    title: 'Drape Neck Dress., '
+                                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw06ea3ef5/images/medium/PG.10251589.JJ3WDXX.PZ.jpg',
+                                    title: 'Drape Neck Dress., ',
                                 },
                                 {
                                     alt: 'Drape Neck Dress., , medium',
                                     disBaseLink:
                                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw9e791206/images/medium/PG.10251589.JJ3WDXX.BZ.jpg',
-                                    link:
-                                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw9e791206/images/medium/PG.10251589.JJ3WDXX.BZ.jpg',
-                                    title: 'Drape Neck Dress., '
-                                }
+                                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw9e791206/images/medium/PG.10251589.JJ3WDXX.BZ.jpg',
+                                    title: 'Drape Neck Dress., ',
+                                },
                             ],
-                            viewType: 'medium'
+                            viewType: 'medium',
                         },
                         {
                             images: [
@@ -70,21 +66,19 @@ const mockData = {
                                     alt: 'Drape Neck Dress., , small',
                                     disBaseLink:
                                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw70771d1e/images/small/PG.10251589.JJ3WDXX.PZ.jpg',
-                                    link:
-                                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw70771d1e/images/small/PG.10251589.JJ3WDXX.PZ.jpg',
-                                    title: 'Drape Neck Dress., '
+                                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw70771d1e/images/small/PG.10251589.JJ3WDXX.PZ.jpg',
+                                    title: 'Drape Neck Dress., ',
                                 },
                                 {
                                     alt: 'Drape Neck Dress., , small',
                                     disBaseLink:
                                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6c634209/images/small/PG.10251589.JJ3WDXX.BZ.jpg',
-                                    link:
-                                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6c634209/images/small/PG.10251589.JJ3WDXX.BZ.jpg',
-                                    title: 'Drape Neck Dress., '
-                                }
+                                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6c634209/images/small/PG.10251589.JJ3WDXX.BZ.jpg',
+                                    title: 'Drape Neck Dress., ',
+                                },
                             ],
-                            viewType: 'small'
-                        }
+                            viewType: 'small',
+                        },
                     ],
                     inventory: {
                         ats: 398,
@@ -92,14 +86,14 @@ const mockData = {
                         id: 'inventory_m',
                         orderable: true,
                         preorderable: false,
-                        stockLevel: 398
+                        stockLevel: 398,
                     },
                     longDescription:
                         'Look your best in this drape neck dress. Sure to turn heads! ',
                     master: {
                         masterId: '25697212M',
                         orderable: true,
-                        price: 76.16
+                        price: 76.16,
                     },
                     minOrderQuantity: 1,
                     name: 'Drape Neck Dress.',
@@ -113,10 +107,10 @@ const mockData = {
                         'Look your best in this drape neck dress. Sure to turn heads! ',
                     stepQuantity: 1,
                     type: {
-                        master: true
+                        master: true,
                     },
                     validFrom: {
-                        default: '2011-03-18T04:00:00.000Z'
+                        default: '2011-03-18T04:00:00.000Z',
                     },
                     variants: [
                         {
@@ -125,8 +119,8 @@ const mockData = {
                             productId: '701644351229M',
                             variationValues: {
                                 color: 'JJ3WDXX',
-                                size: '9LG'
-                            }
+                                size: '9LG',
+                            },
                         },
                         {
                             orderable: true,
@@ -134,8 +128,8 @@ const mockData = {
                             productId: '701644351250M',
                             variationValues: {
                                 color: 'JJ3WDXX',
-                                size: '9XL'
-                            }
+                                size: '9XL',
+                            },
                         },
                         {
                             orderable: true,
@@ -143,8 +137,8 @@ const mockData = {
                             productId: '701644351236M',
                             variationValues: {
                                 color: 'JJ3WDXX',
-                                size: '9MD'
-                            }
+                                size: '9MD',
+                            },
                         },
                         {
                             orderable: true,
@@ -152,9 +146,9 @@ const mockData = {
                             productId: '701644351243M',
                             variationValues: {
                                 color: 'JJ3WDXX',
-                                size: '9SM'
-                            }
-                        }
+                                size: '9SM',
+                            },
+                        },
                     ],
                     variationAttributes: [
                         {
@@ -164,9 +158,9 @@ const mockData = {
                                 {
                                     name: 'Black Multi',
                                     orderable: true,
-                                    value: 'JJ3WDXX'
-                                }
-                            ]
+                                    value: 'JJ3WDXX',
+                                },
+                            ],
                         },
                         {
                             id: 'size',
@@ -175,33 +169,33 @@ const mockData = {
                                 {
                                     name: 'S',
                                     orderable: true,
-                                    value: '9SM'
+                                    value: '9SM',
                                 },
                                 {
                                     name: 'M',
                                     orderable: true,
-                                    value: '9MD'
+                                    value: '9MD',
                                 },
                                 {
                                     name: 'L',
                                     orderable: true,
-                                    value: '9LG'
+                                    value: '9LG',
                                 },
                                 {
                                     name: 'XL',
                                     orderable: true,
-                                    value: '9XL'
-                                }
-                            ]
-                        }
+                                    value: '9XL',
+                                },
+                            ],
+                        },
                     ],
                     c_isNewtest: true,
                     priority: 1,
                     productId: '25697212M',
                     public: false,
                     purchasedQuantity: 0,
-                    quantity: 1
-                }
+                    quantity: 1,
+                },
             ],
             event: {},
             id: 'f25ad12f60bdf2fb6ec932b78e',
@@ -209,9 +203,9 @@ const mockData = {
             name: 'PWA wishlist',
             public: false,
             type: 'wish_list',
-            hasDetail: true
-        }
-    }
+            hasDetail: true,
+        },
+    },
 }
 
 const MockComponent = () => {
@@ -235,7 +229,7 @@ describe('useWishlist hook', () => {
             .fn()
             .mockReturnValue(mockData.data['f25ad12f60bdf2fb6ec932b78e'])
         useCustomerProductLists.mockReturnValue({
-            findListByName: mockFindListByName
+            findListByName: mockFindListByName,
         })
         renderWithProviders(<MockComponent />)
 
@@ -252,7 +246,7 @@ describe('useWishlist hook', () => {
         const mock = jest.fn()
         useCustomerProductLists.mockReturnValue({
             getOrCreateList: mock,
-            findListByName: jest.fn()
+            findListByName: jest.fn(),
         })
         renderWithProviders(<MockComponent />)
         result.init()
@@ -267,7 +261,7 @@ describe('useWishlist hook', () => {
 
         useCustomerProductLists.mockReturnValue({
             createListItem: mock,
-            findListByName: mockFindListByName
+            findListByName: mockFindListByName,
         })
         renderWithProviders(<MockComponent />)
         result.createListItem()
@@ -282,7 +276,7 @@ describe('useWishlist hook', () => {
 
         useCustomerProductLists.mockReturnValue({
             updateListItem: mock,
-            findListByName: mockFindListByName
+            findListByName: mockFindListByName,
         })
         renderWithProviders(<MockComponent />)
         result.updateListItem()
@@ -297,7 +291,7 @@ describe('useWishlist hook', () => {
 
         useCustomerProductLists.mockReturnValue({
             removeListItem: mock,
-            findListByName: mockFindListByName
+            findListByName: mockFindListByName,
         })
         renderWithProviders(<MockComponent />)
         result.removeListItem()
@@ -312,7 +306,7 @@ describe('useWishlist hook', () => {
 
         useCustomerProductLists.mockReturnValue({
             removeListItemByProductId: mock,
-            findListByName: mockFindListByName
+            findListByName: mockFindListByName,
         })
         renderWithProviders(<MockComponent />)
         result.removeListItemByProductId()
@@ -325,7 +319,7 @@ describe('useWishlist hook', () => {
 
         useCustomerProductLists.mockReturnValue({
             createListItem: mock,
-            findListByName: mockFindListByName
+            findListByName: mockFindListByName,
         })
         renderWithProviders(<MockComponent />)
         result.init = jest.fn()

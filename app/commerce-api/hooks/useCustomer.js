@@ -48,7 +48,7 @@ export default function useCustomer() {
                 if (preferredAddressIndex > -1) {
                     return [
                         customer.addresses[preferredAddressIndex],
-                        customer.addresses.slice(preferredAddressIndex, preferredAddressIndex + 1)
+                        customer.addresses.slice(preferredAddressIndex, preferredAddressIndex + 1),
                     ]
                 }
                 return customer.addresses
@@ -67,7 +67,7 @@ export default function useCustomer() {
                     setCustomer(skeletonCustomer)
                 } else {
                     const customer = await api.shopperCustomers.getCustomer({
-                        parameters: {customerId: skeletonCustomer.customerId}
+                        parameters: {customerId: skeletonCustomer.customerId},
                     })
                     setCustomer(customer)
                 }
@@ -88,7 +88,7 @@ export default function useCustomer() {
             async getCustomer() {
                 setCustomer(
                     await api.shopperCustomers.getCustomer({
-                        parameters: {customerId: customer.customerId}
+                        parameters: {customerId: customer.customerId},
                     })
                 )
             },
@@ -112,9 +112,9 @@ export default function useCustomer() {
                         firstName: data.firstName,
                         lastName: data.lastName,
                         email: data.email,
-                        login: data.email
+                        login: data.email,
                     },
-                    password: data.password
+                    password: data.password,
                 }
 
                 const response = await api.shopperCustomers.registerCustomer({body})
@@ -150,12 +150,12 @@ export default function useCustomer() {
                     // updated email. This will lead to issues where you change your email but end
                     // up not being able to login since 'login' will no longer match the email.
                     email: data.email,
-                    login: data.email
+                    login: data.email,
                 }
 
                 const response = await api.shopperCustomers.updateCustomer({
                     body,
-                    parameters: {customerId: customer.customerId}
+                    parameters: {customerId: customer.customerId},
                 })
 
                 // Check for error json response
@@ -179,7 +179,7 @@ export default function useCustomer() {
             async updatePassword(data) {
                 const body = {
                     password: data.password,
-                    currentPassword: data.currentPassword
+                    currentPassword: data.currentPassword,
                 }
 
                 // Note that we're using the raw response here. This request does not return
@@ -187,7 +187,7 @@ export default function useCustomer() {
                 const rawResponse = await api.shopperCustomers.updateCustomerPassword(
                     {
                         body,
-                        parameters: {customerId: customer.customerId}
+                        parameters: {customerId: customer.customerId},
                     },
                     true
                 )
@@ -228,12 +228,12 @@ export default function useCustomer() {
                 // in the UI, which we aren't.
                 const body = {
                     addressId: nanoid(),
-                    ...address
+                    ...address,
                 }
 
                 await api.shopperCustomers.createCustomerAddress({
                     body,
-                    parameters: {customerId: customer.customerId}
+                    parameters: {customerId: customer.customerId},
                 })
 
                 // This endpoint does not return the updated customer object, so we manually fetch it
@@ -251,7 +251,7 @@ export default function useCustomer() {
 
                 await api.shopperCustomers.updateCustomerAddress({
                     body,
-                    parameters: {customerId: customer.customerId, addressName: address.addressId}
+                    parameters: {customerId: customer.customerId, addressName: address.addressId},
                 })
 
                 // This endpoint does not return the updated customer object, so we manually fetch it
@@ -271,12 +271,12 @@ export default function useCustomer() {
                     ...paymentInstrument,
                     paymentCard: {
                         ...paymentInstrument.paymentCard,
-                        securityCode: undefined
-                    }
+                        securityCode: undefined,
+                    },
                 }
                 await api.shopperCustomers.createCustomerPaymentInstrument({
                     body,
-                    parameters: {customerId: customer.customerId}
+                    parameters: {customerId: customer.customerId},
                 })
 
                 // This endpoint does not return the updated customer object, so we manually fetch it
@@ -293,7 +293,7 @@ export default function useCustomer() {
                 // the sdk where it tries parsing json from an empty http response.
                 await api.shopperCustomers.deleteCustomerPaymentInstrument(
                     {
-                        parameters: {customerId: customer.customerId, paymentInstrumentId}
+                        parameters: {customerId: customer.customerId, paymentInstrumentId},
                     },
                     true
                 )
@@ -312,7 +312,7 @@ export default function useCustomer() {
                 // the sdk where it tries parsing json from an empty http response.
                 await api.shopperCustomers.removeCustomerAddress(
                     {
-                        parameters: {customerId: customer.customerId, addressName: addressId}
+                        parameters: {customerId: customer.customerId, addressName: addressId},
                     },
                     true
                 )
@@ -323,21 +323,21 @@ export default function useCustomer() {
 
             async getCustomerOrders(params) {
                 const response = await api.shopperCustomers.getCustomerOrders({
-                    parameters: {customerId: customer.customerId, offset: 0, limit: 10, ...params}
+                    parameters: {customerId: customer.customerId, offset: 0, limit: 10, ...params},
                 })
                 return response
             },
 
             async getOrder(orderNo) {
                 const response = await api.shopperOrders.getOrder({
-                    parameters: {orderNo}
+                    parameters: {orderNo},
                 })
                 return response
             },
 
             async getCustomerOrderProductsDetail(ids) {
                 const response = await api.shopperProducts.getProducts({
-                    parameters: {ids: ids.join(',')}
+                    parameters: {ids: ids.join(',')},
                 })
 
                 const productMap = response.data.reduce((result, item) => {
@@ -347,7 +347,7 @@ export default function useCustomer() {
                 }, {})
 
                 return productMap
-            }
+            },
         }
     }, [customer, setCustomer])
 

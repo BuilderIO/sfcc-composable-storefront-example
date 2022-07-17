@@ -13,7 +13,7 @@ import {cssColorGroups} from '../../../constants'
 const ColorRefinements = ({filter, toggleFilter, selectedFilters}) => {
     const styles = useMultiStyleConfig('SwatchGroup', {
         variant: 'circle',
-        disabled: false
+        disabled: false,
     })
 
     return (
@@ -90,7 +90,7 @@ const ColorRefinements = ({filter, toggleFilter, selectedFilters}) => {
 ColorRefinements.propTypes = {
     filter: PropTypes.object,
     toggleFilter: PropTypes.func,
-    selectedFilters: PropTypes.oneOfType([PropTypes.array, PropTypes.string])
+    selectedFilters: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 }
 
 export default ColorRefinements

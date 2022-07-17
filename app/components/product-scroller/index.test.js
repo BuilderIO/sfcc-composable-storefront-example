@@ -21,7 +21,7 @@ const testProducts = [1, 2, 3, 4].map((i) => ({
     productName: `Product ${i}`,
     image: {disBaseLink: '/testimage'},
     price: 9.99,
-    currency: 'USD'
+    currency: 'USD',
 }))
 
 describe('Product Scroller', () => {
@@ -53,13 +53,13 @@ describe('Product Scroller', () => {
         expect(window.HTMLElement.prototype.scrollBy).toHaveBeenCalledWith({
             top: 0,
             left: 1024,
-            behavior: 'smooth'
+            behavior: 'smooth',
         })
         user.click(screen.getByTestId('product-scroller-nav-left'))
         expect(window.HTMLElement.prototype.scrollBy).toHaveBeenCalledWith({
             top: 0,
             left: -1024,
-            behavior: 'smooth'
+            behavior: 'smooth',
         })
         expect(screen.getByTestId('product-scroller-nav-left')).toBeInTheDocument()
         expect(screen.getByTestId('product-scroller-nav-right')).toBeInTheDocument()

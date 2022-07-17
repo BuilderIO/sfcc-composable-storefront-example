@@ -48,7 +48,7 @@ const CartItems = ({basket}) => {
                             ...product,
                             ...(basket._productItemsDetail &&
                                 basket._productItemsDetail[product.productId]),
-                            price: product.price
+                            price: product.price,
                         }
                         return (
                             <ItemVariantProvider
@@ -81,7 +81,7 @@ const CartItems = ({basket}) => {
 }
 
 CartItems.propTypes = {
-    basket: PropTypes.object
+    basket: PropTypes.object,
 }
 
 const OrderSummary = ({
@@ -89,7 +89,7 @@ const OrderSummary = ({
     showPromoCodeForm = false,
     showCartItems = false,
     isEstimate = false,
-    fontSize = 'md'
+    fontSize = 'md',
 }) => {
     basket = basket || useBasket()
 
@@ -303,7 +303,7 @@ OrderSummary.propTypes = {
     showPromoCodeForm: PropTypes.bool,
     showCartItems: PropTypes.bool,
     isEstimate: PropTypes.bool,
-    fontSize: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl'])
+    fontSize: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 }
 
 export default OrderSummary

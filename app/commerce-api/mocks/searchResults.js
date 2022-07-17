@@ -8,23 +8,23 @@ export default {
     brandSuggestions: {
         suggestedTerms: [
             {
-                originalTerm: 'dresss'
-            }
-        ]
+                originalTerm: 'dresss',
+            },
+        ],
     },
     categorySuggestions: {
         categories: [
             {
                 id: 'womens-clothing-dresses',
                 name: 'Dresses',
-                parentCategoryName: 'Clothing'
-            }
+                parentCategoryName: 'Clothing',
+            },
         ],
         suggestedPhrases: [
             {
                 exactMatch: false,
-                phrase: 'Dresses'
-            }
+                phrase: 'Dresses',
+            },
         ],
         suggestedTerms: [
             {
@@ -34,32 +34,32 @@ export default {
                         completed: false,
                         corrected: true,
                         exactMatch: false,
-                        value: 'dresses'
+                        value: 'dresses',
                     },
                     {
                         completed: false,
                         corrected: true,
                         exactMatch: false,
-                        value: 'dress'
-                    }
-                ]
-            }
-        ]
+                        value: 'dress',
+                    },
+                ],
+            },
+        ],
     },
     contentSuggestions: {
         suggestedTerms: [
             {
-                originalTerm: 'dresss'
-            }
-        ]
+                originalTerm: 'dresss',
+            },
+        ],
     },
     customSuggestions: {
         customSuggestions: ['Dresses'],
         suggestedPhrases: [
             {
                 exactMatch: false,
-                phrase: 'Dresses'
-            }
+                phrase: 'Dresses',
+            },
         ],
         suggestedTerms: [
             {
@@ -69,17 +69,17 @@ export default {
                         completed: false,
                         corrected: true,
                         exactMatch: false,
-                        value: 'dresses'
+                        value: 'dresses',
                     },
                     {
                         completed: false,
                         corrected: true,
                         exactMatch: false,
-                        value: 'dress'
-                    }
-                ]
-            }
-        ]
+                        value: 'dress',
+                    },
+                ],
+            },
+        ],
     },
     productSuggestions: {
         products: [
@@ -87,38 +87,38 @@ export default {
                 currency: 'USD',
                 price: 195.0,
                 productId: '42416786M',
-                productName: 'Casual To Dressy Trousers'
+                productName: 'Casual To Dressy Trousers',
             },
             {
                 currency: 'USD',
                 price: 195.0,
                 productId: '42416786-3M',
-                productName: 'Casual To Dressy Trousers'
+                productName: 'Casual To Dressy Trousers',
             },
             {
                 currency: 'USD',
                 price: 195.0,
                 productId: '42416786-1M',
-                productName: 'Casual To Dressy Trousers'
+                productName: 'Casual To Dressy Trousers',
             },
             {
                 currency: 'USD',
                 price: 195.0,
                 productId: '42416786-2M',
-                productName: 'Casual To Dressy Trousers'
+                productName: 'Casual To Dressy Trousers',
             },
             {
                 currency: 'USD',
                 price: 129.0,
                 productId: '25592581M',
-                productName: 'Floral Dress'
-            }
+                productName: 'Floral Dress',
+            },
         ],
         suggestedPhrases: [
             {
                 exactMatch: false,
-                phrase: 'dresses'
-            }
+                phrase: 'dresses',
+            },
         ],
         suggestedTerms: [
             {
@@ -128,17 +128,17 @@ export default {
                         completed: false,
                         corrected: true,
                         exactMatch: false,
-                        value: 'dresses'
+                        value: 'dresses',
                     },
                     {
                         completed: false,
                         corrected: true,
                         exactMatch: false,
-                        value: 'dressy'
-                    }
-                ]
-            }
-        ]
+                        value: 'dressy',
+                    },
+                ],
+            },
+        ],
     },
-    searchPhrase: 'dresss'
+    searchPhrase: 'dresss',
 }

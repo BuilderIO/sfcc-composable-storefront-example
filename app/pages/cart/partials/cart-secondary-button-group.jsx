@@ -14,7 +14,7 @@ import {
     Divider,
     Flex,
     Stack,
-    useDisclosure
+    useDisclosure,
 } from '@chakra-ui/react'
 import {defineMessage, FormattedMessage} from 'react-intl'
 import {useItemVariant} from '../../../components/item-variant'
@@ -25,21 +25,21 @@ import useCustomer from '../../../commerce-api/hooks/useCustomer'
 export const REMOVE_CART_ITEM_CONFIRMATION_DIALOG_CONFIG = {
     dialogTitle: defineMessage({
         defaultMessage: 'Confirm Remove Item',
-        id: 'confirmation_modal.remove_cart_item.title.confirm_remove'
+        id: 'confirmation_modal.remove_cart_item.title.confirm_remove',
     }),
     confirmationMessage: defineMessage({
         defaultMessage: 'Are you sure you want to remove this item from your cart?',
-        id: 'confirmation_modal.remove_cart_item.message.sure_to_remove'
+        id: 'confirmation_modal.remove_cart_item.message.sure_to_remove',
     }),
     primaryActionLabel: defineMessage({
         defaultMessage: 'Yes, remove item',
-        id: 'confirmation_modal.remove_cart_item.action.yes'
+        id: 'confirmation_modal.remove_cart_item.action.yes',
     }),
     alternateActionLabel: defineMessage({
         defaultMessage: 'No, keep item',
-        id: 'confirmation_modal.remove_cart_item.action.no'
+        id: 'confirmation_modal.remove_cart_item.action.no',
     }),
-    onPrimaryAction: noop
+    onPrimaryAction: noop,
 }
 
 /**
@@ -50,7 +50,7 @@ export const REMOVE_CART_ITEM_CONFIRMATION_DIALOG_CONFIG = {
 const CartSecondaryButtonGroup = ({
     onAddToWishlistClick = noop,
     onEditClick = noop,
-    onRemoveItemClick = noop
+    onRemoveItemClick = noop,
 }) => {
     const variant = useItemVariant()
 
@@ -129,7 +129,7 @@ CartSecondaryButtonGroup.propTypes = {
     onClick: PropTypes.func,
     onEditClick: PropTypes.func,
     onAddToWishlistClick: PropTypes.func,
-    onRemoveItemClick: PropTypes.func
+    onRemoveItemClick: PropTypes.func,
 }
 
 export default CartSecondaryButtonGroup

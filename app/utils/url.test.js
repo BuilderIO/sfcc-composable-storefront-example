@@ -15,7 +15,7 @@ import {
     rebuildPathWithParams,
     removeQueryParamsFromPath,
     buildPathWithUrlConfig,
-    absoluteUrl
+    absoluteUrl,
 } from './url'
 import {getUrlConfig} from './utils'
 import mockConfig from '../../config/mocks/default'
@@ -28,7 +28,7 @@ jest.mock('pwa-kit-react-sdk/utils/url', () => {
     const original = jest.requireActual('pwa-kit-react-sdk/utils/url')
     return {
         ...original,
-        getAppOrigin: jest.fn(() => 'https://www.example.com')
+        getAppOrigin: jest.fn(() => 'https://www.example.com'),
     }
 })
 jest.mock('./utils', () => {
@@ -36,7 +36,7 @@ jest.mock('./utils', () => {
     return {
         ...original,
         getConfig: jest.fn(() => mockConfig),
-        getUrlConfig: jest.fn()
+        getUrlConfig: jest.fn(),
     }
 })
 
@@ -53,7 +53,7 @@ describe('buildUrlSet returns the expected set of urls', () => {
         expect(set).toEqual([
             '/mens/clothing?offset=0',
             '/mens/clothing?offset=5',
-            '/mens/clothing?offset=10'
+            '/mens/clothing?offset=10',
         ])
     })
 
@@ -69,7 +69,7 @@ describe('buildUrlSet returns the expected set of urls', () => {
         expect(set).toEqual([
             '/mens/clothing?offset=0&sort=high-to-low',
             '/mens/clothing?offset=5&sort=high-to-low',
-            '/mens/clothing?offset=10&sort=high-to-low'
+            '/mens/clothing?offset=10&sort=high-to-low',
         ])
     })
 
@@ -79,7 +79,7 @@ describe('buildUrlSet returns the expected set of urls', () => {
         expect(set).toEqual([
             '/mens/clothing?sort=high-to-low&offset=0',
             '/mens/clothing?sort=high-to-low&offset=5',
-            '/mens/clothing?sort=high-to-low&offset=10'
+            '/mens/clothing?sort=high-to-low&offset=10',
         ])
     })
 
@@ -89,7 +89,7 @@ describe('buildUrlSet returns the expected set of urls', () => {
         expect(set).toEqual([
             '/mens/clothing?server_only&offset=0',
             '/mens/clothing?server_only&offset=5',
-            '/mens/clothing?server_only&offset=10'
+            '/mens/clothing?server_only&offset=10',
         ])
     })
 })
@@ -147,7 +147,7 @@ describe('getPathWithLocale', () => {
 
         const relativeUrl = getPathWithLocale('fr-FR', {
             disallowParams: ['refine'],
-            location
+            location,
         })
         expect(relativeUrl).toEqual(
             `/uk/fr-FR/category/newarrivals-womens?limit=25&sort=best-matches&offset=25`
@@ -182,122 +182,122 @@ describe('homeUrlBuilder', () => {
             urlConfig: {
                 locale: 'path',
                 site: 'path',
-                showDefaults: true
+                showDefaults: true,
             },
             site: defaultSiteMock,
             locale: {id: 'en-GB'},
-            expectedRes: '/'
+            expectedRes: '/',
         },
         {
             urlConfig: {
                 locale: 'query_param',
                 site: 'query_param',
-                showDefaults: true
+                showDefaults: true,
             },
             site: defaultSiteMock,
             locale: {id: 'en-GB'},
-            expectedRes: '/'
+            expectedRes: '/',
         },
         {
             urlConfig: {
                 locale: 'path',
                 site: 'path',
-                showDefaults: false
+                showDefaults: false,
             },
             site: defaultSiteMock,
             locale: {id: 'en-GB'},
-            expectedRes: '/'
+            expectedRes: '/',
         },
         {
             urlConfig: {
                 locale: 'query_param',
                 site: 'query_param',
-                showDefaults: false
+                showDefaults: false,
             },
             site: defaultSiteMock,
             locale: {id: 'en-GB'},
-            expectedRes: '/'
+            expectedRes: '/',
         },
         {
             urlConfig: {
                 locale: 'path',
                 site: 'path',
-                showDefaults: true
+                showDefaults: true,
             },
             site: defaultSiteMock,
             locale: {id: 'fr-FR'},
-            expectedRes: '/uk/fr-FR/'
+            expectedRes: '/uk/fr-FR/',
         },
         {
             urlConfig: {
                 locale: 'path',
                 site: 'path',
-                showDefaults: false
+                showDefaults: false,
             },
             site: defaultSiteMock,
             locale: {id: 'fr-FR'},
-            expectedRes: '/fr-FR/'
+            expectedRes: '/fr-FR/',
         },
         {
             urlConfig: {
                 locale: 'query_param',
                 site: 'query_param',
-                showDefaults: true
+                showDefaults: true,
             },
             site: defaultSiteMock,
             locale: {id: 'fr-FR'},
-            expectedRes: '/?site=uk&locale=fr-FR'
+            expectedRes: '/?site=uk&locale=fr-FR',
         },
         {
             urlConfig: {
                 locale: 'path',
                 site: 'path',
-                showDefaults: true
+                showDefaults: true,
             },
             site: nonDefaultSiteMock,
             locale: {id: 'en-US'},
-            expectedRes: '/us/en-US/'
+            expectedRes: '/us/en-US/',
         },
         {
             urlConfig: {
                 locale: 'query_param',
                 site: 'path',
-                showDefaults: true
+                showDefaults: true,
             },
             site: nonDefaultSiteMock,
             locale: {id: 'en-US'},
-            expectedRes: '/us/?locale=en-US'
+            expectedRes: '/us/?locale=en-US',
         },
         {
             urlConfig: {
                 locale: 'path',
                 site: 'path',
-                showDefaults: false
+                showDefaults: false,
             },
             site: nonDefaultSiteMock,
             locale: {id: 'en-US'}, // default locale of the nonDefault Site
-            expectedRes: '/us/'
+            expectedRes: '/us/',
         },
         {
             urlConfig: {
                 locale: 'query_param',
                 site: 'path',
-                showDefaults: false
+                showDefaults: false,
             },
             site: nonDefaultSiteMock,
             locale: {id: 'en-US'}, // default locale of the nonDefault Site
-            expectedRes: '/us/'
+            expectedRes: '/us/',
         },
         {
             urlConfig: {
                 locale: 'query_param',
                 site: 'query_param',
-                showDefaults: true
+                showDefaults: true,
             },
             site: nonDefaultSiteMock,
             locale: {id: 'en-US'}, // default locale of the nonDefault Site
-            expectedRes: '/?site=us&locale=en-US'
-        }
+            expectedRes: '/?site=us&locale=en-US',
+        },
     ]
 
     cases.forEach(({urlConfig, site, locale, expectedRes}) => {
@@ -307,7 +307,7 @@ describe('homeUrlBuilder', () => {
             getUrlConfig.mockImplementation(() => urlConfig)
             const homeUrl = homeUrlBuilder('/', {
                 site,
-                locale
+                locale,
             })
             expect(homeUrl).toEqual(expectedRes)
         })
@@ -335,7 +335,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'path',
             site: 'path',
-            showDefaults: true
+            showDefaults: true,
         }))
         const url = buildPathWithUrlConfig('/women/dresses', {locale: 'en-GB', site: 'uk'})
         expect(url).toEqual('/uk/en-GB/women/dresses')
@@ -345,7 +345,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'path',
             site: 'path',
-            showDefaults: false
+            showDefaults: false,
         }))
         const url = buildPathWithUrlConfig('/women/dresses', {locale: 'en-GB', site: 'uk'})
         expect(url).toEqual('/women/dresses')
@@ -355,7 +355,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'query_param',
             site: 'path',
-            showDefaults: true
+            showDefaults: true,
         }))
         const url = buildPathWithUrlConfig('/women/dresses', {locale: 'en-GB', site: 'uk'})
         expect(url).toEqual('/uk/women/dresses?locale=en-GB')
@@ -365,7 +365,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'path',
             site: 'query_param',
-            showDefaults: true
+            showDefaults: true,
         }))
         const url = buildPathWithUrlConfig('/women/dresses', {locale: 'en-GB', site: 'uk'})
         expect(url).toEqual('/en-GB/women/dresses?site=uk')
@@ -375,7 +375,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'path',
             site: 'query_param',
-            showDefaults: false
+            showDefaults: false,
         }))
         const url = buildPathWithUrlConfig('/women/dresses', {locale: 'en-GB', site: 'uk'})
         expect(url).toEqual('/women/dresses')
@@ -385,7 +385,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'query_param',
             site: 'path',
-            showDefaults: true
+            showDefaults: true,
         }))
         const url = buildPathWithUrlConfig(
             '/women/dresses?something=else&refine=c_color',
@@ -399,7 +399,7 @@ describe('buildPathWithUrlConfig', () => {
         getUrlConfig.mockImplementation(() => ({
             locale: 'query_param',
             site: 'path',
-            showDefaults: false
+            showDefaults: false,
         }))
         const url = buildPathWithUrlConfig(
             '/women/dresses?something=else&refine=c_color',
@@ -418,7 +418,7 @@ describe('buildPathWithUrlConfig', () => {
     })
 })
 
-describe('absoluteUrl', function() {
+describe('absoluteUrl', function () {
     test('return expected when path is a relative url', () => {
         const url = absoluteUrl('/uk/en/women/dresses')
         expect(url).toEqual('https://www.example.com/uk/en/women/dresses')

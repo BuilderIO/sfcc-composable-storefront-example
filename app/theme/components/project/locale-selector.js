@@ -9,27 +9,27 @@ export default {
         accordion: {},
         container: {},
         selectedButtonIcon: {
-            color: 'grey'
+            color: 'grey',
         },
         selectedButton: {
-            paddingLeft: 0
+            paddingLeft: 0,
         },
         selectedText: {
             flex: '1',
             textAlign: 'left',
-            paddingLeft: 2
+            paddingLeft: 2,
         },
         selectedIcon: {
-            color: 'blue.600'
+            color: 'blue.600',
         },
         optionButton: {
-            paddingLeft: 2
+            paddingLeft: 2,
         },
         optionText: {
             paddingLeft: 2,
             paddingRight: 4,
-            textAlign: 'left'
-        }
+            textAlign: 'left',
+        },
     },
     parts: [
         'accordion',
@@ -37,6 +37,6 @@ export default {
         'selectedButton',
         'selectedText',
         'optionButton',
-        'optionText'
-    ]
+        'optionText',
+    ],
 }

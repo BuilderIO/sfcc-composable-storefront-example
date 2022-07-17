@@ -9,33 +9,33 @@ export default {
         container: {},
         socialsContainer: {
             flex: 1,
-            justifyContent: 'flex-start'
+            justifyContent: 'flex-start',
         },
         icon: {
             color: 'gray.900',
             width: 5,
-            height: 5
+            height: 5,
         },
         logo: {
             width: 12,
-            height: 8
+            height: 8,
         },
         socialsItem: {
             textAlign: 'center',
             paddingLeft: 2,
-            paddingRight: 2
+            paddingRight: 2,
         },
         actions: {
             paddingLeft: 4,
-            paddingRight: 4
+            paddingRight: 4,
         },
         actionsItem: {
             paddingTop: 3,
-            paddingBottom: 3
+            paddingBottom: 3,
         },
         localeSelector: {
             paddingTop: 1,
-            paddingBottom: 1
+            paddingBottom: 1,
         },
         signout: {
             width: '100%',
@@ -44,14 +44,14 @@ export default {
             paddingBottom: 2,
             _focus: {
                 borderRadius: 0,
-                boxShadow: 'outline'
-            }
+                boxShadow: 'outline',
+            },
         },
         signoutText: {
             marginLeft: 2,
             fontSize: 14,
-            fontWeight: 'normal'
-        }
+            fontWeight: 'normal',
+        },
     },
     parts: [
         'actions',
@@ -61,6 +61,6 @@ export default {
         'localeSelector',
         'socials',
         'socialsItem',
-        'signout'
-    ]
+        'signout',
+    ],
 }

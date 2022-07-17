@@ -69,7 +69,7 @@ Hero.propTypes = {
      */
     img: PropTypes.shape({
         src: PropTypes.string,
-        alt: PropTypes.string
+        alt: PropTypes.string,
     }),
     /**
      * Hero component main title
@@ -78,7 +78,7 @@ Hero.propTypes = {
     /**
      * Call to action component(s)
      */
-    actions: PropTypes.element
+    actions: PropTypes.element,
 }
 
 export default Hero

@@ -32,7 +32,7 @@ const SwatchGroup = (props) => {
                         key: childValue,
                         value,
                         variant,
-                        onChange
+                        onChange,
                     })
                 })}
             </Flex>
@@ -66,7 +66,7 @@ SwatchGroup.propTypes = {
     /**
      * This function is called when a new option is selected
      */
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
 }
 
 export default SwatchGroup

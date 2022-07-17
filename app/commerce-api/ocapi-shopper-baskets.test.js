@@ -11,7 +11,7 @@ import {
     ocapiBasketResponse,
     ocapiBasketWithItem,
     ocapiBasketWithPaymentInstrumentAndBillingAddress,
-    mockShippingMethods
+    mockShippingMethods,
 } from './mock-data'
 
 jest.mock('cross-fetch', () => jest.requireActual('jest-fetch-mock'))
@@ -37,7 +37,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const basket = await ocapiShopperBaskets.updateBasket({
             parameters: {basketId: 'testBasketId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -61,7 +61,7 @@ describe('test OcapiShopperBaskets class', () => {
         const ocapiShopperBaskets = getOcapiShopperBaskets()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const basket = await ocapiShopperBaskets.getBasket({
-            parameters: {basketId: 'testBasketId'}
+            parameters: {basketId: 'testBasketId'},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo.customerId).toBeDefined()
@@ -80,7 +80,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithItem))
         const basket = await ocapiShopperBaskets.addItemToBasket({
             parameters: {basketId: 'testBasketId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.productItems).toBeDefined()
@@ -98,7 +98,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithItem))
         const basket = await ocapiShopperBaskets.updateItemInBasket({
             parameters: {basketId: 'testBasketId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.productItems).toBeDefined()
@@ -115,7 +115,7 @@ describe('test OcapiShopperBaskets class', () => {
         const ocapiShopperBaskets = getOcapiShopperBaskets()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithItem))
         const basket = await ocapiShopperBaskets.removeItemFromBasket({
-            parameters: {basketId: 'testBasketId', itemId: 'fakeItemId'}
+            parameters: {basketId: 'testBasketId', itemId: 'fakeItemId'},
         })
         expect(basket).toBeDefined()
         expect(basket.productItems).toBeDefined()
@@ -133,7 +133,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithPaymentInstrumentAndBillingAddress))
         const basket = await ocapiShopperBaskets.addPaymentInstrumentToBasket({
             parameters: {basketId: 'testBasketId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.paymentInstruments[0]).toBeDefined()
@@ -150,7 +150,7 @@ describe('test OcapiShopperBaskets class', () => {
         const ocapiShopperBaskets = getOcapiShopperBaskets()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const basket = await ocapiShopperBaskets.removePaymentInstrumentFromBasket({
-            parameters: {basketId: 'testBasketId', paymentInstrumentId: 'paymentInstrumentId'}
+            parameters: {basketId: 'testBasketId', paymentInstrumentId: 'paymentInstrumentId'},
         })
         expect(basket).toBeDefined()
         expect(basket.paymentInstruments).not.toBeDefined()
@@ -166,7 +166,7 @@ describe('test OcapiShopperBaskets class', () => {
         const ocapiShopperBaskets = getOcapiShopperBaskets()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithPaymentInstrumentAndBillingAddress))
         const basket = await ocapiShopperBaskets.getPaymentMethodsForBasket({
-            parameters: {basketId: 'testBasketId'}
+            parameters: {basketId: 'testBasketId'},
         })
         expect(basket).toBeDefined()
         expect(basket.paymentInstruments[0]).toBeDefined()
@@ -183,7 +183,7 @@ describe('test OcapiShopperBaskets class', () => {
         const ocapiShopperBaskets = getOcapiShopperBaskets()
         fetch.mockResponseOnce(JSON.stringify(mockShippingMethods))
         const methods = await ocapiShopperBaskets.getShippingMethodsForShipment({
-            parameters: {basketId: 'testBasketId', shipmentId: 'fakeShipmentId'}
+            parameters: {basketId: 'testBasketId', shipmentId: 'fakeShipmentId'},
         })
         expect(methods).toBeDefined()
         expect(methods.applicableShippingMethods).toBeDefined()
@@ -200,7 +200,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithPaymentInstrumentAndBillingAddress))
         const basket = await ocapiShopperBaskets.updateBillingAddressForBasket({
             parameters: {basketId: 'testBasketId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.billingAddress).toBeDefined()
@@ -218,7 +218,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithPaymentInstrumentAndBillingAddress))
         const basket = await ocapiShopperBaskets.updateShippingAddressForShipment({
             parameters: {basketId: 'testBasketId', shipmentId: 'fakeShippingId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.shipments).toBeDefined()
@@ -236,7 +236,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketWithPaymentInstrumentAndBillingAddress))
         const basket = await ocapiShopperBaskets.updateShippingMethodForShipment({
             parameters: {basketId: 'testBasketId', shipmentId: 'fakeShippingId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.shipments).toBeDefined()
@@ -254,7 +254,7 @@ describe('test OcapiShopperBaskets class', () => {
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const basket = await ocapiShopperBaskets.updateCustomerForBasket({
             parameters: {basketId: 'testBasketId'},
-            body: {}
+            body: {},
         })
         expect(basket).toBeDefined()
         expect(basket.customerInfo).toBeDefined()
@@ -271,7 +271,7 @@ describe('test OcapiShopperBaskets class', () => {
         const ocapiShopperBaskets = getOcapiShopperBaskets()
         fetch.mockResponseOnce(JSON.stringify({status: 204}))
         const response = await ocapiShopperBaskets.deleteBasket({
-            parameters: {basketId: 'testBasketId'}
+            parameters: {basketId: 'testBasketId'},
         })
         expect(response.status).toEqual(204)
     })

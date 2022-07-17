@@ -13,7 +13,7 @@ jest.mock('pwa-kit-runtime/utils/ssr-config', () => {
     const origin = jest.requireActual('pwa-kit-react-sdk/ssr/universal/utils')
     return {
         ...origin,
-        getConfig: jest.fn()
+        getConfig: jest.fn(),
     }
 })
 
@@ -25,7 +25,7 @@ afterEach(() => {
     jest.resetAllMocks()
 })
 
-describe('resolveSiteFromUrl', function() {
+describe('resolveSiteFromUrl', function () {
     test('throw an error without an arg', () => {
         expect(() => {
             resolveSiteFromUrl()
@@ -50,8 +50,8 @@ describe('resolveSiteFromUrl', function() {
             ...mockConfig,
             app: {
                 ...mockConfig.app,
-                defaultSite: 'site-3'
-            }
+                defaultSite: 'site-3',
+            },
         }
 
         getConfig.mockImplementation(() => newConfig)
@@ -67,8 +67,8 @@ describe('resolveSiteFromUrl', function() {
                 app: {
                     ...mockConfig.app,
                     siteAliases: {},
-                    defaultSite: 'site-2'
-                }
+                    defaultSite: 'site-2',
+                },
             }
         })
 
@@ -77,7 +77,7 @@ describe('resolveSiteFromUrl', function() {
     })
 })
 
-describe('getDefaultSite', function() {
+describe('getDefaultSite', function () {
     test('returns expected default site when there is only one site in the site list', () => {
         const siteMock = {
             id: 'site-a',
@@ -86,25 +86,25 @@ describe('getDefaultSite', function() {
                 supportedLocales: [
                     {
                         id: 'en-GB',
-                        preferredCurrency: 'GBP'
+                        preferredCurrency: 'GBP',
                     },
                     {
                         id: 'fr-FR',
                         alias: 'fr',
-                        preferredCurrency: 'EUR'
+                        preferredCurrency: 'EUR',
                     },
                     {
                         id: 'it-IT',
-                        preferredCurrency: 'EUR'
-                    }
-                ]
-            }
+                        preferredCurrency: 'EUR',
+                    },
+                ],
+            },
         }
         getConfig.mockImplementation(() => ({
             app: {
                 ...mockConfig.app,
-                sites: [siteMock]
-            }
+                sites: [siteMock],
+            },
         }))
 
         const defaultSite = getDefaultSite()
@@ -115,8 +115,8 @@ describe('getDefaultSite', function() {
         getConfig.mockImplementation(() => ({
             app: {
                 ...mockConfig.app,
-                defaultSite: 'site-2'
-            }
+                defaultSite: 'site-2',
+            },
         }))
 
         const expectedRes = {
@@ -127,14 +127,14 @@ describe('getDefaultSite', function() {
                 supportedLocales: [
                     {
                         id: 'en-US',
-                        preferredCurrency: 'USD'
+                        preferredCurrency: 'USD',
                     },
                     {
                         id: 'en-CA',
-                        preferredCurrency: 'USD'
-                    }
-                ]
-            }
+                        preferredCurrency: 'USD',
+                    },
+                ],
+            },
         }
 
         const defaultSite = getDefaultSite()
@@ -142,7 +142,7 @@ describe('getDefaultSite', function() {
     })
 })
 
-describe('getSites', function() {
+describe('getSites', function () {
     test('returns site list with alias', () => {
         getConfig.mockImplementation(() => mockConfig)
         const sites = getSites()
@@ -155,19 +155,19 @@ describe('getSites', function() {
                     supportedLocales: [
                         {
                             id: 'en-GB',
-                            preferredCurrency: 'GBP'
+                            preferredCurrency: 'GBP',
                         },
                         {
                             id: 'fr-FR',
                             alias: 'fr',
-                            preferredCurrency: 'EUR'
+                            preferredCurrency: 'EUR',
                         },
                         {
                             id: 'it-IT',
-                            preferredCurrency: 'EUR'
-                        }
-                    ]
-                }
+                            preferredCurrency: 'EUR',
+                        },
+                    ],
+                },
             },
             {
                 id: 'site-2',
@@ -177,15 +177,15 @@ describe('getSites', function() {
                     supportedLocales: [
                         {
                             id: 'en-US',
-                            preferredCurrency: 'USD'
+                            preferredCurrency: 'USD',
                         },
                         {
                             id: 'en-CA',
-                            preferredCurrency: 'USD'
-                        }
-                    ]
-                }
-            }
+                            preferredCurrency: 'USD',
+                        },
+                    ],
+                },
+            },
         ]
         expect(sites).toEqual(expectedRes)
     })
@@ -193,7 +193,7 @@ describe('getSites', function() {
     test('throw error when there is no sites in the config', () => {
         getConfig.mockImplementation(() => ({
             ...mockConfig.app,
-            sites: []
+            sites: [],
         }))
 
         expect(() => {

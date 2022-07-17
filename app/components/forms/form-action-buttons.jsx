@@ -19,7 +19,7 @@ const FormActionButtons = ({
     cancelButtonProps = {},
     saveButtonLabel,
     cancelButtonLabel,
-    onCancel = () => {}
+    onCancel = () => {},
 }) => {
     return (
         <Stack direction={{base: 'column', lg: 'row-reverse'}} spacing={4}>
@@ -49,7 +49,7 @@ FormActionButtons.propTypes = {
     cancelButtonProps: PropTypes.object,
     saveButtonLabel: MESSAGE_PROPTYPE,
     cancelButtonLabel: MESSAGE_PROPTYPE,
-    onCancel: PropTypes.func
+    onCancel: PropTypes.func,
 }
 
 export default FormActionButtons

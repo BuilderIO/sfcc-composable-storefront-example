@@ -32,20 +32,18 @@ const mockData = {
                                 alt: 'Ruffle Front V-Neck Cardigan, , large',
                                 disBaseLink:
                                     'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4cd0a798/images/large/PG.10216885.JJ169XX.PZ.jpg',
-                                link:
-                                    'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4cd0a798/images/large/PG.10216885.JJ169XX.PZ.jpg',
-                                title: 'Ruffle Front V-Neck Cardigan, '
+                                link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4cd0a798/images/large/PG.10216885.JJ169XX.PZ.jpg',
+                                title: 'Ruffle Front V-Neck Cardigan, ',
                             },
                             {
                                 alt: 'Ruffle Front V-Neck Cardigan, , large',
                                 disBaseLink:
                                     'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dwf67d39ef/images/large/PG.10216885.JJ169XX.BZ.jpg',
-                                link:
-                                    'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dwf67d39ef/images/large/PG.10216885.JJ169XX.BZ.jpg',
-                                title: 'Ruffle Front V-Neck Cardigan, '
-                            }
+                                link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dwf67d39ef/images/large/PG.10216885.JJ169XX.BZ.jpg',
+                                title: 'Ruffle Front V-Neck Cardigan, ',
+                            },
                         ],
-                        viewType: 'large'
+                        viewType: 'large',
                     },
                     {
                         images: [
@@ -53,20 +51,18 @@ const mockData = {
                                 alt: 'Ruffle Front V-Neck Cardigan, , medium',
                                 disBaseLink:
                                     'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dwc31527c1/images/medium/PG.10216885.JJ169XX.PZ.jpg',
-                                link:
-                                    'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dwc31527c1/images/medium/PG.10216885.JJ169XX.PZ.jpg',
-                                title: 'Ruffle Front V-Neck Cardigan, '
+                                link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dwc31527c1/images/medium/PG.10216885.JJ169XX.PZ.jpg',
+                                title: 'Ruffle Front V-Neck Cardigan, ',
                             },
                             {
                                 alt: 'Ruffle Front V-Neck Cardigan, , medium',
                                 disBaseLink:
                                     'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw3b11511c/images/medium/PG.10216885.JJ169XX.BZ.jpg',
-                                link:
-                                    'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw3b11511c/images/medium/PG.10216885.JJ169XX.BZ.jpg',
-                                title: 'Ruffle Front V-Neck Cardigan, '
-                            }
+                                link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw3b11511c/images/medium/PG.10216885.JJ169XX.BZ.jpg',
+                                title: 'Ruffle Front V-Neck Cardigan, ',
+                            },
                         ],
-                        viewType: 'medium'
+                        viewType: 'medium',
                     },
                     {
                         images: [
@@ -74,21 +70,19 @@ const mockData = {
                                 alt: 'Ruffle Front V-Neck Cardigan, , small',
                                 disBaseLink:
                                     'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4ada76e4/images/small/PG.10216885.JJ169XX.PZ.jpg',
-                                link:
-                                    'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4ada76e4/images/small/PG.10216885.JJ169XX.PZ.jpg',
-                                title: 'Ruffle Front V-Neck Cardigan, '
+                                link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4ada76e4/images/small/PG.10216885.JJ169XX.PZ.jpg',
+                                title: 'Ruffle Front V-Neck Cardigan, ',
                             },
                             {
                                 alt: 'Ruffle Front V-Neck Cardigan, , small',
                                 disBaseLink:
                                     'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw5c3e4bf4/images/small/PG.10216885.JJ169XX.BZ.jpg',
-                                link:
-                                    'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw5c3e4bf4/images/small/PG.10216885.JJ169XX.BZ.jpg',
-                                title: 'Ruffle Front V-Neck Cardigan, '
-                            }
+                                link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw5c3e4bf4/images/small/PG.10216885.JJ169XX.BZ.jpg',
+                                title: 'Ruffle Front V-Neck Cardigan, ',
+                            },
                         ],
-                        viewType: 'small'
-                    }
+                        viewType: 'small',
+                    },
                 ],
                 inventory: {
                     ats: 1597,
@@ -96,14 +90,14 @@ const mockData = {
                     id: 'inventory_m',
                     orderable: true,
                     preorderable: false,
-                    stockLevel: 1597
+                    stockLevel: 1597,
                 },
                 longDescription:
                     "This flirty ruffle cardigan can take you from day to night. Don't leave home with out a great pair of Commerce Cloud Store earrings.",
                 master: {
                     masterId: '25518837M',
                     orderable: true,
-                    price: 26.23
+                    price: 26.23,
                 },
                 minOrderQuantity: 1,
                 name: 'Ruffle Front V-Neck Cardigan',
@@ -116,21 +110,21 @@ const mockData = {
                 productPromotions: [
                     {
                         calloutMsg: '$50 Fixed Products Amount Above 100',
-                        promotionId: '$50FixedProductsAmountAbove100'
+                        promotionId: '$50FixedProductsAmountAbove100',
                     },
                     {
                         calloutMsg: 'Buy one Long Center Seam Skirt and get 2 tops',
-                        promotionId: 'ChoiceOfBonusProdect-ProductLevel-ruleBased'
-                    }
+                        promotionId: 'ChoiceOfBonusProdect-ProductLevel-ruleBased',
+                    },
                 ],
                 shortDescription:
                     "This flirty ruffle cardigan can take you from day to night. Don't leave home with out a great pair of Commerce Cloud Store earrings.",
                 stepQuantity: 1,
                 type: {
-                    master: true
+                    master: true,
                 },
                 validFrom: {
-                    default: '2010-11-18T05:00:00.000Z'
+                    default: '2010-11-18T05:00:00.000Z',
                 },
                 variants: [
                     {
@@ -139,8 +133,8 @@ const mockData = {
                         productId: '701642873211M',
                         variationValues: {
                             color: 'JJ169XX',
-                            size: '9LG'
-                        }
+                            size: '9LG',
+                        },
                     },
                     {
                         orderable: true,
@@ -148,8 +142,8 @@ const mockData = {
                         productId: '701642873334M',
                         variationValues: {
                             color: 'JJ908XX',
-                            size: '9LG'
-                        }
+                            size: '9LG',
+                        },
                     },
                     {
                         orderable: true,
@@ -157,8 +151,8 @@ const mockData = {
                         productId: '701642873297M',
                         variationValues: {
                             color: 'JJ8UTXX',
-                            size: '9LG'
-                        }
+                            size: '9LG',
+                        },
                     },
                     {
                         orderable: true,
@@ -166,8 +160,8 @@ const mockData = {
                         productId: '701642873372M',
                         variationValues: {
                             color: 'JJI15XX',
-                            size: '9LG'
-                        }
+                            size: '9LG',
+                        },
                     },
                     {
                         orderable: true,
@@ -175,8 +169,8 @@ const mockData = {
                         productId: '701642873402M',
                         variationValues: {
                             color: 'JJI15XX',
-                            size: '9XL'
-                        }
+                            size: '9XL',
+                        },
                     },
                     {
                         orderable: true,
@@ -184,8 +178,8 @@ const mockData = {
                         productId: '701642873303M',
                         variationValues: {
                             color: 'JJ8UTXX',
-                            size: '9MD'
-                        }
+                            size: '9MD',
+                        },
                     },
                     {
                         orderable: true,
@@ -193,8 +187,8 @@ const mockData = {
                         productId: '701642873310M',
                         variationValues: {
                             color: 'JJ8UTXX',
-                            size: '9SM'
-                        }
+                            size: '9SM',
+                        },
                     },
                     {
                         orderable: true,
@@ -202,8 +196,8 @@ const mockData = {
                         productId: '701642873228M',
                         variationValues: {
                             color: 'JJ169XX',
-                            size: '9MD'
-                        }
+                            size: '9MD',
+                        },
                     },
                     {
                         orderable: true,
@@ -211,8 +205,8 @@ const mockData = {
                         productId: '701642873235M',
                         variationValues: {
                             color: 'JJ169XX',
-                            size: '9SM'
-                        }
+                            size: '9SM',
+                        },
                     },
                     {
                         orderable: true,
@@ -220,8 +214,8 @@ const mockData = {
                         productId: '701642873396M',
                         variationValues: {
                             color: 'JJI15XX',
-                            size: '9SM'
-                        }
+                            size: '9SM',
+                        },
                     },
                     {
                         orderable: true,
@@ -229,8 +223,8 @@ const mockData = {
                         productId: '701642873389M',
                         variationValues: {
                             color: 'JJI15XX',
-                            size: '9MD'
-                        }
+                            size: '9MD',
+                        },
                     },
                     {
                         orderable: true,
@@ -238,8 +232,8 @@ const mockData = {
                         productId: '701642873327M',
                         variationValues: {
                             color: 'JJ8UTXX',
-                            size: '9XL'
-                        }
+                            size: '9XL',
+                        },
                     },
                     {
                         orderable: true,
@@ -247,8 +241,8 @@ const mockData = {
                         productId: '701642873341M',
                         variationValues: {
                             color: 'JJ908XX',
-                            size: '9MD'
-                        }
+                            size: '9MD',
+                        },
                     },
                     {
                         orderable: true,
@@ -256,8 +250,8 @@ const mockData = {
                         productId: '701642873358M',
                         variationValues: {
                             color: 'JJ908XX',
-                            size: '9SM'
-                        }
+                            size: '9SM',
+                        },
                     },
                     {
                         orderable: true,
@@ -265,8 +259,8 @@ const mockData = {
                         productId: '701642873365M',
                         variationValues: {
                             color: 'JJ908XX',
-                            size: '9XL'
-                        }
+                            size: '9XL',
+                        },
                     },
                     {
                         orderable: true,
@@ -274,9 +268,9 @@ const mockData = {
                         productId: '701642873242M',
                         variationValues: {
                             color: 'JJ169XX',
-                            size: '9XL'
-                        }
-                    }
+                            size: '9XL',
+                        },
+                    },
                 ],
                 variationAttributes: [
                     {
@@ -286,24 +280,24 @@ const mockData = {
                             {
                                 name: 'Black',
                                 orderable: true,
-                                value: 'JJ169XX'
+                                value: 'JJ169XX',
                             },
                             {
                                 name: 'Icy Mint',
                                 orderable: true,
-                                value: 'JJ8UTXX'
+                                value: 'JJ8UTXX',
                             },
                             {
                                 name: 'Grey Heather',
                                 orderable: true,
-                                value: 'JJ908XX'
+                                value: 'JJ908XX',
                             },
                             {
                                 name: 'White',
                                 orderable: true,
-                                value: 'JJI15XX'
-                            }
-                        ]
+                                value: 'JJI15XX',
+                            },
+                        ],
                     },
                     {
                         id: 'size',
@@ -312,37 +306,37 @@ const mockData = {
                             {
                                 name: 'S',
                                 orderable: true,
-                                value: '9SM'
+                                value: '9SM',
                             },
                             {
                                 name: 'M',
                                 orderable: true,
-                                value: '9MD'
+                                value: '9MD',
                             },
                             {
                                 name: 'L',
                                 orderable: true,
-                                value: '9LG'
+                                value: '9LG',
                             },
                             {
                                 name: 'XL',
                                 orderable: true,
-                                value: '9XL'
-                            }
-                        ]
-                    }
+                                value: '9XL',
+                            },
+                        ],
+                    },
                 ],
                 c_isNewtest: true,
-                c_isSale: true
-            }
-        }
+                c_isSale: true,
+            },
+        },
     ],
     event: {},
     id: 'eba7a6682031bfa931949708d7',
     lastModified: '2021-09-14T00:47:12.612Z',
     name: 'PWA wishlist',
     public: false,
-    type: 'wish_list'
+    type: 'wish_list',
 }
 
 jest.mock('../../../hooks/use-wishlist')
@@ -356,7 +350,7 @@ test('Renders wishlist page', () => {
         isInitialized: true,
         isEmpty: false,
         hasDetail: true,
-        items: mockData.customerProductListItems
+        items: mockData.customerProductListItems,
     })
 
     renderWithProviders(<AccountWishlist />)
@@ -371,7 +365,7 @@ test('Can remove item from the wishlist', async () => {
         isEmpty: false,
         hasDetail: true,
         items: mockData.customerProductListItems,
-        removeListItem: removeItemMock
+        removeListItem: removeItemMock,
     })
 
     renderWithProviders(<AccountWishlist />)
@@ -388,7 +382,7 @@ test('renders no wishlist items for empty wishlist', () => {
     useWishlist.mockReturnValue({
         isInitialized: true,
         isEmpty: true,
-        hasDetail: true
+        hasDetail: true,
     })
     renderWithProviders(<AccountWishlist />)
 
@@ -399,7 +393,7 @@ test('renders no wishlist items for empty wishlist', () => {
 test('renders skeleton when product list is loading', () => {
     useWishlist.mockReturnValue({
         isInitialized: false,
-        isEmpty: true
+        isEmpty: true,
     })
 
     renderWithProviders(<AccountWishlist />)

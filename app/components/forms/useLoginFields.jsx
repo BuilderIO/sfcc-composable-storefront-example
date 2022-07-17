@@ -19,29 +19,29 @@ export default function useLoginFields({form: {control, errors}, prefix = ''}) {
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your email address.',
-                    id: 'use_login_fields.error.required_email'
-                })
+                    id: 'use_login_fields.error.required_email',
+                }),
             },
             error: errors[`${prefix}email`],
-            control
+            control,
         },
         password: {
             name: `${prefix}password`,
             label: formatMessage({
                 defaultMessage: 'Password',
-                id: 'use_login_fields.label.password'
+                id: 'use_login_fields.label.password',
             }),
             defaultValue: '',
             type: 'password',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your password.',
-                    id: 'use_login_fields.error.required_password'
-                })
+                    id: 'use_login_fields.error.required_password',
+                }),
             },
             error: errors[`${prefix}password`],
-            control
-        }
+            control,
+        },
     }
 
     return fields

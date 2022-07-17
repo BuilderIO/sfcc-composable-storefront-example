@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
 const SizeRefinements = ({filter, toggleFilter, selectedFilters}) => {
     const styles = useMultiStyleConfig('SwatchGroup', {
         variant: 'square',
-        disabled: false
+        disabled: false,
     })
 
     return (
@@ -50,7 +50,7 @@ SizeRefinements.propTypes = {
     selectedFilterValues: PropTypes.object,
     categoryId: PropTypes.string,
     selectedFilters: PropTypes.array,
-    toggleFilter: PropTypes.func
+    toggleFilter: PropTypes.func,
 }
 
 export default SizeRefinements

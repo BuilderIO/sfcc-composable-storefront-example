@@ -72,29 +72,29 @@ class CommerceAPI {
         const apiConfigs = {
             shopperCustomers: {
                 api: sdk.ShopperCustomers,
-                sendLocale: false
+                sendLocale: false,
             },
             shopperBaskets: {
                 api: ShopperBaskets,
                 sendLocale: false,
-                sendCurrency: ['createBasket']
+                sendCurrency: ['createBasket'],
             },
             shopperGiftCertificates: {
-                api: sdk.ShopperGiftCertificates
+                api: sdk.ShopperGiftCertificates,
             },
             shopperLogin: {api: sdk.ShopperLogin, sendLocale: false},
             shopperOrders: {api: OcapiShopperOrders},
             shopperProducts: {
                 api: sdk.ShopperProducts,
-                sendCurrency: ['getProduct', 'getProducts']
+                sendCurrency: ['getProduct', 'getProducts'],
             },
             shopperPromotions: {
-                api: sdk.ShopperPromotions
+                api: sdk.ShopperPromotions,
             },
             shopperSearch: {
                 api: sdk.ShopperSearch,
-                sendCurrency: ['productSearch', 'getSearchSuggestions']
-            }
+                sendCurrency: ['productSearch', 'getSearchSuggestions'],
+            },
         }
 
         // Instantiate the SDK class proxies and create getters from our api mapping.
@@ -107,7 +107,7 @@ class CommerceAPI {
             self._sdkInstances = {
                 ...self._sdkInstances,
                 [key]: new Proxy(new SdkClass(this._config), {
-                    get: function(obj, prop) {
+                    get: function (obj, prop) {
                         if (typeof obj[prop] === 'function') {
                             return (...args) => {
                                 const fetchOptions = args[0]
@@ -138,7 +138,7 @@ class CommerceAPI {
                                     ...(includeGlobalLocale ? {locale} : {}),
                                     ...(includeGlobalCurrency ? {currency} : {}),
                                     // Allowing individual API calls to override the global locale/currency
-                                    ...fetchOptions.parameters
+                                    ...fetchOptions.parameters,
                                 }
 
                                 return self.willSendRequest(prop, ...args).then((newArgs) => {
@@ -149,13 +149,13 @@ class CommerceAPI {
                             }
                         }
                         return obj[prop]
-                    }
-                })
+                    },
+                }),
             }
             Object.defineProperty(self, key, {
                 get() {
                     return self._sdkInstances[key]
-                }
+                },
             })
         })
         this.getConfig = this.getConfig.bind(this)
@@ -205,7 +205,7 @@ class CommerceAPI {
         const [fetchOptions, ...restParams] = params
         const newFetchOptions = {
             ...fetchOptions,
-            headers: {...fetchOptions.headers, Authorization: this.auth.authToken}
+            headers: {...fetchOptions.headers, Authorization: this.auth.authToken},
         }
         return [newFetchOptions, ...restParams]
     }

@@ -88,7 +88,7 @@ LoginForm.propTypes = {
     submitForm: PropTypes.func,
     clickForgotPassword: PropTypes.func,
     clickCreateAccount: PropTypes.func,
-    form: PropTypes.object
+    form: PropTypes.object,
 }
 
 export default LoginForm

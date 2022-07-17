@@ -11,7 +11,7 @@ import {
     AlertTitle,
     CloseButton,
     Spacer,
-    useToast as useChakraToast
+    useToast as useChakraToast,
 } from '@chakra-ui/react'
 
 /**
@@ -36,7 +36,7 @@ export function useToast() {
         position = 'top-right',
         duration = 5000,
         variant = 'subtle',
-        isClosable = true
+        isClosable = true,
     }) => {
         let toastConfig = {
             title,
@@ -44,7 +44,7 @@ export function useToast() {
             isClosable,
             position,
             duration,
-            variant
+            variant,
         }
 
         if (action) {
@@ -60,7 +60,7 @@ export function useToast() {
                         <Spacer />
                         <CloseButton onClick={onClose} />
                     </Alert>
-                )
+                ),
             }
         }
         toast(toastConfig)

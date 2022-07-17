@@ -50,7 +50,7 @@ DynamicImage.propTypes = {
     /**
      * Override with your chosen image component
      */
-    as: PropTypes.elementType
+    as: PropTypes.elementType,
 }
 
 export default DynamicImage

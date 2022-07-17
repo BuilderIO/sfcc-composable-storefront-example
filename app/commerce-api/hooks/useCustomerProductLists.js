@@ -29,8 +29,8 @@ export default function useCustomerProductLists() {
     const getLists = handleAsyncError(() => {
         return api.shopperCustomers.getCustomerProductLists({
             parameters: {
-                customerId: customer.customerId
-            }
+                customerId: customer.customerId,
+            },
         })
     })
 
@@ -38,11 +38,11 @@ export default function useCustomerProductLists() {
         return api.shopperCustomers.createCustomerProductList({
             body: {
                 type,
-                name
+                name,
             },
             parameters: {
-                customerId: customer.customerId
-            }
+                customerId: customer.customerId,
+            },
         })
     })
 
@@ -50,8 +50,8 @@ export default function useCustomerProductLists() {
         return api.shopperCustomers.getCustomerProductList({
             parameters: {
                 customerId: customer.customerId,
-                listId
-            }
+                listId,
+            },
         })
     })
 
@@ -63,12 +63,12 @@ export default function useCustomerProductLists() {
                 quantity,
                 public: false,
                 priority: 1,
-                type: 'product'
+                type: 'product',
             },
             parameters: {
                 customerId: customer.customerId,
-                listId
-            }
+                listId,
+            },
         })
     })
 
@@ -79,13 +79,13 @@ export default function useCustomerProductLists() {
                 id,
                 quantity,
                 public: false,
-                priority: 1
+                priority: 1,
             },
             parameters: {
                 customerId: customer.customerId,
                 listId: listId,
-                itemId: item.id
-            }
+                itemId: item.id,
+            },
         })
     })
 
@@ -95,8 +95,8 @@ export default function useCustomerProductLists() {
                 parameters: {
                     itemId,
                     listId,
-                    customerId: customer.customerId
-                }
+                    customerId: customer.customerId,
+                },
             },
             true
         )
@@ -260,8 +260,8 @@ export default function useCustomerProductLists() {
                 const productDetails = await api.shopperProducts.getProducts({
                     parameters: {
                         ids: ids.join(','),
-                        allImages: true
-                    }
+                        allImages: true,
+                    },
                 })
                 const result = self.mergeProductDetailsIntoList(list, productDetails)
 
@@ -282,16 +282,16 @@ export default function useCustomerProductLists() {
             mergeProductDetailsIntoList(list, productDetails) {
                 const items = list.customerProductListItems?.map((item) => {
                     const product = {
-                        ...productDetails.data.find((product) => product.id === item.productId)
+                        ...productDetails.data.find((product) => product.id === item.productId),
                     }
                     return {
                         ...item,
-                        product
+                        product,
                     }
                 })
                 return {
                     ...list,
-                    customerProductListItems: items
+                    customerProductListItems: items,
                 }
             },
 
@@ -329,7 +329,7 @@ export default function useCustomerProductLists() {
                 return self
                     .findListById(listId)
                     ?.customerProductListItems?.find((item) => item.productId === productId)
-            }
+            },
         }
     }, [customer.customerId, state])
     return self

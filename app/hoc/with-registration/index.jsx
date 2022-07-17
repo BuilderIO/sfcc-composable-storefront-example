@@ -30,9 +30,9 @@ const withRegistration = (Component) => {
                     showToast({
                         title: formatMessage({
                             defaultMessage: 'Please sign in to continue!',
-                            id: 'with_registration.info.please_sign_in'
+                            id: 'with_registration.info.please_sign_in',
                         }),
-                        status: 'info'
+                        status: 'info',
                     })
                 } else {
                     authModal.onOpen()
@@ -50,7 +50,7 @@ const withRegistration = (Component) => {
         )
     }
     WrappedComponent.propTypes = {
-        onClick: PropTypes.func
+        onClick: PropTypes.func,
     }
     return WrappedComponent
 }

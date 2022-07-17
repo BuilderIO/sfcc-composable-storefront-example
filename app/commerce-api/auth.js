@@ -74,7 +74,7 @@ class Auth {
      */
     static USER_TYPE = {
         REGISTERED: 'registered',
-        GUEST: 'guest'
+        GUEST: 'guest',
     }
 
     /**
@@ -148,7 +148,7 @@ class Auth {
     _saveRefreshToken(token, type) {
         if (type === Auth.USER_TYPE.REGISTERED) {
             this._storage.set(refreshTokenRegisteredStorageKey, token, {
-                expires: REFRESH_TOKEN_COOKIE_AGE
+                expires: REFRESH_TOKEN_COOKIE_AGE,
             })
             this._storage.delete(refreshTokenGuestStorageKey)
             return
@@ -175,9 +175,9 @@ class Auth {
 
         const options = {
             headers: {
-                'Content-Type': `application/x-www-form-urlencoded`
+                'Content-Type': `application/x-www-form-urlencoded`,
             },
-            body: data
+            body: data,
         }
 
         const response = await this._api.shopperLogin.getAccessToken(options)
@@ -208,8 +208,8 @@ class Auth {
             {
                 method: 'POST',
                 headers: {
-                    Authorization: this.authToken
-                }
+                    Authorization: this.authToken,
+                },
             }
         )
     }
@@ -271,8 +271,8 @@ class Auth {
             parameters: {
                 refresh_token: this.refreshToken,
                 client_id: this._config.parameters.clientId,
-                channel_id: this._config.parameters.siteId
-            }
+                channel_id: this._config.parameters.siteId,
+            },
         }
         await this._api.shopperLogin.logoutCustomer(options, true)
         await this._clearAuth()
@@ -287,14 +287,8 @@ class Auth {
      * @param {object} tokenResponse - access_token,id_token,refresh_token, expires_in,token_type, usid, customer_id, enc_user_id, idp_access_token
      */
     _handleShopperLoginTokenResponse(tokenResponse) {
-        const {
-            access_token,
-            refresh_token,
-            customer_id,
-            usid,
-            enc_user_id,
-            id_token
-        } = tokenResponse
+        const {access_token, refresh_token, customer_id, usid, enc_user_id, id_token} =
+            tokenResponse
         this.authToken = `Bearer ${access_token}`
         this.usid = usid
         this.cid = customer_id
@@ -316,7 +310,7 @@ class Auth {
         // we're reusing the same token so we just need to return the customer object already associated with the token
         const customer = {
             authType: this.userType,
-            customerId: this.cid
+            customerId: this.cid,
         }
 
         return customer
@@ -337,15 +331,15 @@ class Auth {
         const options = {
             headers: {
                 Authorization: authorization,
-                'Content-Type': `application/x-www-form-urlencoded`
+                'Content-Type': `application/x-www-form-urlencoded`,
             },
             body: {
                 redirect_uri: `${getAppOrigin()}${slasCallbackEndpoint}`,
                 client_id: this._config.parameters.clientId,
                 code_challenge: codeChallenge,
                 channel_id: this._config.parameters.siteId,
-                usid: this.usid // mergeBasket API requires guest usid to be sent in the authToken
-            }
+                usid: this.usid, // mergeBasket API requires guest usid to be sent in the authToken
+            },
         }
 
         const response = await this._api.shopperLogin.authenticateCustomer(options, true)
@@ -363,7 +357,7 @@ class Auth {
         const {customer_id} = await this.getLoggedInToken(tokenBody)
         const customer = {
             customerId: customer_id,
-            authType: Auth.USER_TYPE.REGISTERED
+            authType: Auth.USER_TYPE.REGISTERED,
         }
 
         return customer
@@ -384,15 +378,15 @@ class Auth {
         const options = {
             headers: {
                 Authorization: '',
-                'Content-Type': `application/x-www-form-urlencoded`
+                'Content-Type': `application/x-www-form-urlencoded`,
             },
             parameters: {
                 redirect_uri: `${getAppOrigin()}${slasCallbackEndpoint}`,
                 client_id: this._config.parameters.clientId,
                 code_challenge: codeChallenge,
                 response_type: 'code',
-                hint: 'guest'
-            }
+                hint: 'guest',
+            },
         }
 
         const response = await this._api.shopperLogin.authorizeCustomer(options, true)
@@ -419,7 +413,7 @@ class Auth {
         // A guest customerId will never return a customer from the customer endpoint
         const customer = {
             authType: Auth.USER_TYPE.GUEST,
-            customerId: customer_id
+            customerId: customer_id,
         }
 
         return customer
@@ -434,8 +428,8 @@ class Auth {
         const loginType = 'guest'
         const options = {
             body: {
-                type: loginType
-            }
+                type: loginType,
+            },
         }
 
         const rawResponse = await this._api.shopperCustomers.authorizeCustomer(options, true)
@@ -455,9 +449,9 @@ class Auth {
 
         const options = {
             headers: {
-                'Content-Type': `application/x-www-form-urlencoded`
+                'Content-Type': `application/x-www-form-urlencoded`,
             },
-            body: data
+            body: data,
         }
         const response = await this._api.shopperLogin.getAccessToken(options)
         // Check for error response before handling the token
@@ -469,7 +463,7 @@ class Auth {
         const {id_token, enc_user_id, customer_id} = response
         let customer = {
             authType: Auth.USER_TYPE.GUEST,
-            customerId: customer_id
+            customerId: customer_id,
         }
         // Determining if registered customer or guest
         if (id_token.length > 0 && enc_user_id.length > 0) {

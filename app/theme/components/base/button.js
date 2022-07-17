@@ -6,7 +6,7 @@
  */
 export default {
     baseStyle: {
-        borderRadius: 'base'
+        borderRadius: 'base',
     },
     variants: {
         solid: (props) =>
@@ -16,7 +16,7 @@ export default {
                       color: 'white',
                       _hover: {bg: 'blue.700', _disabled: {bg: 'blue.300'}},
                       _active: {bg: 'blue.800'},
-                      _disabled: {bg: 'blue.300'}
+                      _disabled: {bg: 'blue.300'},
                   }
                 : {},
         outline: (props) =>
@@ -30,13 +30,13 @@ export default {
             _hover: {bg: 'gray.200'},
             _active: {bg: 'gray.300'},
             paddingLeft: 3,
-            paddingRight: 3
+            paddingRight: 3,
         },
         link: (props) => ({
             color: props.colorScheme === 'red' ? 'red.500' : 'blue.600',
             fontWeight: 'normal',
             minWidth: '1em',
-            lineHeight: 4
+            lineHeight: 4,
         }),
         'menu-link': {
             color: 'black',
@@ -45,8 +45,8 @@ export default {
             _hover: {bg: 'gray.50', textDecoration: 'none'},
             _activeLink: {
                 bg: 'gray.50',
-                textDecoration: 'none'
-            }
+                textDecoration: 'none',
+            },
         },
         'menu-link-mobile': {
             color: 'black',
@@ -55,23 +55,23 @@ export default {
             _hover: {bg: 'gray.50', textDecoration: 'none'},
             _activeLink: {
                 bg: 'gray.100',
-                textDecoration: 'none'
-            }
+                textDecoration: 'none',
+            },
         },
         'search-link': {
             color: 'black',
             justifyContent: 'flex-start',
             fontSize: 'sm',
-            _hover: {textDecoration: 'none'}
-        }
+            _hover: {textDecoration: 'none'},
+        },
     },
     sizes: {
         md: {
             height: 11,
-            minWidth: 11
-        }
+            minWidth: 11,
+        },
     },
     defaultProps: {
-        colorScheme: 'blue'
-    }
+        colorScheme: 'blue',
+    },
 }

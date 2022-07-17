@@ -22,7 +22,7 @@ const mockRegisteredCustomer = {
     email: 'customer@test.com',
     firstName: 'Tester',
     lastName: 'Testing',
-    login: 'customer@test.com'
+    login: 'customer@test.com',
 }
 
 const mockLogin = jest.fn()
@@ -36,7 +36,7 @@ jest.mock('../commerce-api/auth', () => {
             }),
             getLoggedInToken: jest.fn().mockImplementation(async () => {
                 return {customer_id: 'mockcustomerid'}
-            })
+            }),
         }
     })
 })
@@ -50,7 +50,7 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 return {
                     access_token: 'accesstoken',
                     refresh_token: 'refreshtoken',
-                    customer_id: 'customerId'
+                    customer_id: 'customerId',
                 }
             }
             authenticateCustomer() {
@@ -65,7 +65,7 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 if (args.parameters.customerId === 'customerid') {
                     return {
                         authType: 'guest',
-                        customerId: 'customerid'
+                        customerId: 'customerid',
                     }
                 }
                 return mockRegisteredCustomer
@@ -75,12 +75,12 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     headers: {
                         get(key) {
                             return {authorization: 'guestToken'}[key]
-                        }
+                        },
                     },
                     json: async () => ({
                         authType: 'guest',
-                        customerId: 'customerid'
-                    })
+                        customerId: 'customerid',
+                    }),
                 }
             }
             async getResetPasswordToken() {
@@ -88,10 +88,10 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     email: 'foo@test.com',
                     expiresInMinutes: 10,
                     login: 'foo@test.com',
-                    resetToken: 'testresettoken'
+                    resetToken: 'testresettoken',
                 }
             }
-        }
+        },
     }
 })
 
@@ -105,15 +105,15 @@ jest.mock('../commerce-api/utils', () => {
             code: 'test',
             usid: 'test',
             codeVerifier: 'test',
-            redirectUri: 'http://localhost/test'
-        })
+            redirectUri: 'http://localhost/test',
+        }),
     }
 })
 
 jest.mock('../commerce-api/pkce', () => {
     return {
         createCodeVerifier: jest.fn().mockReturnValue('codeverifier'),
-        generateCodeChallenge: jest.fn().mockReturnValue('codechallenge')
+        generateCodeChallenge: jest.fn().mockReturnValue('codechallenge'),
     }
 })
 
@@ -122,7 +122,7 @@ const MockedComponent = (props) => {
     const {initialView} = props
     authModal = initialView ? useAuthModal(initialView) : useAuthModal()
     const match = {
-        params: {pageName: 'profile'}
+        params: {pageName: 'profile'},
     }
     return (
         <Router>
@@ -135,7 +135,7 @@ const MockedComponent = (props) => {
     )
 }
 MockedComponent.propTypes = {
-    initialView: PropTypes.string
+    initialView: PropTypes.string,
 }
 
 // Set up and clean up

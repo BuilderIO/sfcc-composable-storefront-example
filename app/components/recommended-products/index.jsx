@@ -20,7 +20,7 @@ import {
     API_ERROR_MESSAGE,
     TOAST_ACTION_VIEW_WISHLIST,
     TOAST_MESSAGE_ADDED_TO_WISHLIST,
-    TOAST_MESSAGE_REMOVED_FROM_WISHLIST
+    TOAST_MESSAGE_REMOVED_FROM_WISHLIST,
 } from '../../constants'
 
 /**
@@ -35,7 +35,7 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
         getZoneRecommendations,
         getRecommendations,
         sendClickReco,
-        sendViewReco
+        sendViewReco,
     } = useEinstein()
     const {isInitialized} = useCustomer()
     const wishlist = useWishlist()
@@ -98,7 +98,7 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
             sendViewReco(
                 {
                     recommenderName: recommendations.recommenderName,
-                    __recoUUID: recommendations.recoUUID
+                    __recoUUID: recommendations.recoUUID,
                 },
                 recommendations.recs.map((rec) => ({id: rec.id}))
             )
@@ -121,7 +121,7 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
         try {
             await wishlist.createListItem({
                 id: product.productId,
-                quantity: 1
+                quantity: 1,
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -135,12 +135,12 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                )
+                ),
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error'
+                status: 'error',
             })
         }
     }
@@ -152,12 +152,12 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
             toast({
                 title: formatMessage(TOAST_MESSAGE_REMOVED_FROM_WISHLIST),
                 status: 'success',
-                id: product.productId
+                id: product.productId,
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error'
+                status: 'error',
             })
         }
     }
@@ -173,7 +173,7 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
                     sendClickReco(
                         {
                             recommenderName: recommendations.recommenderName,
-                            __recoUUID: recommendations.recoUUID
+                            __recoUUID: recommendations.recoUUID,
                         },
                         product
                     )
@@ -183,7 +183,7 @@ const RecommendedProducts = ({zone, recommender, products, title, shouldFetch, .
                 onFavouriteToggle: (isFavourite) => {
                     const action = isFavourite ? addItemToWishlist : removeItemFromWishlist
                     return action(product)
-                }
+                },
             })}
             {...props}
         />
@@ -204,7 +204,7 @@ RecommendedProducts.propTypes = {
     products: PropTypes.arrayOf(PropTypes.string),
 
     /* Callback to determine if the component should fetch results */
-    shouldFetch: PropTypes.func
+    shouldFetch: PropTypes.func,
 }
 
 export default RecommendedProducts

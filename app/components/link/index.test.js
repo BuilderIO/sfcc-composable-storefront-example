@@ -12,7 +12,7 @@ import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
 const originalLocation = window.location
 jest.mock('pwa-kit-runtime/utils/ssr-config', () => {
     return {
-        getConfig: jest.fn()
+        getConfig: jest.fn(),
     }
 })
 
@@ -28,7 +28,7 @@ test('renders a link with locale prepended', () => {
     delete window.location
     window.location = new URL('/us/en-US', 'https://www.example.com')
     const {getByText} = renderWithProviders(<Link href="/mypage">My Page</Link>, {
-        wrapperProps: {locale: 'en-US'}
+        wrapperProps: {locale: 'en-US'},
     })
     expect(getByText(/My Page/i)).toHaveAttribute('href', '/us/en-US/mypage')
 })
@@ -41,15 +41,15 @@ test('renders a link with locale and site as query param', () => {
             url: {
                 site: 'query_param',
                 locale: 'query_param',
-                showDefaults: true
-            }
-        }
+                showDefaults: true,
+            },
+        },
     }
     getConfig.mockImplementation(() => newConfig)
     delete window.location
     window.location = new URL('https://www.example.com/women/dresses?site=us&locale=en-US')
     const {getByText} = renderWithProviders(<Link href="/mypage">My Page</Link>, {
-        wrapperProps: {locale: 'en-US'}
+        wrapperProps: {locale: 'en-US'},
     })
 
     expect(getByText(/My Page/i)).toHaveAttribute('href', `/mypage?site=us&locale=en-US`)
@@ -60,7 +60,7 @@ test('accepts `to` prop as well', () => {
     delete window.location
     window.location = new URL('us/en-US', 'https://www.example.com')
     const {getByText} = renderWithProviders(<Link to="/mypage">My Page</Link>, {
-        wrapperProps: {locale: 'en-US'}
+        wrapperProps: {locale: 'en-US'},
     })
     expect(getByText(/My Page/i)).toHaveAttribute('href', '/us/en-US/mypage')
 })

@@ -23,7 +23,7 @@ const mockSetCategories = jest.fn().mockImplementation((categories) => {
 
 const mockUseContext = jest.fn().mockImplementation(() => ({
     categories: {},
-    setCategories: mockSetCategories
+    setCategories: mockSetCategories,
 }))
 
 React.useContext = mockUseContext

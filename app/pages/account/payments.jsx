@@ -23,7 +23,7 @@ import {
     Text,
 
     // Hooks
-    useToast
+    useToast,
 } from '@chakra-ui/react'
 import {createCreditCardPaymentBodyFromForm, getCreditCardIcon} from '../../utils/cc-utils'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
@@ -49,7 +49,7 @@ const CardPaymentForm = ({hasSavedPayments, form, submitForm, toggleEdit}) => {
                 paddingY: 6,
                 rounded: 'base',
                 border: '1px solid',
-                borderColor: 'blue.600'
+                borderColor: 'blue.600',
             })}
         >
             {form.formState.isSubmitting && <LoadingSpinner />}
@@ -87,7 +87,7 @@ CardPaymentForm.propTypes = {
     form: PropTypes.object,
     hasSavedPayments: PropTypes.bool,
     submitForm: PropTypes.func,
-    toggleEdit: PropTypes.func
+    toggleEdit: PropTypes.func,
 }
 
 const AccountPaymentMethods = () => {
@@ -96,7 +96,7 @@ const AccountPaymentMethods = () => {
         isRegistered,
         paymentInstruments,
         addSavedPaymentInstrument,
-        removeSavedPaymentInstrument
+        removeSavedPaymentInstrument,
     } = useCustomer()
     const [isEditing, setIsEditing] = useState(false)
     const toast = useToast()
@@ -113,10 +113,10 @@ const AccountPaymentMethods = () => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'New Payment Method Saved',
-                    id: 'account_payment_methods.info.new_method_saved'
+                    id: 'account_payment_methods.info.new_method_saved',
                 }),
                 status: 'success',
-                isClosable: true
+                isClosable: true,
             })
         } catch (error) {
             form.setError('global', {type: 'manual', message: error.message})
@@ -248,15 +248,15 @@ const AccountPaymentMethods = () => {
                     icon={<PaymentIcon boxSize={8} />}
                     heading={formatMessage({
                         defaultMessage: 'No Saved Payment Methods',
-                        id: 'account_payment_methods.heading.no_saved_methods'
+                        id: 'account_payment_methods.heading.no_saved_methods',
                     })}
                     text={formatMessage({
                         defaultMessage: 'Add a new payment method for faster checkout.',
-                        id: 'account_payment_methods.description.add_method_for_faster_checkout'
+                        id: 'account_payment_methods.description.add_method_for_faster_checkout',
                     })}
                     buttonText={formatMessage({
                         defaultMessage: 'Add Payment Method',
-                        id: 'account_payment_methods.button.add_method'
+                        id: 'account_payment_methods.button.add_method',
                     })}
                     onButtonClick={toggleEdit}
                 />

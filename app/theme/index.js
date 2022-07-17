@@ -97,8 +97,8 @@ const overrides = {
         Pagination,
         ProductTile,
         SwatchGroup,
-        ImageGallery
-    }
+        ImageGallery,
+    },
 }
 
 export default extendTheme(overrides)

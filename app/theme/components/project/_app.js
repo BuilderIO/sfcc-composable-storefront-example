@@ -13,13 +13,13 @@ export default {
             display: 'flex',
             flexDirection: 'column',
             backgroundColor: 'white',
-            minWidth: '375px'
+            minWidth: '375px',
         },
         headerWrapper: {
             position: 'sticky',
             top: 0,
-            zIndex: theme.zIndices.sticky
-        }
+            zIndex: theme.zIndices.sticky,
+        },
     },
-    parts: ['container']
+    parts: ['container'],
 }

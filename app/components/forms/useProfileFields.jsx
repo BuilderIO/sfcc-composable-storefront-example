@@ -15,35 +15,35 @@ export default function useProfileFields({form: {control, errors}, prefix = ''})
             name: `${prefix}firstName`,
             label: formatMessage({
                 defaultMessage: 'First Name',
-                id: 'use_profile_fields.label.first_name'
+                id: 'use_profile_fields.label.first_name',
             }),
             type: 'text',
             defaultValue: '',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your first name.',
-                    id: 'use_profile_fields.error.required_first_name'
-                })
+                    id: 'use_profile_fields.error.required_first_name',
+                }),
             },
             error: errors[`${prefix}firstName`],
-            control
+            control,
         },
         lastName: {
             name: `${prefix}lastName`,
             label: formatMessage({
                 defaultMessage: 'Last Name',
-                id: 'use_profile_fields.label.last_name'
+                id: 'use_profile_fields.label.last_name',
             }),
             type: 'text',
             defaultValue: '',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your last name.',
-                    id: 'use_profile_fields.error.required_last_name'
-                })
+                    id: 'use_profile_fields.error.required_last_name',
+                }),
             },
             error: errors[`${prefix}lastName`],
-            control
+            control,
         },
         email: {
             name: `${prefix}email`,
@@ -54,34 +54,34 @@ export default function useProfileFields({form: {control, errors}, prefix = ''})
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter a valid email address.',
-                    id: 'use_profile_fields.error.required_email'
-                })
+                    id: 'use_profile_fields.error.required_email',
+                }),
             },
             error: errors[`${prefix}email`],
-            control
+            control,
         },
         phone: {
             name: `${prefix}phone`,
             label: formatMessage({
                 defaultMessage: 'Phone Number',
-                id: 'use_profile_fields.label.phone'
+                id: 'use_profile_fields.label.phone',
             }),
             defaultValue: '',
             type: 'text',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your phone number.',
-                    id: 'use_profile_fields.error.required_phone'
-                })
+                    id: 'use_profile_fields.error.required_phone',
+                }),
             },
             error: errors[`${prefix}phone`],
             inputProps: ({onChange}) => ({
                 onChange(evt) {
                     onChange(formatPhoneNumber(evt.target.value))
-                }
+                },
             }),
-            control
-        }
+            control,
+        },
     }
 
     return fields

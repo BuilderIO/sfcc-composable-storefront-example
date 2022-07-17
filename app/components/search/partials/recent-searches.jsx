@@ -70,7 +70,7 @@ const RecentSearches = ({recentSearches, closeAndNavigate}) => {
 
 RecentSearches.propTypes = {
     recentSearches: PropTypes.array,
-    closeAndNavigate: PropTypes.func
+    closeAndNavigate: PropTypes.func,
 }
 
 export default RecentSearches

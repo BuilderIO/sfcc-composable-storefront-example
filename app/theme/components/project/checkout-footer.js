@@ -16,7 +16,7 @@ export default {
         'bottomHalf',
         'copyright',
         'creditCardIcon',
-        'customerService'
+        'customerService',
     ],
     baseStyle: {
         container: baseStyle.container,
@@ -26,10 +26,10 @@ export default {
         copyright: baseStyle.copyright,
         creditCardIcon: {
             width: '38px',
-            height: '22px'
+            height: '22px',
         },
         customerService: {
-            marginBottom: 6
-        }
-    }
+            marginBottom: 6,
+        },
+    },
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import ProductView from '../../../partials/product-view'
 import useBasket from '../../../commerce-api/hooks/useBasket'
@@ -8,41 +8,43 @@ import {useIntl} from 'react-intl'
 import {
     API_ERROR_MESSAGE,
     TOAST_ACTION_VIEW_WISHLIST,
-    TOAST_MESSAGE_ADDED_TO_WISHLIST
+    TOAST_MESSAGE_ADDED_TO_WISHLIST,
 } from '../../../constants'
 import useWishlist from '../../../hooks/use-wishlist'
 import {Button} from '@chakra-ui/react'
-import { useCommerceAPI } from '../../../commerce-api/contexts'
+import {useCommerceAPI} from '../../../commerce-api/contexts'
 
 export function ProductBox({productRef, initialCategory}) {
     const {formatMessage} = useIntl()
     const basket = useBasket()
     const toast = useToast()
     const navigate = useNavigation()
-    const [productObject, setProductObject] = useState(productRef?.data);
-    const [category, setCategory] = useState(initialCategory);
-    const  [isLoading , setIsloading] = useState(!productObject);
+    const [productObject, setProductObject] = useState(productRef?.data)
+    const [category, setCategory] = useState(initialCategory)
+    const [isLoading, setIsloading] = useState(!productObject)
 
-    const api = useCommerceAPI();
+    const api = useCommerceAPI()
     useEffect(() => {
         async function fetchProduct() {
             if (productObject?.id !== productRef?.options.product) {
                 setIsloading(true)
-                const result = productRef.data || await api.shopperProducts.getProduct({
-                    parameters: {
-                        id: productRef?.options.product,
-                        allImages: true
-                    }
-                })
-            if (result?.primaryCategoryId) {
-                const categoryRes = await api.shopperProducts.getCategory({
-                    parameters: {id: result?.primaryCategoryId, levels: 1}
-                });
-                setCategory(categoryRes)
+                const result =
+                    productRef.data ||
+                    (await api.shopperProducts.getProduct({
+                        parameters: {
+                            id: productRef?.options.product,
+                            allImages: true,
+                        },
+                    }))
+                if (result?.primaryCategoryId) {
+                    const categoryRes = await api.shopperProducts.getCategory({
+                        parameters: {id: result?.primaryCategoryId, levels: 1},
+                    })
+                    setCategory(categoryRes)
+                }
+                setProductObject(result)
+                setIsloading(false)
             }
-              setProductObject(result);
-              setIsloading(false)
-            }    
         }
         fetchProduct()
     }, [productRef])
@@ -51,7 +53,7 @@ export function ProductBox({productRef, initialCategory}) {
     const showError = () => {
         showToast({
             title: formatMessage(API_ERROR_MESSAGE),
-            status: 'error'
+            status: 'error',
         })
     }
     const handleAddToCart = async (variant, quantity) => {
@@ -63,8 +65,8 @@ export function ProductBox({productRef, initialCategory}) {
                 {
                     productId: variant.productId,
                     quantity,
-                    price: variant.price
-                }
+                    price: variant.price,
+                },
             ]
 
             await basket.addItemToBasket(productItems)
@@ -78,8 +80,8 @@ export function ProductBox({productRef, initialCategory}) {
     const handleAddToWishlist = async (quantity) => {
         try {
             await wishlist.createListItem({
-                id: productObj.id,
-                quantity
+                id: productObject.id,
+                quantity,
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -93,12 +95,12 @@ export function ProductBox({productRef, initialCategory}) {
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                )
+                ),
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error'
+                status: 'error',
             })
         }
     }
@@ -120,6 +122,7 @@ ProductBox.propTypes = {
     /** product id */
     productRef: PropTypes.object,
     productObj: PropTypes.object,
+    initialCategory: PropTypes.object,
 }
 
 export default ProductBox

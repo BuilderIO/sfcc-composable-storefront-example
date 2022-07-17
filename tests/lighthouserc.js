@@ -15,13 +15,13 @@ module.exports = {
                 'http://localhost:3000/',
                 'http://localhost:3000/global/en-GB/category/womens',
                 'http://localhost:3000/global/en-GB/product/25493613M',
-                'http://localhost:3000/global/en-GB/search?q=suit'
+                'http://localhost:3000/global/en-GB/search?q=suit',
             ],
             startServerReadyPattern: 'First build complete',
-            startServerReadyTimeout: 90000
+            startServerReadyTimeout: 90000,
         },
         upload: {
-            target: 'temporary-public-storage'
+            target: 'temporary-public-storage',
         },
         assert: {
             aggregationMethod: 'median',
@@ -30,8 +30,8 @@ module.exports = {
                 'categories:performance': ['error', {minScore: 0.3}],
                 'categories:pwa': ['error', {minScore: 0.9}],
                 'categories:seo': ['error', {minScore: 0.85}],
-                'categories:accessibility': ['error', {minScore: 0.88}]
-            }
-        }
-    }
+                'categories:accessibility': ['error', {minScore: 0.88}],
+            },
+        },
+    },
 }

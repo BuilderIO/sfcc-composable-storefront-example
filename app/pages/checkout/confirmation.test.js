@@ -28,11 +28,11 @@ jest.mock('../../commerce-api/auth', () => {
 
 const mockOrder = keysToCamel({
     basket_id: 'testorderbasket',
-    ...ocapiOrderResponse
+    ...ocapiOrderResponse,
 })
 
 const mockBasketOrder = {
-    baskets: [mockOrder]
+    baskets: [mockOrder],
 }
 
 jest.mock('commerce-sdk-isomorphic', () => {
@@ -43,7 +43,7 @@ jest.mock('commerce-sdk-isomorphic', () => {
             async getCustomer() {
                 return {
                     authType: 'guest',
-                    customerId: 'customerid'
+                    customerId: 'customerid',
                 }
             }
 
@@ -52,12 +52,12 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     headers: {
                         get(key) {
                             return {authorization: 'guestToken'}[key]
-                        }
+                        },
                     },
                     json: async () => ({
                         authType: 'guest',
-                        customerId: 'customerid'
-                    })
+                        customerId: 'customerid',
+                    }),
                 }
             }
 
@@ -80,11 +80,11 @@ jest.mock('commerce-sdk-isomorphic', () => {
                                             alt: 'alttext',
                                             disBaseLink: '/image',
                                             link: '/image',
-                                            title: 'simpleproduct'
-                                        }
+                                            title: 'simpleproduct',
+                                        },
                                     ],
-                                    viewType: 'small'
-                                }
+                                    viewType: 'small',
+                                },
                             ],
                             name: 'Simple Product',
 
@@ -98,14 +98,14 @@ jest.mock('commerce-sdk-isomorphic', () => {
                                         {
                                             name: 'Grey Heather Multi',
                                             orderable: true,
-                                            value: 'JJ1MCE6'
+                                            value: 'JJ1MCE6',
                                         },
                                         {
                                             name: 'Begonia Multi',
                                             orderable: true,
-                                            value: 'JJHL3XX'
-                                        }
-                                    ]
+                                            value: 'JJHL3XX',
+                                        },
+                                    ],
                                 },
                                 {
                                     id: 'size',
@@ -114,35 +114,35 @@ jest.mock('commerce-sdk-isomorphic', () => {
                                         {
                                             name: 'S',
                                             orderable: true,
-                                            value: '9SM'
+                                            value: '9SM',
                                         },
                                         {
                                             name: 'M',
                                             orderable: true,
-                                            value: '9MD'
+                                            value: '9MD',
                                         },
                                         {
                                             name: 'L',
                                             orderable: true,
-                                            value: '9LG'
+                                            value: '9LG',
                                         },
                                         {
                                             name: 'XL',
                                             orderable: true,
-                                            value: '9XL'
-                                        }
-                                    ]
-                                }
+                                            value: '9XL',
+                                        },
+                                    ],
+                                },
                             ],
                             variationValues: {
                                 color: 'JJ1MCE6',
-                                size: '9MD'
-                            }
-                        }
-                    ]
+                                size: '9MD',
+                            },
+                        },
+                    ],
                 }
             }
-        }
+        },
     }
 })
 
@@ -150,7 +150,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true)
+        isTokenValid: jest.fn().mockReturnValue(true),
     }
 })
 
@@ -187,7 +187,7 @@ const server = setupMockServer(
             firstName: 'John',
             lastModified: '2021-05-03T07:04:56.572Z',
             lastName: 'Smith',
-            login: 'test3@foo.com'
+            login: 'test3@foo.com',
         }
         return res(ctx.json(successfulAccountCreation))
     })
@@ -249,9 +249,8 @@ test('Create Account form - renders error message', async () => {
         rest.post('*/customers', (_, res, ctx) => {
             const failedAccountCreation = {
                 title: 'Login Already In Use',
-                type:
-                    'https://api.commercecloud.salesforce.com/documentation/error/v1/errors/login-already-in-use',
-                detail: 'The login is already in use.'
+                type: 'https://api.commercecloud.salesforce.com/documentation/error/v1/errors/login-already-in-use',
+                detail: 'The login is already in use.',
             }
             return res(ctx.json(failedAccountCreation))
         })

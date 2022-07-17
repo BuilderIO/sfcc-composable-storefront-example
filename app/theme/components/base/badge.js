@@ -19,7 +19,7 @@ export default {
             backgroundColor: 'blue.500',
             border: '1px solid',
             borderColor: 'white',
-            borderRadius: 'full'
-        }
-    }
+            borderRadius: 'full',
+        },
+    },
 }

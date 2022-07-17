@@ -19,7 +19,7 @@ import {
     Text,
 
     // Hooks
-    useStyleConfig
+    useStyleConfig,
 } from '@chakra-ui/react'
 
 // Icons
@@ -65,7 +65,7 @@ const Pagination = (props) => {
                 <Text>
                     {intl.formatMessage({
                         id: 'pagination.link.prev',
-                        defaultMessage: 'Prev'
+                        defaultMessage: 'Prev',
                     })}
                 </Text>
             </Button>
@@ -91,7 +91,7 @@ const Pagination = (props) => {
                     {intl.formatMessage(
                         {
                             id: 'pagination.field.num_of_pages',
-                            defaultMessage: 'of {numOfPages}'
+                            defaultMessage: 'of {numOfPages}',
                         },
                         {numOfPages: urls.length}
                     )}
@@ -113,7 +113,7 @@ const Pagination = (props) => {
                 <Text>
                     {intl.formatMessage({
                         id: 'pagination.link.next',
-                        defaultMessage: 'Next'
+                        defaultMessage: 'Next',
                     })}
                 </Text>
                 <ChevronRightIcon />
@@ -132,7 +132,7 @@ Pagination.propTypes = {
     /**
      * The URL representing the current page
      */
-    currentURL: PropTypes.string
+    currentURL: PropTypes.string,
 }
 
 export default Pagination

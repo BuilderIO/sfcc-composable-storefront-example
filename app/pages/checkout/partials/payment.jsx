@@ -27,7 +27,7 @@ const Payment = () => {
         selectedBillingAddress,
         selectedPayment,
         getPaymentMethods,
-        removePayment
+        removePayment,
     } = useCheckout()
 
     const {
@@ -35,7 +35,7 @@ const Payment = () => {
         billingAddressForm,
         billingSameAsShipping,
         setBillingSameAsShipping,
-        reviewOrder
+        reviewOrder,
     } = usePaymentForms()
 
     const {removePromoCode, ...promoCodeProps} = usePromoCode()

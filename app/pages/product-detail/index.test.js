@@ -22,7 +22,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true)
+        isTokenValid: jest.fn().mockReturnValue(true),
     }
 })
 

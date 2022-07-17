@@ -20,21 +20,21 @@ import {API_ERROR_MESSAGE} from '../../../../constants'
 export const REMOVE_WISHLIST_ITEM_CONFIRMATION_DIALOG_CONFIG = {
     dialogTitle: defineMessage({
         defaultMessage: 'Confirm Remove Item',
-        id: 'confirmation_modal.remove_wishlist_item.title.confirm_remove'
+        id: 'confirmation_modal.remove_wishlist_item.title.confirm_remove',
     }),
     confirmationMessage: defineMessage({
         defaultMessage: 'Are you sure you want to remove this item from your wishlist?',
-        id: 'confirmation_modal.remove_wishlist_item.message.sure_to_remove'
+        id: 'confirmation_modal.remove_wishlist_item.message.sure_to_remove',
     }),
     primaryActionLabel: defineMessage({
         defaultMessage: 'Yes, remove item',
-        id: 'confirmation_modal.remove_wishlist_item.action.yes'
+        id: 'confirmation_modal.remove_wishlist_item.action.yes',
     }),
     alternateActionLabel: defineMessage({
         defaultMessage: 'No, keep item',
-        id: 'confirmation_modal.remove_wishlist_item.action.no'
+        id: 'confirmation_modal.remove_wishlist_item.action.no',
     }),
-    onPrimaryAction: noop
+    onPrimaryAction: noop,
 }
 
 /**
@@ -59,14 +59,14 @@ const WishlistSecondaryButtonGroup = ({productListItemId, onClick = noop}) => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'Item removed from wishlist',
-                    id: 'wishlist_secondary_button_group.info.item_removed'
+                    id: 'wishlist_secondary_button_group.info.item_removed',
                 }),
-                status: 'success'
+                status: 'success',
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error'
+                status: 'error',
             })
         }
         onClick('')
@@ -102,7 +102,7 @@ const WishlistSecondaryButtonGroup = ({productListItemId, onClick = noop}) => {
 
 WishlistSecondaryButtonGroup.propTypes = {
     productListItemId: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
 }
 
 export default WishlistSecondaryButtonGroup

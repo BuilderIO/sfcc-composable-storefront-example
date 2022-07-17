@@ -8,7 +8,7 @@ export default {
     baseStyle: {
         container: {style: {alignItems: 'baseline'}},
         label: {
-            width: 'full'
+            width: 'full',
         },
         control: {
             marginTop: '2px',
@@ -17,14 +17,14 @@ export default {
                 borderColor: 'blue.600',
                 _hover: {
                     bg: 'blue.700',
-                    borderColor: 'blue.700'
-                }
-            }
-        }
+                    borderColor: 'blue.700',
+                },
+            },
+        },
     },
     sizes: {
         md: {
-            label: {fontSize: 'sm'}
-        }
-    }
+            label: {fontSize: 'sm'},
+        },
+    },
 }

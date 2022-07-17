@@ -17,12 +17,12 @@ export default {
         'bottomHalf',
         'horizontalRule',
         'copyright',
-        'socialIcons'
+        'socialIcons',
     ],
     baseStyle: {
         container: {
             width: 'full',
-            background: 'gray.900'
+            background: 'gray.900',
         },
         content: {
             maxWidth: 'container.xxl',
@@ -32,53 +32,53 @@ export default {
             paddingTop: {base: 8, lg: 10},
             paddingBottom: 8,
             paddingLeft: [4, 4, 6, 8],
-            paddingRight: [4, 4, 6, 8]
+            paddingRight: [4, 4, 6, 8],
         },
         subscribe: {
-            maxWidth: {base: '21.5rem', lg: 'none'}
+            maxWidth: {base: '21.5rem', lg: 'none'},
         },
         subscribeField: {
             background: 'white',
-            color: 'gray.900'
+            color: 'gray.900',
         },
         subscribeButtonContainer: {
-            width: 'auto'
+            width: 'auto',
         },
         subscribeHeading: {
             fontSize: 'md',
-            marginBottom: 2
+            marginBottom: 2,
         },
         subscribeMessage: {
             fontSize: 'sm',
-            marginBottom: 4
+            marginBottom: 4,
         },
         localeSelector: {
             display: 'inline-block',
-            marginTop: 8
+            marginTop: 8,
         },
         localeDropdown: {
             background: 'gray.800',
             _hover: {
-                background: 'whiteAlpha.500'
-            }
+                background: 'whiteAlpha.500',
+            },
         },
         localeDropdownOption: {
-            color: 'black'
+            color: 'black',
         },
         bottomHalf: {
-            maxWidth: {base: '34.5rem', lg: '100%'}
+            maxWidth: {base: '34.5rem', lg: '100%'},
         },
         horizontalRule: {
             marginTop: 4,
-            marginBottom: 4
+            marginBottom: 4,
         },
         copyright: {
             fontSize: 'sm',
             marginBottom: 6,
-            color: 'gray.50'
+            color: 'gray.50',
         },
         socialIcons: {
-            marginTop: 4
-        }
-    }
+            marginTop: 4,
+        },
+    },
 }

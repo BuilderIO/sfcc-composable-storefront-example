@@ -25,15 +25,15 @@ module.exports = {
                 clientId: '1d763261-6522-4913-9d52-5d947d3b94c4',
                 organizationId: 'f_ecom_zzte_053',
                 shortCode: 'kv7kzm78',
-                siteId: 'RefArch'
-            }
+                siteId: 'RefArch',
+            },
         },
         // Einstein api config
         einsteinAPI: {
             proxyPath: `/mobify/proxy/einstein`,
             einsteinId: '1ea06c6e-c936-4324-bcf0-fada93f83bb1',
-            siteId: 'aaij-MobileFirst'
-        }
+            siteId: 'aaij-MobileFirst',
+        },
     },
     // This list contains server-side only libraries that you don't want to be compiled by webpack
     externals: [],
@@ -41,17 +41,17 @@ module.exports = {
     pageNotFoundURL: '/page-not-found',
     // Enables or disables building the files necessary for server-side rendering.
     ssrEnabled: true,
-    // This list determines which files are available exclusively to the server-side rendering system 
+    // This list determines which files are available exclusively to the server-side rendering system
     // and are not available through the /mobify/bundle/ path.
     ssrOnly: ['ssr.js', 'ssr.js.map', 'node_modules/**/*.*'],
-    // This list determines which files are available to the server-side rendering system 
+    // This list determines which files are available to the server-side rendering system
     // and available through the /mobify/bundle/ path.
     ssrShared: [
         'static/ico/favicon.ico',
         'static/robots.txt',
         '**/*.js',
         '**/*.js.map',
-        '**/*.json'
+        '**/*.json',
     ],
     // Additional parameters that configure Express app behavior.
     ssrParameters: {
@@ -59,16 +59,16 @@ module.exports = {
         proxyConfigs: [
             {
                 host: 'kv7kzm78.api.commercecloud.salesforce.com',
-                path: 'api'
+                path: 'api',
             },
             {
                 host: 'zzte-053.sandbox.us02.dx.commercecloud.salesforce.com',
-                path: 'ocapi'
+                path: 'ocapi',
             },
             {
                 host: 'api.cquotient.com',
-                path: 'einstein'
-            }
-        ]
-    }
+                path: 'einstein',
+            },
+        ],
+    },
 }

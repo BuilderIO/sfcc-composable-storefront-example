@@ -34,7 +34,7 @@ const PricePerItem = ({currency, basket, basePrice}) => {
 PricePerItem.propTypes = {
     currency: PropTypes.string,
     basket: PropTypes.object,
-    basePrice: PropTypes.string
+    basePrice: PropTypes.string,
 }
 
 /**
@@ -103,7 +103,7 @@ const ItemPrice = ({currency, align = 'right', baseDirection = 'column', ...prop
 ItemPrice.propTypes = {
     currency: PropTypes.string,
     align: PropTypes.string,
-    baseDirection: PropTypes.string
+    baseDirection: PropTypes.string,
 }
 
 export default ItemPrice

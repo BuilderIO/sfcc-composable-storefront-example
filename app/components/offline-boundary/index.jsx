@@ -21,7 +21,7 @@ class OfflineBoundary extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            chunkLoadError: false
+            chunkLoadError: false,
         }
     }
 
@@ -97,7 +97,7 @@ class OfflineBoundary extends React.Component {
 OfflineBoundary.propTypes = {
     isOnline: PropTypes.bool.isRequired,
     location: PropTypes.object,
-    children: PropTypes.node
+    children: PropTypes.node,
 }
 
 export {OfflineBoundary as UnwrappedOfflineBoundary}

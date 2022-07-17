@@ -16,6 +16,6 @@ export const validatePassword = (value) => {
         hasUppercase: value && /[A-Z]/.test(value) ? true : false,
         hasLowercase: value && /[a-z]/.test(value) ? true : false,
         hasNumber: value && /\d/.test(value) ? true : false,
-        hasSpecialChar: value && /[!@#$%^&*(),.?":{}|<>]/.test(value) ? true : false
+        hasSpecialChar: value && /[!@#$%^&*(),.?":{}|<>]/.test(value) ? true : false,
     }
 }

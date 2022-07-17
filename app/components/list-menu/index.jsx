@@ -29,7 +29,7 @@ import {
 
     // Hooks
     useTheme,
-    useDisclosure
+    useDisclosure,
 } from '@chakra-ui/react'
 import Link from '../link'
 // Others
@@ -52,7 +52,7 @@ const ListMenuTrigger = ({item, name, isOpen, onOpen, onClose, hasItems}) => {
 
     const keyMap = {
         Escape: () => onClose(),
-        Enter: () => onOpen()
+        Enter: () => onOpen(),
     }
 
     return (
@@ -93,7 +93,7 @@ ListMenuTrigger.propTypes = {
     isOpen: PropTypes.bool,
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
-    hasItems: PropTypes.bool
+    hasItems: PropTypes.bool,
 }
 
 const ListMenuContent = ({maxColumns, items, itemsKey, onClose, initialFocusRef}) => {
@@ -122,8 +122,8 @@ const ListMenuContent = ({maxColumns, items, itemsKey, onClose, initialFocusRef}
                                 text: name,
                                 styles: {
                                     fontSize: 'md',
-                                    marginBottom: 2
-                                }
+                                    marginBottom: 2,
+                                },
                             }
 
                             const links = items
@@ -135,8 +135,8 @@ const ListMenuContent = ({maxColumns, items, itemsKey, onClose, initialFocusRef}
                                           styles: {
                                               fontSize: 'md',
                                               paddingTop: 3,
-                                              paddingBottom: 3
-                                          }
+                                              paddingBottom: 3,
+                                          },
                                       }
                                   })
                                 : []
@@ -162,7 +162,7 @@ ListMenuContent.propTypes = {
     maxColumns: PropTypes.number,
     itemsKey: PropTypes.string,
     onClose: PropTypes.func,
-    initialFocusRef: PropTypes.object
+    initialFocusRef: PropTypes.object,
 }
 
 const ListMenuPopover = ({items, item, name, itemsKey, maxColumns}) => {
@@ -208,7 +208,7 @@ ListMenuPopover.propTypes = {
     item: PropTypes.object,
     name: PropTypes.string,
     maxColumns: PropTypes.number,
-    itemsKey: PropTypes.string
+    itemsKey: PropTypes.string,
 }
 
 /**
@@ -232,21 +232,23 @@ const ListMenu = ({root, maxColumns = MAXIMUM_NUMBER_COLUMNS}) => {
             <Flex {...baseStyle.container}>
                 {items ? (
                     <Stack direction={'row'} spacing={0} {...baseStyle.stackContainer}>
-                        {items.filter(i => i[itemsKey]?.length > 0).map((item) => {
-                            const {id, name} = item
-                            const items = item[itemsKey]
+                        {items
+                            .filter((i) => i[itemsKey]?.length > 0)
+                            .map((item) => {
+                                const {id, name} = item
+                                const items = item[itemsKey]
 
-                            return (
-                                <ListMenuPopover
-                                    key={id}
-                                    maxColumns={maxColumns}
-                                    item={item}
-                                    name={name}
-                                    items={items}
-                                    itemsKey={itemsKey}
-                                />
-                            )
-                        })}
+                                return (
+                                    <ListMenuPopover
+                                        key={id}
+                                        maxColumns={maxColumns}
+                                        item={item}
+                                        name={name}
+                                        items={items}
+                                        itemsKey={itemsKey}
+                                    />
+                                )
+                            })}
                     </Stack>
                 ) : (
                     <Center p="2">
@@ -268,7 +270,7 @@ ListMenu.propTypes = {
     /**
      * The maximum number of columns that we want to use per row in the menu.
      */
-    maxColumns: PropTypes.number
+    maxColumns: PropTypes.number,
 }
 
 export default ListMenu

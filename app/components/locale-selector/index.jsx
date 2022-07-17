@@ -17,7 +17,7 @@ import {
     Box,
 
     // Hooks
-    useStyleConfig
+    useStyleConfig,
 } from '@chakra-ui/react'
 
 // Icons
@@ -29,7 +29,7 @@ import {
     FlagFRIcon,
     FlagITIcon,
     FlagCNIcon,
-    FlagJPIcon
+    FlagJPIcon,
 } from '../icons'
 
 import LocaleText from '../locale-text'
@@ -41,7 +41,7 @@ const flags = {
     'fr-FR': <FlagFRIcon />,
     'it-IT': <FlagITIcon />,
     'zh-CN': <FlagCNIcon />,
-    'ja-JP': <FlagJPIcon />
+    'ja-JP': <FlagJPIcon />,
 }
 
 /**
@@ -116,7 +116,7 @@ LocaleSelector.propTypes = {
     /**
      * Function called when a locale is selected.
      */
-    onSelect: PropTypes.func
+    onSelect: PropTypes.func,
 }
 
 export default LocaleSelector

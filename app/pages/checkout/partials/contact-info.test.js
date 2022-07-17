@@ -21,8 +21,8 @@ jest.mock('../util/checkout-context', () => {
             step: 0,
             login: null,
             setCheckoutStep: null,
-            goToNextStep: null
-        })
+            goToNextStep: null,
+        }),
     }
 })
 

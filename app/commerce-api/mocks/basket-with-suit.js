@@ -14,21 +14,21 @@ export default {
             type: 'PaymentMethodRequired',
             message:
                 'No payment method ID was specified. Please provide a valid payment method ID.',
-            path: '$.payment_instruments[0].payment_method_id'
+            path: '$.payment_instruments[0].payment_method_id',
         },
         {
             _type: 'flash',
             type: 'BillingAddressRequired',
             message: 'No billing address was specified. Please provide a valid billing address.',
-            path: '$.billing_address'
+            path: '$.billing_address',
         },
         {
             _type: 'flash',
             type: 'ShippingAddressRequired',
             message: 'No shipping address was specified. Please provide a valid shipping address.',
             path: '$.shipments[0].shipping_address',
-            details: {shipmentId: 'me'}
-        }
+            details: {shipmentId: 'me'},
+        },
     ],
     adjusted_merchandize_total_tax: 30.0,
     adjusted_shipping_total_tax: 0.0,
@@ -40,14 +40,13 @@ export default {
     customer_info: {
         _type: 'customer_info',
         customer_id: 'customerid',
-        email: ''
+        email: '',
     },
     last_modified: '2021-06-23T17:46:51.237Z',
     merchandize_total_tax: 30.0,
     notes: {
         _type: 'simple_link',
-        link:
-            'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/baskets/9303c9065ccc5fa2c7fca1d4b4/notes'
+        link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/baskets/9303c9065ccc5fa2c7fca1d4b4/notes',
     },
     order_total: 629.98,
     product_items: [
@@ -69,8 +68,8 @@ export default {
             tax: 30.0,
             tax_basis: 599.98,
             tax_class_id: 'standard',
-            tax_rate: 0.05
-        }
+            tax_rate: 0.05,
+        },
     ],
     product_sub_total: 599.98,
     product_total: 599.98,
@@ -95,19 +94,18 @@ export default {
                     {
                         _type: 'shipping_promotion',
                         callout_msg: 'Free Shipping Amount Above 150',
-                        link:
-                            'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/promotions/3184d71eea54c9d27e88dc41ca',
+                        link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/promotions/3184d71eea54c9d27e88dc41ca',
                         promotion_id: 'FreeShippingAmountAbove150',
-                        promotion_name: 'Free Shipping Amount Above 150'
-                    }
+                        promotion_name: 'Free Shipping Amount Above 150',
+                    },
                 ],
-                c_estimatedArrivalTime: '7-10 Business Days'
+                c_estimatedArrivalTime: '7-10 Business Days',
             },
             shipping_status: 'not_shipped',
             shipping_total: 0.0,
             shipping_total_tax: 0.8,
-            tax_total: 30.0
-        }
+            tax_total: 30.0,
+        },
     ],
     shipping_items: [
         {
@@ -130,19 +128,19 @@ export default {
                     price_adjustment_id: '2a520873159147eb9759d2cc6f',
                     promotion_id: 'FreeShippingAmountAbove150',
                     promotion_link:
-                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/promotions/FreeShippingAmountAbove150'
-                }
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/s/RefArch/dw/shop/v21_3/promotions/FreeShippingAmountAbove150',
+                },
             ],
             price_after_item_discount: 0.0,
             shipment_id: 'me',
             tax: 0.8,
             tax_basis: 15.99,
             tax_class_id: 'standard',
-            tax_rate: 0.05
-        }
+            tax_rate: 0.05,
+        },
     ],
     shipping_total: 0.0,
     shipping_total_tax: 0.8,
     taxation: 'net',
-    tax_total: 30.0
+    tax_total: 30.0,
 }

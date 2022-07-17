@@ -76,14 +76,14 @@ LinksList.propTypes = {
     links: PropTypes.arrayOf(
         PropTypes.shape({
             href: PropTypes.string,
-            text: PropTypes.string
+            text: PropTypes.string,
         })
     ).isRequired,
     heading: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     variant: PropTypes.oneOf(['vertical', 'horizontal']),
     color: PropTypes.string,
     onLinkClick: PropTypes.func,
-    headingLinkRef: PropTypes.object
+    headingLinkRef: PropTypes.object,
 }
 
 export default LinksList

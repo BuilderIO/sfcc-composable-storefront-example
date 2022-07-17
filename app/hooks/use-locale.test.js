@@ -18,7 +18,7 @@ const MockComponent = () => {
     return <div data-testid="locale">{JSON.stringify(locale)}</div>
 }
 
-describe('useLocale', function() {
+describe('useLocale', function () {
     test('return the default locale', () => {
         const history = createMemoryHistory()
         history.push('/test/path')
