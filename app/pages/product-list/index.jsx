@@ -71,6 +71,7 @@ import {
 } from '../../constants'
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../../components/loading-spinner'
+import builder, { BuilderComponent, useIsPreviewing } from '@builder.io/react'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -89,6 +90,7 @@ const ProductList = (props) => {
         staticContext,
         location,
         isLoading,
+        builderCategoryHero,
         ...rest
     } = props
     const {total, sortingOptions} = productSearchResult || {}
@@ -101,6 +103,7 @@ const ProductList = (props) => {
     const params = useParams()
     const {categories} = useCategories()
     const toast = useToast()
+    const isPreviewingInBuilder = useIsPreviewing();
 
     // Get the current category from global state.
     let category = undefined
@@ -253,7 +256,7 @@ const ProductList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-
+                    {(isPreviewingInBuilder || builderCategoryHero) && <BuilderComponent options={{includeRefs: true}} model="category-hero" content={builderCategoryHero} />}
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
@@ -601,6 +604,17 @@ ProductList.getProps = async ({res, params, location, api}) => {
         throw new HTTPNotFound(category.detail)
     }
 
+    if (category) {
+        const builderCategoryHero = await builder.get('category-hero', {
+            options: { includeRefs: true },
+            userAttributes: {
+                category: categoryId,
+            }
+        }).toPromise();
+        return {searchQuery, productSearchResult, builderCategoryHero}
+
+    }
+
     return {searchQuery: searchQuery, productSearchResult}
 }
 
@@ -626,6 +640,7 @@ ProductList.propTypes = {
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
     onRemoveWishlistClick: PropTypes.func,
+    builderCategoryHero: PropTypes.object,
 }
 
 export default ProductList
