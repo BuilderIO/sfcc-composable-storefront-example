@@ -11,7 +11,7 @@ import {rest} from 'msw'
 import {
     mockProductSearch,
     mockCategories,
-    mockedEmptyCustomerProductList,
+    mockedEmptyCustomerProductList
 } from '../../commerce-api/mock-data'
 import {screen, waitFor} from '@testing-library/react'
 import user from '@testing-library/user-event'
@@ -33,7 +33,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 
@@ -53,7 +53,7 @@ jest.mock('commerce-sdk-isomorphic', () => {
             async getCustomerProductLists() {
                 return mockedEmptyCustomerProductList
             }
-        },
+        }
     }
 })
 
@@ -87,7 +87,7 @@ const MockedComponent = ({isLoading, isLoggedIn = false, searchQuery}) => {
 MockedComponent.propTypes = {
     isLoading: PropTypes.bool,
     isLoggedIn: PropTypes.bool,
-    searchQuery: PropTypes.string,
+    searchQuery: PropTypes.string
 }
 
 const MockedEmptyPage = () => {
@@ -114,7 +114,7 @@ beforeEach(() => {
         isInitialized: true,
         isEmpty: false,
         data: {},
-        findItemByProductId: () => {},
+        findItemByProductId: () => {}
     })
 })
 

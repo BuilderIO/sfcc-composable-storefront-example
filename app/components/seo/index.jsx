@@ -27,7 +27,7 @@ Seo.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     noIndex: PropTypes.bool,
-    children: PropTypes.node,
+    children: PropTypes.node
 }
 
 export default Seo

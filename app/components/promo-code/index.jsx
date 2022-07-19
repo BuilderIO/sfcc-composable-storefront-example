@@ -14,7 +14,7 @@ import {
     AccordionButton,
     AccordionItem,
     AccordionPanel,
-    useToast,
+    useToast
 } from '@chakra-ui/react'
 import {useForm} from 'react-hook-form'
 import {ChevronDownIcon, ChevronUpIcon} from '../../components/icons'
@@ -35,11 +35,11 @@ export const usePromoCode = () => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'Promotion applied',
-                    id: 'use_promocode.info.promo_applied',
+                    id: 'use_promocode.info.promo_applied'
                 }),
                 status: 'success',
                 position: 'top-right',
-                isClosable: true,
+                isClosable: true
             })
         } catch (err) {
             form.setError('code', {
@@ -47,8 +47,8 @@ export const usePromoCode = () => {
                 message: formatMessage({
                     defaultMessage:
                         'Check the code and try again, it may already be applied or the promo has expired.',
-                    id: 'use_promocode.error.check_the_code',
-                }),
+                    id: 'use_promocode.error.check_the_code'
+                })
             })
         }
     }
@@ -59,18 +59,18 @@ export const usePromoCode = () => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'Promotion removed',
-                    id: 'use_promocode.info.promo_removed',
+                    id: 'use_promocode.info.promo_removed'
                 }),
                 status: 'success',
                 position: 'top-right',
-                isClosable: true,
+                isClosable: true
             })
         } catch (err) {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
                 status: 'error',
                 position: 'top-right',
-                isClosable: true,
+                isClosable: true
             })
         }
     }
@@ -135,7 +135,7 @@ PromoCode.propTypes = {
     submitPromoCode: PropTypes.func.isRequired,
 
     /** Props applied to inner AccordionItem. Useful for style overrides. */
-    itemProps: PropTypes.object,
+    itemProps: PropTypes.object
 }
 
 export default PromoCode

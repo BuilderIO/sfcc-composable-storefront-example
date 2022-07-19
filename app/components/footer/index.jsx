@@ -20,7 +20,7 @@ import {
     InputGroup,
     InputRightElement,
     Button,
-    FormControl,
+    FormControl
 } from '@chakra-ui/react'
 import {useIntl} from 'react-intl'
 
@@ -49,67 +49,67 @@ const Footer = ({...otherProps}) => {
                             <LinksList
                                 heading={intl.formatMessage({
                                     id: 'footer.column.customer_support',
-                                    defaultMessage: 'Customer Support',
+                                    defaultMessage: 'Customer Support'
                                 })}
                                 links={[
                                     {
                                         href: '/',
                                         text: intl.formatMessage({
                                             id: 'footer.link.contact_us',
-                                            defaultMessage: 'Contact Us',
-                                        }),
+                                            defaultMessage: 'Contact Us'
+                                        })
                                     },
                                     {
                                         href: '/',
                                         text: intl.formatMessage({
                                             id: 'footer.link.shipping',
-                                            defaultMessage: 'Shipping',
-                                        }),
-                                    },
+                                            defaultMessage: 'Shipping'
+                                        })
+                                    }
                                 ]}
                             />
                             <LinksList
                                 heading={intl.formatMessage({
                                     id: 'footer.column.account',
-                                    defaultMessage: 'Account',
+                                    defaultMessage: 'Account'
                                 })}
                                 links={[
                                     {
                                         href: '/',
                                         text: intl.formatMessage({
                                             id: 'footer.link.order_status',
-                                            defaultMessage: 'Order Status',
-                                        }),
+                                            defaultMessage: 'Order Status'
+                                        })
                                     },
                                     {
                                         href: '/',
                                         text: intl.formatMessage({
                                             id: 'footer.link.signin_create_account',
-                                            defaultMessage: 'Sign in or create account',
-                                        }),
-                                    },
+                                            defaultMessage: 'Sign in or create account'
+                                        })
+                                    }
                                 ]}
                             />
                             <LinksList
                                 heading={intl.formatMessage({
                                     id: 'footer.column.our_company',
-                                    defaultMessage: 'Our Company',
+                                    defaultMessage: 'Our Company'
                                 })}
                                 links={[
                                     {
                                         href: '/',
                                         text: intl.formatMessage({
                                             id: 'footer.link.store_locator',
-                                            defaultMessage: 'Store Locator',
-                                        }),
+                                            defaultMessage: 'Store Locator'
+                                        })
                                     },
                                     {
                                         href: '/',
                                         text: intl.formatMessage({
                                             id: 'footer.link.about_us',
-                                            defaultMessage: 'About Us',
-                                        }),
-                                    },
+                                            defaultMessage: 'About Us'
+                                        })
+                                    }
                                 ]}
                             />
                             <Box>
@@ -137,7 +137,7 @@ const Footer = ({...otherProps}) => {
 
                                         // Update the `locale` in the URL.
                                         const newUrl = getPathWithLocale(target.value, {
-                                            disallowParams: ['refine'],
+                                            disallowParams: ['refine']
                                         })
 
                                         window.location = newUrl
@@ -167,7 +167,7 @@ const Footer = ({...otherProps}) => {
                             {intl.formatMessage({
                                 id: 'footer.message.copyright',
                                 defaultMessage:
-                                    '2021 Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed.',
+                                    '2021 Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed.'
                             })}
                         </Text>
 
@@ -195,13 +195,13 @@ const Subscribe = ({...otherProps}) => {
             <Heading {...styles.subscribeHeading}>
                 {intl.formatMessage({
                     id: 'footer.subscribe.heading.first_to_know',
-                    defaultMessage: 'Be the first to know',
+                    defaultMessage: 'Be the first to know'
                 })}
             </Heading>
             <Text {...styles.subscribeMessage}>
                 {intl.formatMessage({
                     id: 'footer.subscribe.description.sign_up',
-                    defaultMessage: 'Sign up to stay in the loop about the hottest deals',
+                    defaultMessage: 'Sign up to stay in the loop about the hottest deals'
                 })}
             </Text>
 
@@ -212,7 +212,7 @@ const Subscribe = ({...otherProps}) => {
                         <Button variant="footer">
                             {intl.formatMessage({
                                 id: 'footer.subscribe.button.sign_up',
-                                defaultMessage: 'Sign Up',
+                                defaultMessage: 'Sign Up'
                             })}
                         </Button>
                     </InputRightElement>
@@ -233,23 +233,23 @@ const LegalLinks = ({variant}) => {
                     href: '/',
                     text: intl.formatMessage({
                         id: 'footer.link.terms_conditions',
-                        defaultMessage: 'Terms & Conditions',
-                    }),
+                        defaultMessage: 'Terms & Conditions'
+                    })
                 },
                 {
                     href: '/',
                     text: intl.formatMessage({
                         id: 'footer.link.privacy_policy',
-                        defaultMessage: 'Privacy Policy',
-                    }),
+                        defaultMessage: 'Privacy Policy'
+                    })
                 },
                 {
                     href: '/',
                     text: intl.formatMessage({
                         id: 'footer.link.site_map',
-                        defaultMessage: 'Site Map',
-                    }),
-                },
+                        defaultMessage: 'Site Map'
+                    })
+                }
             ]}
             color="gray.200"
             variant={variant}
@@ -257,5 +257,5 @@ const LegalLinks = ({variant}) => {
     )
 }
 LegalLinks.propTypes = {
-    variant: PropTypes.oneOf(['vertical', 'horizontal']),
+    variant: PropTypes.oneOf(['vertical', 'horizontal'])
 }

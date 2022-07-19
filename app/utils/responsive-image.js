@@ -30,7 +30,7 @@ let breakpointLabels = getBreakpointLabels(themeBreakpoints)
 export const getResponsiveImageAttributes = ({src, widths, breakpoints = defaultBreakpoints}) => {
     if (!widths) {
         return {
-            src: getSrcWithoutOptionalParams(src),
+            src: getSrcWithoutOptionalParams(src)
         }
     }
 
@@ -40,7 +40,7 @@ export const getResponsiveImageAttributes = ({src, widths, breakpoints = default
     return {
         src: getSrcWithoutOptionalParams(src),
         sizes: mapWidthsToSizes(widths),
-        srcSet: mapWidthsToSrcSet(widths, src),
+        srcSet: mapWidthsToSrcSet(widths, src)
     }
 }
 

@@ -24,8 +24,8 @@ const useSearchSuggestions = () => {
             setState({loading: true})
             const searchSuggestions = await api.shopperSearch.getSearchSuggestions({
                 parameters: {
-                    q: input,
-                },
+                    q: input
+                }
             })
             setState({results: searchSuggestions})
         },
@@ -34,7 +34,7 @@ const useSearchSuggestions = () => {
          */
         async clearSuggestedSearch() {
             setState({results: {}})
-        },
+        }
     }
 }
 

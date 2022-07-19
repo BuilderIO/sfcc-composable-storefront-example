@@ -15,8 +15,8 @@ test('Hero renders without errors', () => {
         actions: undefined,
         img: {
             src: 'src',
-            alt: 'alt',
-        },
+            alt: 'alt'
+        }
     }
     const {getByText} = renderWithProviders(<Hero {...data} />)
     expect(getByText(/title/i)).toBeInTheDocument()
@@ -29,8 +29,8 @@ test('Hero renders actions and event handlers', () => {
         actions: <button data-testid="button" onClick={onClick}></button>,
         img: {
             src: 'src',
-            alt: 'alt',
-        },
+            alt: 'alt'
+        }
     }
     const {getByTestId} = renderWithProviders(<Hero {...data} />)
     const button = getByTestId('button')

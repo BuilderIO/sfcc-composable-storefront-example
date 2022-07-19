@@ -9,7 +9,7 @@ import * as utils from './cc-utils'
 test('formatCreditCardNumber returns number with proper spaces', () => {
     const opts = {
         gaps: [4, 8, 12],
-        lengths: [16],
+        lengths: [16]
     }
 
     expect(utils.formatCreditCardNumber('41111111111111111', opts)).toEqual('4111 1111 1111 1111')

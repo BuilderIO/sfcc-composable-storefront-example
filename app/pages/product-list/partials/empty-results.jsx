@@ -15,7 +15,7 @@ import RecommendedProducts from '../../../components/recommended-products'
 
 const contactUsMessage = defineMessage({
     id: 'empty_search_results.link.contact_us',
-    defaultMessage: 'Contact Us',
+    defaultMessage: 'Contact Us'
 })
 
 const EmptySearchResults = ({searchQuery, category}) => {
@@ -38,7 +38,7 @@ const EmptySearchResults = ({searchQuery, category}) => {
                             {
                                 id: 'empty_search_results.info.cant_find_anything_for_category',
                                 defaultMessage:
-                                    'We couldn’t find anything for {category}. Try searching for a product or {link}.',
+                                    'We couldn’t find anything for {category}. Try searching for a product or {link}.'
                             },
                             {
                                 category: category.name,
@@ -46,7 +46,7 @@ const EmptySearchResults = ({searchQuery, category}) => {
                                     <Link as={RouteLink} to={'/'}>
                                         {intl.formatMessage(contactUsMessage)}
                                     </Link>
-                                ),
+                                )
                             }
                         )}
                     </Text>{' '}
@@ -57,10 +57,10 @@ const EmptySearchResults = ({searchQuery, category}) => {
                         {intl.formatMessage(
                             {
                                 id: 'empty_search_results.info.cant_find_anything_for_query',
-                                defaultMessage: 'We couldn’t find anything for "{searchQuery}".',
+                                defaultMessage: 'We couldn’t find anything for "{searchQuery}".'
                             },
                             {
-                                searchQuery: searchQuery,
+                                searchQuery: searchQuery
                             }
                         )}
                     </Text>
@@ -69,14 +69,14 @@ const EmptySearchResults = ({searchQuery, category}) => {
                             {
                                 id: 'empty_search_results.info.double_check_spelling',
                                 defaultMessage:
-                                    'Double-check your spelling and try again or {link}.',
+                                    'Double-check your spelling and try again or {link}.'
                             },
                             {
                                 link: (
                                     <Button variant="link" to={'/'}>
                                         {intl.formatMessage(contactUsMessage)}
                                     </Button>
-                                ),
+                                )
                             }
                         )}
                     </Text>
@@ -122,7 +122,7 @@ const EmptySearchResults = ({searchQuery, category}) => {
 
 EmptySearchResults.propTypes = {
     searchQuery: PropTypes.string,
-    category: PropTypes.object,
+    category: PropTypes.object
 }
 
 export default EmptySearchResults

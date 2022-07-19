@@ -41,10 +41,15 @@ const ProductItem = ({
     primaryAction,
     secondaryActions,
     onItemQuantityChange = noop,
-    showLoading = false,
+    showLoading = false
 }) => {
-    const {stepQuantity, showInventoryMessage, inventoryMessage, quantity, setQuantity} =
-        useProduct(product)
+    const {
+        stepQuantity,
+        showInventoryMessage,
+        inventoryMessage,
+        quantity,
+        setQuantity
+    } = useProduct(product)
 
     return (
         <Box position="relative" data-testid={`sf-cart-item-${product.productId}`}>
@@ -141,7 +146,7 @@ ProductItem.propTypes = {
     showLoading: PropTypes.bool,
     isWishlistItem: PropTypes.bool,
     primaryAction: PropTypes.node,
-    secondaryActions: PropTypes.node,
+    secondaryActions: PropTypes.node
 }
 
 export default ProductItem

@@ -19,7 +19,7 @@ import {
     Divider,
     Grid,
     SimpleGrid,
-    Skeleton,
+    Skeleton
 } from '@chakra-ui/react'
 import {getCreditCardIcon} from '../../utils/cc-utils'
 import {useAccountOrders} from './util/order-context'
@@ -102,8 +102,8 @@ const AccountOrderDetail = () => {
                                         date: formatDate(new Date(order.creationDate), {
                                             year: 'numeric',
                                             day: 'numeric',
-                                            month: 'short',
-                                        }),
+                                            month: 'short'
+                                        })
                                     }}
                                 />
                             </Text>
@@ -174,7 +174,8 @@ const AccountOrderDetail = () => {
                                             {trackingNumber ||
                                                 formatMessage({
                                                     defaultMessage: 'Pending',
-                                                    id: 'account_order_detail.label.pending_tracking_number',
+                                                    id:
+                                                        'account_order_detail.label.pending_tracking_number'
                                                 })}
                                         </Text>
                                     </Box>
@@ -298,7 +299,7 @@ const AccountOrderDetail = () => {
                             const variant = {
                                 ...product,
                                 ...productsById[product.productId],
-                                price: product.price,
+                                price: product.price
                             }
                             return (
                                 <Box

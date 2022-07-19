@@ -91,7 +91,7 @@ export const flatten = (node, key = 'children') => {
 
     return {
         [node.id]: node,
-        ...children,
+        ...children
     }
 }
 
@@ -235,7 +235,7 @@ export const getConfigMatcher = (config) => {
     return {
         pathMatcher,
         searchMatcherForSite,
-        searchMatcherForLocale,
+        searchMatcherForLocale
     }
 }
 

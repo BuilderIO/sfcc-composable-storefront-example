@@ -14,28 +14,30 @@ export default {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, large',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw68c99706/images/large/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw68c99706/images/large/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw68c99706/images/large/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
                 },
                 {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, large',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw45d30402/images/large/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw45d30402/images/large/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
-                },
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw45d30402/images/large/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
+                }
             ],
             variationAttributes: [
                 {
                     id: 'color',
                     values: [
                         {
-                            value: 'BLACKFB',
-                        },
-                    ],
-                },
+                            value: 'BLACKFB'
+                        }
+                    ]
+                }
             ],
-            viewType: 'large',
+            viewType: 'large'
         },
         {
             images: [
@@ -43,28 +45,30 @@ export default {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, medium',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw35242324/images/medium/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw35242324/images/medium/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw35242324/images/medium/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
                 },
                 {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, medium',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw116e8397/images/medium/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw116e8397/images/medium/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
-                },
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw116e8397/images/medium/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
+                }
             ],
             variationAttributes: [
                 {
                     id: 'color',
                     values: [
                         {
-                            value: 'BLACKFB',
-                        },
-                    ],
-                },
+                            value: 'BLACKFB'
+                        }
+                    ]
+                }
             ],
-            viewType: 'medium',
+            viewType: 'medium'
         },
         {
             images: [
@@ -72,28 +76,30 @@ export default {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, small',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw43b167a3/images/small/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw43b167a3/images/small/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw43b167a3/images/small/PG.52001RUBN4Q.BLACKFB.PZ.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
                 },
                 {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, small',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dwdcb6bc41/images/small/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dwdcb6bc41/images/small/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
-                },
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dwdcb6bc41/images/small/PG.52001RUBN4Q.BLACKFB.BZ.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
+                }
             ],
             variationAttributes: [
                 {
                     id: 'color',
                     values: [
                         {
-                            value: 'BLACKFB',
-                        },
-                    ],
-                },
+                            value: 'BLACKFB'
+                        }
+                    ]
+                }
             ],
-            viewType: 'small',
+            viewType: 'small'
         },
         {
             images: [
@@ -101,22 +107,23 @@ export default {
                     alt: 'Black Single Pleat Athletic Fit Wool Suit, Black, swatch',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw5c9bc6f6/images/swatch/PG.52001RUBN4Q.BLACKFB.CP.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw5c9bc6f6/images/swatch/PG.52001RUBN4Q.BLACKFB.CP.jpg',
-                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black',
-                },
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw5c9bc6f6/images/swatch/PG.52001RUBN4Q.BLACKFB.CP.jpg',
+                    title: 'Black Single Pleat Athletic Fit Wool Suit, Black'
+                }
             ],
             variationAttributes: [
                 {
                     id: 'color',
                     values: [
                         {
-                            value: 'BLACKFB',
-                        },
-                    ],
-                },
+                            value: 'BLACKFB'
+                        }
+                    ]
+                }
             ],
-            viewType: 'swatch',
-        },
+            viewType: 'swatch'
+        }
     ],
     inventory: {
         ats: 5,
@@ -124,14 +131,14 @@ export default {
         id: 'inventory_m',
         orderable: true,
         preorderable: false,
-        stockLevel: 5,
+        stockLevel: 5
     },
     longDescription:
         'This suit is great for any occasion. Add a shirt and a tie and you are ready for any event. ',
     master: {
         masterId: '25604524M',
         orderable: true,
-        price: 299.99,
+        price: 299.99
     },
     minOrderQuantity: 1,
     name: 'Black Single Pleat Athletic Fit Wool Suit',
@@ -143,11 +150,11 @@ export default {
         'This suit is great for any occasion. Add a shirt and a tie and you are ready for any event. ',
     stepQuantity: 1,
     type: {
-        variant: true,
+        variant: true
     },
     upc: '750518699578',
     validFrom: {
-        default: '2011-02-07T05:00:00.000Z',
+        default: '2011-02-07T05:00:00.000Z'
     },
     variants: [
         {
@@ -157,8 +164,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '050',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -167,8 +174,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '039',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -177,8 +184,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '048',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -187,8 +194,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '042',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -197,8 +204,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '041',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -207,8 +214,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '046',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -217,8 +224,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '040',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -227,8 +234,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '043',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -237,8 +244,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '038',
-                width: 'V',
-            },
+                width: 'V'
+            }
         },
         {
             orderable: true,
@@ -247,8 +254,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '046',
-                width: 'L',
-            },
+                width: 'L'
+            }
         },
         {
             orderable: true,
@@ -257,8 +264,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '044',
-                width: 'L',
-            },
+                width: 'L'
+            }
         },
         {
             orderable: true,
@@ -267,8 +274,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '040',
-                width: 'L',
-            },
+                width: 'L'
+            }
         },
         {
             orderable: true,
@@ -277,8 +284,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '048',
-                width: 'L',
-            },
+                width: 'L'
+            }
         },
         {
             orderable: true,
@@ -287,8 +294,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '043',
-                width: 'L',
-            },
+                width: 'L'
+            }
         },
         {
             orderable: true,
@@ -297,8 +304,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '042',
-                width: 'L',
-            },
+                width: 'L'
+            }
         },
         {
             orderable: true,
@@ -307,8 +314,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '044',
-                width: 'S',
-            },
+                width: 'S'
+            }
         },
         {
             orderable: true,
@@ -317,8 +324,8 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '040',
-                width: 'S',
-            },
+                width: 'S'
+            }
         },
         {
             orderable: true,
@@ -327,9 +334,9 @@ export default {
             variationValues: {
                 color: 'BLACKFB',
                 size: '042',
-                width: 'S',
-            },
-        },
+                width: 'S'
+            }
+        }
     ],
     variationAttributes: [
         {
@@ -339,9 +346,9 @@ export default {
                 {
                     name: 'Black',
                     orderable: true,
-                    value: 'BLACKFB',
-                },
-            ],
+                    value: 'BLACKFB'
+                }
+            ]
         },
         {
             id: 'size',
@@ -350,54 +357,54 @@ export default {
                 {
                     name: '38',
                     orderable: true,
-                    value: '038',
+                    value: '038'
                 },
                 {
                     name: '39',
                     orderable: true,
-                    value: '039',
+                    value: '039'
                 },
                 {
                     name: '40',
                     orderable: true,
-                    value: '040',
+                    value: '040'
                 },
                 {
                     name: '41',
                     orderable: true,
-                    value: '041',
+                    value: '041'
                 },
                 {
                     name: '42',
                     orderable: true,
-                    value: '042',
+                    value: '042'
                 },
                 {
                     name: '43',
                     orderable: true,
-                    value: '043',
+                    value: '043'
                 },
                 {
                     name: '44',
                     orderable: false,
-                    value: '044',
+                    value: '044'
                 },
                 {
                     name: '46',
                     orderable: true,
-                    value: '046',
+                    value: '046'
                 },
                 {
                     name: '48',
                     orderable: true,
-                    value: '048',
+                    value: '048'
                 },
                 {
                     name: '50',
                     orderable: true,
-                    value: '050',
-                },
-            ],
+                    value: '050'
+                }
+            ]
         },
         {
             id: 'width',
@@ -406,29 +413,29 @@ export default {
                 {
                     name: 'Short',
                     orderable: false,
-                    value: 'S',
+                    value: 'S'
                 },
                 {
                     name: 'Regular',
                     orderable: true,
-                    value: 'V',
+                    value: 'V'
                 },
                 {
                     name: 'Long',
                     orderable: false,
-                    value: 'L',
-                },
-            ],
-        },
+                    value: 'L'
+                }
+            ]
+        }
     ],
     variationValues: {
         color: 'BLACKFB',
         size: '038',
-        width: 'V',
+        width: 'V'
     },
     c_color: 'BLACKFB',
     c_isNew: true,
     c_refinementColor: 'black',
     c_size: '038',
-    c_width: 'V',
+    c_width: 'V'
 }

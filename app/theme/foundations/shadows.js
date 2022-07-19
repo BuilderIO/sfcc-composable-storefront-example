@@ -5,5 +5,5 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 export default {
-    top: '0px -1px 3px rgba(0, 0, 0, 0.1), 0px -1px 2px rgba(0, 0, 0, 0.06)',
+    top: '0px -1px 3px rgba(0, 0, 0, 0.1), 0px -1px 2px rgba(0, 0, 0, 0.06)'
 }

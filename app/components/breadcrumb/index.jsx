@@ -16,7 +16,7 @@ import {
     BreadcrumbItem as ChakraBreadcrumbItem,
     BreadcrumbLink as ChakraBreadcrumbLink,
     // Hooks
-    useStyleConfig,
+    useStyleConfig
 } from '@chakra-ui/react'
 
 // Icons
@@ -61,7 +61,7 @@ Breadcrumb.propTypes = {
     /**
      * The categories to be displayed in this breadcrumb.
      */
-    categories: PropTypes.array,
+    categories: PropTypes.array
 }
 
 export default Breadcrumb

@@ -58,7 +58,7 @@ export default function useBasket(opts = {}) {
              */
             async getOrCreateBasket() {
                 const customerBaskets = await api.shopperCustomers.getCustomerBaskets({
-                    parameters: {customerId: customer?.customerId},
+                    parameters: {customerId: customer?.customerId}
                 })
 
                 // Throw if there was a problem getting the customer baskets
@@ -98,7 +98,7 @@ export default function useBasket(opts = {}) {
             async updateBasketCurrency(currency, basketId) {
                 const updateBasket = await api.shopperBaskets.updateBasket({
                     body: {currency},
-                    parameters: {basketId},
+                    parameters: {basketId}
                 })
                 if (isError(updateBasket)) {
                     throw new Error(updateBasket)
@@ -117,7 +117,7 @@ export default function useBasket(opts = {}) {
             async addItemToBasket(item) {
                 const response = await api.shopperBaskets.addItemToBasket({
                     body: item,
-                    parameters: {basketId: basket.basketId},
+                    parameters: {basketId: basket.basketId}
                 })
                 if (response.fault) {
                     throw new Error(response)
@@ -127,7 +127,7 @@ export default function useBasket(opts = {}) {
                         id: item[0].productId,
                         sku: '',
                         price: item[0].price,
-                        quantity: item[0].quantity,
+                        quantity: item[0].quantity
                     }
                     einstein.sendAddToCart(einsteinProduct)
                 }
@@ -140,7 +140,7 @@ export default function useBasket(opts = {}) {
              */
             async removeItemFromBasket(itemId) {
                 const response = await api.shopperBaskets.removeItemFromBasket({
-                    parameters: {basketId: basket.basketId, itemId: itemId},
+                    parameters: {basketId: basket.basketId, itemId: itemId}
                 })
                 if (response.fault) {
                     throw new Error(response)
@@ -160,7 +160,7 @@ export default function useBasket(opts = {}) {
             async updateItemInBasket(item, basketItemId) {
                 const response = await api.shopperBaskets.updateItemInBasket({
                     body: item,
-                    parameters: {basketId: basket.basketId, itemId: basketItemId},
+                    parameters: {basketId: basket.basketId, itemId: basketItemId}
                 })
                 if (response.fault) {
                     throw new Error(response)
@@ -181,7 +181,7 @@ export default function useBasket(opts = {}) {
                 }
 
                 const response = await api.shopperProducts.getProducts({
-                    parameters: {ids: ids, ...options},
+                    parameters: {ids: ids, ...options}
                 })
 
                 const itemDetail = response.data.reduce((result, item) => {
@@ -192,7 +192,7 @@ export default function useBasket(opts = {}) {
 
                 const updatedBasket = {
                     ...basket,
-                    _productItemsDetail: {...basket._productItemsDetail, ...itemDetail},
+                    _productItemsDetail: {...basket._productItemsDetail, ...itemDetail}
                 }
 
                 setBasket(updatedBasket)
@@ -209,8 +209,8 @@ export default function useBasket(opts = {}) {
                     parameters: {
                         basketId: basket.basketId,
                         shipmentId: 'me',
-                        useAsBilling: !basket.billingAddress,
-                    },
+                        useAsBilling: !basket.billingAddress
+                    }
                 })
 
                 setBasket(response)
@@ -224,7 +224,7 @@ export default function useBasket(opts = {}) {
             async setShippingMethod(id) {
                 const response = await api.shopperBaskets.updateShippingMethodForShipment({
                     body: {id},
-                    parameters: {basketId: basket.basketId, shipmentId: 'me'},
+                    parameters: {basketId: basket.basketId, shipmentId: 'me'}
                 })
 
                 setBasket(response)
@@ -238,7 +238,7 @@ export default function useBasket(opts = {}) {
             async setBillingAddress(address) {
                 const response = await api.shopperBaskets.updateBillingAddressForBasket({
                     body: address,
-                    parameters: {basketId: basket.basketId, shipmentId: 'me'},
+                    parameters: {basketId: basket.basketId, shipmentId: 'me'}
                 })
 
                 setBasket(response)
@@ -265,7 +265,7 @@ export default function useBasket(opts = {}) {
                 // Add the new payment instrument to basket
                 let response = await api.shopperBaskets.addPaymentInstrumentToBasket({
                     body: paymentInstrument,
-                    parameters: {basketId: basket.basketId},
+                    parameters: {basketId: basket.basketId}
                 })
 
                 // TOOO: Handle possible error when adding payment instrument.
@@ -276,8 +276,8 @@ export default function useBasket(opts = {}) {
                     response = await api.shopperBaskets.removePaymentInstrumentFromBasket({
                         parameters: {
                             basketId: basket.basketId,
-                            paymentInstrumentId: existingPaymentInstrumentId,
-                        },
+                            paymentInstrumentId: existingPaymentInstrumentId
+                        }
                     })
                 }
 
@@ -298,8 +298,8 @@ export default function useBasket(opts = {}) {
                 const response = await api.shopperBaskets.removePaymentInstrumentFromBasket({
                     parameters: {
                         basketId: basket.basketId,
-                        paymentInstrumentId: paymentInstrumentId,
-                    },
+                        paymentInstrumentId: paymentInstrumentId
+                    }
                 })
 
                 setBasket(response)
@@ -314,7 +314,7 @@ export default function useBasket(opts = {}) {
             async updateCustomerInfo(info) {
                 const response = await api.shopperBaskets.updateCustomerForBasket({
                     body: info,
-                    parameters: {basketId: basket.basketId},
+                    parameters: {basketId: basket.basketId}
                 })
 
                 setBasket(response)
@@ -327,7 +327,7 @@ export default function useBasket(opts = {}) {
             async applyPromoCode(code) {
                 const response = await api.shopperBaskets.addCouponToBasket({
                     body: {code},
-                    parameters: {basketId: basket.basketId},
+                    parameters: {basketId: basket.basketId}
                 })
 
                 if (response.fault) {
@@ -343,7 +343,7 @@ export default function useBasket(opts = {}) {
              */
             async removePromoCode(couponItemId) {
                 const response = await api.shopperBaskets.removeCouponFromBasket({
-                    parameters: {basketId: basket.basketId, couponItemId},
+                    parameters: {basketId: basket.basketId, couponItemId}
                 })
 
                 if (response.fault) {
@@ -360,7 +360,7 @@ export default function useBasket(opts = {}) {
              */
             async getPromotions(ids) {
                 const response = await api.shopperPromotions.getPromotions({
-                    parameters: {ids: ids.join(',')},
+                    parameters: {ids: ids.join(',')}
                 })
 
                 return response
@@ -371,7 +371,7 @@ export default function useBasket(opts = {}) {
              */
             async createOrder() {
                 const response = await api.shopperOrders.createOrder({
-                    body: {basketId: basket.basketId},
+                    body: {basketId: basket.basketId}
                 })
 
                 if (response.fault || (response.title && response.type && response.detail)) {
@@ -390,7 +390,7 @@ export default function useBasket(opts = {}) {
              */
             getShippingMethods() {
                 return api.shopperBaskets.getShippingMethodsForShipment({
-                    parameters: {basketId: basket.basketId, shipmentId: 'me'},
+                    parameters: {basketId: basket.basketId, shipmentId: 'me'}
                 })
             },
 
@@ -401,11 +401,11 @@ export default function useBasket(opts = {}) {
             async mergeBasket() {
                 const response = api.shopperBaskets.mergeBasket({
                     headers: {
-                        'Content-Type': 'application/json', // This is not required since the request has no body but CommerceAPI throws a '419 - Unsupported Media Type' error if this header is removed.
+                        'Content-Type': 'application/json' // This is not required since the request has no body but CommerceAPI throws a '419 - Unsupported Media Type' error if this header is removed.
                     },
                     parameters: {
-                        createDestinationBasket: true, // If the current shopper has an active basket, this parameter is ignored.
-                    },
+                        createDestinationBasket: true // If the current shopper has an active basket, this parameter is ignored.
+                    }
                 })
 
                 if (response.fault) {
@@ -413,7 +413,7 @@ export default function useBasket(opts = {}) {
                 }
 
                 setBasket(response)
-            },
+            }
         }
     }, [customer, basket, setBasket])
 

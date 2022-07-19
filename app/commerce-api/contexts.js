@@ -49,7 +49,7 @@ const CPLInitialValue = {
     // keyed by list id, initial state
     // being undefined indicates the
     // product lists is not initialized
-    productLists: undefined,
+    productLists: undefined
 }
 const CPLActionTypes = {
     RECEIVE_LISTS: 'RECEIVE_LISTS',
@@ -57,7 +57,7 @@ const CPLActionTypes = {
     CREATE_LIST_ITEM: 'CREATE_LIST_ITEM',
     UPDATE_LIST_ITEM: 'UPDATE_LIST_ITEM',
     REMOVE_LIST_ITEM: 'REMOVE_LIST_ITEM',
-    RESET: 'RESET',
+    RESET: 'RESET'
 }
 export const CustomerProductListsContext = createContext(CPLInitialValue)
 // eslint-disable-next-line react/prop-types
@@ -68,7 +68,7 @@ export const CustomerProductListsProvider = ({children}) => {
                 const productLists = payload.reduce((acc, curr) => {
                     return {
                         ...acc,
-                        [curr.id]: curr,
+                        [curr.id]: curr
                     }
                 }, {})
                 return {...state, productLists}
@@ -83,8 +83,8 @@ export const CustomerProductListsProvider = ({children}) => {
                     ...state,
                     productLists: {
                         ...state.productLists,
-                        [id]: payload,
-                    },
+                        [id]: payload
+                    }
                 }
             }
             case CPLActionTypes.CREATE_LIST_ITEM: {
@@ -106,9 +106,9 @@ export const CustomerProductListsProvider = ({children}) => {
                         ...state.productLists,
                         [listId]: {
                             ...state.productLists[listId],
-                            customerProductListItems: items,
-                        },
-                    },
+                            customerProductListItems: items
+                        }
+                    }
                 }
             }
             case CPLActionTypes.UPDATE_LIST_ITEM: {
@@ -118,7 +118,7 @@ export const CustomerProductListsProvider = ({children}) => {
                         if (listItem.id === item.id) {
                             return {
                                 ...listItem,
-                                ...item,
+                                ...item
                             }
                         }
                         return listItem
@@ -130,15 +130,15 @@ export const CustomerProductListsProvider = ({children}) => {
                         ...state.productLists,
                         [listId]: {
                             ...state.productLists[listId],
-                            customerProductListItems: items,
-                        },
-                    },
+                            customerProductListItems: items
+                        }
+                    }
                 }
             }
             case CPLActionTypes.REMOVE_LIST_ITEM: {
                 const {listId, itemId} = payload
                 const productLists = {
-                    ...state.productLists,
+                    ...state.productLists
                 }
                 productLists[listId].customerProductListItems = productLists[
                     listId
@@ -164,7 +164,7 @@ export const CustomerProductListsProvider = ({children}) => {
             dispatch({type: CPLActionTypes.UPDATE_LIST_ITEM, payload: {listId, item}}),
         removeListItem: (listId, itemId) =>
             dispatch({type: CPLActionTypes.REMOVE_LIST_ITEM, payload: {listId, itemId}}),
-        reset: () => dispatch({type: CPLActionTypes.RESET}),
+        reset: () => dispatch({type: CPLActionTypes.RESET})
     }
 
     return (

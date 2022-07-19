@@ -14,7 +14,7 @@ export default function useResetPasswordFields({form: {control, errors}, prefix 
             name: `${prefix}email`,
             label: formatMessage({
                 defaultMessage: 'Email',
-                id: 'use_reset_password_fields.label.email',
+                id: 'use_reset_password_fields.label.email'
             }),
             placeholder: 'you@email.com',
             defaultValue: '',
@@ -22,12 +22,12 @@ export default function useResetPasswordFields({form: {control, errors}, prefix 
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter a valid email address.',
-                    id: 'use_reset_password_fields.error.required_email',
-                }),
+                    id: 'use_reset_password_fields.error.required_email'
+                })
             },
             error: errors[`${prefix}email`],
-            control,
-        },
+            control
+        }
     }
 
     return fields

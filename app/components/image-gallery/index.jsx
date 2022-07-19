@@ -20,7 +20,7 @@ import {
     Skeleton as ChakraSkeleton,
     ListItem,
     List,
-    useMultiStyleConfig,
+    useMultiStyleConfig
 } from '@chakra-ui/react'
 import {findImageGroupBy} from '../../utils/image-groups-utils'
 import DynamicImage from '../dynamic-image'
@@ -56,7 +56,7 @@ export const Skeleton = ({size}) => {
 }
 
 Skeleton.propTypes = {
-    size: PropTypes.bool,
+    size: PropTypes.bool
 }
 
 /**
@@ -73,7 +73,7 @@ const ImageGallery = ({imageGroups = [], selectedVariationAttributes = {}, size}
         () =>
             findImageGroupBy(imageGroups, {
                 viewType: LARGE,
-                selectedVariationAttributes,
+                selectedVariationAttributes
             }),
         [selectedVariationAttributes]
     )
@@ -90,7 +90,7 @@ const ImageGallery = ({imageGroups = [], selectedVariationAttributes = {}, size}
         () =>
             findImageGroupBy(imageGroups, {
                 viewType: SMALL,
-                selectedVariationAttributes,
+                selectedVariationAttributes
             }),
         [selectedVariationAttributes]
     )
@@ -109,10 +109,10 @@ const ImageGallery = ({imageGroups = [], selectedVariationAttributes = {}, size}
                             src={`${heroImage.disBaseLink || heroImage.link}[?sw={width}&q=60]`}
                             widths={{
                                 base: '100vw',
-                                lg: heroImageMaxWidth,
+                                lg: heroImageMaxWidth
                             }}
                             imageProps={{
-                                alt: heroImage.alt,
+                                alt: heroImage.alt
                             }}
                         />
                     </AspectRatio>
@@ -160,7 +160,7 @@ ImageGallery.propTypes = {
     /**
      * Size of the Image gallery, this will be used to determined the max width from styles
      */
-    size: PropTypes.string,
+    size: PropTypes.string
 }
 
 export default ImageGallery

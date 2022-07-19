@@ -11,16 +11,16 @@ import {renderWithProviders} from '../../utils/test-utils'
 const mockCategories = [
     {
         id: 1,
-        name: 'Category 1',
+        name: 'Category 1'
     },
     {
         id: 2,
-        name: 'Category 2',
+        name: 'Category 2'
     },
     {
         id: 3,
-        name: 'Category 3',
-    },
+        name: 'Category 3'
+    }
 ]
 
 test('Renders Breadcrum', () => {

@@ -18,7 +18,7 @@ const CCRadioGroup = ({
     value = '',
     isEditingPayment = false,
     togglePaymentEdit = () => null,
-    onPaymentIdChange = () => null,
+    onPaymentIdChange = () => null
 }) => {
     const {customer} = useCheckout()
 
@@ -116,7 +116,7 @@ CCRadioGroup.propTypes = {
     togglePaymentEdit: PropTypes.func,
 
     /** Callback for notifying on value change */
-    onPaymentIdChange: PropTypes.func,
+    onPaymentIdChange: PropTypes.func
 }
 
 export default CCRadioGroup

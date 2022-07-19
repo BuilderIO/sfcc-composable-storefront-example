@@ -14,7 +14,7 @@ Builder.registerComponent(ProductsGrid, {
             name: 'productIds',
             friendlyName: 'Products',
             type: 'SFCommerceProductsList',
-            required: true,
-        },
-    ],
+            required: true
+        }
+    ]
 })

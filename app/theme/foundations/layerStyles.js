@@ -9,14 +9,14 @@ const card = {
     px: 4,
     backgroundColor: 'white',
     rounded: 'base',
-    boxShadow: 'base',
+    boxShadow: 'base'
 }
 
 const cardBordered = {
     ...card,
     px: [4, 4, 5, 6],
     border: '1px solid',
-    borderColor: 'gray.50',
+    borderColor: 'gray.50'
 }
 
 export default {
@@ -26,7 +26,7 @@ export default {
 
     ccIcon: {
         width: '34px',
-        height: '22px',
+        height: '22px'
     },
 
     page: {
@@ -36,6 +36,6 @@ export default {
         width: '100%',
         maxWidth: 'container.xxxl',
         marginLeft: 'auto',
-        marginRight: 'auto',
-    },
+        marginRight: 'auto'
+    }
 }

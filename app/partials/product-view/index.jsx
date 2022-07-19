@@ -47,7 +47,7 @@ const ProductViewHeader = ({name, price, currency, category}) => {
                 <Text fontWeight="bold" fontSize="md" aria-label="price">
                     {intl.formatNumber(price, {
                         style: 'currency',
-                        currency: currency || activeCurrency,
+                        currency: currency || activeCurrency
                     })}
                 </Text>
             </Skeleton>
@@ -59,7 +59,7 @@ ProductViewHeader.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     currency: PropTypes.string,
-    category: PropTypes.array,
+    category: PropTypes.array
 }
 
 const ButtonWithRegistration = withRegistration(Button)
@@ -78,7 +78,7 @@ const ProductView = ({
     updateCart,
     addToWishlist,
     updateWishlist,
-    isProductLoading,
+    isProductLoading
 }) => {
     const intl = useIntl()
     const history = useHistory()
@@ -86,7 +86,7 @@ const ProductView = ({
     const {
         isOpen: isAddToCartModalOpen,
         onOpen: onAddToCartModalOpen,
-        onClose: onAddToCartModalClose,
+        onClose: onAddToCartModalClose
     } = useAddToCartModalContext()
     const theme = useTheme()
     const [showOptionsMessage, toggleShowOptionsMessage] = useState(false)
@@ -101,7 +101,7 @@ const ProductView = ({
         variationParams,
         variationAttributes,
         stockLevel,
-        stepQuantity,
+        stepQuantity
     } = useProduct(product)
     const canAddToWishlist = !isProductLoading
     const canOrder =
@@ -149,11 +149,11 @@ const ProductView = ({
                     {updateCart
                         ? intl.formatMessage({
                               defaultMessage: 'Update',
-                              id: 'product_view.button.update',
+                              id: 'product_view.button.update'
                           })
                         : intl.formatMessage({
                               defaultMessage: 'Add to Cart',
-                              id: 'product_view.button.add_to_cart',
+                              id: 'product_view.button.add_to_cart'
                           })}
                 </Button>
             )
@@ -173,11 +173,11 @@ const ProductView = ({
                     {updateWishlist
                         ? intl.formatMessage({
                               defaultMessage: 'Update',
-                              id: 'product_view.button.update',
+                              id: 'product_view.button.update'
                           })
                         : intl.formatMessage({
                               defaultMessage: 'Add to Wishlist',
-                              id: 'product_view.button.add_to_wishlist',
+                              id: 'product_view.button.add_to_wishlist'
                           })}
                 </ButtonWithRegistration>
             )
@@ -224,7 +224,7 @@ const ProductView = ({
                                         <Text color="blue.600">
                                             {intl.formatMessage({
                                                 defaultMessage: 'See full details',
-                                                id: 'product_view.link.full_details',
+                                                id: 'product_view.link.full_details'
                                             })}
                                         </Text>
                                     </Link>
@@ -270,7 +270,7 @@ const ProductView = ({
                                         id,
                                         name,
                                         selectedValue,
-                                        values = [],
+                                        values = []
                                     } = variationAttribute
                                     return (
                                         <SwatchGroup
@@ -302,10 +302,8 @@ const ProductView = ({
                                                             backgroundColor={name.toLowerCase()}
                                                             backgroundImage={
                                                                 image
-                                                                    ? `url(${
-                                                                          image.disBaseLink ||
-                                                                          image.link
-                                                                      })`
+                                                                    ? `url(${image.disBaseLink ||
+                                                                          image.link})`
                                                                     : ''
                                                             }
                                                         />
@@ -326,7 +324,7 @@ const ProductView = ({
                                 <label htmlFor="quantity">
                                     {intl.formatMessage({
                                         defaultMessage: 'Quantity',
-                                        id: 'product_view.label.quantity',
+                                        id: 'product_view.label.quantity'
                                     })}
                                     :
                                 </label>
@@ -367,7 +365,7 @@ const ProductView = ({
                                 <Fade in={true}>
                                     <Text color="orange.600" fontWeight={600} marginBottom={8}>
                                         {intl.formatMessage({
-                                            defaultMessage: 'Please select all your options above',
+                                            defaultMessage: 'Please select all your options above'
                                         })}
                                     </Text>
                                 </Fade>
@@ -379,7 +377,7 @@ const ProductView = ({
                                     <Text color="blue.600">
                                         {intl.formatMessage({
                                             defaultMessage: 'See full details',
-                                            id: 'product_view.link.full_details',
+                                            id: 'product_view.link.full_details'
                                         })}
                                     </Text>
                                 </Link>
@@ -429,7 +427,7 @@ ProductView.propTypes = {
     updateCart: PropTypes.func,
     updateWishlist: PropTypes.func,
     showFullLink: PropTypes.bool,
-    imageSize: PropTypes.oneOf(['sm', 'md']),
+    imageSize: PropTypes.oneOf(['sm', 'md'])
 }
 
 export default ProductView

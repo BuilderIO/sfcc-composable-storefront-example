@@ -35,7 +35,7 @@ import {
     DrawerHeader,
     DrawerOverlay,
     DrawerContent,
-    DrawerCloseButton,
+    DrawerCloseButton
 } from '@chakra-ui/react'
 
 // Project Components
@@ -67,11 +67,11 @@ import {
     MAX_CACHE_AGE,
     TOAST_ACTION_VIEW_WISHLIST,
     TOAST_MESSAGE_ADDED_TO_WISHLIST,
-    TOAST_MESSAGE_REMOVED_FROM_WISHLIST,
+    TOAST_MESSAGE_REMOVED_FROM_WISHLIST
 } from '../../constants'
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../../components/loading-spinner'
-import builder, { BuilderComponent, useIsPreviewing } from '@builder.io/react'
+import builder, {BuilderComponent, useIsPreviewing} from '@builder.io/react'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -103,7 +103,7 @@ const ProductList = (props) => {
     const params = useParams()
     const {categories} = useCategories()
     const toast = useToast()
-    const isPreviewingInBuilder = useIsPreviewing();
+    const isPreviewingInBuilder = useIsPreviewing()
 
     // Get the current category from global state.
     let category = undefined
@@ -136,7 +136,7 @@ const ProductList = (props) => {
             setWishlistLoading([...wishlistLoading, product.productId])
             await wishlist.createListItem({
                 id: product.productId,
-                quantity: 1,
+                quantity: 1
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -150,12 +150,12 @@ const ProductList = (props) => {
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                ),
+                )
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         } finally {
             setWishlistLoading(wishlistLoading.filter((id) => id !== product.productId))
@@ -169,12 +169,12 @@ const ProductList = (props) => {
             await wishlist.removeListItemByProductId(product.productId)
             toast({
                 title: formatMessage(TOAST_MESSAGE_REMOVED_FROM_WISHLIST),
-                status: 'success',
+                status: 'success'
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         } finally {
             setWishlistLoading(wishlistLoading.filter((id) => id !== product.productId))
@@ -256,7 +256,13 @@ const ProductList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-                    {(isPreviewingInBuilder || builderCategoryHero) && <BuilderComponent options={{includeRefs: true}} model="category-hero" content={builderCategoryHero} />}
+                    {(isPreviewingInBuilder || builderCategoryHero) && (
+                        <BuilderComponent
+                            options={{includeRefs: true}}
+                            model="category-hero"
+                            content={builderCategoryHero}
+                        />
+                    )}
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
@@ -337,10 +343,10 @@ const ProductList = (props) => {
                                         {formatMessage(
                                             {
                                                 id: 'product_list.button.sort_by',
-                                                defaultMessage: 'Sort By: {sortOption}',
+                                                defaultMessage: 'Sort By: {sortOption}'
                                             },
                                             {
-                                                sortOption: selectedSortingOptionLabel?.label,
+                                                sortOption: selectedSortingOptionLabel?.label
                                             }
                                         )}
                                     </Button>
@@ -380,8 +386,9 @@ const ProductList = (props) => {
                                           ))
                                     : productSearchResult.hits.map((productSearchItem) => {
                                           const productId = productSearchItem.productId
-                                          const isInWishlist =
-                                              !!wishlist.findItemByProductId(productId)
+                                          const isInWishlist = !!wishlist.findItemByProductId(
+                                              productId
+                                          )
 
                                           return (
                                               <ProductTile
@@ -402,8 +409,8 @@ const ProductList = (props) => {
                                                           '50vw',
                                                           '20vw',
                                                           '20vw',
-                                                          '25vw',
-                                                      ],
+                                                          '25vw'
+                                                      ]
                                                   }}
                                               />
                                           )
@@ -478,10 +485,10 @@ const ProductList = (props) => {
                                 {formatMessage(
                                     {
                                         id: 'product_list.modal.button.view_items',
-                                        defaultMessage: 'View {prroductCount} items',
+                                        defaultMessage: 'View {prroductCount} items'
                                     },
                                     {
-                                        prroductCount: productSearchResult?.total,
+                                        prroductCount: productSearchResult?.total
                                     }
                                 )}
                             </Button>
@@ -586,11 +593,11 @@ ProductList.getProps = async ({res, params, location, api}) => {
         isSearch
             ? Promise.resolve()
             : api.shopperProducts.getCategory({
-                  parameters: {id: categoryId, levels: 0},
+                  parameters: {id: categoryId, levels: 0}
               }),
         api.shopperSearch.productSearch({
-            parameters: searchParams,
-        }),
+            parameters: searchParams
+        })
     ])
 
     // Apply disallow list to refinements.
@@ -605,14 +612,15 @@ ProductList.getProps = async ({res, params, location, api}) => {
     }
 
     if (category) {
-        const builderCategoryHero = await builder.get('category-hero', {
-            options: { includeRefs: true },
-            userAttributes: {
-                category: categoryId,
-            }
-        }).toPromise();
+        const builderCategoryHero = await builder
+            .get('category-hero', {
+                options: {includeRefs: true},
+                userAttributes: {
+                    category: categoryId
+                }
+            })
+            .toPromise()
         return {searchQuery, productSearchResult, builderCategoryHero}
-
     }
 
     return {searchQuery: searchQuery, productSearchResult}
@@ -640,7 +648,7 @@ ProductList.propTypes = {
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
     onRemoveWishlistClick: PropTypes.func,
-    builderCategoryHero: PropTypes.object,
+    builderCategoryHero: PropTypes.object
 }
 
 export default ProductList
@@ -664,10 +672,10 @@ const Sort = ({sortUrls, productSearchResult, basePath, ...otherProps}) => {
                         {intl.formatMessage(
                             {
                                 id: 'product_list.select.sort_by',
-                                defaultMessage: 'Sort By: {sortOption}',
+                                defaultMessage: 'Sort By: {sortOption}'
                             },
                             {
-                                sortOption: productSearchResult?.sortingOptions[index]?.label,
+                                sortOption: productSearchResult?.sortingOptions[index]?.label
                             }
                         )}
                     </option>
@@ -679,5 +687,5 @@ const Sort = ({sortUrls, productSearchResult, basePath, ...otherProps}) => {
 Sort.propTypes = {
     sortUrls: PropTypes.array,
     productSearchResult: PropTypes.object,
-    basePath: PropTypes.string,
+    basePath: PropTypes.string
 }

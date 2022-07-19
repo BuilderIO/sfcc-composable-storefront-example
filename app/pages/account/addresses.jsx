@@ -23,7 +23,7 @@ import {
     Text,
 
     // Hooks
-    useToast,
+    useToast
 } from '@chakra-ui/react'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
 import FormActionButtons from '../../components/forms/form-action-buttons'
@@ -68,7 +68,7 @@ const ShippingAddressForm = ({form, hasAddresses, selectedAddressId, toggleEdit,
                 paddingY: 6,
                 rounded: 'base',
                 border: '1px solid',
-                borderColor: 'blue.600',
+                borderColor: 'blue.600'
             })}
         >
             {form.formState.isSubmitting && <LoadingSpinner />}
@@ -114,13 +114,18 @@ ShippingAddressForm.propTypes = {
     hasAddresses: PropTypes.bool,
     selectedAddressId: PropTypes.string,
     toggleEdit: PropTypes.func,
-    submitForm: PropTypes.func,
+    submitForm: PropTypes.func
 }
 
 const AccountAddresses = () => {
     const {formatMessage} = useIntl()
-    const {isRegistered, addresses, addSavedAddress, updateSavedAddress, removeSavedAddress} =
-        useCustomer()
+    const {
+        isRegistered,
+        addresses,
+        addSavedAddress,
+        updateSavedAddress,
+        removeSavedAddress
+    } = useCustomer()
     const [isEditing, setIsEditing] = useState(false)
     const [selectedAddressId, setSelectedAddressId] = useState(false)
     const toast = useToast()
@@ -141,14 +146,14 @@ const AccountAddresses = () => {
                 title: selectedAddressId
                     ? formatMessage({
                           defaultMessage: 'Address updated',
-                          id: 'account_addresses.info.address_updated',
+                          id: 'account_addresses.info.address_updated'
                       })
                     : formatMessage({
                           defaultMessage: 'New address saved',
-                          id: 'account_addresses.info.new_address_saved',
+                          id: 'account_addresses.info.new_address_saved'
                       }),
                 status: 'success',
-                isClosable: true,
+                isClosable: true
             })
         } catch (error) {
             form.setError('global', {type: 'manual', message: error.message})
@@ -290,15 +295,17 @@ const AccountAddresses = () => {
                             icon={<LocationIcon boxSize={8} />}
                             heading={formatMessage({
                                 defaultMessage: 'No Saved Addresses',
-                                id: 'account_addresses.page_action_placeholder.heading.no_saved_addresses',
+                                id:
+                                    'account_addresses.page_action_placeholder.heading.no_saved_addresses'
                             })}
                             text={formatMessage({
                                 defaultMessage: 'Add a new address method for faster checkout.',
-                                id: 'account_addresses.page_action_placeholder.message.add_new_address',
+                                id:
+                                    'account_addresses.page_action_placeholder.message.add_new_address'
                             })}
                             buttonText={formatMessage({
                                 defaultMessage: 'Add Address',
-                                id: 'account_addresses.page_action_placeholder.button.add_address',
+                                id: 'account_addresses.page_action_placeholder.button.add_address'
                             })}
                             onButtonClick={toggleEdit}
                         />

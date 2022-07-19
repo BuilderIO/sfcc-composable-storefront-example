@@ -21,7 +21,7 @@ import {MESSAGE_PROPTYPE} from '../../../utils/locale'
 
 const saveButtonMessage = defineMessage({
     defaultMessage: 'Save & Continue to Shipping Method',
-    id: 'shipping_address_edit_form.button.save_and_continue',
+    id: 'shipping_address_edit_form.button.save_and_continue'
 })
 
 const ShippingAddressEditForm = ({
@@ -30,7 +30,7 @@ const ShippingAddressEditForm = ({
     toggleAddressEdit,
     hideSubmitButton,
     form,
-    submitButtonLabel,
+    submitButtonLabel
 }) => {
     const {formatMessage} = useIntl()
 
@@ -42,7 +42,7 @@ const ShippingAddressEditForm = ({
                 paddingY: 6,
                 rounded: 'base',
                 border: '1px solid',
-                borderColor: 'blue.600',
+                borderColor: 'blue.600'
             })}
             data-testid="sf-shipping-address-edit-form"
         >
@@ -88,12 +88,12 @@ ShippingAddressEditForm.propTypes = {
     toggleAddressEdit: PropTypes.func,
     hideSubmitButton: PropTypes.bool,
     form: PropTypes.object,
-    submitButtonLabel: MESSAGE_PROPTYPE,
+    submitButtonLabel: MESSAGE_PROPTYPE
 }
 
 const submitButtonMessage = defineMessage({
     defaultMessage: 'Submit',
-    id: 'shipping_address_selection.button.submit',
+    id: 'shipping_address_selection.button.submit'
 })
 
 const ShippingAddressSelection = ({
@@ -101,7 +101,7 @@ const ShippingAddressSelection = ({
     selectedAddress,
     submitButtonLabel = submitButtonMessage,
     hideSubmitButton = false,
-    onSubmit = async () => null,
+    onSubmit = async () => null
 }) => {
     const {formatMessage} = useIntl()
     const {customer} = useCheckout()
@@ -115,8 +115,8 @@ const ShippingAddressSelection = ({
             mode: 'onChange',
             shouldUnregister: false,
             defaultValues: {
-                ...selectedAddress,
-            },
+                ...selectedAddress
+            }
         })
 
     const matchedAddress =
@@ -150,7 +150,7 @@ const ShippingAddressSelection = ({
         if (matchedAddress) {
             form.reset({
                 addressId: matchedAddress.addressId,
-                ...matchedAddress,
+                ...matchedAddress
             })
         }
 
@@ -262,7 +262,8 @@ const ShippingAddressSelection = ({
                                                     <ShippingAddressEditForm
                                                         title={formatMessage({
                                                             defaultMessage: 'Edit Shipping Address',
-                                                            id: 'shipping_address_selection.title.edit_shipping',
+                                                            id:
+                                                                'shipping_address_selection.title.edit_shipping'
                                                         })}
                                                         hasSavedAddresses={hasSavedAddresses}
                                                         toggleAddressEdit={toggleAddressEdit}
@@ -315,7 +316,7 @@ const ShippingAddressSelection = ({
                     <ShippingAddressEditForm
                         title={formatMessage({
                             defaultMessage: 'Add New Address',
-                            id: 'shipping_address_selection.title.add_address',
+                            id: 'shipping_address_selection.title.add_address'
                         })}
                         hasSavedAddresses={hasSavedAddresses}
                         toggleAddressEdit={toggleAddressEdit}
@@ -357,7 +358,7 @@ ShippingAddressSelection.propTypes = {
     hideSubmitButton: PropTypes.bool,
 
     /** Callback for form submit */
-    onSubmit: PropTypes.func,
+    onSubmit: PropTypes.func
 }
 
 export default ShippingAddressSelection

@@ -100,7 +100,7 @@ const useCustomerProductList = (name, type) => {
                     return undefined
                 }
                 return cpl.findItemByProductId(self.data.id, productId)
-            },
+            }
         }
     }, [cpl])
     return self

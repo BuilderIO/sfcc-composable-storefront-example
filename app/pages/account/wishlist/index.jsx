@@ -48,12 +48,12 @@ const AccountWishlist = () => {
         try {
             await wishlist.updateListItem({
                 ...item,
-                quantity: parseInt(quantity),
+                quantity: parseInt(quantity)
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         }
         setWishlistItemLoading(false)
@@ -114,15 +114,15 @@ const AccountWishlist = () => {
                     icon={<HeartIcon boxSize={8} />}
                     heading={formatMessage({
                         defaultMessage: 'No Wishlist Items',
-                        id: 'account_wishlist.heading.no_wishlist',
+                        id: 'account_wishlist.heading.no_wishlist'
                     })}
                     text={formatMessage({
                         defaultMessage: 'Continue shopping and add items to your wishlist.',
-                        id: 'account_wishlist.description.continue_shopping',
+                        id: 'account_wishlist.description.continue_shopping'
                     })}
                     buttonText={formatMessage({
                         defaultMessage: 'Continue Shopping',
-                        id: 'account_wishlist.button.continue_shopping',
+                        id: 'account_wishlist.button.continue_shopping'
                     })}
                     buttonProps={{leftIcon: undefined}}
                     onButtonClick={() => navigate('/')}
@@ -138,7 +138,7 @@ const AccountWishlist = () => {
                             ...item.product,
                             quantity: localQuantity[item.productId]
                                 ? localQuantity[item.productId]
-                                : item.quantity,
+                                : item.quantity
                         }}
                         showLoading={isWishlistItemLoading && selectedItem === item.productId}
                         primaryAction={<WishlistPrimaryAction />}

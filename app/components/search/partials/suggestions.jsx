@@ -37,7 +37,7 @@ const Suggestions = ({suggestions, closeAndNavigate}) => {
 
 Suggestions.propTypes = {
     suggestions: PropTypes.array,
-    closeAndNavigate: PropTypes.func,
+    closeAndNavigate: PropTypes.func
 }
 
 export default Suggestions

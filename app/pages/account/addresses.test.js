@@ -20,7 +20,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 
@@ -43,14 +43,14 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 mockCustomer.addresses = undefined
                 return {}
             }
-        },
+        }
     }
 })
 
 const mockToastSpy = jest.fn()
 jest.mock('@chakra-ui/toast', () => {
     return {
-        useToast: jest.fn(() => mockToastSpy),
+        useToast: jest.fn(() => mockToastSpy)
     }
 })
 
@@ -84,7 +84,7 @@ beforeEach(() => {
         email: 'jkeane@64labs.com',
         firstName: 'John',
         lastName: 'Keane',
-        login: 'jkeane@64labs.com',
+        login: 'jkeane@64labs.com'
     }
 })
 afterEach(() => {

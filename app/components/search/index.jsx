@@ -16,7 +16,7 @@ import {
     Box,
     Flex,
     HStack,
-    Spinner,
+    Spinner
 } from '@chakra-ui/react'
 import SearchSuggestions from './partials/search-suggestions'
 import {SearchIcon} from '../icons'
@@ -37,7 +37,7 @@ const formatSuggestions = (searchSuggestions, input) => {
                     type: 'category',
                     id: suggestion.id,
                     link: categoryUrlBuilder({id: suggestion.id}),
-                    name: boldString(suggestion.name, capitalize(input)),
+                    name: boldString(suggestion.name, capitalize(input))
                 }
             }
         ),
@@ -48,7 +48,7 @@ const formatSuggestions = (searchSuggestions, input) => {
                 price: product.price,
                 productId: product.productId,
                 name: boldString(product.productName, capitalize(input)),
-                link: productUrlBuilder({id: product.productId}),
+                link: productUrlBuilder({id: product.productId})
             }
         }),
         phraseSuggestions: searchSuggestions?.categorySuggestions?.suggestedPhrases?.map(
@@ -56,10 +56,10 @@ const formatSuggestions = (searchSuggestions, input) => {
                 return {
                     type: 'phrase',
                     name: boldString(phrase.phrase, capitalize(input)),
-                    link: searchUrlBuilder(phrase.phrase),
+                    link: searchUrlBuilder(phrase.phrase)
                 }
             }
-        ),
+        )
     }
 }
 

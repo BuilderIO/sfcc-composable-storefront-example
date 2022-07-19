@@ -146,7 +146,7 @@ export const SearchIcon = icon('search')
 export const SocialFacebookIcon = icon('social-facebook')
 export const SocialInstagramIcon = icon('social-instagram')
 export const SocialPinterestIcon = icon('social-pinterest', {
-    viewBox: SocialPinterestSymbol.viewBox,
+    viewBox: SocialPinterestSymbol.viewBox
 })
 export const SocialTwitterIcon = icon('social-twitter')
 export const SocialYoutubeIcon = icon('social-youtube')

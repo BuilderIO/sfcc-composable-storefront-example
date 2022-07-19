@@ -15,7 +15,7 @@ const mockRoot = {
     categories: [
         {
             id: 't1-1',
-            name: 'Level one Test One One',
+            name: 'Level one Test One One'
         },
         {
             id: 't1-2',
@@ -27,21 +27,21 @@ const mockRoot = {
                     categories: [
                         {
                             id: 't1-2-1-1',
-                            name: 'Level three Test One Two One One',
+                            name: 'Level three Test One Two One One'
                         },
                         {
                             id: 't1-2-2-2',
-                            name: 'Level three Test One Two Two Two',
-                        },
-                    ],
+                            name: 'Level three Test One Two Two Two'
+                        }
+                    ]
                 },
                 {
                     id: 't1-2-2',
-                    name: 'Level two Test One Two Two',
-                },
-            ],
-        },
-    ],
+                    name: 'Level two Test One Two Two'
+                }
+            ]
+        }
+    ]
 }
 
 describe('ListMenu', () => {

@@ -75,7 +75,7 @@ export const getSites = () => {
         const alias = siteAliases[site.id]
         return {
             ...site,
-            ...(alias ? {alias} : {}),
+            ...(alias ? {alias} : {})
         }
     })
 }

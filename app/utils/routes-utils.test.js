@@ -7,13 +7,13 @@
 import React from 'react'
 import {configureRoutes} from './routes-utils'
 
-describe('configureRoutes', function () {
+describe('configureRoutes', function() {
     const cases = [
         {
             urlConfig: {
                 site: 'path',
                 locale: 'path',
-                showDefaults: true,
+                showDefaults: true
             },
             expectedRes: [
                 '/uk/',
@@ -61,14 +61,14 @@ describe('configureRoutes', function () {
                 '/site-2/category/:categoryId',
                 '/site-2/en-US/category/:categoryId',
                 '/site-2/en-CA/category/:categoryId',
-                '/category/:categoryId',
-            ],
+                '/category/:categoryId'
+            ]
         },
         {
             urlConfig: {
                 site: 'path',
                 locale: 'path',
-                showDefaults: false,
+                showDefaults: false
             },
             expectedRes: [
                 '/uk/',
@@ -116,14 +116,14 @@ describe('configureRoutes', function () {
                 '/site-2/category/:categoryId',
                 '/site-2/en-US/category/:categoryId',
                 '/site-2/en-CA/category/:categoryId',
-                '/category/:categoryId',
-            ],
+                '/category/:categoryId'
+            ]
         },
         {
             urlConfig: {
                 site: 'query_param',
                 locale: 'path',
-                showDefaults: true,
+                showDefaults: true
             },
             expectedRes: [
                 '/en-GB/',
@@ -139,14 +139,14 @@ describe('configureRoutes', function () {
                 '/it-IT/category/:categoryId',
                 '/en-US/category/:categoryId',
                 '/en-CA/category/:categoryId',
-                '/category/:categoryId',
-            ],
+                '/category/:categoryId'
+            ]
         },
         {
             urlConfig: {
                 site: 'query_param',
                 locale: 'path',
-                showDefaults: false,
+                showDefaults: false
             },
             expectedRes: [
                 '/en-GB/',
@@ -162,14 +162,14 @@ describe('configureRoutes', function () {
                 '/it-IT/category/:categoryId',
                 '/en-US/category/:categoryId',
                 '/en-CA/category/:categoryId',
-                '/category/:categoryId',
-            ],
+                '/category/:categoryId'
+            ]
         },
         {
             urlConfig: {
                 site: 'path',
                 locale: 'query_param',
-                showDefaults: true,
+                showDefaults: true
             },
             expectedRes: [
                 '/uk/',
@@ -181,14 +181,14 @@ describe('configureRoutes', function () {
                 '/site-1/category/:categoryId',
                 '/us/category/:categoryId',
                 '/site-2/category/:categoryId',
-                '/category/:categoryId',
-            ],
+                '/category/:categoryId'
+            ]
         },
         {
             urlConfig: {
                 site: 'path',
                 locale: 'query_param',
-                showDefaults: false,
+                showDefaults: false
             },
             expectedRes: [
                 '/uk/',
@@ -200,30 +200,30 @@ describe('configureRoutes', function () {
                 '/site-1/category/:categoryId',
                 '/us/category/:categoryId',
                 '/site-2/category/:categoryId',
-                '/category/:categoryId',
-            ],
+                '/category/:categoryId'
+            ]
         },
         {
             urlConfig: {
                 site: 'query_param',
                 locale: 'query_param',
-                showDefaults: true,
+                showDefaults: true
             },
-            expectedRes: ['/', '/category/:categoryId'],
+            expectedRes: ['/', '/category/:categoryId']
         },
         {
             urlConfig: {
                 site: 'query_param',
                 locale: 'query_param',
-                showDefaults: false,
+                showDefaults: false
             },
-            expectedRes: ['/', '/category/:categoryId'],
+            expectedRes: ['/', '/category/:categoryId']
         },
         {
             urlConfig: {
                 site: 'path',
                 locale: 'path',
-                showDefaults: true,
+                showDefaults: true
             },
             expectedRes: [
                 '/uk/',
@@ -249,10 +249,10 @@ describe('configureRoutes', function () {
                 '/site-2/en-US/',
                 '/site-2/en-CA/',
                 '/',
-                '/category/:categoryId',
+                '/category/:categoryId'
             ],
-            ignoredRoutes: ['/category/:categoryId'],
-        },
+            ignoredRoutes: ['/category/:categoryId']
+        }
     ]
     beforeEach(() => {
         jest.resetModules()
@@ -265,13 +265,13 @@ describe('configureRoutes', function () {
         {
             path: '/',
             component: CompA,
-            exact: true,
+            exact: true
         },
         {
             path: '/category/:categoryId',
             component: CompC,
-            exact: true,
-        },
+            exact: true
+        }
     ]
 
     cases.forEach(({urlConfig, expectedRes, ignoredRoutes = []}) => {
@@ -280,8 +280,8 @@ describe('configureRoutes', function () {
         }`, () => {
             const config = {
                 app: {
-                    url: urlConfig,
-                },
+                    url: urlConfig
+                }
             }
             const configuredRoutes = configureRoutes(routes, config, {ignoredRoutes})
             const paths = configuredRoutes.map((route) => route.path)

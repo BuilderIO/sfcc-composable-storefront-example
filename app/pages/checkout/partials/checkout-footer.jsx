@@ -16,7 +16,7 @@ import {
     HStack,
     Flex,
     Spacer,
-    useStyles,
+    useStyles
 } from '@chakra-ui/react'
 import LinksList from '../../../components/links-list'
 import {VisaIcon, MastercardIcon, AmexIcon, DiscoverIcon} from '../../../components/icons'
@@ -36,16 +36,16 @@ const CheckoutFooter = ({...otherProps}) => {
                                 href: '/',
                                 text: intl.formatMessage({
                                     id: 'checkout_footer.link.shipping',
-                                    defaultMessage: 'Shipping',
-                                }),
+                                    defaultMessage: 'Shipping'
+                                })
                             },
                             {
                                 href: '/',
                                 text: intl.formatMessage({
                                     id: 'checkout_footer.link.returns_exchanges',
-                                    defaultMessage: 'Returns & Exchanges',
-                                }),
-                            },
+                                    defaultMessage: 'Returns & Exchanges'
+                                })
+                            }
                         ]}
                         {...styles.customerService}
                     />
@@ -62,7 +62,7 @@ const CheckoutFooter = ({...otherProps}) => {
                             {intl.formatMessage({
                                 id: 'checkout_footer.message.copyright',
                                 defaultMessage:
-                                    '2021 Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed.',
+                                    '2021 Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed.'
                             })}
                         </Text>
 
@@ -95,23 +95,23 @@ const LegalLinks = ({variant}) => {
                     href: '/',
                     text: intl.formatMessage({
                         id: 'checkout_footer.link.terms_conditions',
-                        defaultMessage: 'Terms & Conditions',
-                    }),
+                        defaultMessage: 'Terms & Conditions'
+                    })
                 },
                 {
                     href: '/',
                     text: intl.formatMessage({
                         id: 'checkout_footer.link.privacy_policy',
-                        defaultMessage: 'Privacy Policy',
-                    }),
+                        defaultMessage: 'Privacy Policy'
+                    })
                 },
                 {
                     href: '/',
                     text: intl.formatMessage({
                         id: 'checkout_footer.link.site_map',
-                        defaultMessage: 'Site Map',
-                    }),
-                },
+                        defaultMessage: 'Site Map'
+                    })
+                }
             ]}
             color="gray.200"
             variant={variant}
@@ -119,7 +119,7 @@ const LegalLinks = ({variant}) => {
     )
 }
 LegalLinks.propTypes = {
-    variant: PropTypes.oneOf(['vertical', 'horizontal']),
+    variant: PropTypes.oneOf(['vertical', 'horizontal'])
 }
 
 const CreditCardIcons = (props) => {

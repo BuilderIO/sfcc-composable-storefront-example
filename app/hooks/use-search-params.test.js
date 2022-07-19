@@ -60,9 +60,9 @@ describe('The useSearchParams', () => {
             limit: '25',
             offset: '0',
             refine: {
-                c_refinementColor: ['Black', 'Purple'],
+                c_refinementColor: ['Black', 'Purple']
             },
-            sort: 'best-matches',
+            sort: 'best-matches'
         }
 
         const stringifiedObject = stringify(objectToStringify)
@@ -81,7 +81,7 @@ describe('The useSearchParams', () => {
                 limit: 25,
                 offset: 0,
                 refine: {c_refinementColor: ['Black', 'Purple']},
-                sort: 'best-matches',
+                sort: 'best-matches'
             } // eslint-disable-line
         )
     })

@@ -19,7 +19,7 @@ export const AccountOrdersProvider = ({children}) => {
         ordersById: {},
         paging: {limit: 10, offset: 0, total: 0},
         productsById: {},
-        isLoading: true,
+        isLoading: true
     })
 
     const mergeState = useCallback((data) => {
@@ -30,7 +30,7 @@ export const AccountOrdersProvider = ({children}) => {
         }
         setState((_state) => ({
             ..._state,
-            ...data,
+            ...data
         }))
     })
 
@@ -43,7 +43,7 @@ export const AccountOrdersProvider = ({children}) => {
 
             const {data = [], ...paging} = await customer.getCustomerOrders({
                 offset,
-                limit,
+                limit
             })
 
             orders = data
@@ -51,16 +51,16 @@ export const AccountOrdersProvider = ({children}) => {
             mergeState({
                 orderIdsByOffset: {
                     ...state.orderIdsByOffset,
-                    [offset]: data.map((order) => order.orderNo),
+                    [offset]: data.map((order) => order.orderNo)
                 },
                 ordersById: {
                     ...state.ordersById,
                     ...data?.reduce((acc, order) => {
                         return {...acc, [order.orderNo]: order}
-                    }, {}),
+                    }, {})
                 },
                 paging,
-                isLoading: false,
+                isLoading: false
             })
         }
 
@@ -88,7 +88,7 @@ export const AccountOrdersProvider = ({children}) => {
             order = await customer.getOrder(orderNo)
             mergeState({
                 ordersById: {...state.ordersById, [order.orderNo]: order},
-                isLoading: false,
+                isLoading: false
             })
         }
 
@@ -114,7 +114,7 @@ export const AccountOrdersProvider = ({children}) => {
         return {
             ...state,
             fetchOrders,
-            fetchOrder,
+            fetchOrder
         }
     }, [state, customer, mergeState])
 
@@ -122,7 +122,7 @@ export const AccountOrdersProvider = ({children}) => {
 }
 
 AccountOrdersProvider.propTypes = {
-    children: PropTypes.any,
+    children: PropTypes.any
 }
 
 /**

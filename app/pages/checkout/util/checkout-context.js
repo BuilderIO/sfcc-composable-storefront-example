@@ -29,7 +29,7 @@ export const CheckoutProvider = ({children}) => {
         shippingMethods: undefined,
         paymentMethods: undefined,
         globalError: undefined,
-        sectionError: undefined,
+        sectionError: undefined
     })
 
     const mergeState = useCallback((data) => {
@@ -40,7 +40,7 @@ export const CheckoutProvider = ({children}) => {
         }
         setState((_state) => ({
             ..._state,
-            ...data,
+            ...data
         }))
     })
 
@@ -224,7 +224,7 @@ export const CheckoutProvider = ({children}) => {
              */
             async getPaymentMethods() {
                 const paymentMethods = await api.shopperBaskets.getPaymentMethodsForBasket({
-                    parameters: {basketId: basket.basketId},
+                    parameters: {basketId: basket.basketId}
                 })
                 mergeState({paymentMethods})
             },
@@ -240,7 +240,7 @@ export const CheckoutProvider = ({children}) => {
                 if (paymentInstrumentId) {
                     // Customer selected a saved card
                     await basket.setPaymentInstrument({
-                        customerPaymentInstrumentId: paymentInstrumentId,
+                        customerPaymentInstrumentId: paymentInstrumentId
                     })
                     return
                 }
@@ -263,8 +263,8 @@ export const CheckoutProvider = ({children}) => {
                         // we're just passing some values to make it work. Need to investigate.
                         issueNumber: '',
                         validFromMonth: 1,
-                        validFromYear: 2020,
-                    },
+                        validFromYear: 2020
+                    }
                 }
 
                 await basket.setPaymentInstrument(paymentInstrument)
@@ -318,12 +318,12 @@ export const CheckoutProvider = ({children}) => {
                     // recommend using your own error messages, rather than those provided by OCAPI.
                     const message = formatMessage({
                         id: 'checkout.message.generic_error',
-                        defaultMessage: 'An unexpected error occurred during checkout.',
+                        defaultMessage: 'An unexpected error occurred during checkout.'
                     })
                     mergeState({globalError: message})
                     throw error
                 }
-            },
+            }
         }
     }, [state, customer, basket, mergeState])
 
@@ -331,7 +331,7 @@ export const CheckoutProvider = ({children}) => {
 }
 
 CheckoutProvider.propTypes = {
-    children: PropTypes.any,
+    children: PropTypes.any
 }
 
 /**

@@ -14,7 +14,7 @@ import {
     Skeleton,
     Text,
     Heading,
-    Box,
+    Box
 } from '@chakra-ui/react'
 import {FormattedMessage} from 'react-intl'
 

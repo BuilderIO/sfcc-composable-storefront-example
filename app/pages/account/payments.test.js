@@ -22,7 +22,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 
@@ -46,11 +46,11 @@ jest.mock('commerce-sdk-isomorphic', () => {
                             maskedNumber: '************1111',
                             numberLastDigits: '1111',
                             validFromMonth: 1,
-                            validFromYear: 2020,
+                            validFromYear: 2020
                         },
                         paymentInstrumentId: '51227637631ec8db019208d8a4',
-                        paymentMethodId: 'CREDIT_CARD',
-                    },
+                        paymentMethodId: 'CREDIT_CARD'
+                    }
                 ]
                 return {}
             }
@@ -59,13 +59,13 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 mockCustomer.paymentInstruments = undefined
                 return {}
             }
-        },
+        }
     }
 })
 
 jest.mock('@chakra-ui/toast', () => {
     return {
-        useToast: jest.fn(() => mockToastSpy),
+        useToast: jest.fn(() => mockToastSpy)
     }
 })
 
@@ -99,7 +99,7 @@ beforeEach(() => {
         email: 'jkeane@64labs.com',
         firstName: 'John',
         lastName: 'Keane',
-        login: 'jkeane@64labs.com',
+        login: 'jkeane@64labs.com'
     }
 })
 afterEach(() => {

@@ -22,37 +22,38 @@ import {
     DashboardIcon,
     HeartIcon,
     LikeIcon,
-    PlugIcon,
+    PlugIcon
 } from '../../components/icons'
 
 export const heroFeatures = [
     {
         message: defineMessages({
-            title: {defaultMessage: 'Download on Github', id: 'home.hero_features.link.on_github'},
+            title: {defaultMessage: 'Download on Github', id: 'home.hero_features.link.on_github'}
         }),
         icon: <GithubLogo width={12} height={12} />,
-        href: 'https://github.com/SalesforceCommerceCloud/pwa-kit',
+        href: 'https://github.com/SalesforceCommerceCloud/pwa-kit'
     },
     {
         message: defineMessages({
             title: {
                 defaultMessage: 'Deploy on Managed Runtime',
-                id: 'home.hero_features.link.on_managed_runtime',
-            },
+                id: 'home.hero_features.link.on_managed_runtime'
+            }
         }),
         icon: <BrandLogo width={12} height={8} />,
-        href: 'https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/pushing-and-deploying-bundles.html',
+        href:
+            'https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/pushing-and-deploying-bundles.html'
     },
     {
         message: defineMessages({
             title: {
                 defaultMessage: 'Create with the Figma PWA Design Kit',
-                id: 'home.hero_features.link.design_kit',
-            },
+                id: 'home.hero_features.link.design_kit'
+            }
         }),
         icon: <FigmaLogo width={12} height={8} />,
-        href: 'https://sfdc.co/figma-pwa-design-kit',
-    },
+        href: 'https://sfdc.co/figma-pwa-design-kit'
+    }
 ]
 
 export const features = [
@@ -62,24 +63,24 @@ export const features = [
             text: {
                 defaultMessage:
                     "Ecommerce best practice for a shopper's cart and checkout experience.",
-                id: 'home.features.description.cart_checkout',
-            },
+                id: 'home.features.description.cart_checkout'
+            }
         }),
-        icon: <BasketIcon />,
+        icon: <BasketIcon />
     },
     {
         message: defineMessages({
             title: {
                 defaultMessage: 'Einstein Recommendations',
-                id: 'home.features.heading.einstein_recommendations',
+                id: 'home.features.heading.einstein_recommendations'
             },
             text: {
                 defaultMessage:
                     'Deliver the next best product or offer to every shopper through product recommendations.',
-                id: 'home.features.description.einstein_recommendations',
-            },
+                id: 'home.features.description.einstein_recommendations'
+            }
         }),
-        icon: <LikeIcon />,
+        icon: <LikeIcon />
     },
     {
         message: defineMessages({
@@ -87,38 +88,38 @@ export const features = [
             text: {
                 defaultMessage:
                     'Shoppers can manage account information such as their profile, addresses, payments and orders.',
-                id: 'home.features.description.my_account',
-            },
+                id: 'home.features.description.my_account'
+            }
         }),
-        icon: <AccountIcon />,
+        icon: <AccountIcon />
     },
     {
         message: defineMessages({
             title: {
                 defaultMessage: 'Shopper Login and API Access Service',
-                id: 'home.features.heading.shopper_login',
+                id: 'home.features.heading.shopper_login'
             },
             text: {
                 defaultMessage:
                     'Enable shoppers to easily log in with a more personalized shopping experience.',
-                id: 'home.features.description.shopper_login',
-            },
+                id: 'home.features.description.shopper_login'
+            }
         }),
-        icon: <PlugIcon />,
+        icon: <PlugIcon />
     },
     {
         message: defineMessages({
             title: {
                 defaultMessage: 'Components & Design Kit',
-                id: 'home.features.heading.components',
+                id: 'home.features.heading.components'
             },
             text: {
                 defaultMessage:
                     'Built using Chakra UI, a simple, modular and accessible React component library.',
-                id: 'home.features.description.components',
-            },
+                id: 'home.features.description.components'
+            }
         }),
-        icon: <DashboardIcon />,
+        icon: <DashboardIcon />
     },
     {
         message: defineMessages({
@@ -126,9 +127,9 @@ export const features = [
             text: {
                 defaultMessage:
                     'Registered shoppers can add product items to their wishlist from purchasing later. ',
-                id: 'home.features.description.wishlist',
-            },
+                id: 'home.features.description.wishlist'
+            }
         }),
-        icon: <HeartIcon />,
-    },
+        icon: <HeartIcon />
+    }
 ]

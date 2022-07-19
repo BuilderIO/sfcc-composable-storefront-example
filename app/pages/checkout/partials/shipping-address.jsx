@@ -13,14 +13,19 @@ import AddressDisplay from '../../../components/address-display'
 
 const submitButtonMessage = defineMessage({
     defaultMessage: 'Continue to Shipping Method',
-    id: 'shipping_address.button.continue_to_shipping',
+    id: 'shipping_address.button.continue_to_shipping'
 })
 
 export default function ShippingAddress() {
     const {formatMessage} = useIntl()
 
-    const {step, selectedShippingAddress, setShippingAddress, setCheckoutStep, goToNextStep} =
-        useCheckout()
+    const {
+        step,
+        selectedShippingAddress,
+        setShippingAddress,
+        setCheckoutStep,
+        goToNextStep
+    } = useCheckout()
     const [isLoading, setIsLoading] = useState()
 
     const submitAndContinue = async (address) => {
@@ -35,7 +40,7 @@ export default function ShippingAddress() {
             id="step-1"
             title={formatMessage({
                 defaultMessage: 'Shipping Address',
-                id: 'shipping_address.title.shipping_address',
+                id: 'shipping_address.title.shipping_address'
             })}
             editing={step === 1}
             isLoading={isLoading}

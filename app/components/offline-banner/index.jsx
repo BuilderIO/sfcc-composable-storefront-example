@@ -14,7 +14,7 @@ import {
     Text,
 
     // Hooks
-    useStyleConfig,
+    useStyleConfig
 } from '@chakra-ui/react'
 
 // Icons
@@ -30,7 +30,7 @@ const OfflineBanner = () => {
             <Text {...style.message}>
                 {intl.formatMessage({
                     id: 'offline_banner.description.browsing_offline_mode',
-                    defaultMessage: "You're currently browsing in offline mode",
+                    defaultMessage: "You're currently browsing in offline mode"
                 })}
             </Text>
         </Alert>

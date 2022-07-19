@@ -24,15 +24,14 @@ export default function ShippingOptions() {
         selectedShippingMethod,
         selectedShippingAddress,
         setShippingMethod,
-        goToNextStep,
+        goToNextStep
     } = useCheckout()
 
     const form = useForm({
         shouldUnregister: false,
         defaultValues: {
-            shippingMethodId:
-                selectedShippingMethod?.id || shippingMethods?.defaultShippingMethodId,
-        },
+            shippingMethodId: selectedShippingMethod?.id || shippingMethods?.defaultShippingMethodId
+        }
     })
 
     useEffect(() => {
@@ -73,7 +72,7 @@ export default function ShippingOptions() {
             id="step-2"
             title={formatMessage({
                 defaultMessage: 'Shipping & Gift Options',
-                id: 'shipping_options.title.shipping_gift_options',
+                id: 'shipping_options.title.shipping_gift_options'
             })}
             editing={step === 2}
             isLoading={form.formState.isSubmitting}

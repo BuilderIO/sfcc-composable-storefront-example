@@ -18,7 +18,7 @@ import {
     Text,
     Alert,
     AlertIcon,
-    Divider,
+    Divider
 } from '@chakra-ui/react'
 import {useForm} from 'react-hook-form'
 import {getCreditCardIcon} from '../../utils/cc-utils'
@@ -50,8 +50,8 @@ const CheckoutConfirmation = () => {
             email: customer?.email || order?.customerInfo?.email || '',
             password: '',
             firstName: customer.firstName || order?.billingAddress?.firstName,
-            lastName: customer.lastName || order?.billingAddress?.lastName,
-        },
+            lastName: customer.lastName || order?.billingAddress?.lastName
+        }
     })
 
     // If we don't have an order object on first render we need to transition back to a
@@ -140,7 +140,7 @@ const CheckoutConfirmation = () => {
                                                 values={{
                                                     // eslint-disable-next-line react/display-name
                                                     b: (chunks) => <b>{chunks}</b>,
-                                                    email: order.customerInfo.email,
+                                                    email: order.customerInfo.email
                                                 }}
                                             />
                                         </Text>
@@ -263,7 +263,7 @@ const CheckoutConfirmation = () => {
                                                 itemCount: order.productItems.reduce(
                                                     (a, b) => a + b.quantity,
                                                     0
-                                                ),
+                                                )
                                             }}
                                             id="checkout_confirmation.message.num_of_items_in_order"
                                         />
@@ -283,7 +283,7 @@ const CheckoutConfirmation = () => {
                                                         order._productItemsDetail[
                                                             product.productId
                                                         ]),
-                                                    price: product.price,
+                                                    price: product.price
                                                 }
                                                 return (
                                                     <ItemVariantProvider

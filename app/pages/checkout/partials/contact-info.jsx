@@ -19,7 +19,7 @@ import {
     Button,
     Container,
     Stack,
-    Text,
+    Text
 } from '@chakra-ui/react'
 import {useHistory} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
@@ -43,11 +43,11 @@ const ContactInfo = () => {
         step,
         login,
         setCheckoutStep,
-        goToNextStep,
+        goToNextStep
     } = useCheckout()
 
     const form = useForm({
-        defaultValues: {email: customer?.email || basket.customerInfo?.email || '', password: ''},
+        defaultValues: {email: customer?.email || basket.customerInfo?.email || '', password: ''}
     })
 
     const fields = useLoginFields({form})
@@ -66,7 +66,7 @@ const ContactInfo = () => {
                 setError(
                     formatMessage({
                         defaultMessage: 'Incorrect username or password, please try again.',
-                        id: 'contact_info.error.incorrect_username_or_password',
+                        id: 'contact_info.error.incorrect_username_or_password'
                     })
                 )
             } else {
@@ -92,7 +92,7 @@ const ContactInfo = () => {
             id="step-0"
             title={formatMessage({
                 defaultMessage: 'Contact Info',
-                id: 'contact_info.title.contact_info',
+                id: 'contact_info.title.contact_info'
             })}
             editing={step === 0}
             isLoading={form.formState.isSubmitting}
@@ -106,7 +106,9 @@ const ContactInfo = () => {
             editLabel={
                 !isGuestCheckout ? (
                     <FormattedMessage defaultMessage="Sign Out" id="contact_info.action.sign_out" />
-                ) : undefined
+                ) : (
+                    undefined
+                )
             }
         >
             <ToggleCardEdit>
@@ -237,7 +239,7 @@ const SignOutConfirmationDialog = ({isOpen, onConfirm, onClose}) => {
 SignOutConfirmationDialog.propTypes = {
     isOpen: PropTypes.bool,
     onClose: PropTypes.func,
-    onConfirm: PropTypes.func,
+    onConfirm: PropTypes.func
 }
 
 export default ContactInfo

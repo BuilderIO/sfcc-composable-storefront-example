@@ -21,7 +21,7 @@ const MockedComponent = (props) => {
             title: 'Demo Notification',
             status: 'success',
             duration: 1000,
-            variant: 'subtle',
+            variant: 'subtle'
         })
     }
     return (

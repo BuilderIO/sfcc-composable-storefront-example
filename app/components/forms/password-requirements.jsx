@@ -23,7 +23,7 @@ const PasswordRequirement = ({isValid, children}) => {
         color: isValid ? 'green.500' : 'white',
         border: !isValid ? '1px solid' : 'none',
         borderColor: 'gray.200',
-        borderRadius: 'full',
+        borderRadius: 'full'
     }
     return (
         <Flex align="center">
@@ -40,7 +40,7 @@ PasswordRequirement.propTypes = {
     isValid: PropTypes.bool,
 
     /** The requirement text */
-    children: PropTypes.any,
+    children: PropTypes.any
 }
 
 /**
@@ -93,7 +93,7 @@ const PasswordRequirements = ({value}) => {
 
 PasswordRequirements.propTypes = {
     /** The password to check against */
-    value: PropTypes.string,
+    value: PropTypes.string
 }
 
 export default PasswordRequirements

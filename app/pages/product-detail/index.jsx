@@ -20,7 +20,7 @@ import {
     AccordionIcon,
     Box,
     Button,
-    Stack,
+    Stack
 } from '@chakra-ui/react'
 
 // Hooks
@@ -41,7 +41,7 @@ import {
     API_ERROR_MESSAGE,
     MAX_CACHE_AGE,
     TOAST_ACTION_VIEW_WISHLIST,
-    TOAST_MESSAGE_ADDED_TO_WISHLIST,
+    TOAST_MESSAGE_ADDED_TO_WISHLIST
 } from '../../constants'
 import {rebuildPathWithParams} from '../../utils/url'
 import {useHistory} from 'react-router-dom'
@@ -76,7 +76,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
         // update the variation attributes parameter on
         // the url accordingly as the variant changes
         const updatedUrl = rebuildPathWithParams(`${location.pathname}${location.search}`, {
-            pid: variant?.productId,
+            pid: variant?.productId
         })
         history.replace(updatedUrl)
     }, [variant])
@@ -88,7 +88,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
         try {
             await wishlist.createListItem({
                 id: product.id,
-                quantity,
+                quantity
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -102,12 +102,12 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                ),
+                )
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         }
     }
@@ -117,7 +117,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
     const showError = () => {
         showToast({
             title: formatMessage(API_ERROR_MESSAGE),
-            status: 'error',
+            status: 'error'
         })
     }
     const handleAddToCart = async (variant, quantity) => {
@@ -129,8 +129,8 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                 {
                     productId: variant.productId,
                     quantity,
-                    price: variant.price,
-                },
+                    price: variant.price
+                }
             ]
 
             await basket.addItemToBasket(productItems)
@@ -177,7 +177,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                                     <Box flex="1" textAlign="left" fontWeight="bold" fontSize="lg">
                                         {formatMessage({
                                             defaultMessage: 'Product Detail',
-                                            id: 'product_detail.accordion.button.product_detail',
+                                            id: 'product_detail.accordion.button.product_detail'
                                         })}
                                     </Box>
                                     <AccordionIcon />
@@ -186,7 +186,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                             <AccordionPanel mb={6} mt={4}>
                                 <div
                                     dangerouslySetInnerHTML={{
-                                        __html: product?.longDescription,
+                                        __html: product?.longDescription
                                     }}
                                 />
                             </AccordionPanel>
@@ -199,7 +199,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                                     <Box flex="1" textAlign="left" fontWeight="bold" fontSize="lg">
                                         {formatMessage({
                                             defaultMessage: 'Size & Fit',
-                                            id: 'product_detail.accordion.button.size_fit',
+                                            id: 'product_detail.accordion.button.size_fit'
                                         })}
                                     </Box>
                                     <AccordionIcon />
@@ -208,7 +208,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                             <AccordionPanel mb={6} mt={4}>
                                 {formatMessage({
                                     defaultMessage: 'Coming Soon',
-                                    id: 'product_detail.accordion.message.coming_soon',
+                                    id: 'product_detail.accordion.message.coming_soon'
                                 })}
                             </AccordionPanel>
                         </AccordionItem>
@@ -220,7 +220,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                                     <Box flex="1" textAlign="left" fontWeight="bold" fontSize="lg">
                                         {formatMessage({
                                             defaultMessage: 'Reviews',
-                                            id: 'product_detail.accordion.button.reviews',
+                                            id: 'product_detail.accordion.button.reviews'
                                         })}
                                     </Box>
                                     <AccordionIcon />
@@ -229,7 +229,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                             <AccordionPanel mb={6} mt={4}>
                                 {formatMessage({
                                     defaultMessage: 'Coming Soon',
-                                    id: 'product_detail.accordion.message.coming_soon',
+                                    id: 'product_detail.accordion.message.coming_soon'
                                 })}
                             </AccordionPanel>
                         </AccordionItem>
@@ -241,7 +241,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                                     <Box flex="1" textAlign="left" fontWeight="bold" fontSize="lg">
                                         {formatMessage({
                                             defaultMessage: 'Questions',
-                                            id: 'product_detail.accordion.button.questions',
+                                            id: 'product_detail.accordion.button.questions'
                                         })}
                                     </Box>
                                     <AccordionIcon />
@@ -250,7 +250,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                             <AccordionPanel mb={6} mt={4}>
                                 {formatMessage({
                                     defaultMessage: 'Coming Soon',
-                                    id: 'product_detail.accordion.message.coming_soon',
+                                    id: 'product_detail.accordion.message.coming_soon'
                                 })}
                             </AccordionPanel>
                         </AccordionItem>
@@ -293,13 +293,13 @@ ProductDetail.getProps = async ({res, params, location, api}) => {
     product = await api.shopperProducts.getProduct({
         parameters: {
             id: urlParams.get('pid') || productId,
-            allImages: true,
-        },
+            allImages: true
+        }
     })
 
     if (product?.primaryCategoryId) {
         category = await api.shopperProducts.getCategory({
-            parameters: {id: product?.primaryCategoryId, levels: 1},
+            parameters: {id: product?.primaryCategoryId, levels: 1}
         })
     }
 
@@ -311,11 +311,11 @@ ProductDetail.getProps = async ({res, params, location, api}) => {
     const productFooter = await builder
         .get('product-footer', {
             options: {
-                includeRefs: true,
+                includeRefs: true
             },
             userAttributes: {
-                product: urlParams.get('pid') || productId,
-            },
+                product: urlParams.get('pid') || productId
+            }
         })
         .toPromise()
 
@@ -349,7 +349,7 @@ ProductDetail.propTypes = {
      * The current react router match object. (Provided internally)
      */
     match: PropTypes.object,
-    productFooter: PropTypes.object,
+    productFooter: PropTypes.object
 }
 
 export default ProductDetail

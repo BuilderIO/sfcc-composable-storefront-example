@@ -17,8 +17,8 @@ import {useVariationParams} from './use-variation-params'
 const MockProduct = {
     variationAttributes: [
         {id: 'color', name: 'Color', values: []},
-        {id: 'size', name: 'Size', values: []},
-    ],
+        {id: 'size', name: 'Size', values: []}
+    ]
 }
 
 const MockComponent = () => {

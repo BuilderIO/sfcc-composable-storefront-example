@@ -8,7 +8,7 @@ import {useIntl} from 'react-intl'
 import {
     API_ERROR_MESSAGE,
     TOAST_ACTION_VIEW_WISHLIST,
-    TOAST_MESSAGE_ADDED_TO_WISHLIST,
+    TOAST_MESSAGE_ADDED_TO_WISHLIST
 } from '../../../constants'
 import useWishlist from '../../../hooks/use-wishlist'
 import {Button} from '@chakra-ui/react'
@@ -33,12 +33,12 @@ export function ProductBox({productRef, initialCategory}) {
                     (await api.shopperProducts.getProduct({
                         parameters: {
                             id: productRef?.options.product,
-                            allImages: true,
-                        },
+                            allImages: true
+                        }
                     }))
                 if (result?.primaryCategoryId) {
                     const categoryRes = await api.shopperProducts.getCategory({
-                        parameters: {id: result?.primaryCategoryId, levels: 1},
+                        parameters: {id: result?.primaryCategoryId, levels: 1}
                     })
                     setCategory(categoryRes)
                 }
@@ -53,7 +53,7 @@ export function ProductBox({productRef, initialCategory}) {
     const showError = () => {
         showToast({
             title: formatMessage(API_ERROR_MESSAGE),
-            status: 'error',
+            status: 'error'
         })
     }
     const handleAddToCart = async (variant, quantity) => {
@@ -65,8 +65,8 @@ export function ProductBox({productRef, initialCategory}) {
                 {
                     productId: variant.productId,
                     quantity,
-                    price: variant.price,
-                },
+                    price: variant.price
+                }
             ]
 
             await basket.addItemToBasket(productItems)
@@ -81,7 +81,7 @@ export function ProductBox({productRef, initialCategory}) {
         try {
             await wishlist.createListItem({
                 id: productObject.id,
-                quantity,
+                quantity
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -95,12 +95,12 @@ export function ProductBox({productRef, initialCategory}) {
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                ),
+                )
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         }
     }
@@ -122,7 +122,7 @@ ProductBox.propTypes = {
     /** product id */
     productRef: PropTypes.object,
     productObj: PropTypes.object,
-    initialCategory: PropTypes.object,
+    initialCategory: PropTypes.object
 }
 
 export default ProductBox

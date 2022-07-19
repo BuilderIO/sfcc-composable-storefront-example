@@ -18,7 +18,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 
@@ -48,7 +48,7 @@ MockComponent.propTypes = {
     product: PropTypes.object,
     addToCart: PropTypes.func,
     addToWishlist: PropTypes.func,
-    updateWishlist: PropTypes.func,
+    updateWishlist: PropTypes.func
 }
 
 const server = setupMockServer()

@@ -15,41 +15,41 @@ export default function useRegistrationFields({form: {control, errors}, prefix =
             name: `${prefix}firstName`,
             label: formatMessage({
                 defaultMessage: 'First Name',
-                id: 'use_registration_fields.label.first_name',
+                id: 'use_registration_fields.label.first_name'
             }),
             type: 'text',
             defaultValue: '',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your first name.',
-                    id: 'use_registration_fields.error.required_first_name',
-                }),
+                    id: 'use_registration_fields.error.required_first_name'
+                })
             },
             error: errors[`${prefix}firstName`],
-            control,
+            control
         },
         lastName: {
             name: `${prefix}lastName`,
             label: formatMessage({
                 defaultMessage: 'Last Name',
-                id: 'use_registration_fields.label.last_name',
+                id: 'use_registration_fields.label.last_name'
             }),
             type: 'text',
             defaultValue: '',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter your last name.',
-                    id: 'use_registration_fields.error.required_last_name',
-                }),
+                    id: 'use_registration_fields.error.required_last_name'
+                })
             },
             error: errors[`${prefix}lastName`],
-            control,
+            control
         },
         email: {
             name: `${prefix}email`,
             label: formatMessage({
                 defaultMessage: 'Email',
-                id: 'use_registration_fields.label.email',
+                id: 'use_registration_fields.label.email'
             }),
             placeholder: 'you@email.com',
             type: 'email',
@@ -57,73 +57,73 @@ export default function useRegistrationFields({form: {control, errors}, prefix =
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please enter a valid email address.',
-                    id: 'use_registration_fields.error.required_email',
-                }),
+                    id: 'use_registration_fields.error.required_email'
+                })
             },
             error: errors[`${prefix}email`],
-            control,
+            control
         },
         password: {
             name: `${prefix}password`,
             label: formatMessage({
                 defaultMessage: 'Password',
-                id: 'use_registration_fields.label.password',
+                id: 'use_registration_fields.label.password'
             }),
             type: 'password',
             defaultValue: '',
             rules: {
                 required: formatMessage({
                     defaultMessage: 'Please create a password.',
-                    id: 'use_registration_fields.error.required_password',
+                    id: 'use_registration_fields.error.required_password'
                 }),
                 validate: {
                     hasMinChars: (val) =>
                         validatePassword(val).hasMinChars ||
                         formatMessage({
                             defaultMessage: 'Password must contain at least 8 characters.',
-                            id: 'use_registration_fields.error.minimum_characters',
+                            id: 'use_registration_fields.error.minimum_characters'
                         }),
                     hasUppercase: (val) =>
                         validatePassword(val).hasUppercase ||
                         formatMessage({
                             defaultMessage: 'Password must contain at least one uppercase letter.',
-                            id: 'use_registration_fields.error.uppercase_letter',
+                            id: 'use_registration_fields.error.uppercase_letter'
                         }),
                     hasLowercase: (val) =>
                         validatePassword(val).hasLowercase ||
                         formatMessage({
                             defaultMessage: 'Password must contain at least one lowercase letter.',
-                            id: 'use_registration_fields.error.lowercase_letter',
+                            id: 'use_registration_fields.error.lowercase_letter'
                         }),
                     hasNumber: (val) =>
                         validatePassword(val).hasNumber ||
                         formatMessage({
                             defaultMessage: 'Password must contain at least one number.',
-                            id: 'use_registration_fields.error.contain_number',
+                            id: 'use_registration_fields.error.contain_number'
                         }),
                     hasSpecialChar: (val) =>
                         validatePassword(val).hasSpecialChar ||
                         formatMessage({
                             defaultMessage: 'Password must contain at least one special character.',
-                            id: 'use_registration_fields.error.special_character',
-                        }),
-                },
+                            id: 'use_registration_fields.error.special_character'
+                        })
+                }
             },
             error: errors[`${prefix}password`],
-            control,
+            control
         },
         acceptsMarketing: {
             name: `${prefix}acceptsMarketing`,
             label: formatMessage({
                 defaultMessage:
                     'Sign me up for Salesforce emails (you can unsubscribe at any time)',
-                id: 'use_registration_fields.label.sign_up_to_emails',
+                id: 'use_registration_fields.label.sign_up_to_emails'
             }),
             type: 'checkbox',
             defaultValue: false,
             error: errors[`${prefix}acceptsMarketing`],
-            control,
-        },
+            control
+        }
     }
 
     return fields

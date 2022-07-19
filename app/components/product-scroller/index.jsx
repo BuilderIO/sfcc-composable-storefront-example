@@ -41,7 +41,7 @@ const ProductScroller = forwardRef(
             scrollRef.current?.scrollBy({
                 top: 0,
                 left: direction * window.innerWidth,
-                behavior: 'smooth',
+                behavior: 'smooth'
             })
         }
 
@@ -70,7 +70,7 @@ const ProductScroller = forwardRef(
                             scrollPadding: {base: 16, md: 32, lg: 0},
                             scrollSnapType: 'x mandatory',
                             WebkitOverflowScrolling: 'touch', // Safari touch scrolling needed for scroll snap
-                            ...scrollProps?.sx,
+                            ...scrollProps?.sx
                         }}
                     >
                         {(isLoading ? [0, 1, 2, 4] : products).map((product, idx) => {
@@ -99,7 +99,7 @@ const ProductScroller = forwardRef(
                                                 ? {...productTileProps(product)}
                                                 : {...productTileProps})}
                                             dynamicImageProps={{
-                                                widths: ['70vw', '70vw', '40vw', '30vw'],
+                                                widths: ['70vw', '70vw', '40vw', '30vw']
                                             }}
                                         />
                                     )}
@@ -114,7 +114,7 @@ const ProductScroller = forwardRef(
                         <Box
                             display={{
                                 base: 'none',
-                                lg: 'block',
+                                lg: 'block'
                             }}
                             position="absolute"
                             top="50%"
@@ -134,7 +134,7 @@ const ProductScroller = forwardRef(
                         <Box
                             display={{
                                 base: 'none',
-                                lg: 'block',
+                                lg: 'block'
                             }}
                             position="absolute"
                             top="50%"
@@ -166,7 +166,7 @@ ProductScroller.propTypes = {
     isLoading: PropTypes.bool,
     scrollProps: PropTypes.object,
     itemWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
-    productTileProps: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    productTileProps: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
 }
 
 export default ProductScroller

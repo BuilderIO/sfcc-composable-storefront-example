@@ -18,7 +18,7 @@ import {
     BasketProvider,
     CommerceAPIProvider,
     CustomerProvider,
-    CustomerProductListsProvider,
+    CustomerProductListsProvider
 } from '../commerce-api/contexts'
 import {AddToCartModalContext} from '../hooks/use-add-to-cart-modal'
 import {app as appConfig} from '../../config/default'
@@ -26,7 +26,7 @@ import {IntlProvider} from 'react-intl'
 import {
     mockCategories as initialMockCategories,
     mockedRegisteredCustomer,
-    exampleTokenReponse,
+    exampleTokenReponse
 } from '../commerce-api/mock-data'
 import fallbackMessages from '../translations/compiled/en-GB.json'
 import mockConfig from '../../config/mocks/default'
@@ -36,12 +36,12 @@ export const DEFAULT_CURRENCY = 'GBP'
 export const SUPPORTED_LOCALES = [
     {
         id: 'en-GB',
-        preferredCurrency: 'GBP',
+        preferredCurrency: 'GBP'
     },
     {
         id: 'de-DE',
-        preferredCurrency: 'EUR',
-    },
+        preferredCurrency: 'EUR'
+    }
 ]
 // Contexts
 import {CategoriesProvider, CurrencyProvider} from '../contexts'
@@ -61,7 +61,7 @@ export const renderWithRouterAndCommerceAPI = (node) => {
     const api = new CommerceAPI({
         ...appConfig.commerceAPI,
         einsteinConfig: appConfig.einsteinAPI,
-        proxy: undefined,
+        proxy: undefined
     })
     return renderWithReactIntl(
         <CommerceAPIProvider value={api}>
@@ -81,7 +81,7 @@ export const TestProviders = ({
     initialCustomer = null,
     initialCategories = initialMockCategories,
     locale = DEFAULT_LOCALE,
-    messages = fallbackMessages,
+    messages = fallbackMessages
 }) => {
     const mounted = useRef()
     // We use this to track mounted state.
@@ -102,7 +102,7 @@ export const TestProviders = ({
         ...appConfig.commerceAPI,
         einsteinConfig: appConfig.einsteinAPI,
         proxy,
-        ocapiHost,
+        ocapiHost
     })
     const [basket, _setBasket] = useState(initialBasket)
     const [customer, setCustomer] = useState(initialCustomer)
@@ -118,7 +118,7 @@ export const TestProviders = ({
         isOpen: false,
         data: null,
         onOpen: () => {},
-        onClose: () => {},
+        onClose: () => {}
     }
 
     return (
@@ -153,7 +153,7 @@ TestProviders.propTypes = {
     initialCategories: PropTypes.element,
     initialProductLists: PropTypes.object,
     messages: PropTypes.object,
-    locale: PropTypes.string,
+    locale: PropTypes.string
 }
 
 /**
@@ -168,7 +168,7 @@ export const renderWithProviders = (children, options) =>
     render(children, {
         // eslint-disable-next-line react/display-name
         wrapper: () => <TestProviders {...options?.wrapperProps}>{children}</TestProviders>,
-        ...options,
+        ...options
     })
 
 /**
@@ -187,7 +187,7 @@ export const createPathWithDefaults = (path) => {
 
     const updatedPath = buildPathWithUrlConfig(path, {
         site: siteAlias || defaultSite.id,
-        locale: defaultLocale,
+        locale: defaultLocale
     })
     return updatedPath
 }
@@ -228,7 +228,7 @@ export const setupMockServer = (...handlers) => {
                     refresh_token: 'testrefeshtoken',
                     usid: 'testusid',
                     enc_user_id: 'testEncUserId',
-                    id_token: 'testIdToken',
+                    id_token: 'testIdToken'
                 })
             )
         )

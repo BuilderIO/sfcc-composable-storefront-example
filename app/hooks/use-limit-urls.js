@@ -24,7 +24,7 @@ export const useLimitUrls = () => {
     return useMemo(
         () =>
             buildUrlSet(`${location.pathname}${location.search}`, 'limit', DEFAULT_LIMIT_VALUES, {
-                offset: 0,
+                offset: 0
             }),
         [location.search, location.pathname]
     )

@@ -14,7 +14,7 @@ const mockItem = {
     items: [
         {
             id: 't1-1',
-            name: 'Test One One',
+            name: 'Test One One'
         },
         {
             id: 't1-2',
@@ -22,15 +22,15 @@ const mockItem = {
             items: [
                 {
                     id: 't1-2-1',
-                    name: 'Test One Two One',
+                    name: 'Test One Two One'
                 },
                 {
                     id: 't1-2-2',
-                    name: 'Test One Two Two',
-                },
-            ],
-        },
-    ],
+                    name: 'Test One Two Two'
+                }
+            ]
+        }
+    ]
 }
 test('Renders NestedAccordion', () => {
     renderWithProviders(<NestedAccordion item={mockItem} />)
@@ -47,12 +47,12 @@ test('Renders NestedAccordion with items elements before and after', () => {
             itemsBefore={[
                 <div className="itemsBefore" key="before">
                     before
-                </div>,
+                </div>
             ]}
             itemsAfter={[
                 <div className="itemsAfter" key="after">
                     before
-                </div>,
+                </div>
             ]}
         />
     )
@@ -68,12 +68,12 @@ test('Renders NestedAccordion with items functions before and after', () => {
     const onItemsBefore = jest.fn(() => [
         <div className="itemsBefore" key="before">
             before
-        </div>,
+        </div>
     ])
     const onItemsAfter = jest.fn(() => [
         <div className="itemsAfter" key="after">
             after
-        </div>,
+        </div>
     ])
 
     renderWithProviders(

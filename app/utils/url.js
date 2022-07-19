@@ -59,7 +59,10 @@ export const rebuildPathWithParams = (url, extraParams) => {
     })
 
     // Clean up any trailing `=` for params without values.
-    const paramStr = params.toString().replace(/=&/g, '&').replace(/=$/, '')
+    const paramStr = params
+        .toString()
+        .replace(/=&/g, '&')
+        .replace(/=$/, '')
 
     // Generate the newly updated url.
     return `${pathname}${Array.from(paramStr).length > 0 ? `?${paramStr}` : ''}`
@@ -156,7 +159,7 @@ export const getPathWithLocale = (shortCode, opts = {}) => {
                 isDefaultLocaleOfDefaultSite && isDefaultSite && isHomeRef
                     ? ''
                     : siteRef || defaultSite.alias || defaultSite.id,
-            locale: isDefaultLocaleOfDefaultSite && isDefaultSite && isHomeRef ? '' : shortCode,
+            locale: isDefaultLocaleOfDefaultSite && isDefaultSite && isHomeRef ? '' : shortCode
         },
         opts
     )
@@ -183,7 +186,7 @@ export const homeUrlBuilder = (homeHref, options = {}) => {
     const isDefaultSite = site.id === defaultSite.id || site.alias === defaultSite.alias
     const updatedUrl = buildPathWithUrlConfig(homeHref, {
         locale: isDefaultLocaleOfDefaultSite && isDefaultSite ? '' : locale.alias || locale.id,
-        site: isDefaultLocaleOfDefaultSite && isDefaultSite ? '' : site.alias || site.id,
+        site: isDefaultLocaleOfDefaultSite && isDefaultSite ? '' : site.alias || site.id
     })
     return encodeURI(updatedUrl)
 }
@@ -214,7 +217,10 @@ export const removeQueryParamsFromPath = (path, keys) => {
     })
 
     // Clean up any trailing `=` for params without values.
-    const paramStr = params.toString().replace(/=&/g, '&').replace(/=$/, '')
+    const paramStr = params
+        .toString()
+        .replace(/=&/g, '&')
+        .replace(/=$/, '')
 
     return `${pathname}${paramStr && '?'}${paramStr}`
 }

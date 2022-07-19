@@ -33,12 +33,12 @@ const CreditCardFields = ({form, prefix = ''}) => {
             ? formatMessage({
                   id: 'credit_card_fields.tool_tip.security_code.american_express',
                   defaultMessage: 'This 4-digit code can be found on the front of your card.',
-                  description: 'American Express security code help text',
+                  description: 'American Express security code help text'
               })
             : formatMessage({
                   id: 'credit_card_fields.tool_tip.security_code',
                   defaultMessage: 'This 3-digit code can be found on the back of your card.',
-                  description: 'Generic credit card security code help text',
+                  description: 'Generic credit card security code help text'
               })
 
     return (
@@ -67,7 +67,7 @@ const CreditCardFields = ({form, prefix = ''}) => {
                                 : number
                             form.setValue('cardType', card?.type || '')
                             return onChange(formattedNumber)
-                        },
+                        }
                     })}
                 >
                     {CardIcon && form.getValues().number?.length > 2 && (
@@ -108,7 +108,7 @@ const CreditCardFields = ({form, prefix = ''}) => {
                                     evt.preventDefault()
                                     return onChange(evt.target.value.slice(0, -1))
                                 }
-                            },
+                            }
                         })}
                     />
 
@@ -135,7 +135,7 @@ CreditCardFields.propTypes = {
     form: PropTypes.object.isRequired,
 
     /** Optional prefix for field names */
-    prefix: PropTypes.string,
+    prefix: PropTypes.string
 }
 
 export default CreditCardFields
