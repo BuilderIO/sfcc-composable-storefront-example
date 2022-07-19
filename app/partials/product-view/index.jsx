@@ -25,6 +25,7 @@ import {useCurrency} from '../../hooks'
 import {Skeleton as ImageGallerySkeleton} from '../../components/image-gallery'
 import {HideOnDesktop, HideOnMobile} from '../../components/responsive'
 import QuantityPicker from '../../components/quantity-picker'
+import {builder} from '@builder.io/react'
 
 const ProductViewHeader = ({name, price, currency, category}) => {
     const intl = useIntl()
@@ -185,6 +186,12 @@ const ProductView = ({
 
         return buttons
     }
+    useEffect(() => {
+        const model = builder.editingModel || builder.previewingModel
+        if (model === 'cart-modal-upsell') {
+            onAddToCartModalOpen({product, quantity})
+        }
+    }, [builder.editingModel, builder.previewingModel])
 
     useEffect(() => {
         if (isAddToCartModalOpen) {

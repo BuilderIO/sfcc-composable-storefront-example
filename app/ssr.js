@@ -82,6 +82,9 @@ const {handler} = runtime.createHandler(options, (app) => {
     app.get('*', (req, res, next) => {
         const interceptedResponse = interceptMethodCalls(res, 'send', ([result]) => {
             const styles = extractABTestingStyles(result)
+            if (!styles) {
+                return [result]
+            }
             return [result.replace('<body>', `<body><style>${styles}</style>`)]
         })
         return runtime.render(req, interceptedResponse, next)

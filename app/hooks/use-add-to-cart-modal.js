@@ -7,7 +7,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {useLocation} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {useIntl, FormattedMessage} from 'react-intl'
+import {useIntl} from 'react-intl'
 import {
     AspectRatio,
     Box,
@@ -25,10 +25,10 @@ import {
 } from '@chakra-ui/react'
 import useBasket from '../commerce-api/hooks/useBasket'
 import Link from '../components/link'
-import RecommendedProducts from '../components/recommended-products'
 import {LockIcon} from '../components/icons'
 import {useVariationAttributes} from './'
 import {findImageGroupBy} from '../utils/image-groups-utils'
+import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
 
 /**
  * This is the context for managing the AddToCartModal.
@@ -59,6 +59,28 @@ export const AddToCartModal = () => {
     const basket = useBasket()
     const size = useBreakpointValue({base: 'full', lg: '2xl', xl: '4xl'})
     const variationAttributes = useVariationAttributes(product)
+    const isPreviewing = useIsPreviewing()
+    const [cartUpsell, setCartUpsell] = useState()
+    useEffect(() => {
+        async function fetchCartUpsall() {
+            const content = await builder
+                .get('cart-modal-upsell', {
+                    options: {includeRefs: true},
+                    userAttributes: {
+                        product: product?.master.masterId
+                    }
+                })
+                .toPromise()
+            if (content) {
+                setCartUpsell(content)
+            } else {
+                setCartUpsell(null);
+            }
+        }
+        if (product) {
+            fetchCartUpsall()
+        }
+    }, [product])
     if (!isOpen) {
         return null
     }
@@ -193,18 +215,14 @@ export const AddToCartModal = () => {
                     </Flex>
                 </ModalBody>
                 <Box padding="8">
-                    <RecommendedProducts
-                        title={
-                            <FormattedMessage
-                                defaultMessage="You Might Also Like"
-                                id="add_to_cart_modal.recommended_products.title.might_also_like"
-                            />
-                        }
-                        recommender={'pdp-similar-items'}
-                        products={product && [product.id]}
-                        mx={{base: -4, md: -8, lg: 0}}
-                        shouldFetch={() => product?.id}
-                    />
+                    {(isPreviewing || cartUpsell) && (
+                        <BuilderComponent
+                            content={cartUpsell}
+                            options={{includeRefs: true}}
+                            model="cart-modal-upsell"
+                            data={{product}}
+                        />
+                    )}
                 </Box>
             </ModalContent>
         </Modal>

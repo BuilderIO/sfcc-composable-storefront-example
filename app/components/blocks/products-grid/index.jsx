@@ -15,9 +15,9 @@ import {
 import useNavigation from '../../../hooks/use-navigation'
 import PropTypes from 'prop-types'
 
-function ProductsGrid({productIds, productObjects}) {
-    const [products, setProducts] = useState(productObjects || [])
-    const [isLoading, setIsLoading] = useState(!productObjects)
+function ProductsGrid({productIds}) {
+    const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     const api = useCommerceAPI()
     const navigate = useNavigation()
     const {formatMessage} = useIntl()
@@ -131,8 +131,7 @@ function ProductsGrid({productIds, productObjects}) {
 }
 
 ProductsGrid.propTypes = {
-    productIds: PropTypes.Array,
-    productObjects: PropTypes.Array
+    productIds: PropTypes.any
 }
 
 export default ProductsGrid
