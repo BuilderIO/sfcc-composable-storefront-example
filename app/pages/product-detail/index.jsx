@@ -46,6 +46,7 @@ import {
 import {rebuildPathWithParams} from '../../utils/url'
 import {useHistory} from 'react-router-dom'
 import {useToast} from '../../hooks/use-toast'
+import builderConfig from '../../utils/builder'
 
 const ProductDetail = ({category, product, isLoading, productFooter}) => {
     const {formatMessage} = useIntl()
@@ -262,7 +263,7 @@ const ProductDetail = ({category, product, isLoading, productFooter}) => {
                         key={product.id}
                         data={{product}}
                         content={productFooter}
-                        model="product-footer"
+                        model={builderConfig.productFooterModel}
                         options={{includeRefs: true}}
                     />
                 )}
@@ -309,7 +310,7 @@ ProductDetail.getProps = async ({res, params, location, api}) => {
     }
 
     const productFooter = await builder
-        .get('product-footer', {
+        .get(builderConfig.productFooterModel, {
             options: {
                 includeRefs: true
             },

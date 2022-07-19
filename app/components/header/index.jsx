@@ -49,9 +49,9 @@ import {noop} from '../../utils/utils'
 import {navLinks, messages} from '../../pages/account/constant'
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../loading-spinner'
+import builderConfig from '../../utils/builder'
 
 const ENTER_KEY = 'Enter'
-
 const IconButtonWithRegistration = withRegistration(IconButton)
 /**
  * The header is the main source for accessing
@@ -117,9 +117,10 @@ const Header = ({
 
     // fetch content for announcement bars
     useEffect(() => {
+        console.log(' fetching ', builderConfig.announcementBarModel)
         async function fetchContent() {
             const anouncementContent = await builder
-                .get('announcement-bar', {
+                .get(builderConfig.announcementBarModel, {
                     cacheSeconds: 120
                 })
                 .toPromise()
@@ -132,7 +133,7 @@ const Header = ({
         <Box {...styles.container} {...props}>
             <BuilderComponent
                 content={announcement}
-                model="announcement-bar"
+                model={builderConfig.announcementBarModel}
                 options={{includeRefs: true}}
             />
             <Box {...styles.content}>

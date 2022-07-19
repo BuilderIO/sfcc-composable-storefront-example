@@ -4,6 +4,7 @@ import PageNotFound from '../page-not-found'
 import Seo from '../../components/seo'
 import {Box} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+import builderConfig from '../../utils/builder'
 
 export const CatchAllPage = ({page}) => {
     const isPreviewing = useIsPreviewing()
@@ -20,7 +21,11 @@ export const CatchAllPage = ({page}) => {
     return (
         <Box css={{minHeight: '100vh'}}>
             {header}
-            <BuilderComponent model="page" content={page} options={{includeRefs: true}} />
+            <BuilderComponent
+                model={builderConfig.pageModel}
+                content={page}
+                options={{includeRefs: true}}
+            />
         </Box>
     )
 }
@@ -28,7 +33,7 @@ export const CatchAllPage = ({page}) => {
 // eslint-disable-next-line
 CatchAllPage.getProps = async ({res, api, location}) => {
     const page = await builder
-        .get('page', {
+        .get(builderConfig.pageModel, {
             url: location.pathname,
             options: {
                 includeRefs: true

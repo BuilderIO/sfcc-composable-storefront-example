@@ -72,6 +72,7 @@ import {
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../../components/loading-spinner'
 import builder, {BuilderComponent, useIsPreviewing} from '@builder.io/react'
+import builderConfig from '../../utils/builder'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -259,7 +260,7 @@ const ProductList = (props) => {
                     {(isPreviewingInBuilder || builderCategoryHero) && (
                         <BuilderComponent
                             options={{includeRefs: true}}
-                            model="category-hero"
+                            model={builderConfig.categoryHeroModel}
                             content={builderCategoryHero}
                         />
                     )}
@@ -613,7 +614,7 @@ ProductList.getProps = async ({res, params, location, api}) => {
 
     if (category) {
         const builderCategoryHero = await builder
-            .get('category-hero', {
+            .get(builderConfig.categoryHeroModel, {
                 options: {includeRefs: true},
                 userAttributes: {
                     category: categoryId

@@ -29,6 +29,7 @@ import {LockIcon} from '../components/icons'
 import {useVariationAttributes} from './'
 import {findImageGroupBy} from '../utils/image-groups-utils'
 import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
+import builderconfig from '../utils/builder'
 
 /**
  * This is the context for managing the AddToCartModal.
@@ -64,7 +65,7 @@ export const AddToCartModal = () => {
     useEffect(() => {
         async function fetchCartUpsall() {
             const content = await builder
-                .get('cart-modal-upsell', {
+                .get(builderconfig.cartUpsellModel, {
                     options: {includeRefs: true},
                     userAttributes: {
                         product: product?.master.masterId
@@ -74,7 +75,7 @@ export const AddToCartModal = () => {
             if (content) {
                 setCartUpsell(content)
             } else {
-                setCartUpsell(null);
+                setCartUpsell(null)
             }
         }
         if (product) {
@@ -219,7 +220,7 @@ export const AddToCartModal = () => {
                         <BuilderComponent
                             content={cartUpsell}
                             options={{includeRefs: true}}
-                            model="cart-modal-upsell"
+                            model={builderconfig.cartUpsellModel}
                             data={{product}}
                         />
                     )}
