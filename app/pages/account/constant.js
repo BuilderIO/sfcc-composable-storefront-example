@@ -11,7 +11,7 @@ import {
     LocationIcon,
     PaymentIcon,
     ReceiptIcon,
-    HeartIcon,
+    HeartIcon
 } from '../../components/icons'
 
 export const messages = defineMessages({
@@ -19,46 +19,46 @@ export const messages = defineMessages({
     addresses: {defaultMessage: 'Addresses', id: 'global.account.link.addresses'},
     orders: {defaultMessage: 'Order History', id: 'global.account.link.order_history'},
     payments: {defaultMessage: 'Payment Methods', id: 'global.account.link.payment_methods'},
-    wishlist: {defaultMessage: 'Wishlist', id: 'global.account.link.wishlist'},
+    wishlist: {defaultMessage: 'Wishlist', id: 'global.account.link.wishlist'}
 })
 
 export const navLinks = [
     {
         name: 'profile',
         path: '',
-        icon: AccountIcon,
+        icon: AccountIcon
     },
     {
         name: 'wishlist',
         path: '/wishlist',
-        icon: HeartIcon,
+        icon: HeartIcon
     },
     {
         name: 'orders',
         path: '/orders',
-        icon: ReceiptIcon,
+        icon: ReceiptIcon
     },
     {
         name: 'addresses',
         path: '/addresses',
-        icon: LocationIcon,
+        icon: LocationIcon
     },
     {
         name: 'payments',
         path: '/payments',
-        icon: PaymentIcon,
-    },
+        icon: PaymentIcon
+    }
 ]
 
 export const CONFIRMATION_DIALOG_DEFAULT_CONFIG = defineMessages({
     dialogTitle: {
         defaultMessage: 'Confirm Action',
-        id: 'confirmation_modal.default.title.confirm_action',
+        id: 'confirmation_modal.default.title.confirm_action'
     },
     confirmationMessage: {
         defaultMessage: 'Are you sure you want to continue?',
-        id: 'confirmation_modal.default.message.you_want_to_continue',
+        id: 'confirmation_modal.default.message.you_want_to_continue'
     },
     primaryActionLabel: {defaultMessage: 'Yes', id: 'confirmation_modal.default.action.yes'},
-    alternateActionLabel: {defaultMessage: 'No', id: 'confirmation_modal.default.action.no'},
+    alternateActionLabel: {defaultMessage: 'No', id: 'confirmation_modal.default.action.no'}
 })

@@ -62,7 +62,7 @@ describe('getTargetLocale', () => {
 
     const l10nConfig = {
         defaultLocale: DEFAULT_LOCALE,
-        supportedLocales: SUPPORTED_LOCALES,
+        supportedLocales: SUPPORTED_LOCALES
     }
     beforeEach(() => {
         windowSpy = jest.spyOn(window, 'window', 'get')
@@ -84,7 +84,7 @@ describe('getTargetLocale', () => {
         }
         const targetLocale = getTargetLocale({
             getUserPreferredLocales: () => [locale],
-            l10nConfig,
+            l10nConfig
         })
         expect(targetLocale).toBe(locale)
     })

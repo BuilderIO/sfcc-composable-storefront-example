@@ -9,10 +9,10 @@ export default {
         container: {},
         heroImage: {},
         heroImageGroup: {
-            marginBottom: 2,
+            marginBottom: 2
         },
         heroImageSkeleton: {
-            marginBottom: 2,
+            marginBottom: 2
         },
         thumbnailImageGroup: {},
         thumbnailImageItem: {
@@ -23,37 +23,37 @@ export default {
             marginBottom: [1, 1, 2, 2],
             marginRight: [1, 1, 2, 2],
             _focus: {
-                boxShadow: 'outline',
+                boxShadow: 'outline'
             },
             _focusVisible: {
-                outline: 0,
-            },
+                outline: 0
+            }
         },
         thumbnailImageSkeleton: {
             marginRight: 2,
-            width: [20, 20, 24, 24],
-        },
+            width: [20, 20, 24, 24]
+        }
     },
     sizes: {
         sm: {
             heroImageSkeleton: {
-                maxWidth: ['none', 'none', 'none', '500px'],
+                maxWidth: ['none', 'none', 'none', '500px']
             },
             heroImage: {
-                maxWidth: ['none', 'none', 'none', '500px'],
-            },
+                maxWidth: ['none', 'none', 'none', '500px']
+            }
         },
         md: {
             heroImageSkeleton: {
-                maxWidth: ['none', 'none', 'none', '680px'],
+                maxWidth: ['none', 'none', 'none', '680px']
             },
             heroImage: {
-                maxWidth: ['none', 'none', 'none', '680px'],
-            },
-        },
+                maxWidth: ['none', 'none', 'none', '680px']
+            }
+        }
     },
     defaultProps: {
-        size: 'md',
+        size: 'md'
     },
-    parts: ['container', 'heroImageGroup', 'heroImage', 'heroImageSkeleton', 'thumbnailImageGroup'],
+    parts: ['container', 'heroImageGroup', 'heroImage', 'heroImageSkeleton', 'thumbnailImageGroup']
 }

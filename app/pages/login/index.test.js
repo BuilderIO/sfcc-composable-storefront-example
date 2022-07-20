@@ -24,7 +24,7 @@ const mockRegisteredCustomer = {
     email: 'darek@test.com',
     firstName: 'Tester',
     lastName: 'Testing',
-    login: 'darek@test.com',
+    login: 'darek@test.com'
 }
 
 const mockMergedBasket = {
@@ -32,8 +32,8 @@ const mockMergedBasket = {
     currency: 'USD',
     customerInfo: {
         customerId: 'registeredCustomerId',
-        email: 'darek@test.com',
-    },
+        email: 'darek@test.com'
+    }
 }
 
 jest.mock('commerce-sdk-isomorphic', () => {
@@ -49,7 +49,7 @@ jest.mock('commerce-sdk-isomorphic', () => {
                 if (args.parameters.customerId === 'customerid') {
                     return {
                         authType: 'guest',
-                        customerId: 'customerid',
+                        customerId: 'customerid'
                     }
                 }
                 return mockRegisteredCustomer
@@ -60,15 +60,15 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     headers: {
                         get(key) {
                             return {authorization: 'guestToken'}[key]
-                        },
+                        }
                     },
                     json: async () => ({
                         authType: 'guest',
-                        customerId: 'customerid',
-                    }),
+                        customerId: 'customerid'
+                    })
                 }
             }
-        },
+        }
     }
 })
 
@@ -82,21 +82,21 @@ jest.mock('../../commerce-api/utils', () => {
             code: 'test',
             usid: 'test',
             codeVerifier: 'test',
-            redirectUri: 'http://localhost/test',
-        }),
+            redirectUri: 'http://localhost/test'
+        })
     }
 })
 
 jest.mock('../../commerce-api/pkce', () => {
     return {
         createCodeVerifier: jest.fn().mockReturnValue('codeverifier'),
-        generateCodeChallenge: jest.fn().mockReturnValue('codechallenge'),
+        generateCodeChallenge: jest.fn().mockReturnValue('codechallenge')
     }
 })
 
 const MockedComponent = () => {
     const match = {
-        params: {pageName: 'profile'},
+        params: {pageName: 'profile'}
     }
     return (
         <Router>
@@ -120,7 +120,7 @@ const server = setupMockServer()
 beforeEach(() => {
     jest.resetModules()
     server.listen({
-        onUnhandledRequest: 'error',
+        onUnhandledRequest: 'error'
     })
 })
 afterEach(() => {

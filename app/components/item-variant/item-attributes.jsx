@@ -33,7 +33,7 @@ const ItemAttributes = ({includeQuantity, currency, ...props}) => {
         return {
             id: key,
             name: attr?.name || key,
-            value: attr.values.find((val) => val.value === value)?.name || value,
+            value: attr.values.find((val) => val.value === value)?.name || value
         }
     })
 
@@ -109,7 +109,7 @@ const ItemAttributes = ({includeQuantity, currency, ...props}) => {
 
 ItemAttributes.propTypes = {
     includeQuantity: PropTypes.bool,
-    currency: PropTypes.string,
+    currency: PropTypes.string
 }
 
 export default ItemAttributes

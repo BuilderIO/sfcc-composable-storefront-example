@@ -10,14 +10,14 @@ export default {
         popper: {
             borderColor: 'transparent',
             borderRadius: 'base',
-            boxShadow: '0px 1px 12px rgba(0, 0, 0, 0.25)',
-        },
+            boxShadow: '0px 1px 12px rgba(0, 0, 0, 0.25)'
+        }
     },
     variants: {
         small: {},
         normal: {
             popper: {
-                width: 286,
+                width: 286
             },
             header: {
                 textAlign: 'left',
@@ -25,20 +25,20 @@ export default {
                 borderBottom: 'none',
                 fontSize: 18,
                 px: 7,
-                paddingTop: 6,
+                paddingTop: 6
             },
             footer: {
                 textAlign: 'left',
                 fontSize: 14,
                 px: 3,
-                borderTop: 'none',
+                borderTop: 'none'
             },
             content: {
-                width: 286,
+                width: 286
             },
             body: {
-                py: 0,
-            },
+                py: 0
+            }
         },
         fullWidth: {
             popper: {
@@ -48,14 +48,14 @@ export default {
                 top: '0',
                 right: 'auto',
                 bottom: 'auto',
-                left: '0',
+                left: '0'
             },
             content: {
-                width: 'auto',
-            },
-        },
+                width: 'auto'
+            }
+        }
     },
     defaultProps: {
-        variant: 'normal',
-    },
+        variant: 'normal'
+    }
 }

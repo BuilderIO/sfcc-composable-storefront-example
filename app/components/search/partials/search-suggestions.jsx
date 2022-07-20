@@ -39,7 +39,7 @@ const SearchSuggestions = ({recentSearches, searchSuggestions, closeAndNavigate}
 SearchSuggestions.propTypes = {
     recentSearches: PropTypes.array,
     searchSuggestions: PropTypes.object,
-    closeAndNavigate: PropTypes.func,
+    closeAndNavigate: PropTypes.func
 }
 
 export default SearchSuggestions

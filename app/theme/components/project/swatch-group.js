@@ -7,28 +7,28 @@
 export default {
     baseStyle: () => ({
         swatchGroup: {
-            flexDirection: 'column ',
+            flexDirection: 'column '
         },
         swatchLabel: {
-            marginBottom: 3,
+            marginBottom: 3
         },
         swatch: {
             position: 'relative',
             backgroundColor: 'white',
             _focus: {
                 outline: 'none',
-                boxShadow: 'outline',
-            },
+                boxShadow: 'outline'
+            }
         },
         swatchesWrapper: {
-            flexWrap: 'wrap',
+            flexWrap: 'wrap'
         },
         swatchButton: {
             borderColor: 'gray.200',
             _disabled: {
-                opacity: 1,
-            },
-        },
+                opacity: 1
+            }
+        }
     }),
     variants: {
         circle: (props) => ({
@@ -46,10 +46,10 @@ export default {
                 _hover: {
                     borderColor: `${props.selected ? 'black' : 'gray.200'}`,
                     borderWidth: 1,
-                    borderStyle: 'solid',
+                    borderStyle: 'solid'
                 },
                 _active: {
-                    background: 'transparent',
+                    background: 'transparent'
                 },
                 _before: {
                     content: '""',
@@ -59,8 +59,8 @@ export default {
                     width: '1px',
                     transform: 'rotate(45deg)',
                     backgroundColor: 'black',
-                    zIndex: 1,
-                },
+                    zIndex: 1
+                }
             },
             swatchButton: {
                 height: 8,
@@ -71,9 +71,9 @@ export default {
                 minWidth: 'auto',
                 opacity: 1,
                 _focus: {
-                    outline: 'none',
-                },
-            },
+                    outline: 'none'
+                }
+            }
         }),
         square: (props) => ({
             swatch: {
@@ -98,18 +98,18 @@ export default {
                 _focus: {outline: 'none'},
                 _hover: {
                     textDecoration: 'none',
-                    borderColor: 'gray.900',
+                    borderColor: 'gray.900'
                 },
                 _active: {
-                    borderColor: 'gray.900',
+                    borderColor: 'gray.900'
                 },
                 backgroundColor: `${
                     props.selected ? (props.disabled ? 'gray.100' : 'black') : 'white'
                 }`,
-                color: `${props.selected && !props.disabled ? 'white' : 'gray.900'}`,
+                color: `${props.selected && !props.disabled ? 'white' : 'gray.900'}`
             },
-            swatchButton: {},
-        }),
+            swatchButton: {}
+        })
     },
-    parts: ['swatch', 'swatchItem'],
+    parts: ['swatch', 'swatchItem']
 }

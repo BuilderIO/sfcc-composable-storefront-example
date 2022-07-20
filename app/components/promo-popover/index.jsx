@@ -17,7 +17,7 @@ import {
     PopoverHeader,
     PopoverTrigger,
     Portal,
-    Text,
+    Text
 } from '@chakra-ui/react'
 import {InfoIcon} from '../icons'
 import {FormattedMessage} from 'react-intl'
@@ -77,7 +77,7 @@ const PromoPopover = ({header, children, ...props}) => {
 
 PromoPopover.propTypes = {
     header: PropTypes.any,
-    children: PropTypes.any,
+    children: PropTypes.any
 }
 
 export default PromoPopover

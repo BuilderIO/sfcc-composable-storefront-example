@@ -17,7 +17,7 @@ import {
     Text,
     Stack,
     useMultiStyleConfig,
-    IconButton,
+    IconButton
 } from '@chakra-ui/react'
 import DynamicImage from '../dynamic-image'
 
@@ -96,7 +96,7 @@ const ProductTile = (props) => {
                         widths={dynamicImageProps?.widths}
                         imageProps={{
                             alt: image.alt,
-                            ...dynamicImageProps?.imageProps,
+                            ...dynamicImageProps?.imageProps
                         }}
                     />
                 </AspectRatio>
@@ -113,7 +113,7 @@ const ProductTile = (props) => {
                         <IconButtonWithRegistration
                             aria-label={intl.formatMessage({
                                 id: 'product_tile.assistive_msg.wishlist',
-                                defaultMessage: 'Wishlist',
+                                defaultMessage: 'Wishlist'
                             })}
                             icon={isFavourite ? <HeartSolidIcon /> : <HeartIcon />}
                             {...styles.favIcon}
@@ -135,7 +135,7 @@ const ProductTile = (props) => {
             <Text {...styles.price}>
                 {intl.formatNumber(price, {
                     style: 'currency',
-                    currency: currency || activeCurrency,
+                    currency: currency || activeCurrency
                 })}
             </Text>
         </Link>
@@ -156,7 +156,7 @@ ProductTile.propTypes = {
         image: PropTypes.shape({
             alt: PropTypes.string,
             disBaseLink: PropTypes.string,
-            link: PropTypes.string,
+            link: PropTypes.string
         }),
         price: PropTypes.number,
         // `name` is present and localized when `product` is provided by a RecommendedProducts component
@@ -171,7 +171,7 @@ ProductTile.propTypes = {
         // See: https://developer.salesforce.com/docs/commerce/einstein-api/references/einstein-api-quick-start-guide?meta=getRecommendations
         // Note: useEinstein() transforms snake_case property names from the API response to camelCase
         productName: PropTypes.string,
-        productId: PropTypes.string,
+        productId: PropTypes.string
     }),
     /**
      * Enable adding/removing product as a favourite.
@@ -187,7 +187,7 @@ ProductTile.propTypes = {
      * interacts with favourite icon/button.
      */
     onFavouriteToggle: PropTypes.func,
-    dynamicImageProps: PropTypes.object,
+    dynamicImageProps: PropTypes.object
 }
 
 export default ProductTile

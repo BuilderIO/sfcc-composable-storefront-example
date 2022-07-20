@@ -34,12 +34,12 @@ test('returns first match for image groups with no selectedVariationAttributes',
                     id: 'color',
                     values: [
                         {
-                            value: 'JJ825XX',
-                        },
-                    ],
-                },
-            ],
-        },
+                            value: 'JJ825XX'
+                        }
+                    ]
+                }
+            ]
+        }
     ]
     expect(findImageGroupBy(groups, {viewType: 'small'})).toBe(groups[0])
 })
@@ -49,15 +49,15 @@ test('returns first match for image groups with matching selectedVariationAttrib
         id: 'color',
         values: [
             {
-                value: 'JJ825XX',
-            },
-        ],
+                value: 'JJ825XX'
+            }
+        ]
     }
     const groups = [
         {
             viewType: 'small',
-            variationAttributes: [variation],
-        },
+            variationAttributes: [variation]
+        }
     ]
     expect(findImageGroupBy(groups, {viewType: 'small', selectedVariationValues: variation})).toBe(
         groups[0]

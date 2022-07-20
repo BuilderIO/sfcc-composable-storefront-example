@@ -25,7 +25,7 @@ const ItemImage = ({imageProps, ratio = 1, ...props}) => {
     // We find the 'small' images in the variant's image groups based on variationValues and pick the first one
     const image = findImageGroupBy(variant?.imageGroups, {
         viewType: 'small',
-        selectedVariationAttributes: variant?.variationValues,
+        selectedVariationAttributes: variant?.variationValues
     })?.images?.[0]
 
     return (
@@ -67,7 +67,7 @@ const ItemImage = ({imageProps, ratio = 1, ...props}) => {
 
 ItemImage.propTypes = {
     imageProps: PropTypes.object,
-    ratio: PropTypes.number,
+    ratio: PropTypes.number
 }
 
 export default ItemImage

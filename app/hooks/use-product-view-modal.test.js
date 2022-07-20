@@ -21,7 +21,7 @@ jest.mock('../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 jest.mock('commerce-sdk-isomorphic', () => {
@@ -36,16 +36,16 @@ jest.mock('commerce-sdk-isomorphic', () => {
                     variationValues: {
                         color: 'BLACKFB',
                         size: '050',
-                        width: 'V',
+                        width: 'V'
                     },
                     c_color: 'BLACKFB',
                     c_isNew: true,
                     c_refinementColor: 'black',
                     c_size: '050',
-                    c_width: 'V',
+                    c_width: 'V'
                 }
             }
-        },
+        }
     }
 })
 const MockComponent = ({product}) => {
@@ -67,7 +67,7 @@ const MockComponent = ({product}) => {
 }
 
 MockComponent.propTypes = {
-    product: PropTypes.object,
+    product: PropTypes.object
 }
 
 describe('useProductViewModal hook', () => {

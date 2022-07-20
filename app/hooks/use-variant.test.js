@@ -17,7 +17,7 @@ import {useVariant} from './use-variant'
 const MockProduct = {
     variationAttributes: [
         {id: 'color', name: 'Color', values: []},
-        {id: 'size', name: 'Size', values: []},
+        {id: 'size', name: 'Size', values: []}
     ],
     variants: [
         {
@@ -26,8 +26,8 @@ const MockProduct = {
             productId: '883360352473M',
             variationValues: {
                 color: 'B9W',
-                size: '34',
-            },
+                size: '34'
+            }
         },
         {
             orderable: true,
@@ -35,10 +35,10 @@ const MockProduct = {
             productId: '883360492148M',
             variationValues: {
                 color: 'DKL',
-                size: '34',
-            },
-        },
-    ],
+                size: '34'
+            }
+        }
+    ]
 }
 
 const MockComponent = () => {

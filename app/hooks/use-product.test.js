@@ -28,7 +28,7 @@ const MockComponent = ({product}) => {
 }
 
 MockComponent.propTypes = {
-    product: PropTypes.object,
+    product: PropTypes.object
 }
 
 describe('useProduct hook', () => {
@@ -58,8 +58,8 @@ describe('useProduct hook', () => {
                 id: 'inventory_m',
                 orderable: false,
                 preorderable: false,
-                stockLevel: 0,
-            },
+                stockLevel: 0
+            }
         }
 
         renderWithProviders(<MockComponent product={mockData} />)

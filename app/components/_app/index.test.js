@@ -38,7 +38,7 @@ afterEach(() => {
 describe('App', () => {
     const site = {
         ...mockConfig.app.sites[0],
-        alias: 'uk',
+        alias: 'uk'
     }
     test('App component is rendered appropriately', () => {
         useSite.mockImplementation(() => site)
@@ -59,8 +59,8 @@ describe('App', () => {
 
         windowSpy.mockImplementation(() => ({
             location: {
-                origin: 'http://localhost:3000/',
-            },
+                origin: 'http://localhost:3000/'
+            }
         }))
         expect(App.shouldGetProps()).toBe(false)
     })

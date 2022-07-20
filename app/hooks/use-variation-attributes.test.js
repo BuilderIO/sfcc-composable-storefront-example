@@ -18,7 +18,7 @@ const MockProduct = {
     master: {
         masterId: '73910532M',
         orderable: true,
-        price: 195,
+        price: 195
     },
     imageGroups: [
         {
@@ -27,11 +27,12 @@ const MockProduct = {
                     alt: 'Basic Leg Trousers, , swatch',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6cc11129/images/swatch/90011212_001_sw.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6cc11129/images/swatch/90011212_001_sw.jpg',
-                    title: 'Basic Leg Trousers, ',
-                },
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6cc11129/images/swatch/90011212_001_sw.jpg',
+                    title: 'Basic Leg Trousers, '
+                }
             ],
-            viewType: 'swatch',
+            viewType: 'swatch'
         },
         {
             images: [
@@ -39,22 +40,23 @@ const MockProduct = {
                     alt: 'Basic Leg Trousers, Black, swatch',
                     disBaseLink:
                         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6cc11129/images/swatch/90011212_001_sw.jpg',
-                    link: 'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6cc11129/images/swatch/90011212_001_sw.jpg',
-                    title: 'Basic Leg Trousers, Black',
-                },
+                    link:
+                        'https://zzrf-001.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Sites-apparel-m-catalog/default/dw6cc11129/images/swatch/90011212_001_sw.jpg',
+                    title: 'Basic Leg Trousers, Black'
+                }
             ],
             variationAttributes: [
                 {
                     id: 'color',
                     values: [
                         {
-                            value: '001',
-                        },
-                    ],
-                },
+                            value: '001'
+                        }
+                    ]
+                }
             ],
-            viewType: 'swatch',
-        },
+            viewType: 'swatch'
+        }
     ],
     variants: [
         {
@@ -63,9 +65,9 @@ const MockProduct = {
             productId: '883858858302M',
             variationValues: {
                 color: '001',
-                size: '28',
-            },
-        },
+                size: '28'
+            }
+        }
     ],
     variationAttributes: [
         {
@@ -75,9 +77,9 @@ const MockProduct = {
                 {
                     name: 'Black',
                     orderable: true,
-                    value: '001',
-                },
-            ],
+                    value: '001'
+                }
+            ]
         },
         {
             id: 'size',
@@ -86,11 +88,11 @@ const MockProduct = {
                 {
                     name: '28',
                     orderable: true,
-                    value: '28',
-                },
-            ],
-        },
-    ],
+                    value: '28'
+                }
+            ]
+        }
+    ]
 }
 
 const MockComponent = () => {

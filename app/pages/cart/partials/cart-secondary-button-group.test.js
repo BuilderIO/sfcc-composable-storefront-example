@@ -8,7 +8,7 @@ import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import {
     mockedCustomerProductLists,
-    mockedCustomerProductListsDetails,
+    mockedCustomerProductListsDetails
 } from '../../../commerce-api/mock-data'
 import ItemVariantProvider from '../../../components/item-variant'
 import {renderWithProviders} from '../../../utils/test-utils'
@@ -21,7 +21,7 @@ import useCustomer from '../../../commerce-api/hooks/useCustomer'
 const MockedComponent = ({
     onAddToWishlistClick = noop,
     onEditClick = noop,
-    onRemoveItemClick = noop,
+    onRemoveItemClick = noop
 }) => {
     const customer = useCustomer()
 
@@ -45,14 +45,14 @@ const MockedComponent = ({
 MockedComponent.propTypes = {
     onAddToWishlistClick: PropTypes.func,
     onEditClick: PropTypes.func,
-    onRemoveItemClick: PropTypes.func,
+    onRemoveItemClick: PropTypes.func
 }
 
 jest.mock('../../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 
@@ -64,7 +64,7 @@ jest.mock('../../../commerce-api/hooks/useBasket', () => {
 
         return {
             ...basket,
-            removeItemFromBasket: jest.fn(),
+            removeItemFromBasket: jest.fn()
         }
     }
 })
@@ -79,7 +79,7 @@ jest.mock('../../../commerce-api/hooks/useCustomerProductLists', () => {
             ...customerProductLists,
             ...mockedCustomerProductLists,
             loaded: jest.fn().mockReturnValue(true),
-            createCustomerProductListItem: jest.fn().mockReturnValue({id: 'testid'}),
+            createCustomerProductListItem: jest.fn().mockReturnValue({id: 'testid'})
         }
     }
 })
@@ -92,7 +92,7 @@ jest.mock('../../../commerce-api/hooks/useCustomer', () => {
 
         return {
             ...customer,
-            isRegistered: () => true,
+            isRegistered: () => true
         }
     }
 })
@@ -104,7 +104,7 @@ beforeEach(() => {
 test('renders secondary action component', async () => {
     renderWithProviders(<MockedComponent />)
     const removeButton = screen.getByRole('button', {
-        name: /remove/i,
+        name: /remove/i
     })
     expect(removeButton).toBeInTheDocument()
     user.click(removeButton)
@@ -131,7 +131,7 @@ test('renders secondary with event handlers', async () => {
     )
 
     const editButton = screen.getByRole('button', {
-        name: /Edit/i,
+        name: /Edit/i
     })
 
     expect(editButton).toBeInTheDocument()
@@ -139,13 +139,13 @@ test('renders secondary with event handlers', async () => {
     expect(onEditClick).toHaveBeenCalledTimes(1)
 
     const addToWishlistButton = screen.getByRole('button', {
-        name: /Add to wishlist/i,
+        name: /Add to wishlist/i
     })
     user.click(addToWishlistButton)
     expect(onAddToWishlistClick).toHaveBeenCalledTimes(1)
 
     const removeButton = screen.getByRole('button', {
-        name: /remove/i,
+        name: /remove/i
     })
 
     expect(removeButton).toBeInTheDocument()

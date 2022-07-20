@@ -72,5 +72,5 @@ export const MESSAGE_PROPTYPE = PropTypes.shape({
     // NOTE: defaultMessage is typically written as a string
     // but its value can be an array when it comes from the compiled AST version
     defaultMessage: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-    id: PropTypes.string,
+    id: PropTypes.string
 })

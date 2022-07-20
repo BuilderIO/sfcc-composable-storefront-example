@@ -1,5 +1,5 @@
 {
-  "name": "demo-storefront",
+  "name": "builder-demo",
   "version": "0.0.1",
   "license": "See license in LICENSE",
   "private": true,
@@ -93,6 +93,7 @@
   ],
   "dependencies": {
     "@builder.io/react": "^2.0.2-7",
-    "@builder.io/widgets": "^1.2.22-7"
+    "@builder.io/widgets": "^1.2.22-7",
+    "cheerio": "^1.0.0-rc.12"
   }
 }

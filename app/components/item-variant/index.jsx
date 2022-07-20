@@ -27,7 +27,7 @@ const ItemVariantProvider = ({variant, children}) => {
 
 ItemVariantProvider.propTypes = {
     variant: PropTypes.object,
-    children: PropTypes.any,
+    children: PropTypes.any
 }
 
 export default ItemVariantProvider

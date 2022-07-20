@@ -6,7 +6,7 @@ module.exports = {
             // Determine where the siteRef is located. Valid values include 'path|query_param|none'. Defaults to: 'none'
             // site: 'none',
             // Determine where the localeRef is located. Valid values include 'path|query_param|none'. Defaults to: 'none'
-            locale: 'none',
+            locale: 'none'
             // This boolean value dictates whether or not default site or locale values are shown in the url. Defaults to: false
             // showDefaults: true
         },
@@ -25,15 +25,15 @@ module.exports = {
                 clientId: '1d763261-6522-4913-9d52-5d947d3b94c4',
                 organizationId: 'f_ecom_zzte_053',
                 shortCode: 'kv7kzm78',
-                siteId: 'RefArch',
-            },
+                siteId: 'RefArch'
+            }
         },
         // Einstein api config
         einsteinAPI: {
             proxyPath: `/mobify/proxy/einstein`,
             einsteinId: '1ea06c6e-c936-4324-bcf0-fada93f83bb1',
-            siteId: 'aaij-MobileFirst',
-        },
+            siteId: 'aaij-MobileFirst'
+        }
     },
     // This list contains server-side only libraries that you don't want to be compiled by webpack
     externals: [],
@@ -51,7 +51,7 @@ module.exports = {
         'static/robots.txt',
         '**/*.js',
         '**/*.js.map',
-        '**/*.json',
+        '**/*.json'
     ],
     // Additional parameters that configure Express app behavior.
     ssrParameters: {
@@ -59,16 +59,16 @@ module.exports = {
         proxyConfigs: [
             {
                 host: 'kv7kzm78.api.commercecloud.salesforce.com',
-                path: 'api',
+                path: 'api'
             },
             {
                 host: 'zzte-053.sandbox.us02.dx.commercecloud.salesforce.com',
-                path: 'ocapi',
+                path: 'ocapi'
             },
             {
                 host: 'api.cquotient.com',
-                path: 'einstein',
-            },
-        ],
-    },
+                path: 'einstein'
+            }
+        ]
+    }
 }

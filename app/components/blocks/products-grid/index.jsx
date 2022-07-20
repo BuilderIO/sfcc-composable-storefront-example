@@ -10,14 +10,14 @@ import {
     API_ERROR_MESSAGE,
     TOAST_ACTION_VIEW_WISHLIST,
     TOAST_MESSAGE_ADDED_TO_WISHLIST,
-    TOAST_MESSAGE_REMOVED_FROM_WISHLIST,
+    TOAST_MESSAGE_REMOVED_FROM_WISHLIST
 } from '../../../constants'
 import useNavigation from '../../../hooks/use-navigation'
 import PropTypes from 'prop-types'
 
-function ProductsGrid({productIds, productObjects}) {
-    const [products, setProducts] = useState(productObjects || [])
-    const [isLoading, setIsLoading] = useState(!productObjects)
+function ProductsGrid({productIds}) {
+    const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     const api = useCommerceAPI()
     const navigate = useNavigation()
     const {formatMessage} = useIntl()
@@ -26,7 +26,7 @@ function ProductsGrid({productIds, productObjects}) {
             setIsLoading(true)
             if (productIds?.length > 0) {
                 const results = await api.shopperProducts.getProducts({
-                    parameters: {ids: productIds.join(','), allImages: true},
+                    parameters: {ids: productIds.join(','), allImages: true}
                 })
                 setProducts(results.data)
             }
@@ -44,7 +44,7 @@ function ProductsGrid({productIds, productObjects}) {
             setWishlistLoading([...wishlistLoading, product.productId])
             await wishlist.createListItem({
                 id: product.productId,
-                quantity: 1,
+                quantity: 1
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -58,12 +58,12 @@ function ProductsGrid({productIds, productObjects}) {
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                ),
+                )
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         } finally {
             setWishlistLoading(wishlistLoading.filter((id) => id !== product.productId))
@@ -77,12 +77,12 @@ function ProductsGrid({productIds, productObjects}) {
             await wishlist.removeListItemByProductId(product.productId)
             toast({
                 title: formatMessage(TOAST_MESSAGE_REMOVED_FROM_WISHLIST),
-                status: 'success',
+                status: 'success'
             })
         } catch {
             toast({
                 title: formatMessage(API_ERROR_MESSAGE),
-                status: 'error',
+                status: 'error'
             })
         } finally {
             setWishlistLoading(wishlistLoading.filter((id) => id !== product.productId))
@@ -121,7 +121,7 @@ function ProductsGrid({productIds, productObjects}) {
                                   return action(product)
                               }}
                               dynamicImageProps={{
-                                  widths: ['70vw', '70vw', '40vw', '30vw'],
+                                  widths: ['70vw', '70vw', '40vw', '30vw']
                               }}
                           />
                       )
@@ -131,8 +131,7 @@ function ProductsGrid({productIds, productObjects}) {
 }
 
 ProductsGrid.propTypes = {
-    productIds: PropTypes.Array,
-    productObjects: PropTypes.Array,
+    productIds: PropTypes.any
 }
 
 export default ProductsGrid

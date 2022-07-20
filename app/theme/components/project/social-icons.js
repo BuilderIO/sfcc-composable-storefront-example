@@ -7,46 +7,46 @@
 export default {
     baseStyle: {
         container: {
-            flex: 1,
+            flex: 1
         },
         icon: {
             width: 5,
-            height: 5,
+            height: 5
         },
         item: {
             textAlign: 'center',
             paddingLeft: 2,
-            paddingRight: 2,
-        },
+            paddingRight: 2
+        }
     },
     variants: {
         'flex-start': {
             container: {
-                justifyContent: 'flex-start',
+                justifyContent: 'flex-start'
             },
             item: {
-                flex: 0,
-            },
+                flex: 0
+            }
         },
         'flex-end': {
             container: {
-                justifyContent: 'flex-end',
+                justifyContent: 'flex-end'
             },
             item: {
-                flex: 0,
-            },
+                flex: 0
+            }
         },
         flex: {
             container: {
-                justifyContent: 'center',
+                justifyContent: 'center'
             },
             item: {
-                flex: 1,
-            },
-        },
+                flex: 1
+            }
+        }
     },
     parts: ['container', 'item', 'icon'],
     defaultProps: {
-        variant: 'flex-start',
-    },
+        variant: 'flex-start'
+    }
 }

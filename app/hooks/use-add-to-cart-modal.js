@@ -7,7 +7,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {useLocation} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {useIntl, FormattedMessage} from 'react-intl'
+import {useIntl} from 'react-intl'
 import {
     AspectRatio,
     Box,
@@ -21,14 +21,15 @@ import {
     ModalContent,
     ModalOverlay,
     Stack,
-    useBreakpointValue,
+    useBreakpointValue
 } from '@chakra-ui/react'
 import useBasket from '../commerce-api/hooks/useBasket'
 import Link from '../components/link'
-import RecommendedProducts from '../components/recommended-products'
 import {LockIcon} from '../components/icons'
 import {useVariationAttributes} from './'
 import {findImageGroupBy} from '../utils/image-groups-utils'
+import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
+import builderconfig from '../utils/builder'
 
 /**
  * This is the context for managing the AddToCartModal.
@@ -46,7 +47,7 @@ export const AddToCartModalProvider = ({children}) => {
     )
 }
 AddToCartModalProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired
 }
 
 /**
@@ -59,6 +60,28 @@ export const AddToCartModal = () => {
     const basket = useBasket()
     const size = useBreakpointValue({base: 'full', lg: '2xl', xl: '4xl'})
     const variationAttributes = useVariationAttributes(product)
+    const isPreviewing = useIsPreviewing()
+    const [cartUpsell, setCartUpsell] = useState()
+    useEffect(() => {
+        async function fetchCartUpsall() {
+            const content = await builder
+                .get(builderconfig.cartUpsellModel, {
+                    options: {includeRefs: true},
+                    userAttributes: {
+                        product: product?.master.masterId
+                    }
+                })
+                .toPromise()
+            if (content) {
+                setCartUpsell(content)
+            } else {
+                setCartUpsell(null)
+            }
+        }
+        if (product) {
+            fetchCartUpsall()
+        }
+    }, [product])
     if (!isOpen) {
         return null
     }
@@ -67,7 +90,7 @@ export const AddToCartModal = () => {
     const lineItemPrice = productItems?.find((item) => item.productId === id)?.basePrice * quantity
     const image = findImageGroupBy(product.imageGroups, {
         viewType: 'small',
-        selectedVariationAttributes: variationValues,
+        selectedVariationAttributes: variationValues
     })?.images?.[0]
 
     return (
@@ -85,7 +108,7 @@ export const AddToCartModal = () => {
                         {
                             defaultMessage:
                                 '{quantity} {quantity, plural, one {item} other {items}} added to cart',
-                            id: 'add_to_cart_modal.info.added_to_cart',
+                            id: 'add_to_cart_modal.info.added_to_cart'
                         },
                         {quantity}
                     )}
@@ -126,7 +149,7 @@ export const AddToCartModal = () => {
                                             <Text>
                                                 {intl.formatMessage({
                                                     defaultMessage: 'Qty',
-                                                    id: 'add_to_cart_modal.label.quantity',
+                                                    id: 'add_to_cart_modal.label.quantity'
                                                 })}
                                                 : {quantity}
                                             </Text>
@@ -138,7 +161,7 @@ export const AddToCartModal = () => {
                                         {!!lineItemPrice &&
                                             intl.formatNumber(lineItemPrice, {
                                                 style: 'currency',
-                                                currency: currency,
+                                                currency: currency
                                             })}
                                     </Text>
                                 </Box>
@@ -155,7 +178,7 @@ export const AddToCartModal = () => {
                                         {
                                             defaultMessage:
                                                 'Cart Subtotal ({itemAccumulatedCount} item)',
-                                            id: 'add_to_cart_modal.label.cart_subtotal',
+                                            id: 'add_to_cart_modal.label.cart_subtotal'
                                         },
                                         {itemAccumulatedCount}
                                     )}
@@ -164,7 +187,7 @@ export const AddToCartModal = () => {
                                     {productSubTotal &&
                                         intl.formatNumber(productSubTotal, {
                                             style: 'currency',
-                                            currency: currency,
+                                            currency: currency
                                         })}
                                 </Text>
                             </Flex>
@@ -172,7 +195,7 @@ export const AddToCartModal = () => {
                                 <Button as={Link} to="/cart" width="100%" variant="solid">
                                     {intl.formatMessage({
                                         defaultMessage: 'View Cart',
-                                        id: 'add_to_cart_modal.link.view_cart',
+                                        id: 'add_to_cart_modal.link.view_cart'
                                     })}
                                 </Button>
 
@@ -185,7 +208,7 @@ export const AddToCartModal = () => {
                                 >
                                     {intl.formatMessage({
                                         defaultMessage: 'Proceed to Checkout',
-                                        id: 'add_to_cart_modal.link.checkout',
+                                        id: 'add_to_cart_modal.link.checkout'
                                     })}
                                 </Button>
                             </Stack>
@@ -193,18 +216,14 @@ export const AddToCartModal = () => {
                     </Flex>
                 </ModalBody>
                 <Box padding="8">
-                    <RecommendedProducts
-                        title={
-                            <FormattedMessage
-                                defaultMessage="You Might Also Like"
-                                id="add_to_cart_modal.recommended_products.title.might_also_like"
-                            />
-                        }
-                        recommender={'pdp-similar-items'}
-                        products={product && [product.id]}
-                        mx={{base: -4, md: -8, lg: 0}}
-                        shouldFetch={() => product?.id}
-                    />
+                    {(isPreviewing || cartUpsell) && (
+                        <BuilderComponent
+                            content={cartUpsell}
+                            options={{includeRefs: true}}
+                            model={builderconfig.cartUpsellModel}
+                            data={{product}}
+                        />
+                    )}
                 </Box>
             </ModalContent>
         </Modal>
@@ -214,22 +233,22 @@ export const AddToCartModal = () => {
 AddToCartModal.propTypes = {
     product: PropTypes.shape({
         name: PropTypes.string,
-        imageGroups: PropTypes.array,
+        imageGroups: PropTypes.array
     }),
     variant: PropTypes.shape({
         productId: PropTypes.string,
-        variationValues: PropTypes.object,
+        variationValues: PropTypes.object
     }),
     quantity: PropTypes.number,
     isOpen: PropTypes.bool,
     onClose: PropTypes.func,
-    children: PropTypes.any,
+    children: PropTypes.any
 }
 
 export const useAddToCartModal = () => {
     const [state, setState] = useState({
         isOpen: false,
-        data: null,
+        data: null
     })
 
     const {pathname} = useLocation()
@@ -237,7 +256,7 @@ export const useAddToCartModal = () => {
         if (state.isOpen) {
             setState({
                 ...state,
-                isOpen: false,
+                isOpen: false
             })
         }
     }, [pathname])
@@ -248,14 +267,14 @@ export const useAddToCartModal = () => {
         onOpen: (data) => {
             setState({
                 isOpen: true,
-                data,
+                data
             })
         },
         onClose: () => {
             setState({
                 isOpen: false,
-                data: null,
+                data: null
             })
-        },
+        }
     }
 }

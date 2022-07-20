@@ -10,12 +10,12 @@ export default {
             paddingLeft: 0,
 
             _hover: {
-                background: 'none',
-            },
+                background: 'none'
+            }
         },
         panel: {
             paddingTop: 0,
-            paddingBottom: 0,
-        },
-    },
+            paddingBottom: 0
+        }
+    }
 }

@@ -20,7 +20,7 @@ const MockComponent = () => {
     return <div data-testid="site">{JSON.stringify(site)}</div>
 }
 
-describe('useSite', function () {
+describe('useSite', function() {
     test('returns the default site when there is no ref in the url ', () => {
         const history = createMemoryHistory()
         history.push('/test/path')

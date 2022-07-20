@@ -7,7 +7,7 @@
 import {
     mockGetZoneRecommendationsResponse,
     mockRecommendationsResponse,
-    mockRecommendersResponse,
+    mockRecommendersResponse
 } from '../mocks/einstein-mock-data'
 import {keysToCamel} from '../utils'
 
@@ -53,8 +53,8 @@ class EinsteinAPI {
                 productId: r.id,
                 image: {disBaseLink: r.imageUrl},
                 currency: 'USD',
-                price: 5.99,
-            })),
+                price: 5.99
+            }))
         }
     }
 }

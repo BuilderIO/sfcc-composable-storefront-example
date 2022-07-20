@@ -15,8 +15,8 @@ import LinksList from './index'
 const links = [
     {
         href: '/',
-        text: 'Privacy Policy',
-    },
+        text: 'Privacy Policy'
+    }
 ]
 const horizontalVariantSelector = 'ul > .chakra-stack > li'
 
@@ -25,7 +25,7 @@ const FooterStylesProvider = ({children}) => {
     return <StylesProvider value={styles}>{children}</StylesProvider>
 }
 FooterStylesProvider.propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.node
 }
 
 test('renders LinksList with default arguments', () => {

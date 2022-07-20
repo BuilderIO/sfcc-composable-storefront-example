@@ -14,7 +14,7 @@ Builder.registerComponent(ProductBox, {
             name: 'productRef',
             friendlyName: 'Product',
             type: 'SFCommerceProduct',
-            required: true,
-        },
-    ],
+            required: true
+        }
+    ]
 })

@@ -40,7 +40,7 @@ const CheckboxRefinements = ({filter, toggleFilter, selectedFilters}) => {
 CheckboxRefinements.propTypes = {
     filter: PropTypes.object,
     toggleFilter: PropTypes.func,
-    selectedFilters: PropTypes.array,
+    selectedFilters: PropTypes.array
 }
 
 export default CheckboxRefinements

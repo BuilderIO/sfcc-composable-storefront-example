@@ -14,7 +14,7 @@ import {
     mockOrderHistory,
     mockedGuestCustomer,
     mockedRegisteredCustomer,
-    mockOrderProducts,
+    mockOrderProducts
 } from '../../commerce-api/mock-data'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
 import Account from './index'
@@ -23,7 +23,7 @@ jest.mock('../../commerce-api/utils', () => {
     const originalModule = jest.requireActual('../../commerce-api/utils')
     return {
         ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true),
+        isTokenValid: jest.fn().mockReturnValue(true)
     }
 })
 
@@ -123,7 +123,7 @@ test('Allows customer to edit profile details', async () => {
                 ctx.json({
                     ...mockedRegisteredCustomer,
                     firstName: 'Geordi',
-                    phoneHome: '(567) 123-5585',
+                    phoneHome: '(567) 123-5585'
                 })
             )
         ),
@@ -132,7 +132,7 @@ test('Allows customer to edit profile details', async () => {
                 ctx.json({
                     ...mockedRegisteredCustomer,
                     firstName: 'Geordi',
-                    phoneHome: '(567) 123-5585',
+                    phoneHome: '(567) 123-5585'
                 })
             )
         )

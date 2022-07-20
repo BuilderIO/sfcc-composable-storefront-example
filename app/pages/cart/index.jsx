@@ -34,7 +34,7 @@ import useBasket from '../../commerce-api/hooks/useBasket'
 import {
     API_ERROR_MESSAGE,
     TOAST_ACTION_VIEW_WISHLIST,
-    TOAST_MESSAGE_ADDED_TO_WISHLIST,
+    TOAST_MESSAGE_ADDED_TO_WISHLIST
 } from '../../constants'
 import {REMOVE_CART_ITEM_CONFIRMATION_DIALOG_CONFIG} from './partials/cart-secondary-button-group'
 
@@ -55,7 +55,7 @@ const Cart = () => {
     const showError = () => {
         toast({
             title: formatMessage(API_ERROR_MESSAGE),
-            status: 'error',
+            status: 'error'
         })
     }
 
@@ -66,7 +66,7 @@ const Cart = () => {
         try {
             await wishlist.createListItem({
                 id: product.productId,
-                quantity: product.quantity,
+                quantity: product.quantity
             })
             toast({
                 title: formatMessage(TOAST_MESSAGE_ADDED_TO_WISHLIST, {quantity: 1}),
@@ -80,7 +80,7 @@ const Cart = () => {
                     <Button variant="link" onClick={() => navigate('/account/wishlist')}>
                         {formatMessage(TOAST_ACTION_VIEW_WISHLIST)}
                     </Button>
-                ),
+                )
             })
         } catch {
             showError()
@@ -116,7 +116,7 @@ const Cart = () => {
                 const item = {
                     productId: variant.productId,
                     quantity,
-                    price: variant.price,
+                    price: variant.price
                 }
                 return await basket.updateItemInBasket(item, selectedItem.itemId)
             }
@@ -151,7 +151,7 @@ const Cart = () => {
         try {
             const item = {
                 productId: product.id,
-                quantity: parseInt(quantity),
+                quantity: parseInt(quantity)
             }
             await basket.updateItemInBasket(item, product.itemId)
         } catch {
@@ -203,9 +203,9 @@ const Cart = () => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'Item removed from cart',
-                    id: 'cart.info.removed_from_cart',
+                    id: 'cart.info.removed_from_cart'
                 }),
-                status: 'success',
+                status: 'success'
             })
         } catch {
             showError()
@@ -255,7 +255,7 @@ const Cart = () => {
                                                 price: product.price,
                                                 quantity: localQuantity[product.itemId]
                                                     ? localQuantity[product.itemId]
-                                                    : product.quantity,
+                                                    : product.quantity
                                             }}
                                             onItemQuantityChange={handleChangeItemQuantity.bind(
                                                 this,

@@ -40,7 +40,7 @@ const LoadingSpinner = ({wrapperStyles = {}, spinnerStyles = {}}) => {
 
 LoadingSpinner.propTypes = {
     wrapperStyles: PropTypes.object,
-    spinnerStyles: PropTypes.object,
+    spinnerStyles: PropTypes.object
 }
 
 export default LoadingSpinner

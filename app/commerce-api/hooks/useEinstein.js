@@ -40,7 +40,7 @@ const useEinstein = () => {
             setState((s) => ({...s, loading: true}))
             const recommendations = await api.einstein.getZoneRecommendations(...args)
             setState({loading: false, recommendations})
-        },
+        }
     }
 }
 

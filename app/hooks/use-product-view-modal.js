@@ -55,14 +55,14 @@ export const useProductViewModal = (initialProduct) => {
                 const res = await api.shopperProducts.getProduct({
                     parameters: {
                         id: variant.productId,
-                        allImages: true,
-                    },
+                        allImages: true
+                    }
                 })
                 if (isError(res)) {
                     setIsFetching(false)
                     toast({
                         title: intl.formatMessage(API_ERROR_MESSAGE),
-                        status: 'error',
+                        status: 'error'
                     })
                     throw new Error(res)
                 }
@@ -75,7 +75,7 @@ export const useProductViewModal = (initialProduct) => {
             // update the url with the new product id and variation values when the variant changes
             const updatedUrl = rebuildPathWithParams(`${location.pathname}${location.search}`, {
                 ...variationValues,
-                pid: variant.productId,
+                pid: variant.productId
             })
             history.replace(updatedUrl)
         }
@@ -85,6 +85,6 @@ export const useProductViewModal = (initialProduct) => {
     return {
         product,
         variant,
-        isFetching,
+        isFetching
     }
 }

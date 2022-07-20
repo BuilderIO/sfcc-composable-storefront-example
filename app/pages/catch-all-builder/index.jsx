@@ -1,36 +1,31 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
 import PageNotFound from '../page-not-found'
 import Seo from '../../components/seo'
-import {useEffect} from 'react'
 import {Box} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+import builderConfig from '../../utils/builder'
 
 export const CatchAllPage = ({page}) => {
     const isPreviewing = useIsPreviewing()
-    const [mounted, setMounted] = useState(false)
-    useEffect(() => {
-        setMounted(true)
-    }, [])
 
     if (!isPreviewing && !page) {
         return <PageNotFound />
     }
     let header = <React.Fragment></React.Fragment>
-    let delay = false
     if (page) {
         const {title, description, keywords} = page.data
-        header = <Seo title={title} description={description} keywords={keywords?.join(', ')}></Seo>
-        // delay rendering to client side when there's an a/b test, styling of ab tests is not playing well with chakra
-        delay = Object.keys(page.variations || {}).length > 0
+        header = <Seo title={title} description={description} keywords={keywords?.join(', ')} />
     }
 
     return (
         <Box css={{minHeight: '100vh'}}>
             {header}
-            {(delay ? mounted : true) && (
-                <BuilderComponent model="page" content={page} options={{includeRefs: true}} />
-            )}
+            <BuilderComponent
+                model={builderConfig.pageModel}
+                content={page}
+                options={{includeRefs: true}}
+            />
         </Box>
     )
 }
@@ -38,11 +33,11 @@ export const CatchAllPage = ({page}) => {
 // eslint-disable-next-line
 CatchAllPage.getProps = async ({res, api, location}) => {
     const page = await builder
-        .get('page', {
+        .get(builderConfig.pageModel, {
             url: location.pathname,
             options: {
-                includeRefs: true,
-            },
+                includeRefs: true
+            }
         })
         .toPromise()
 
@@ -54,7 +49,7 @@ CatchAllPage.getProps = async ({res, api, location}) => {
 }
 
 CatchAllPage.propTypes = {
-    page: PropTypes.any,
+    page: PropTypes.any
 }
 
 export default CatchAllPage

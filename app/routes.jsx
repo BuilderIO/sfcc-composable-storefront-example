@@ -42,73 +42,73 @@ const routes = [
     {
         path: '/',
         component: Home,
-        exact: true,
+        exact: true
     },
     {
         path: '/login',
         component: Login,
-        exact: true,
+        exact: true
     },
     {
         path: '/registration',
         component: Registration,
-        exact: true,
+        exact: true
     },
     {
         path: '/reset-password',
         component: ResetPassword,
-        exact: true,
+        exact: true
     },
     {
         path: '/account',
-        component: Account,
+        component: Account
     },
     {
         path: '/checkout',
         component: Checkout,
-        exact: true,
+        exact: true
     },
     {
         path: '/checkout/confirmation',
         component: CheckoutConfirmation,
-        exact: true,
+        exact: true
     },
     {
         path: '/callback',
         component: LoginRedirect,
-        exact: true,
+        exact: true
     },
     {
         path: '/cart',
         component: Cart,
-        exact: true,
+        exact: true
     },
     {
         path: '/product/:productId',
-        component: ProductDetail,
+        component: ProductDetail
     },
     {
         path: '/search',
-        component: ProductList,
+        component: ProductList
     },
     {
         path: '/category/:categoryId',
-        component: ProductList,
+        component: ProductList
     },
     {
         path: '/account/wishlist',
-        component: Wishlist,
+        component: Wishlist
     },
     {
         path: '*',
         // component: PageNotFound
-        component: CatchAllBuillder,
-    },
+        component: CatchAllBuillder
+    }
 ]
 
 export default () => {
     const config = getConfig()
     return configureRoutes(routes, config, {
-        ignoredRoutes: ['/callback', '*'],
+        ignoredRoutes: ['/callback', '*']
     })
 }

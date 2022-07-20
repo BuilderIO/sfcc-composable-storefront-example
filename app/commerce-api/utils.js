@@ -41,7 +41,7 @@ export function createGetTokenBody(urlString, slasCallbackEndpoint, codeVerifier
         code,
         usid,
         codeVerifier: codeVerifier,
-        redirectUri: slasCallbackEndpoint,
+        redirectUri: slasCallbackEndpoint
     }
 }
 
@@ -52,7 +52,10 @@ const toCamel = (str) => {
         return str
     }
     return str.replace(/([-_][a-z])/gi, ($1) => {
-        return $1.toUpperCase().replace('-', '').replace('_', '')
+        return $1
+            .toUpperCase()
+            .replace('-', '')
+            .replace('_', '')
     })
 }
 
@@ -123,7 +126,7 @@ export const convertOcapiFaultToCapiError = (error) => {
         detail: error.message,
         // Unique to OCAPI I think
         arguments: error.arguments,
-        fault: true,
+        fault: true
     }
 }
 
@@ -136,7 +139,7 @@ export const checkRequiredParameters = (listOfPassedParameters, listOfRequiredPa
         return {
             title: `Parameters are required for this request`,
             type: `MissingParameters`,
-            detail: `Parameters are required for this request`,
+            detail: `Parameters are required for this request`
         }
     }
 
@@ -144,7 +147,7 @@ export const checkRequiredParameters = (listOfPassedParameters, listOfRequiredPa
         return {
             title: `Body is required for this request`,
             type: `MissingBody`,
-            detail: `Body is  required for this request`,
+            detail: `Body is  required for this request`
         }
     }
 
@@ -166,7 +169,7 @@ export const checkRequiredParameters = (listOfPassedParameters, listOfRequiredPa
         return {
             title: `The following parameters were missing from your resquest: ${undefinedValues.toString()}`,
             type: `MissingParameters`,
-            detail: `The following parameters were missing from your resquest: ${undefinedValues.toString()}`,
+            detail: `The following parameters were missing from your resquest: ${undefinedValues.toString()}`
         }
     } else {
         return undefined
@@ -174,44 +177,49 @@ export const checkRequiredParameters = (listOfPassedParameters, listOfRequiredPa
 }
 
 // This function is used to interact with the OCAPI API
-export const createOcapiFetch =
-    (commerceAPIConfig) => async (endpoint, method, args, methodName, body) => {
-        const proxy = `/mobify/proxy/ocapi`
+export const createOcapiFetch = (commerceAPIConfig) => async (
+    endpoint,
+    method,
+    args,
+    methodName,
+    body
+) => {
+    const proxy = `/mobify/proxy/ocapi`
 
-        // The api config will only have `ocapiHost` during testing to workaround localhost proxy
-        const host = commerceAPIConfig.ocapiHost
-            ? `https://${commerceAPIConfig.ocapiHost}`
-            : `${getAppOrigin()}${proxy}`
+    // The api config will only have `ocapiHost` during testing to workaround localhost proxy
+    const host = commerceAPIConfig.ocapiHost
+        ? `https://${commerceAPIConfig.ocapiHost}`
+        : `${getAppOrigin()}${proxy}`
 
-        const siteId = commerceAPIConfig.parameters.siteId
-        const headers = {
-            ...args[0].headers,
-            'Content-Type': 'application/json',
-            'x-dw-client-id': commerceAPIConfig.parameters.clientId,
-        }
-
-        let response
-        response = await fetch(`${host}/s/${siteId}/dw/shop/v21_3/${endpoint}`, {
-            method: method,
-            headers: headers,
-            ...(body && {
-                body: JSON.stringify(body),
-            }),
-        })
-        const httpStatus = response.status
-
-        if (!args[1] && response.json) {
-            response = await response.json()
-        }
-
-        const convertedResponse = keysToCamel(response)
-        if (convertedResponse.fault) {
-            const error = convertOcapiFaultToCapiError(convertedResponse.fault)
-            throw new HTTPError(httpStatus, error.detail)
-        } else {
-            return convertedResponse
-        }
+    const siteId = commerceAPIConfig.parameters.siteId
+    const headers = {
+        ...args[0].headers,
+        'Content-Type': 'application/json',
+        'x-dw-client-id': commerceAPIConfig.parameters.clientId
     }
+
+    let response
+    response = await fetch(`${host}/s/${siteId}/dw/shop/v21_3/${endpoint}`, {
+        method: method,
+        headers: headers,
+        ...(body && {
+            body: JSON.stringify(body)
+        })
+    })
+    const httpStatus = response.status
+
+    if (!args[1] && response.json) {
+        response = await response.json()
+    }
+
+    const convertedResponse = keysToCamel(response)
+    if (convertedResponse.fault) {
+        const error = convertOcapiFaultToCapiError(convertedResponse.fault)
+        throw new HTTPError(httpStatus, error.detail)
+    } else {
+        return convertedResponse
+    }
+}
 
 // This function derrives the SF Tenant Id from the SF OrgId
 export const getTenantId = (orgId) => {

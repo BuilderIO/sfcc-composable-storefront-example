@@ -11,9 +11,9 @@ module.exports = [
                 {
                     id: 'en-US',
                     // alias: 'us',
-                    preferredCurrency: 'USD',
-                },
-            ],
-        },
-    },
+                    preferredCurrency: 'USD'
+                }
+            ]
+        }
+    }
 ]

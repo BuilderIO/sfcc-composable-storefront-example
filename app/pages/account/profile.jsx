@@ -16,7 +16,7 @@ import {
     Skeleton as ChakraSkeleton,
     Stack,
     Text,
-    useToast,
+    useToast
 } from '@chakra-ui/react'
 import {useForm} from 'react-hook-form'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
@@ -38,7 +38,7 @@ const Skeleton = ({children, height, width, ...rest}) => {
     const size = !isRegistered
         ? {
               height,
-              width,
+              width
           }
         : {}
 
@@ -60,8 +60,8 @@ const ProfileCard = () => {
             firstName: customer.firstName,
             lastName: customer.lastName,
             email: customer.email,
-            phone: customer.phoneHome,
-        },
+            phone: customer.phoneHome
+        }
     })
 
     useEffect(() => {
@@ -69,7 +69,7 @@ const ProfileCard = () => {
             firstName: customer.firstName,
             lastName: customer.lastName,
             email: customer.email,
-            phone: customer.phoneHome,
+            phone: customer.phoneHome
         })
     }, [customer])
 
@@ -81,10 +81,10 @@ const ProfileCard = () => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'Profile updated',
-                    id: 'profile_card.info.profile_updated',
+                    id: 'profile_card.info.profile_updated'
                 }),
                 status: 'success',
-                isClosable: true,
+                isClosable: true
             })
         } catch (error) {
             form.setError('global', {type: 'manual', message: error.message})
@@ -100,7 +100,7 @@ const ProfileCard = () => {
                 <Skeleton height="30px" width="120px">
                     {formatMessage({
                         defaultMessage: 'My Profile',
-                        id: 'profile_card.title.my_profile',
+                        id: 'profile_card.title.my_profile'
                     })}
                 </Skeleton>
             }
@@ -202,10 +202,10 @@ const PasswordCard = () => {
             toast({
                 title: formatMessage({
                     defaultMessage: 'Password updated',
-                    id: 'password_card.info.password_updated',
+                    id: 'password_card.info.password_updated'
                 }),
                 status: 'success',
-                isClosable: true,
+                isClosable: true
             })
         } catch (error) {
             form.setError('global', {type: 'manual', message: error.message})
@@ -221,7 +221,7 @@ const PasswordCard = () => {
                 <Skeleton height="30px" width="120px">
                     {formatMessage({
                         defaultMessage: 'Password',
-                        id: 'password_card.title.password',
+                        id: 'password_card.title.password'
                     })}
                 </Skeleton>
             }

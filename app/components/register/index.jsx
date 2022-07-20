@@ -92,7 +92,7 @@ const RegisterForm = ({submitForm, clickSignIn = noop, form}) => {
                                         >
                                             {chunks}
                                         </ChakraLink>
-                                    ),
+                                    )
                                 }}
                             />
                         </Text>
@@ -106,7 +106,7 @@ const RegisterForm = ({submitForm, clickSignIn = noop, form}) => {
 RegisterForm.propTypes = {
     submitForm: PropTypes.func,
     clickSignIn: PropTypes.func,
-    form: PropTypes.object,
+    form: PropTypes.object
 }
 
 export default RegisterForm

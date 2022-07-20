@@ -42,7 +42,7 @@ PageHeader.propTypes = {
     category: PropTypes.object,
     productSearchResult: PropTypes.object,
     isLoading: PropTypes.bool,
-    searchQuery: PropTypes.string,
+    searchQuery: PropTypes.string
 }
 
 export default PageHeader

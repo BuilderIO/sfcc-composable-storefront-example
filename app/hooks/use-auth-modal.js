@@ -18,7 +18,7 @@ import {
     Stack,
     Text,
     useDisclosure,
-    useToast,
+    useToast
 } from '@chakra-ui/react'
 import useCustomer from '../commerce-api/hooks/useCustomer'
 import {BrandLogo} from '../components/icons'
@@ -54,7 +54,7 @@ export const AuthModal = ({
         return {
             login: handleLogin,
             register: handleRegister,
-            password: handleResetPassword,
+            password: handleResetPassword
         }[currentView](data)
     }
 
@@ -66,7 +66,7 @@ export const AuthModal = ({
                 ? formatMessage({
                       defaultMessage:
                           "Something's not right with your email or password. Try again.",
-                      id: 'auth_modal.error.incorrect_email_or_password',
+                      id: 'auth_modal.error.incorrect_email_or_password'
                   })
                 : formatMessage(API_ERROR_MESSAGE)
             form.setError('global', {type: 'manual', message})
@@ -107,7 +107,7 @@ export const AuthModal = ({
         const initialField = {
             [LOGIN_VIEW]: 'email',
             [REGISTER_VIEW]: 'firstName',
-            [PASSWORD_VIEW]: 'email',
+            [PASSWORD_VIEW]: 'email'
         }[currentView]
         const fieldsRef = form.control?.fieldsRef?.current
         fieldsRef?.[initialField]?.ref.focus()
@@ -140,19 +140,19 @@ export const AuthModal = ({
                 title: `${formatMessage(
                     {
                         defaultMessage: 'Welcome {name},',
-                        id: 'auth_modal.info.welcome_user',
+                        id: 'auth_modal.info.welcome_user'
                     },
                     {
-                        name: customer?.firstName,
+                        name: customer?.firstName
                     }
                 )}`,
                 description: `${formatMessage({
                     defaultMessage: "You're now signed in.",
-                    id: 'auth_modal.description.now_signed_in',
+                    id: 'auth_modal.description.now_signed_in'
                 })}`,
                 status: 'success',
                 position: 'top-right',
-                isClosable: true,
+                isClosable: true
             })
 
             // Execute action to be performed on successful login
@@ -185,7 +185,7 @@ export const AuthModal = ({
                         values={{
                             email: submittedEmail.current,
                             // eslint-disable-next-line react/display-name
-                            b: (chunks) => <b>{chunks}</b>,
+                            b: (chunks) => <b>{chunks}</b>
                         }}
                     />
                 </Text>
@@ -244,7 +244,7 @@ AuthModal.propTypes = {
     onClose: PropTypes.func.isRequired,
     onLoginSuccess: PropTypes.func,
     onRegistrationSuccess: PropTypes.func,
-    onPasswordResetSuccess: PropTypes.func,
+    onPasswordResetSuccess: PropTypes.func
 }
 
 /**
@@ -259,6 +259,6 @@ export const useAuthModal = (initialView = LOGIN_VIEW) => {
         initialView,
         isOpen,
         onOpen,
-        onClose,
+        onClose
     }
 }

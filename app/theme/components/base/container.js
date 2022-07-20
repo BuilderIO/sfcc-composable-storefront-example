@@ -6,12 +6,12 @@
  */
 export default {
     baseStyle: {
-        maxWidth: 'container.xxl',
+        maxWidth: 'container.xxl'
     },
     variants: {
         form: {
             maxWidth: '522px',
-            px: 0,
-        },
-    },
+            px: 0
+        }
+    }
 }

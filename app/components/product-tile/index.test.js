@@ -13,10 +13,10 @@ const mockProductSearchItem = {
     image: {
         alt: 'Charcoal Single Pleat Wool Suit, , large',
         disBaseLink:
-            'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4de8166b/images/large/PG.33698RUBN4Q.CHARCWL.PZ.jpg',
+            'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/ZZRF_001/on/demandware.static/-/Sites-apparel-m-catalog/default/dw4de8166b/images/large/PG.33698RUBN4Q.CHARCWL.PZ.jpg'
     },
     price: 299.99,
-    productName: 'Charcoal Single Pleat Wool Suit',
+    productName: 'Charcoal Single Pleat Wool Suit'
 }
 
 test('Renders Breadcrumb', () => {

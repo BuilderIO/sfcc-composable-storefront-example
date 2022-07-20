@@ -20,7 +20,7 @@ import {
     Grid,
     AspectRatio,
     Img,
-    Skeleton,
+    Skeleton
 } from '@chakra-ui/react'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
 import useNavigation from '../../hooks/use-navigation'
@@ -37,8 +37,14 @@ const AccountOrderHistory = () => {
     const searchParams = useSearchParams({limit: 10, offset: 0})
     const navigate = useNavigation()
     const customer = useCustomer()
-    const {orderIdsByOffset, ordersById, productsById, isLoading, fetchOrders, paging} =
-        useAccountOrders()
+    const {
+        orderIdsByOffset,
+        ordersById,
+        productsById,
+        isLoading,
+        fetchOrders,
+        paging
+    } = useAccountOrders()
     const pageUrls = usePageUrls({total: paging.total, limit: paging.limit})
 
     const orders =
@@ -91,8 +97,8 @@ const AccountOrderHistory = () => {
                                                     date: formatDate(new Date(order.creationDate), {
                                                         year: 'numeric',
                                                         day: 'numeric',
-                                                        month: 'short',
-                                                    }),
+                                                        month: 'short'
+                                                    })
                                                 }}
                                             />
                                         </Text>
@@ -185,7 +191,7 @@ const AccountOrderHistory = () => {
                                             defaultMessage="Shipped to: {name}"
                                             id="account_order_history.label.shipped_to"
                                             values={{
-                                                name: `${order.shipments[0].shippingAddress.firstName} ${order.shipments[0].shippingAddress.lastName}`,
+                                                name: `${order.shipments[0].shippingAddress.firstName} ${order.shipments[0].shippingAddress.lastName}`
                                             }}
                                         />
                                     </Text>
@@ -210,15 +216,15 @@ const AccountOrderHistory = () => {
                     icon={<ReceiptIcon boxSize={8} />}
                     heading={formatMessage({
                         defaultMessage: "You haven't placed an order yet.",
-                        id: 'account_order_history.heading.no_order_yet',
+                        id: 'account_order_history.heading.no_order_yet'
                     })}
                     text={formatMessage({
                         defaultMessage: 'Once you place an order the details will show up here.',
-                        id: 'account_order_history.description.once_you_place_order',
+                        id: 'account_order_history.description.once_you_place_order'
                     })}
                     buttonText={formatMessage({
                         defaultMessage: 'Continue Shopping',
-                        id: 'account_order_history.button.continue_shopping',
+                        id: 'account_order_history.button.continue_shopping'
                     })}
                     buttonProps={{leftIcon: undefined}}
                     onButtonClick={() => navigate('/')}

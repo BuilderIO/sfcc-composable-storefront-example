@@ -23,7 +23,7 @@ const mockSetCurrency = jest.fn().mockImplementation((currency) => {
 
 const mockUseContext = jest.fn().mockImplementation(() => ({
     currency: {},
-    setCurrency: mockSetCurrency,
+    setCurrency: mockSetCurrency
 }))
 
 React.useContext = mockUseContext

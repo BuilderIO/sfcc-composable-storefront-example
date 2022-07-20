@@ -24,7 +24,7 @@ const AddressDisplay = ({address}) => {
 }
 
 AddressDisplay.propTypes = {
-    address: PropTypes.object,
+    address: PropTypes.object
 }
 
 export default AddressDisplay

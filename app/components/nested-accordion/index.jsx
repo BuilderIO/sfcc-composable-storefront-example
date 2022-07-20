@@ -17,7 +17,7 @@ import {
     Text,
 
     // Hooks
-    useStyleConfig,
+    useStyleConfig
 } from '@chakra-ui/react'
 import Link from '../link'
 // Icons
@@ -179,7 +179,7 @@ NestedAccordion.propTypes = {
      * This function builds the urls for leaf items. It accepts
      * the current item, and returns a string.
      */
-    urlBuilder: PropTypes.func,
+    urlBuilder: PropTypes.func
 }
 
 export default NestedAccordion

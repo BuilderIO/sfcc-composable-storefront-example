@@ -81,7 +81,7 @@ const ResetPasswordForm = ({submitForm, clickSignIn = noop, form}) => {
 ResetPasswordForm.propTypes = {
     submitForm: PropTypes.func,
     clickSignIn: PropTypes.func,
-    form: PropTypes.object,
+    form: PropTypes.object
 }
 
 export default ResetPasswordForm

@@ -17,7 +17,7 @@ import {
     RadioGroup,
     Stack,
     Text,
-    Tooltip,
+    Tooltip
 } from '@chakra-ui/react'
 import {useForm, Controller} from 'react-hook-form'
 import {LockIcon, PaypalIcon} from '../../../components/icons'
@@ -84,7 +84,7 @@ const PaymentSelection = ({form, hideSubmitButton, onSubmit = () => null}) => {
                                                 label={formatMessage({
                                                     defaultMessage:
                                                         'This is a secure SSL encrypted payment.',
-                                                    id: 'payment_selection.tooltip.secure_payment',
+                                                    id: 'payment_selection.tooltip.secure_payment'
                                                 })}
                                             >
                                                 <LockIcon color="gray.700" boxSize={5} />
@@ -113,9 +113,10 @@ const PaymentSelection = ({form, hideSubmitButton, onSubmit = () => null}) => {
                                                     ? formatMessage({
                                                           defaultMessage:
                                                               'Please select a payment method.',
-                                                          id: 'payment_selection.message.select_payment_method',
+                                                          id:
+                                                              'payment_selection.message.select_payment_method'
                                                       })
-                                                    : false,
+                                                    : false
                                             }}
                                             render={({value}) => (
                                                 <CCRadioGroup
@@ -136,7 +137,7 @@ const PaymentSelection = ({form, hideSubmitButton, onSubmit = () => null}) => {
                                                 py: 6,
                                                 rounded: 'base',
                                                 border: '1px solid',
-                                                borderColor: 'blue.600',
+                                                borderColor: 'blue.600'
                                             })}
                                         >
                                             <Stack spacing={6}>
@@ -198,7 +199,7 @@ PaymentSelection.propTypes = {
     hideSubmitButton: PropTypes.bool,
 
     /** Callback for form submit */
-    onSubmit: PropTypes.func,
+    onSubmit: PropTypes.func
 }
 
 export default PaymentSelection

@@ -68,7 +68,7 @@ const ResetPassword = () => {
                                     values={{
                                         email: submittedEmail,
                                         // eslint-disable-next-line react/display-name
-                                        b: (chunks) => <b>{chunks}</b>,
+                                        b: (chunks) => <b>{chunks}</b>
                                     }}
                                 />
                             </Text>
@@ -89,7 +89,7 @@ const ResetPassword = () => {
 ResetPassword.getTemplateName = () => 'reset-password'
 
 ResetPassword.propTypes = {
-    match: PropTypes.object,
+    match: PropTypes.object
 }
 
 export default ResetPassword

@@ -17,7 +17,7 @@ import {
     BasketProvider,
     CommerceAPIProvider,
     CustomerProductListsProvider,
-    CustomerProvider,
+    CustomerProvider
 } from '../../commerce-api/contexts'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
 import {resolveLocaleFromUrl} from '../../utils/utils'
@@ -28,12 +28,12 @@ import '../blocks/product-box/product-box.builder'
 import '../blocks/products-grid/prouducts-grid.builder'
 import {builder, Builder} from '@builder.io/react'
 import '@builder.io/widgets'
-// todo move to config
-builder.init('d1ed12c3338144da8dd6b63b35d14c30')
+import builderconfig from '../../utils/builder'
+builder.init(builderconfig.apiKey)
 
 Builder.register('insertMenu', {
     name: 'Salesforce Products Components',
-    items: [{name: 'ProductBox'}, {name: 'ProductsGrid'}, {name: 'EinsteinProductsGrid'}],
+    items: [{name: 'ProductBox'}, {name: 'ProductsGrid'}, {name: 'EinsteinProductsGrid'}]
 })
 
 /**
@@ -72,7 +72,7 @@ AppConfig.restore = (locals = {}) => {
     const {app: appConfig} = getConfig()
     const apiConfig = {
         ...appConfig.commerceAPI,
-        einsteinConfig: appConfig.einsteinAPI,
+        einsteinConfig: appConfig.einsteinAPI
     }
 
     apiConfig.parameters.siteId = site.id
@@ -84,13 +84,13 @@ AppConfig.freeze = () => undefined
 
 AppConfig.extraGetPropsArgs = (locals = {}) => {
     return {
-        api: locals.api,
+        api: locals.api
     }
 }
 
 AppConfig.propTypes = {
     children: PropTypes.node,
-    locals: PropTypes.object,
+    locals: PropTypes.object
 }
 
 export default AppConfig
