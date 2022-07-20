@@ -1,0 +1,64 @@
+{
+  "createdBy": "IqzTkBgwWTbzaXDAhTL6IpwiCah1",
+  "createdDate": 1657907794269,
+  "data": {
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-5c34873b050749d5baf1b891fecfedbd",
+        "component": {
+          "name": "Text",
+          "options": {
+            "text": "<p><strong>Free shipping on all items</strong></p>"
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "0px",
+            "lineHeight": "normal",
+            "height": "auto",
+            "textAlign": "center",
+            "backgroundColor": "rgba(20, 19, 19, 1)",
+            "paddingTop": "5px",
+            "paddingBottom": "5px",
+            "color": "rgba(223, 223, 223, 1)"
+          }
+        }
+      }
+    ],
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "id": "2587ccaf0e28441bb210f68adf61c795",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "component",
+    "lastPreviewUrl": "http://localhost:3000?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=announcement-bar&builder.noCache=true&__builder_editing__=true&builder.overrides.announcement-bar=988bb73c121d41c39d47e23aa6f42011&builder.overrides.988bb73c121d41c39d47e23aa6f42011=988bb73c121d41c39d47e23aa6f42011",
+    "needsHydration": false
+  },
+  "modelId": "a11fd5eb8fe94c239932b9e0e3fb35b1",
+  "name": "first",
+  "published": "published",
+  "query": [],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1658004586090,
+  "firstPublished": 1657907831050,
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F26a02ba0f30d4a639bfe752d96ac5914",
+  "rev": "0nrvh9a732m",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "988bb73c121d41c39d47e23aa6f42011",
+  "@originModelId": "fc837c29e99a4c48be10b664a9ba8436"
+}

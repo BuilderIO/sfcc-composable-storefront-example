@@ -1,0 +1,94 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1657952390452,
+  "data": {
+    "inputs": [],
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-2a217320f05a40839a78d6e0aa4f4d8e",
+        "component": {
+          "name": "Text",
+          "options": {
+            "text": "<p><strong>You might also like</strong></p>"
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "20px",
+            "lineHeight": "normal",
+            "height": "auto",
+            "textAlign": "center"
+          }
+        }
+      },
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-1f03afa2f6f74eed856ac4131a26ed6a",
+        "component": {
+          "name": "ProductsGrid",
+          "options": {
+            "productIds": [
+              "22951021M",
+              "91736743M",
+              "P0138M"
+            ]
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "20px"
+          }
+        }
+      }
+    ],
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "id": "e2bbebb1351a4681aa67dcc193ee0bcd",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "component",
+    "lastPreviewUrl": "http://localhost:3000/product/25772717M?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=product-footer&builder.noCache=true&__builder_editing__=true&builder.overrides.product-footer=6dea3fd25ad44ecda710f64b6861ac71&builder.overrides.6dea3fd25ad44ecda710f64b6861ac71=6dea3fd25ad44ecda710f64b6861ac71",
+    "needsHydration": false
+  },
+  "modelId": "5de1fe6beaba4e91a23a6d03c46a75c6",
+  "name": "zerick specific footer",
+  "published": "published",
+  "query": [
+    {
+      "@type": "@builder.io/core:Query",
+      "operator": "is",
+      "property": "product",
+      "value": "25772717M"
+    }
+  ],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1658081805829,
+  "previewUrl": "http://localhost:3000/product/25772717M",
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F174b9141aaf7483aa5fb34da9b09a097",
+  "firstPublished": 1657956614214,
+  "rev": "uvsdhx1w26a",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "6dea3fd25ad44ecda710f64b6861ac71",
+  "@originModelId": "ee5eb04813b74b7eae2f92f01079d834"
+}

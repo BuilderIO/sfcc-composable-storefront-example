@@ -1,0 +1,196 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1658084196410,
+  "data": {
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-dc0725665ff3465bb16da0325a666d04",
+        "component": {
+          "name": "Image",
+          "options": {
+            "image": "https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=2000",
+            "backgroundSize": "cover",
+            "backgroundPosition": "center",
+            "lazy": false,
+            "aspectRatio": 0.666,
+            "sizes": "(max-width: 638px) 100vw, 100vw",
+            "height": 1253,
+            "width": 1880,
+            "srcset": "https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=638 638w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=998 998w"
+          }
+        },
+        "children": [
+          {
+            "@type": "@builder.io/sdk:Element",
+            "@version": 2,
+            "id": "builder-cf415ae4799b4204886a2d23ecac2f92",
+            "children": [
+              {
+                "@type": "@builder.io/sdk:Element",
+                "@version": 2,
+                "id": "builder-34c32a7eceb9427c884f61ebd12a1074",
+                "component": {
+                  "name": "Text",
+                  "options": {
+                    "text": "<p>GIFT GUIDE</p>"
+                  }
+                },
+                "responsiveStyles": {
+                  "large": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "stretch",
+                    "position": "relative",
+                    "flexShrink": "0",
+                    "boxSizing": "border-box",
+                    "marginLeft": "20px",
+                    "lineHeight": "normal",
+                    "height": "auto",
+                    "textAlign": "center",
+                    "fontWeight": "600",
+                    "fontSize": "26px",
+                    "letterSpacing": "2px"
+                  },
+                  "small": {
+                    "fontSize": "22px"
+                  }
+                }
+              },
+              {
+                "@type": "@builder.io/sdk:Element",
+                "@version": 2,
+                "id": "builder-8f8e8b90471c4abfa4397abbcbca9ccb",
+                "component": {
+                  "name": "Text",
+                  "options": {
+                    "text": "<p>\n  here's to <span class=\"j\">j</span><span class=\"o\">o</span\n  ><span class=\"y\">y</span>\n</p>\n"
+                  }
+                },
+                "responsiveStyles": {
+                  "large": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "stretch",
+                    "position": "relative",
+                    "flexShrink": "0",
+                    "boxSizing": "border-box",
+                    "marginLeft": "20px",
+                    "lineHeight": "normal",
+                    "height": "auto",
+                    "textAlign": "center",
+                    "fontSize": "72px"
+                  },
+                  "small": {
+                    "marginLeft": "0px",
+                    "fontSize": "52px"
+                  }
+                }
+              },
+              {
+                "@type": "@builder.io/sdk:Element",
+                "@version": 2,
+                "id": "builder-d679d56caba8452692618a092677c67f",
+                "component": {
+                  "name": "Core:Button",
+                  "options": {
+                    "text": "SHOP GIFTS",
+                    "link": "/category/womens"
+                  }
+                },
+                "responsiveStyles": {
+                  "large": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "stretch",
+                    "position": "relative",
+                    "flexShrink": "0",
+                    "boxSizing": "border-box",
+                    "marginTop": "20px",
+                    "appearance": "none",
+                    "paddingTop": "15px",
+                    "paddingBottom": "15px",
+                    "paddingLeft": "25px",
+                    "paddingRight": "25px",
+                    "backgroundColor": "rgba(74, 74, 74, 1)",
+                    "color": "white",
+                    "borderRadius": "4px",
+                    "textAlign": "center",
+                    "cursor": "pointer",
+                    "width": "auto",
+                    "alignSelf": "center"
+                  }
+                }
+              }
+            ],
+            "responsiveStyles": {
+              "large": {
+                "display": "flex",
+                "flexDirection": "column",
+                "alignItems": "stretch",
+                "position": "relative",
+                "flexShrink": "0",
+                "boxSizing": "border-box",
+                "marginTop": "auto",
+                "height": "auto",
+                "paddingBottom": "30px",
+                "marginBottom": "auto"
+              }
+            }
+          }
+        ],
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "stretch",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "minWidth": "20px",
+            "overflow": "hidden",
+            "width": "100%",
+            "height": "48vh"
+          }
+        }
+      }
+    ],
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "id": "1b68cefbdbfb4dfab2bc74d7c5116ed0",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "component",
+    "lastPreviewUrl": "http://localhost:3000/category/womens-accessories?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=category-hero&builder.noCache=true&__builder_editing__=true&builder.overrides.category-hero=bcf25dfc6e654456885a4fd42dfadcba&builder.overrides.bcf25dfc6e654456885a4fd42dfadcba=bcf25dfc6e654456885a4fd42dfadcba",
+    "needsHydration": false
+  },
+  "modelId": "1c122157252c481f963b4bd1b0874f59",
+  "name": "women accessories hero",
+  "published": "published",
+  "query": [
+    {
+      "@type": "@builder.io/core:Query",
+      "operator": "is",
+      "property": "category",
+      "value": "womens-accessories"
+    }
+  ],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1658084362222,
+  "previewUrl": "http://localhost:3000/category/womens-accessories",
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2Ffe211be346d04281a3e019e8d9fd13c3",
+  "firstPublished": 1658084362220,
+  "rev": "fslf5uzgo9b",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "bcf25dfc6e654456885a4fd42dfadcba",
+  "@originModelId": "c451eb07237e4861a94d703fc0068cfd"
+}
