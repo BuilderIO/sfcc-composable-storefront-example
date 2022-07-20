@@ -1,0 +1,375 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1658011058757,
+  "data": {
+    "list": [],
+    "themeId": false,
+    "title": "a-b-test",
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-5f9796a2b39343dc91a6ca98f930704a",
+        "component": {
+          "name": "Core:Section",
+          "options": {
+            "maxWidth": 1200
+          }
+        },
+        "children": [
+          {
+            "@type": "@builder.io/sdk:Element",
+            "@version": 2,
+            "id": "builder-8d2e5af0f99041f6bdaafd57804885e9",
+            "component": {
+              "name": "ProductBox",
+              "options": {
+                "productRef": {
+                  "@type": "@builder.io/core:Request",
+                  "request": {
+                    "url": "https://qa.builder.io/api/v1/sfcc-commerce/products/25518447M?pluginId=%40builder.io%2Fplugin-sfcc-commerce-api&apiKey=d1ed12c3338144da8dd6b63b35d14c30",
+                    "method": "GET"
+                  },
+                  "options": {
+                    "product": "25518447M"
+                  }
+                }
+              }
+            },
+            "responsiveStyles": {
+              "large": {
+                "display": "flex",
+                "flexDirection": "column",
+                "position": "relative",
+                "flexShrink": "0",
+                "boxSizing": "border-box",
+                "marginTop": "20px"
+              }
+            }
+          },
+          {
+            "@type": "@builder.io/sdk:Element",
+            "@version": 2,
+            "id": "builder-a006823097fc4864b55fe2ddfc0dc8f5",
+            "component": {
+              "name": "EinsteinProductsGrid",
+              "options": {
+                "recommender": "no-search-personalized-for-shopper",
+                "title": "no-search-personalized-for-shopper"
+              }
+            },
+            "responsiveStyles": {
+              "large": {
+                "display": "flex",
+                "flexDirection": "column",
+                "position": "relative",
+                "flexShrink": "0",
+                "boxSizing": "border-box",
+                "marginTop": "20px"
+              }
+            }
+          }
+        ],
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "0px",
+            "paddingLeft": "20px",
+            "paddingRight": "20px",
+            "paddingTop": "50px",
+            "paddingBottom": "50px",
+            "width": "100vw",
+            "marginLeft": "calc(50% - 50vw)"
+          }
+        }
+      }
+    ],
+    "url": "/a-b-test",
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "id": "d80a20988172434eaee68ebe3532cb39",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "page",
+    "lastPreviewUrl": "http://localhost:3000/a-b-test?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=page&builder.noCache=true&__builder_editing__=true&builder.overrides.page=88a6f8aa971143b988869f909f1d150a&builder.overrides.88a6f8aa971143b988869f909f1d150a=88a6f8aa971143b988869f909f1d150a&builder.overrides.page:/a-b-test=88a6f8aa971143b988869f909f1d150a",
+    "needsHydration": false
+  },
+  "modelId": "c7b4bb010a2648d9926445ee55bef73f",
+  "name": "a-b-test",
+  "published": "published",
+  "query": [
+    {
+      "@type": "@builder.io/core:Query",
+      "operator": "is",
+      "property": "urlPath",
+      "value": "/a-b-test"
+    }
+  ],
+  "testRatio": 0.5,
+  "variations": {
+    "ea4ead4f199b44faa6b5a74c57da28f0": {
+      "createdDate": 1658011078231,
+      "data": {
+        "list": [],
+        "themeId": false,
+        "title": "a-b-test",
+        "blocks": [
+          {
+            "@type": "@builder.io/sdk:Element",
+            "@version": 2,
+            "id": "builder-534502e7180e4eb687c8013c03a3279b",
+            "component": {
+              "name": "Core:Section",
+              "options": {
+                "maxWidth": 1200
+              }
+            },
+            "children": [
+              {
+                "@type": "@builder.io/sdk:Element",
+                "@version": 2,
+                "id": "builder-72d1c4bacd9d4142a8bd08947ee63966",
+                "component": {
+                  "name": "Image",
+                  "options": {
+                    "image": "https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=2000",
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "center",
+                    "lazy": false,
+                    "aspectRatio": 0.666,
+                    "sizes": "(max-width: 638px) 100vw, 100vw",
+                    "height": 1253,
+                    "width": 1880,
+                    "srcset": "https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=638 638w, https://cdn.builder.io/api/v1/image/assets%2F89d6bbb44070475d9580fd22f21ef8f1%2F3f5ca6f8df284630875f1d9604fc8d9d?width=998 998w"
+                  }
+                },
+                "children": [
+                  {
+                    "@type": "@builder.io/sdk:Element",
+                    "@version": 2,
+                    "id": "builder-59fb73fbe6b743e98c32e7f2bdba7cb5",
+                    "children": [
+                      {
+                        "@type": "@builder.io/sdk:Element",
+                        "@version": 2,
+                        "id": "builder-fc2a034a757942a78d53b34f8edf18d9",
+                        "component": {
+                          "name": "Text",
+                          "options": {
+                            "text": "<p>GIFT GUIDE</p>"
+                          }
+                        },
+                        "responsiveStyles": {
+                          "large": {
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "alignItems": "stretch",
+                            "position": "relative",
+                            "flexShrink": "0",
+                            "boxSizing": "border-box",
+                            "marginLeft": "20px",
+                            "lineHeight": "normal",
+                            "height": "auto",
+                            "textAlign": "center",
+                            "fontWeight": "600",
+                            "fontSize": "26px",
+                            "letterSpacing": "2px"
+                          },
+                          "small": {
+                            "fontSize": "22px"
+                          }
+                        }
+                      },
+                      {
+                        "@type": "@builder.io/sdk:Element",
+                        "@version": 2,
+                        "id": "builder-791da882e85449f9bffab94284b9e553",
+                        "component": {
+                          "name": "Text",
+                          "options": {
+                            "text": "<p>\n  here's to <span class=\"j\">j</span><span class=\"o\">o</span\n  ><span class=\"y\">y</span>\n</p>\n"
+                          }
+                        },
+                        "responsiveStyles": {
+                          "large": {
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "alignItems": "stretch",
+                            "position": "relative",
+                            "flexShrink": "0",
+                            "boxSizing": "border-box",
+                            "marginLeft": "20px",
+                            "lineHeight": "normal",
+                            "height": "auto",
+                            "textAlign": "center",
+                            "fontSize": "72px"
+                          },
+                          "small": {
+                            "marginLeft": "0px",
+                            "fontSize": "52px"
+                          }
+                        }
+                      },
+                      {
+                        "@type": "@builder.io/sdk:Element",
+                        "@version": 2,
+                        "id": "builder-ee0941339fc841bcad3bc44d4c7bdcd7",
+                        "component": {
+                          "name": "Core:Button",
+                          "options": {
+                            "text": "SHOP GIFTS"
+                          }
+                        },
+                        "responsiveStyles": {
+                          "large": {
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "alignItems": "stretch",
+                            "position": "relative",
+                            "flexShrink": "0",
+                            "boxSizing": "border-box",
+                            "marginTop": "20px",
+                            "appearance": "none",
+                            "paddingTop": "15px",
+                            "paddingBottom": "15px",
+                            "paddingLeft": "25px",
+                            "paddingRight": "25px",
+                            "backgroundColor": "rgba(74, 74, 74, 1)",
+                            "color": "white",
+                            "borderRadius": "4px",
+                            "textAlign": "center",
+                            "cursor": "pointer",
+                            "width": "auto",
+                            "alignSelf": "center"
+                          }
+                        }
+                      }
+                    ],
+                    "responsiveStyles": {
+                      "large": {
+                        "display": "flex",
+                        "flexDirection": "column",
+                        "alignItems": "stretch",
+                        "position": "relative",
+                        "flexShrink": "0",
+                        "boxSizing": "border-box",
+                        "marginTop": "auto",
+                        "height": "auto",
+                        "paddingBottom": "30px",
+                        "marginBottom": "auto"
+                      }
+                    }
+                  }
+                ],
+                "responsiveStyles": {
+                  "large": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "alignItems": "stretch",
+                    "position": "relative",
+                    "flexShrink": "0",
+                    "boxSizing": "border-box",
+                    "minWidth": "20px",
+                    "overflow": "hidden",
+                    "width": "100%",
+                    "height": "40vh"
+                  }
+                }
+              },
+              {
+                "@type": "@builder.io/sdk:Element",
+                "@version": 2,
+                "id": "builder-d0c5d9adb4bd42f58796af2e78da64bd",
+                "component": {
+                  "name": "ProductBox",
+                  "options": {
+                    "productRef": {
+                      "@type": "@builder.io/core:Request",
+                      "request": {
+                        "url": "https://qa.builder.io/api/v1/sfcc-commerce/products/25772741M?pluginId=%40builder.io%2Fplugin-sfcc-commerce-api&apiKey=d1ed12c3338144da8dd6b63b35d14c30",
+                        "method": "GET"
+                      },
+                      "options": {
+                        "product": "25772741M"
+                      }
+                    }
+                  }
+                },
+                "responsiveStyles": {
+                  "large": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "position": "relative",
+                    "flexShrink": "0",
+                    "boxSizing": "border-box",
+                    "marginTop": "20px"
+                  }
+                }
+              },
+              {
+                "@type": "@builder.io/sdk:Element",
+                "@version": 2,
+                "id": "builder-71305f54d084442ba9b227a4a142cea9",
+                "component": {
+                  "name": "EinsteinProductsGrid",
+                  "options": {
+                    "recommender": "pdp-similar-items",
+                    "title": "pdp similar items"
+                  }
+                },
+                "responsiveStyles": {
+                  "large": {
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "position": "relative",
+                    "flexShrink": "0",
+                    "boxSizing": "border-box",
+                    "marginTop": "20px"
+                  }
+                }
+              }
+            ],
+            "responsiveStyles": {
+              "large": {
+                "display": "flex",
+                "flexDirection": "column",
+                "position": "relative",
+                "flexShrink": "0",
+                "boxSizing": "border-box",
+                "marginTop": "0px",
+                "paddingLeft": "20px",
+                "paddingRight": "20px",
+                "paddingTop": "50px",
+                "paddingBottom": "50px",
+                "width": "100vw",
+                "marginLeft": "calc(50% - 50vw)"
+              }
+            }
+          }
+        ]
+      },
+      "id": "ea4ead4f199b44faa6b5a74c57da28f0",
+      "meta": {},
+      "name": "",
+      "testRatio": 0.5
+    }
+  },
+  "lastUpdated": 1658211565665,
+  "firstPublished": 1658011115223,
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2Fc2a2d5989e4745b8be8e98cca01f30f9",
+  "rev": "jmo221ch08",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "88a6f8aa971143b988869f909f1d150a",
+  "@originModelId": "b0061e242f914ce2b7dc8f5fe960044b"
+}

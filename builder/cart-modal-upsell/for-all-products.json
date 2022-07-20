@@ -1,0 +1,62 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1658214246547,
+  "data": {
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "bindings": {
+          "component.options.product": "state.product"
+        },
+        "id": "builder-9205fe8765454289a48339dc8f0fe119",
+        "component": {
+          "name": "EinsteinProductsGrid",
+          "options": {
+            "recommender": "pdp-similar-items",
+            "title": "You might also like"
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "20px"
+          }
+        }
+      }
+    ],
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "id": "fada11e9a29247fc9b5c035ed55f2e74",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "component",
+    "lastPreviewUrl": "http://localhost:3000/product/25752218M?addToCart=true&builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=cart-modal-upsell&builder.noCache=true&__builder_editing__=true&builder.overrides.cart-modal-upsell=41e911302b784db4a52ba59827a1ab12&builder.overrides.41e911302b784db4a52ba59827a1ab12=41e911302b784db4a52ba59827a1ab12",
+    "needsHydration": false
+  },
+  "modelId": "b95e168781e14d28936361f7d4ae0cc2",
+  "name": "for all products",
+  "published": "published",
+  "query": [],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1658214824017,
+  "previewUrl": "http://localhost:3000/product/25752218M?addToCart=true",
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F57a5a89fb51f4301a30dee4331a1aa5f",
+  "firstPublished": 1658214824016,
+  "rev": "an2eviy96v6",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "41e911302b784db4a52ba59827a1ab12",
+  "@originModelId": "03fc9f1c85e748cbac547d09414a7648"
+}

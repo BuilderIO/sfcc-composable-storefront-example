@@ -1,0 +1,101 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1658227252809,
+  "data": {
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "bindings": {
+          "component.options.product": "state.product"
+        },
+        "id": "builder-8cf7bf5116a042b6a98b7369628326e3",
+        "component": {
+          "name": "EinsteinProductsGrid",
+          "options": {
+            "recommender": "pdp-similar-items",
+            "title": "You might also like"
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "20px"
+          }
+        }
+      }
+    ],
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "firstPublished": 1658214824016,
+  "id": "120d78f83f4f462c937479674764ffb7",
+  "lastUpdated": 1658227282940,
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "component",
+    "lastPreviewUrl": "http://localhost:3000/product/25752218M?addToCart=true&builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=cart-modal-upsell&builder.noCache=true&__builder_editing__=true&builder.overrides.cart-modal-upsell=41e911302b784db4a52ba59827a1ab12&builder.overrides.41e911302b784db4a52ba59827a1ab12=41e911302b784db4a52ba59827a1ab12",
+    "originalContentId": "fada11e9a29247fc9b5c035ed55f2e74",
+    "winningTest": null,
+    "needsHydration": false
+  },
+  "modelId": "b95e168781e14d28936361f7d4ae0cc2",
+  "name": "for all products 2",
+  "previewUrl": "http://localhost:3000/product/25752218M?addToCart=true",
+  "published": "published",
+  "query": [],
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F57a5a89fb51f4301a30dee4331a1aa5f",
+  "testRatio": 0.5,
+  "variations": {
+    "9c7b7f70301f4be1bfaf36a2bb3faabc": {
+      "createdDate": 1658227268537,
+      "data": {
+        "blocks": [
+          {
+            "@type": "@builder.io/sdk:Element",
+            "@version": 2,
+            "bindings": {
+              "component.options.product": "state.product"
+            },
+            "id": "builder-cf0ad6307bbc467d8dd3be996fd91bd5",
+            "component": {
+              "name": "EinsteinProductsGrid",
+              "options": {
+                "recommender": "no-search-personalized-for-shopper",
+                "title": "You might also like"
+              }
+            },
+            "responsiveStyles": {
+              "large": {
+                "display": "flex",
+                "flexDirection": "column",
+                "position": "relative",
+                "flexShrink": "0",
+                "boxSizing": "border-box",
+                "marginTop": "20px"
+              }
+            }
+          }
+        ]
+      },
+      "id": "9c7b7f70301f4be1bfaf36a2bb3faabc",
+      "meta": {},
+      "name": "",
+      "testRatio": 0.5
+    }
+  },
+  "rev": "an2eviy96v6",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "3bcd51669fc748909e53e8435703c77c",
+  "@originModelId": "03fc9f1c85e748cbac547d09414a7648"
+}
