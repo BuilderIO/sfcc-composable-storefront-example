@@ -15,9 +15,9 @@ Before you begin, ensure that you have the following accounts set up:
 
 
 ### Getting started with Builder.io :
-      - [1: Create an account for Builder.io](#1-create-an-account-for-builderio)
-      - [2: Your Builder.io private key](#2-your-builderio-private-key)
-      - [3: Clone this repository and initialize a Builder.io space](#3-clone-this-repository-and-initialize-a-builderio-space)
+  - [1: Create an account for Builder.io](#1-create-an-account-for-builderio)
+  - [2: Your Builder.io private key](#2-your-builderio-private-key)
+  - [3: Clone this repository and initialize a Builder.io space](#3-clone-this-repository-and-initialize-a-builderio-space)
 
 #### 1: Create an account for Builder.io
 
@@ -61,7 +61,7 @@ Note:
 if you're only interested in using this starter for a landing page use this command instead:
 
 ```
-builder create --key "<private-key>" --name "<space-name>" --input builder-landing-page-only --debug
+builder create --key "<private-key>" --name "<space-name>"
 ```
 
 
@@ -90,24 +90,28 @@ Your new space "sfcc pwa kit starter" public API Key: d1ed12c3338144da8dd6b63b35
 
 Copy the public API key ("d1ed12c3338144da8dd6b63b35d14c30" in the example above) for the next step.
 
-This starter project uses dotenv files to configure environment variables.
-Open the files [.env.development](./.env.development) and
-[.env.production](./.env.production) in your favorite text editor, and
-set the value of `REACT_APP_BUILDER_PUBLIC_KEY` to the public key you just copied.
-You can ignore the other variables for now, we'll set them later.
+This starter project uses a configuration file to set the builder api key.
+Open the file [builder.js](./app/utils/builder.js) and
+set the value you just copied from your terminal to 'apiKey' property.
 
-```diff
-+ REACT_APP_BUILDER_PUBLIC_KEY=d1ed12c3338144da8dd6b63b35d14c30
-- BUILDER_PUBLIC_KEY=
+```
+export default {
+    apiKey: 'YOUR API KEY GOES HERE',
+    announcementBarModel: 'announcement-bar',
+    categoryHeroModel: 'category-hero',
+    productFooterModel: 'product-footer',
+    pageModel: 'page',
+    cartUpsellModel: 'cart-modal-upsell'
+}
 ```
 
 ## Cloning/Importing our space models
 Follow the steps below if you wish to import our pre created models and templates for this starter kit.
 
-In the example below, replace `<private-key>` with the key you from your organization settings page.
+In the example below, the private key is the one from our demo sfcc pwa starter kit space.
 
 ```
-builder import --key "<private-key>" --debug
+builder import --key "bpk-e12ce4d82a5d45cbb9e5e6ee12fb2c33" --debug
 ```
 
 You should be prompted with something like:
