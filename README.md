@@ -42,12 +42,7 @@ private key, copy the key for the next step.
 
 ![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F7a121a72a0f749a1a9d154b96914be26)
 
-
-## Initialize a space with this starter kit
-Follow the steps below to initialize a blank Builder.io space with the starter kit features and config.
-#### *Note: If you want to clone/import our pre created templates for models and custom targeting, see the Cloning/Importing section below and then come back to this section.*
-
-#### Clone this repository and initialize a Builder.io space
+#### 3: Clone this repository and initialize a Builder.io space
 
 Next, we'll create a copy of the starter project, and create a new
 [space](https://www.builder.io/c/docs/spaces) for it's content to live
@@ -104,32 +99,6 @@ export default {
     cartUpsellModel: 'cart-modal-upsell'
 }
 ```
-
-## Cloning/Importing our space models
-Follow the steps below if you wish to import our pre created models and templates for this starter kit.
-
-In the example below, the private key is the one from our demo sfcc pwa starter kit space.
-
-```
-builder import --key "bpk-e12ce4d82a5d45cbb9e5e6ee12fb2c33" --debug
-```
-
-You should be prompted with something like:
-
-``` bash
-  ____            _   _       _                     _                    _   _ 
-| __ )   _   _  (_) | |   __| |   ___   _ __      (_)   ___       ___  | | (_)
-|  _ \  | | | | | | | |  / _` |  / _ \ | '__|     | |  / _ \     / __| | | | |
-| |_) | | |_| | | | | | | (_| | |  __/ | |     _  | | | (_) |   | (__  | | | |
-|____/   \__,_| |_| |_|  \__,_|  \___| |_|    (_) |_|  \___/     \___| |_| |_|
-
-|████████████████████████████████████████| product-footer writing schema.json | 1/1
-|████████████████████████████████████████| announcement-bar: writing schema.json | 1/1
-|████████████████████████████████████████| category-hero: writing schema.json | 1/1
-|████████████████████████████████████████| page: writing schema.json | 2/2
-```
-
-##### Now you have our demo space content imported to your current directory, so now let's just create a new space with all of the content you've just pulled, for that, just use the above instructions to *Initialize a space with this starter kit*.
 
 ## Up and Running
 
