@@ -8,7 +8,7 @@ Developers don’t have to worry about the underlying infrastructure, whether th
 
 Before you begin, ensure that you have the following accounts set up:
 
--   [SFCC B2C Commerce account](https://dashboard.elasticpath.com/login)
+-   [Salesforce Commerce API client](https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/setting-up-api-access.html)
 -   [Builder.io Account](https://builder.io)
 -   Node 14
 -   npm 6.14.4 or later
