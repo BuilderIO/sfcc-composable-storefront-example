@@ -56,7 +56,7 @@ Note:
 if you're only interested in using this starter for a landing page use this command instead:
 
 ```
-builder create --key "<private-key>" --name "<space-name>"
+builder create --key "<private-key>" --name "<space-name>" --debug
 ```
 
 
