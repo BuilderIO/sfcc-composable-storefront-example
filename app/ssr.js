@@ -72,7 +72,6 @@ const {handler} = runtime.createHandler(options, (app) => {
 
     // Handle the redirect from SLAS as to avoid error
     app.get('/callback?*', (req, res) => {
-        res.set('Access-Control-Allow-Origin', 'https://builder.io')
         res.send()
     })
     app.get('/robots.txt', runtime.serveStaticFile('static/robots.txt'))
