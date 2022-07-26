@@ -25,20 +25,16 @@ Before we start, head over to Builder.io and [create an account](https://builder
 
 #### 2: Your Builder.io private key
 
-Head over to your [organization settings page](https://builder.io/account/organization?root=true) and create a
-private key, copy the key for the next step.
+Head over to your [organization settings page](https://builder.io/account/organization?root=true) fint your organization private key and copy it for the next step.
 
 - Visit the [organization settings page](https://builder.io/account/organization?root=true), or select
   an organization from the list 
 
-![organizations drop down list](https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F573b9e0ce1fc43c09a069fd4976be47c)
-
-- Click "Account" from the left hand sidebar
 - Click the edit icon for the "Private keys" row
-- Copy the value of the auto-generated key, or create a new one with a name that's meaningful to you
-
 
 ![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2F1f3cfad3ba4047d3aeb1f6935d1f650f%2F222bbf272a2f47dca2420e5931f4bd82)
+
+- Copy the value of the auto-generated key, or create a new one with a name that's meaningful to you
 
 ![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2F1f3cfad3ba4047d3aeb1f6935d1f650f%2Ffcea43185bc44f8db9afc56477569688)
 
