@@ -38,9 +38,9 @@ private key, copy the key for the next step.
 - Copy the value of the auto-generated key, or create a new one with a name that's meaningful to you
 
 
-![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2Fd824c5a4ddc3436e806d4b7305961d96)
+![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2F1f3cfad3ba4047d3aeb1f6935d1f650f%2F222bbf272a2f47dca2420e5931f4bd82)
 
-![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F7a121a72a0f749a1a9d154b96914be26)
+![Example of how to get your private key](https://cdn.builder.io/api/v1/image/assets%2F1f3cfad3ba4047d3aeb1f6935d1f650f%2Ffcea43185bc44f8db9afc56477569688)
 
 #### 3: Clone this repository and initialize a Builder.io space
 
