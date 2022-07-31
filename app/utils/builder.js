@@ -4,5 +4,6 @@ export default {
     categoryHeroModel: 'category-hero',
     productFooterModel: 'product-footer',
     pageModel: 'page',
-    cartUpsellModel: 'cart-modal-upsell'
+    cartUpsellModel: 'cart-modal-upsell',
+    blogArticleModel: 'blog-article'
 }

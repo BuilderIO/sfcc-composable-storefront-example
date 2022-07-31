@@ -43,6 +43,7 @@ const {handler} = runtime.createHandler(options, (app) => {
                     'img-src': [
                         "'self'",
                         '*.commercecloud.salesforce.com',
+                        'via.placeholder.com',
                         'data:',
                         'https://*.builder.io',
                         'https://builder.io'

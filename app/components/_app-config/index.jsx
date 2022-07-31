@@ -26,6 +26,8 @@ import {getConfig} from 'pwa-kit-runtime/utils/ssr-config'
 import '../blocks/einstein-products-grid/einstein-products-grid.builder'
 import '../blocks/product-box/product-box.builder'
 import '../blocks/products-grid/prouducts-grid.builder'
+import '../blocks/blog-card/blog-card.builder'
+
 import {builder, Builder} from '@builder.io/react'
 import '@builder.io/widgets'
 import builderconfig from '../../utils/builder'
@@ -34,6 +36,10 @@ builder.init(builderconfig.apiKey)
 Builder.register('insertMenu', {
     name: 'Salesforce Products Components',
     items: [{name: 'ProductBox'}, {name: 'ProductsGrid'}, {name: 'EinsteinProductsGrid'}]
+})
+Builder.register('insertMenu', {
+    name: 'Blog',
+    items: [{name: 'BlogCard'}]
 })
 
 /**

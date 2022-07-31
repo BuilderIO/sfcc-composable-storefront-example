@@ -117,7 +117,6 @@ const Header = ({
 
     // fetch content for announcement bars
     useEffect(() => {
-        console.log(' fetching ', builderConfig.announcementBarModel)
         async function fetchContent() {
             const anouncementContent = await builder
                 .get(builderConfig.announcementBarModel, {

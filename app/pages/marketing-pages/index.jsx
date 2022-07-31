@@ -6,7 +6,7 @@ import {Box} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import builderConfig from '../../utils/builder'
 
-export const CatchAllPage = ({page}) => {
+export const MarketingPage = ({page}) => {
     const isPreviewing = useIsPreviewing()
 
     if (!isPreviewing && !page) {
@@ -14,8 +14,15 @@ export const CatchAllPage = ({page}) => {
     }
     let header = <React.Fragment></React.Fragment>
     if (page) {
-        const {title, description, keywords} = page.data
-        header = <Seo title={title} description={description} keywords={keywords?.join(', ')} />
+        const {title, description, keywords, noIndex} = page.data
+        header = (
+            <Seo
+                title={title}
+                description={description}
+                noIndex={noIndex}
+                keywords={keywords?.join(', ')}
+            />
+        )
     }
 
     return (
@@ -31,7 +38,7 @@ export const CatchAllPage = ({page}) => {
 }
 
 // eslint-disable-next-line
-CatchAllPage.getProps = async ({res, api, location}) => {
+MarketingPage.getProps = async ({res, api, location}) => {
     const page = await builder
         .get(builderConfig.pageModel, {
             url: location.pathname,
@@ -48,8 +55,8 @@ CatchAllPage.getProps = async ({res, api, location}) => {
     return {page}
 }
 
-CatchAllPage.propTypes = {
+MarketingPage.propTypes = {
     page: PropTypes.any
 }
 
-export default CatchAllPage
+export default MarketingPage
