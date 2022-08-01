@@ -15,13 +15,6 @@
     }
   },
   "settings": {
-    "apps": {
-      "Yotpo": {},
-      "Stamped_io": {},
-      "Rebuy": {},
-      "Klaviyo": {},
-      "Postscript": {}
-    },
     "customComponents": [
       "ProgressTracker",
       "JobSelect",
@@ -46,19 +39,53 @@
       "EinsteinProductGrid",
       "ProductBox",
       "ProductGrid",
-      "ProductsGrid"
+      "ProductsGrid",
+      "Languages",
+      "Navbar",
+      "PolicyDocuments",
+      "CustomButton",
+      "Customgrid",
+      "Custom animation loop",
+      "Custom element list",
+      "CustomSubTab",
+      "CustomTabContent",
+      "CustomMultipleTabContent",
+      "CustomMoneyContent",
+      "Footers",
+      "CustomPricingCard",
+      "Custom Category Calculator",
+      "CodeEditor",
+      "Gateway Cards",
+      "AppPay Cards",
+      "CustomSmartPosNav",
+      "CustomStepper",
+      "CustomSearch",
+      "CustomLottieAnim",
+      "CustomTimeLine",
+      "CustomHelpData",
+      "Custom help",
+      "BlogCard"
     ],
+    "showSitePreviewTab": true,
     "enableModelValidationHooks": true,
-    "editorEnableEditingUrlLogic": true,
+    "editorOnlyUseInheritedFonts": true,
     "plugins": {
       "@builder.io/plugin-sfcc-commerce-api": {
         "organizationId": "f_ecom_zzte_053",
-        "proxy": "https://pwa-kit.mobify-storefront.com/mobify/proxy/api",
-        "clientId": "1d763261-6522-4913-9d52-5d947d3b94c4",
+        "shortCode": "kv7kzm78",
         "siteId": "RefArch",
-        "shortCode": "kv7kzm78"
+        "clientId": "1d763261-6522-4913-9d52-5d947d3b94c4",
+        "proxy": "https://pwa-kit.mobify-storefront.com/mobify/proxy/api",
       }
-    }
+    },
+    "apps": {
+      "Yotpo": {},
+      "Klaviyo": {},
+      "Stamped_io": {},
+      "Rebuy": {},
+      "Postscript": {}
+    },
+    "editorEnableEditingUrlLogic": true
   },
   "type": "space",
   "siteUrl": "http://localhost:3000",
@@ -70,26 +97,25 @@
   "@version": 6,
   "cloneInfo": {
     "contentIdMap": {
-      "bcf25dfc6e654456885a4fd42dfadcba": "1b68cefbdbfb4dfab2bc74d7c5116ed0",
-      "9ee8825152a34c37aa9fbfb8f2d8f741": "4622f8e9205a493488ac7889504c2265",
-      "fb371779c5f94de98b36f312d2f35c6e": "a11ddc7b32f147b2a7cf3eb97d34572d",
-      "6dea3fd25ad44ecda710f64b6861ac71": "e2bbebb1351a4681aa67dcc193ee0bcd",
-      "edf697276d2d4c9ebedec75edeb5d98a": "87b6356b061c4d35a82e7d4844ea5338",
-      "3bcd51669fc748909e53e8435703c77c": "120d78f83f4f462c937479674764ffb7",
-      "6ef1a937ec984ef491e55b85af3574c2": "8508ac991c1c4e1f9a7833bf0eed5033",
-      "41e911302b784db4a52ba59827a1ab12": "fada11e9a29247fc9b5c035ed55f2e74",
-      "988bb73c121d41c39d47e23aa6f42011": "2587ccaf0e28441bb210f68adf61c795",
-      "06a0cd013ed84182941f7497de09e9f4": "cb43434702324dcaac1032832e46cc7f",
-      "88a6f8aa971143b988869f909f1d150a": "d80a20988172434eaee68ebe3532cb39",
-      "624ff9773f174ba8a48c9602e4cad1c9": "0bd33f8092a9462c9641196aa4b264ea"
+      "988bb73c121d41c39d47e23aa6f42011": "b3257edb4b5f4baeb00dfcd9f41f34be",
+      "bcf25dfc6e654456885a4fd42dfadcba": "d82614397d274c339f03a70adf074060",
+      "c91fbe641b2345b59b299458b48a9326": "2c4dd2f60f8f44aa9938e7a78cabfe9f",
+      "624ff9773f174ba8a48c9602e4cad1c9": "aafd89c23cbd482a8626c7bf0085ff1a",
+      "edf697276d2d4c9ebedec75edeb5d98a": "7b2d5a580be2429a8881ec3f11f1cb4e",
+      "06a0cd013ed84182941f7497de09e9f4": "2c95e27278a64137a0b541c2daa6a94d",
+      "ec9bf2d898bb475981adf3bdbec73dda": "301a86021dd8439aa08f24edf62c0109",
+      "c1f987107ec644f2a80cdd0408a6473b": "f830b1cbc8324de696f3a289b39c1f16",
+      "41e911302b784db4a52ba59827a1ab12": "07708e807ebf4c42b048b8dede065008"
     },
     "modelIdMap": {
-      "c451eb07237e4861a94d703fc0068cfd": "1c122157252c481f963b4bd1b0874f59",
-      "ee5eb04813b74b7eae2f92f01079d834": "5de1fe6beaba4e91a23a6d03c46a75c6",
-      "03fc9f1c85e748cbac547d09414a7648": "b95e168781e14d28936361f7d4ae0cc2",
-      "fc837c29e99a4c48be10b664a9ba8436": "a11fd5eb8fe94c239932b9e0e3fb35b1",
-      "03b53ab92aef4049bf4ed7fd09f66164": "53f3dc7d11364a86ad70c3f3a365fd84",
-      "b0061e242f914ce2b7dc8f5fe960044b": "c7b4bb010a2648d9926445ee55bef73f"
+      "fc837c29e99a4c48be10b664a9ba8436": "f711673bbe6d4ea399f74fe2f238a6aa",
+      "c451eb07237e4861a94d703fc0068cfd": "e80f40b468ad4507adc1bf06751af18e",
+      "3d2fd80baa164b349806a5f9b0087b88": "18ba3205db4a4d199b233fd717f3cc23",
+      "b0061e242f914ce2b7dc8f5fe960044b": "366725149e424de8a12aed06c8e94dc5",
+      "ee5eb04813b74b7eae2f92f01079d834": "8c827625a0ec4064b7e0eb83587f9327",
+      "03b53ab92aef4049bf4ed7fd09f66164": "6521f91c8d9d4761be44b4c22c1faffd",
+      "4601e0ab0b0a4f84b06e377dd5a37567": "96868452095346e8a354f9585bcb0352",
+      "03fc9f1c85e748cbac547d09414a7648": "4303ed004d924f35ac703cbc1c24dd85"
     }
   }
 }

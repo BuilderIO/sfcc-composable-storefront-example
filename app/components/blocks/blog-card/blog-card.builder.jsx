@@ -3,6 +3,7 @@ import {Text, Skeleton} from '@chakra-ui/react'
 import {Builder} from '@builder.io/react'
 import builderConfig from '../../../utils/builder'
 import loadable from '@loadable/component'
+import {Link} from 'react-router-dom'
 
 const fallback = <Skeleton height="75vh" width="100%" />
 const BlogCard = loadable(() => import('./index'), {fallback})
@@ -25,14 +26,17 @@ Builder.registerComponent(
 
         if (article) {
             return (
-                <BlogCard
-                    date={new Date(article.lastUpdated || Date.now())}
-                    keywords={article.data.keywords || []}
-                    title={article.data.title}
-                    excerpt={article.data.excerpt}
-                    image={article.data.image}
-                    author={article.data.author.value?.data || {}}
-                />
+                <Link to={`/blog/${article.data.slug}`}>
+                    <BlogCard
+                        isColumn={props.isColumn}
+                        date={new Date(article.lastUpdated || Date.now())}
+                        keywords={article.data.keywords || []}
+                        title={article.data.title}
+                        excerpt={article.data.excerpt}
+                        image={article.data.image}
+                        author={article.data.author.value?.data || {}}
+                    />
+                </Link>
             )
         }
         return <Text> Pick an article </Text>
@@ -46,6 +50,11 @@ Builder.registerComponent(
                 name: 'article',
                 type: 'reference',
                 model: 'blog-article'
+            },
+            {
+                name: 'isColumn',
+                friendlyName: 'Stack vertically',
+                type: 'boolean'
             }
         ]
     }

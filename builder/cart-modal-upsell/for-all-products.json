@@ -37,7 +37,7 @@
       }
     }
   },
-  "id": "fada11e9a29247fc9b5c035ed55f2e74",
+  "id": "07708e807ebf4c42b048b8dede065008",
   "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
   "meta": {
     "hasLinks": false,
@@ -45,7 +45,7 @@
     "lastPreviewUrl": "http://localhost:3000/product/25752218M?addToCart=true&builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=cart-modal-upsell&builder.noCache=true&__builder_editing__=true&builder.overrides.cart-modal-upsell=41e911302b784db4a52ba59827a1ab12&builder.overrides.41e911302b784db4a52ba59827a1ab12=41e911302b784db4a52ba59827a1ab12",
     "needsHydration": false
   },
-  "modelId": "b95e168781e14d28936361f7d4ae0cc2",
+  "modelId": "4303ed004d924f35ac703cbc1c24dd85",
   "name": "for all products",
   "published": "published",
   "query": [],
@@ -55,7 +55,7 @@
   "previewUrl": "http://localhost:3000/product/25752218M?addToCart=true",
   "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F57a5a89fb51f4301a30dee4331a1aa5f",
   "firstPublished": 1658214824016,
-  "rev": "an2eviy96v6",
+  "rev": "dyrn52vhqaq",
   "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
   "@originContentId": "41e911302b784db4a52ba59827a1ab12",
   "@originModelId": "03fc9f1c85e748cbac547d09414a7648"

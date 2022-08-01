@@ -30,7 +30,6 @@ const BlogAuthor = (props) => {
                 alt={`Avatar of ${props.author.name}`}
             />
             <Text fontWeight="medium">{props.author.name}</Text>
-            <Text>{props.author.name}</Text>
             <Text>{props.date.toLocaleDateString('en-US')}</Text>
         </HStack>
     )
@@ -38,24 +37,20 @@ const BlogAuthor = (props) => {
 
 BlogAuthor.propTypes = {
     author: PropTypes.any,
-    date: PropTypes.date
+    date: PropTypes.any
 }
 
 export function BlogCard(props) {
+    const isColumn = props.isColumn
     return (
         <Box
-            marginTop={{base: '1', sm: '5'}}
+            my={isColumn ? 5 : {base: '1', sm: '5'}}
             display="flex"
-            flexDirection={{base: 'column', sm: 'row'}}
+            flexDirection={isColumn ? 'column' : {base: 'column', md: 'row'}}
             justifyContent="space-between"
         >
             <Box display="flex" flex="1" marginRight="3" position="relative" alignItems="center">
-                <Box
-                    width={{base: '100%', sm: '85%'}}
-                    zIndex="2"
-                    marginLeft={{base: '0', sm: '5%'}}
-                    marginTop="5%"
-                >
+                <Box mx={2}>
                     <Image
                         borderRadius="lg"
                         src={props.image || 'https://via.placeholder.com/300x200'}
@@ -65,11 +60,12 @@ export function BlogCard(props) {
                 </Box>
             </Box>
             <Box
+                mx={isColumn ? 5 : {base: '1', sm: '5'}}
                 display="flex"
                 flex="1"
                 flexDirection="column"
                 justifyContent="center"
-                marginTop={{base: '3', sm: '0'}}
+                marginTop={{base: '3', sm: '5'}}
             >
                 <BlogTags tags={props.keywords} />
                 <Heading marginTop="1">
@@ -96,7 +92,8 @@ BlogCard.propTypes = {
     image: PropTypes.string,
     author: PropTypes.any,
     keywords: PropTypes.arrayOf(PropTypes.string),
-    date: PropTypes.any
+    date: PropTypes.any,
+    isColumn: PropTypes.bool
 }
 
 export default BlogCard

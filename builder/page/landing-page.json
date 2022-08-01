@@ -7545,7 +7545,7 @@
       }
     }
   },
-  "id": "0bd33f8092a9462c9641196aa4b264ea",
+  "id": "aafd89c23cbd482a8626c7bf0085ff1a",
   "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
   "meta": {
     "hasLinks": false,
@@ -7553,7 +7553,7 @@
     "lastPreviewUrl": "http://localhost:3000/landing?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=page&builder.noCache=true&__builder_editing__=true&builder.overrides.page=624ff9773f174ba8a48c9602e4cad1c9&builder.overrides.624ff9773f174ba8a48c9602e4cad1c9=624ff9773f174ba8a48c9602e4cad1c9&builder.overrides.page:/landing=624ff9773f174ba8a48c9602e4cad1c9",
     "needsHydration": false
   },
-  "modelId": "c7b4bb010a2648d9926445ee55bef73f",
+  "modelId": "366725149e424de8a12aed06c8e94dc5",
   "name": "landing page ",
   "published": "published",
   "query": [
@@ -7569,7 +7569,7 @@
   "lastUpdated": 1658016980372,
   "firstPublished": 1657907838896,
   "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2Fe82fcf212eb541169c972b8a32f4c0ce",
-  "rev": "jmo221ch08",
+  "rev": "6yztrvujsin",
   "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
   "@originContentId": "624ff9773f174ba8a48c9602e4cad1c9",
   "@originModelId": "b0061e242f914ce2b7dc8f5fe960044b"

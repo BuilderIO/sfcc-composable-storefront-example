@@ -1,0 +1,99 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1659378872427,
+  "data": {
+    "author": {
+      "@type": "@builder.io/core:Reference",
+      "id": "301a86021dd8439aa08f24edf62c0109",
+      "model": "author"
+    },
+    "excerpt": "<p>Num vix persecuti honesta philosophari dissentiunt nulla ob rem apte omittam vituperata delectant, Iis veniat appareat bonorum dicat causam clamat referatur ponit beatus modo ducimus intemperantes iucunditas quidam.</p><p>Nemini carum obligantur naturales liberiusque atqui maiores attento conversa everti inquit nihil sequitur. Magnosque maluisti debilitati disputationi impediri magnosque Brutus cohaerescant ponendam collaudata deterret sentiant reliquerunt bona sustulisti!</p>",
+    "image": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F79b4895a95cb4635bd868cb041e7ff78",
+    "slug": "inquam-vituperandae",
+    "title": "Inquam vituperandae",
+    "blocks": [
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-17f0e244d88a43be9a4e6eb6d2b362f6",
+        "component": {
+          "name": "ProductBox",
+          "options": {
+            "productRef": {
+              "@type": "@builder.io/core:Request",
+              "request": {
+                "url": "https://qa.builder.io/api/v1/sfcc-commerce/products/25772717M?pluginId=%40builder.io%2Fplugin-sfcc-commerce-api&apiKey=d1ed12c3338144da8dd6b63b35d14c30",
+                "method": "GET"
+              },
+              "options": {
+                "product": "25772717M"
+              }
+            }
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "20px"
+          }
+        }
+      },
+      {
+        "@type": "@builder.io/sdk:Element",
+        "@version": 2,
+        "id": "builder-d53a63ab38084d738a08d1bde06a2ccd",
+        "component": {
+          "name": "Text",
+          "options": {
+            "text": "<h4>Efficiantur quanti docet provincias</h4><p><span style=\"font-size: 14px;\">Desiderat tamquam ubi commemorandis&nbsp;</span>modo Graecos<span style=\"font-size: 14px;\">&nbsp;scriptorem&nbsp;</span>peccant<span style=\"font-size: 14px;\">&nbsp;e feci mutat vita&nbsp;</span>vias ferri<span style=\"font-size: 14px;\">&nbsp;eas naturae! Opinemur magnosque&nbsp;</span><u style=\"font-size: 14px;\">infinitio iudicatum servire</u><span style=\"font-size: 14px;\">&nbsp;</span>discordant verterem antiquis<span style=\"font-size: 14px;\">&nbsp;impediri finibus&nbsp;</span>litterae natura<span style=\"font-size: 14px;\">&nbsp;</span><u style=\"font-size: 14px;\">consulatu</u><span style=\"font-size: 14px;\">&nbsp;parentes quibus vituperari patrioque&nbsp;</span>assumenda<span style=\"font-size: 14px;\">&nbsp;tolerabiles cupiditate&nbsp;</span><strong style=\"font-size: 14px;\">se</strong><span style=\"font-size: 14px;\">&nbsp;</span><strong style=\"font-size: 14px;\">amplificarique iudicia</strong><span style=\"font-size: 14px;\">&nbsp;ex contentiones! Obiecta levius praesens&nbsp;</span>adest<span style=\"font-size: 14px;\">&nbsp;amaret expectata postremo ratio&nbsp;</span><u style=\"font-size: 14px;\">explicabo choro</u><span style=\"font-size: 14px;\">&nbsp;</span>inprobitas civitas<span style=\"font-size: 14px;\">&nbsp;verterem tractatas inciderint virtutes Praeterea.</span></p><h4>Nam corporis audita</h4><p><span style=\"font-size: 14px;\">Quietem aliquo concederetur ornatus mors ponendam mediocris mundi&nbsp;</span>soliditatem nostris<span style=\"font-size: 14px;\">&nbsp;</span><strong style=\"font-size: 14px;\">sentiant utrisque</strong><span style=\"font-size: 14px;\">&nbsp;</span>circumcisaque<span style=\"font-size: 14px;\">&nbsp;</span><u style=\"font-size: 14px;\">cuius</u><span style=\"font-size: 14px;\">&nbsp;distinctio vidit utens.</span></p><h3>Sententia tandem investigandi</h3><p><span style=\"font-size: 14px;\">Concertationesque iucunditas solam attulit minus honestum utramque isdem, Debent attulit plusque quoquo&nbsp;</span><u style=\"font-size: 14px;\">conquirendae pecuniae</u><span style=\"font-size: 14px;\">&nbsp;</span><strong style=\"font-size: 14px;\">malunt adhuc</strong><span style=\"font-size: 14px;\">&nbsp;</span>videre<span style=\"font-size: 14px;\">&nbsp;utrumvis studuisse defuit oratio dolor quosvis mandamus libidinum!</span></p><h4>Dolores desperantes laboribus</h4><p><span style=\"font-size: 14px;\">Divinum referri Utrum privavisse molita&nbsp;</span><strong style=\"font-size: 14px;\">gerendarum oratio totum</strong><span style=\"font-size: 14px;\">&nbsp;philosophorum multi recusandae; Scriptum isti gloriosis provident&nbsp;</span><u style=\"font-size: 14px;\">impetu fugienda</u><span style=\"font-size: 14px;\">&nbsp;illam Democrito fere ii sua&nbsp;</span>suscepi<span style=\"font-size: 14px;\">&nbsp;Brute Tuo iisque agatur.</span></p><h3>Temperantiam parvos facilis</h3><p><span style=\"font-size: 14px;\">Concertationesque ipsi valetudinis vix&nbsp;</span><strong style=\"font-size: 14px;\">illi</strong><span style=\"font-size: 14px;\">&nbsp;vivendo usus refert O insequitur! Stoicos contentus tantis vendibiliora&nbsp;</span><strong style=\"font-size: 14px;\">angore depravata videamus</strong><span style=\"font-size: 14px;\">&nbsp;</span><u style=\"font-size: 14px;\">optabilem</u><span style=\"font-size: 14px;\">&nbsp;ponit inanes vivamus consedit impetu&nbsp;</span><u style=\"font-size: 14px;\">Latina Scaevola</u><span style=\"font-size: 14px;\">&nbsp;quod&nbsp;</span><strong style=\"font-size: 14px;\">eorum alia</strong><span style=\"font-size: 14px;\">&nbsp;e.</span></p>"
+          }
+        },
+        "responsiveStyles": {
+          "large": {
+            "display": "flex",
+            "flexDirection": "column",
+            "position": "relative",
+            "flexShrink": "0",
+            "boxSizing": "border-box",
+            "marginTop": "20px",
+            "lineHeight": "normal",
+            "height": "auto"
+          }
+        }
+      }
+    ],
+    "state": {
+      "deviceSize": "large",
+      "location": {
+        "path": "",
+        "query": {}
+      }
+    }
+  },
+  "id": "2c4dd2f60f8f44aa9938e7a78cabfe9f",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "hasLinks": false,
+    "kind": "component",
+    "lastPreviewUrl": "http://localhost:3000/blog/inquam-vituperandae?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=blog-article&builder.noCache=true&__builder_editing__=true&builder.overrides.blog-article=c91fbe641b2345b59b299458b48a9326&builder.overrides.c91fbe641b2345b59b299458b48a9326=c91fbe641b2345b59b299458b48a9326",
+    "needsHydration": false
+  },
+  "modelId": "18ba3205db4a4d199b233fd717f3cc23",
+  "name": "Inquam vituperandae",
+  "published": "published",
+  "query": [],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1659378977641,
+  "previewUrl": "http://localhost:3000/blog/inquam-vituperandae",
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F88ec92dff89f4576b1120c4d0d82f155",
+  "firstPublished": 1659378977640,
+  "rev": "9hpdb156at7",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "c91fbe641b2345b59b299458b48a9326",
+  "@originModelId": "3d2fd80baa164b349806a5f9b0087b88"
+}

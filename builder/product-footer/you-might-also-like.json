@@ -9,11 +9,11 @@
         "bindings": {
           "component.options.product": "state.product"
         },
-        "id": "builder-de60f4ae23304a52b67371e3a611dc30",
+        "id": "builder-06fb423c97ed490fa8774723a7751068",
         "component": {
           "name": "EinsteinProductsGrid",
           "options": {
-            "recommender": "pdp-similar-items",
+            "recommender": "no-search-personalized-for-shopper",
             "title": "You might also like"
           }
         },
@@ -31,12 +31,15 @@
       {
         "@type": "@builder.io/sdk:Element",
         "@version": 2,
-        "id": "builder-770064ba00214afd95e22a388c818273",
+        "bindings": {
+          "component.options.product": "state.product"
+        },
+        "id": "builder-d387be20e2e54a5c87ac533e581cff66",
         "component": {
           "name": "EinsteinProductsGrid",
           "options": {
-            "title": "Viewed Recently",
-            "recommender": "viewed-recently-einstein"
+            "recommender": "viewed-recently-einstein",
+            "title": "Viewed recently"
           }
         },
         "responsiveStyles": {
@@ -59,7 +62,7 @@
       }
     }
   },
-  "id": "87b6356b061c4d35a82e7d4844ea5338",
+  "id": "7b2d5a580be2429a8881ec3f11f1cb4e",
   "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
   "meta": {
     "hasLinks": false,
@@ -67,17 +70,17 @@
     "lastPreviewUrl": "http://localhost:3000/product/25752218M?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=product-footer&builder.noCache=true&__builder_editing__=true&builder.overrides.product-footer=edf697276d2d4c9ebedec75edeb5d98a&builder.overrides.edf697276d2d4c9ebedec75edeb5d98a=edf697276d2d4c9ebedec75edeb5d98a",
     "needsHydration": false
   },
-  "modelId": "5de1fe6beaba4e91a23a6d03c46a75c6",
+  "modelId": "8c827625a0ec4064b7e0eb83587f9327",
   "name": "you might also like",
   "published": "published",
   "query": [],
   "testRatio": 1,
   "variations": {},
-  "lastUpdated": 1658230553982,
+  "lastUpdated": 1659378494004,
   "previewUrl": "http://localhost:3000/product/25752218M",
-  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F9f97da3543d24963b64a684e6a7b8fc2",
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F793bf1d738c6443aa369988838ce0e21",
   "firstPublished": 1657957198500,
-  "rev": "uvsdhx1w26a",
+  "rev": "3dv1fy2p3e4",
   "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
   "@originContentId": "edf697276d2d4c9ebedec75edeb5d98a",
   "@originModelId": "ee5eb04813b74b7eae2f92f01079d834"

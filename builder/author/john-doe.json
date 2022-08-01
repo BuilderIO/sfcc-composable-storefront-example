@@ -1,0 +1,25 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1659216759201,
+  "data": {
+    "image": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F46948bee368e4de9b418494d72121fc6",
+    "name": "John Doe"
+  },
+  "id": "f830b1cbc8324de696f3a289b39c1f16",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "kind": "data"
+  },
+  "modelId": "96868452095346e8a354f9585bcb0352",
+  "name": "John Doe",
+  "published": "published",
+  "query": [],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1659216814418,
+  "firstPublished": 1659216814417,
+  "rev": "48hxtsb3jbx",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "c1f987107ec644f2a80cdd0408a6473b",
+  "@originModelId": "4601e0ab0b0a4f84b06e377dd5a37567"
+}

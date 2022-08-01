@@ -2,11 +2,42 @@
   "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
   "createdDate": 1658084196410,
   "data": {
+    "inputs": [],
     "blocks": [
       {
         "@type": "@builder.io/sdk:Element",
         "@version": 2,
         "id": "builder-dc0725665ff3465bb16da0325a666d04",
+        "animations": [
+          {
+            "trigger": "pageLoad",
+            "animation": "fadeInUp",
+            "steps": [
+              {
+                "id": "c00be33c69434c5a80d6f49b19417b87",
+                "isStartState": false,
+                "styles": {
+                  "opacity": "0",
+                  "transform": "translate3d(0, 20px, 0)"
+                },
+                "delay": 0
+              },
+              {
+                "id": "0945ba84fb6247cea10c1c0fb983d4e2",
+                "isStartState": false,
+                "styles": {
+                  "opacity": "1",
+                  "transform": "none"
+                },
+                "delay": 0
+              }
+            ],
+            "delay": 0,
+            "duration": 0.3,
+            "easing": "cubic-bezier(.37,.01,0,.98)",
+            "repeat": false
+          }
+        ],
         "component": {
           "name": "Image",
           "options": {
@@ -65,7 +96,7 @@
                 "component": {
                   "name": "Text",
                   "options": {
-                    "text": "<p>\n  here's to <span class=\"j\">j</span><span class=\"o\">o</span\n  ><span class=\"y\">y</span>\n</p>\n"
+                    "text": "<p>Women's Accessories</p>"
                   }
                 },
                 "responsiveStyles": {
@@ -164,7 +195,7 @@
       }
     }
   },
-  "id": "1b68cefbdbfb4dfab2bc74d7c5116ed0",
+  "id": "d82614397d274c339f03a70adf074060",
   "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
   "meta": {
     "hasLinks": false,
@@ -172,7 +203,7 @@
     "lastPreviewUrl": "http://localhost:3000/category/womens-accessories?builder.space=d1ed12c3338144da8dd6b63b35d14c30&builder.cachebust=true&builder.preview=category-hero&builder.noCache=true&__builder_editing__=true&builder.overrides.category-hero=bcf25dfc6e654456885a4fd42dfadcba&builder.overrides.bcf25dfc6e654456885a4fd42dfadcba=bcf25dfc6e654456885a4fd42dfadcba",
     "needsHydration": false
   },
-  "modelId": "1c122157252c481f963b4bd1b0874f59",
+  "modelId": "e80f40b468ad4507adc1bf06751af18e",
   "name": "women accessories hero",
   "published": "published",
   "query": [
@@ -185,11 +216,11 @@
   ],
   "testRatio": 1,
   "variations": {},
-  "lastUpdated": 1658084362222,
+  "lastUpdated": 1659227800255,
   "previewUrl": "http://localhost:3000/category/womens-accessories",
-  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2Ffe211be346d04281a3e019e8d9fd13c3",
+  "screenshot": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F7e0bed6a0e6647e09370b348b556ebc4",
   "firstPublished": 1658084362220,
-  "rev": "fslf5uzgo9b",
+  "rev": "vtlcmk10qxc",
   "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
   "@originContentId": "bcf25dfc6e654456885a4fd42dfadcba",
   "@originModelId": "c451eb07237e4861a94d703fc0068cfd"

@@ -1,0 +1,25 @@
+{
+  "createdBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "createdDate": 1659341127183,
+  "data": {
+    "image": "https://cdn.builder.io/api/v1/image/assets%2Fd1ed12c3338144da8dd6b63b35d14c30%2F32f35f7500c74a2cb733c8c0c0098909",
+    "name": "Foo bar"
+  },
+  "id": "301a86021dd8439aa08f24edf62c0109",
+  "lastUpdatedBy": "4FFFg0MNRJT0z0nW4uUizDHfHJV2",
+  "meta": {
+    "kind": "data"
+  },
+  "modelId": "96868452095346e8a354f9585bcb0352",
+  "name": "foo bar",
+  "published": "published",
+  "query": [],
+  "testRatio": 1,
+  "variations": {},
+  "lastUpdated": 1659341176617,
+  "firstPublished": 1659341176615,
+  "rev": "48hxtsb3jbx",
+  "@originOrg": "d1ed12c3338144da8dd6b63b35d14c30",
+  "@originContentId": "ec9bf2d898bb475981adf3bdbec73dda",
+  "@originModelId": "4601e0ab0b0a4f84b06e377dd5a37567"
+}

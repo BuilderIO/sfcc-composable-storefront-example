@@ -2,12 +2,19 @@ import React from 'react'
 import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
 import PageNotFound from '../page-not-found'
 import Seo from '../../components/seo'
-import {Box} from '@chakra-ui/react'
+import {Box, Skeleton} from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import builderConfig from '../../utils/builder'
 
-export const MarketingPage = ({page}) => {
+export const MarketingPage = ({page, isLoading}) => {
     const isPreviewing = useIsPreviewing()
+    if (isLoading) {
+        return (
+            <Box css={{minHeight: '100vh'}}>
+                <Skeleton height="75vh" width="100%" />
+            </Box>
+        )
+    }
 
     if (!isPreviewing && !page) {
         return <PageNotFound />
@@ -56,7 +63,8 @@ MarketingPage.getProps = async ({res, api, location}) => {
 }
 
 MarketingPage.propTypes = {
-    page: PropTypes.any
+    page: PropTypes.any,
+    isLoading: PropTypes.bool
 }
 
 export default MarketingPage
