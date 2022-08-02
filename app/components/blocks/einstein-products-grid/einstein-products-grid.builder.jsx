@@ -23,14 +23,7 @@ Builder.registerComponent(EinsteinProductsGrid, {
         },
         {
             name: 'recommender',
-            type: 'text',
-            // TODO define a type for recommenders
-            enum: [
-                'viewed-recently-einstein',
-                'pdp-similar-items',
-                'products-in-all-categories',
-                'no-search-personalized-for-shopper'
-            ],
+            type: 'SFCommerceRecommender',
             required: true
         }
     ]
