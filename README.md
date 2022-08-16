@@ -40,6 +40,10 @@ Head over to your [organization settings page](https://builder.io/account/organi
 
 #### 3: Clone this repository and initialize a Builder.io space
 
+First, we'll need to install Builder's CLI:
+```
+npm install -g @builder.io/cli
+```
 Next, we'll create a copy of the starter project, and create a new
 [space](https://www.builder.io/c/docs/spaces) for it's content to live
 in.
@@ -47,9 +51,6 @@ in.
 In the example below, replace `<private-key>` with the key you copied
 in the previous step, and change `<space-name>` to something that's
 meaningful to you -- don't worry, you can change it later!
-
-Note:
-if you're only interested in using this starter for a landing page use this command instead:
 
 ```
 builder create --key "<private-key>" --name "<space-name>" --debug
