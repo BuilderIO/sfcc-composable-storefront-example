@@ -1,5 +1,5 @@
 export default {
-    apiKey: 'd1ed12c3338144da8dd6b63b35d14c30',
+    apiKey: '9d03670921d745ff826f9a6cce180182',
     announcementBarModel: 'announcement-bar',
     categoryHeroModel: 'category-hero',
     productFooterModel: 'product-footer',
