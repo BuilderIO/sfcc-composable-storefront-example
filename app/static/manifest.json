@@ -1,4 +1,6 @@
 {
+  "name": "builder-io-demo",
+  "short_name": "builder-io-demo",
   "start_url": "/?homescreen=1",
   "background_color": "#fff",
   "theme_color": "#4e439b",

@@ -24,9 +24,15 @@ import {
     ocapiBasketResponse,
     ocapiFaultResponse
 } from './mock-data'
-import Auth from './auth'
 
 jest.mock('cross-fetch', () => jest.requireActual('jest-fetch-mock'))
+
+jest.mock('./utils', () => {
+    const originalModule = jest.requireActual('./utils')
+    return {
+        ...originalModule
+    }
+})
 
 const apiConfig = {
     ...appConfig.commerceAPI,
@@ -101,8 +107,6 @@ jest.mock('commerce-sdk-isomorphic', () => {
         }
     }
 })
-
-jest.spyOn(Auth.prototype, 'createOCAPISession').mockImplementation(() => jest.fn())
 
 beforeEach(() => {
     jest.resetModules()
@@ -681,6 +685,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.createOrder({
+            headers: {_sfdc_customer_id: 'usid'},
             parameters: {},
             body: {basketId: ''}
         })
@@ -691,6 +696,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.createOrder({
+            headers: {_sfdc_customer_id: 'usid'},
             parameters: {}
         })
         expect(response.title).toEqual('Body is required for this request')
@@ -700,6 +706,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.getOrder({
+            headers: {_sfdc_customer_id: 'usid'},
             parameters: {orderNo: ''}
         })
         expect(response).toBeDefined()
@@ -709,6 +716,7 @@ describe('CommerceAPI', () => {
         const api = getAPI()
         fetch.mockResponseOnce(JSON.stringify(ocapiBasketResponse))
         const response = await api.shopperOrders.getOrder({
+            headers: {_sfdc_customer_id: 'usid'},
             parameters: {}
         })
         expect(response.title).toEqual(
@@ -724,6 +732,7 @@ describe('CommerceAPI', () => {
         await expect(
             api.shopperOrders.createOrder({
                 parameters: {},
+                headers: {_sfdc_customer_id: 'usid'},
                 body: {basketId: ''}
             })
         ).rejects.toThrow(ocapiFaultResponse.fault.message)

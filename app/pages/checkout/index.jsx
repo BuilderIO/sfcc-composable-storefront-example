@@ -17,13 +17,11 @@ import useBasket from '../../commerce-api/hooks/useBasket'
 import Payment from './partials/payment'
 import CheckoutSkeleton from './partials/checkout-skeleton'
 import OrderSummary from '../../components/order-summary'
-import builder from '@builder.io/react'
 
 const Checkout = () => {
     const navigate = useNavigation()
     const {globalError, step, placeOrder} = useCheckout()
     const [isLoading, setIsLoading] = useState(false)
-    const basket = useBasket()
 
     // Scroll to the top when we get a global error
     useEffect(() => {
@@ -36,7 +34,6 @@ const Checkout = () => {
         setIsLoading(true)
         try {
             await placeOrder()
-            builder.trackConversion(basket?.orderTotal || basket?.productTotal)
             navigate('/checkout/confirmation')
         } catch (error) {
             setIsLoading(false)

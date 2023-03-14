@@ -25,7 +25,7 @@ afterEach(() => {
     jest.resetAllMocks()
 })
 
-describe('resolveSiteFromUrl', function() {
+describe('resolveSiteFromUrl', function () {
     test('throw an error without an arg', () => {
         expect(() => {
             resolveSiteFromUrl()
@@ -77,7 +77,7 @@ describe('resolveSiteFromUrl', function() {
     })
 })
 
-describe('getDefaultSite', function() {
+describe('getDefaultSite', function () {
     test('returns expected default site when there is only one site in the site list', () => {
         const siteMock = {
             id: 'site-a',
@@ -124,6 +124,7 @@ describe('getDefaultSite', function() {
             id: 'site-2',
             l10n: {
                 defaultLocale: 'en-US',
+                defaultCurrency: 'USD',
                 supportedLocales: [
                     {
                         id: 'en-US',
@@ -142,7 +143,7 @@ describe('getDefaultSite', function() {
     })
 })
 
-describe('getSites', function() {
+describe('getSites', function () {
     test('returns site list with alias', () => {
         getConfig.mockImplementation(() => mockConfig)
         const sites = getSites()
@@ -152,6 +153,7 @@ describe('getSites', function() {
                 alias: 'uk',
                 l10n: {
                     defaultLocale: 'en-GB',
+                    defaultCurrency: 'GBP',
                     supportedLocales: [
                         {
                             id: 'en-GB',
@@ -174,6 +176,7 @@ describe('getSites', function() {
                 alias: 'us',
                 l10n: {
                     defaultLocale: 'en-US',
+                    defaultCurrency: 'USD',
                     supportedLocales: [
                         {
                             id: 'en-US',

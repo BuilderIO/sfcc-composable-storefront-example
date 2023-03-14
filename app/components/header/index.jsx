@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import React, {useEffect, useRef, useState} from 'react'
-import {BuilderComponent, builder} from '@builder.io/react'
+import React, {useRef, useState} from 'react'
 import PropTypes from 'prop-types'
 import {useIntl} from 'react-intl'
 import {
@@ -49,9 +48,9 @@ import {noop} from '../../utils/utils'
 import {navLinks, messages} from '../../pages/account/constant'
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../loading-spinner'
-import builderConfig from '../../utils/builder'
 
 const ENTER_KEY = 'Enter'
+
 const IconButtonWithRegistration = withRegistration(IconButton)
 /**
  * The header is the main source for accessing
@@ -87,8 +86,6 @@ const Header = ({
     const {isOpen, onClose, onOpen} = useDisclosure()
     const [isDesktop] = useMediaQuery('(min-width: 992px)')
 
-    const [announcement, setAnnouncement] = useState()
-
     const [showLoading, setShowLoading] = useState(false)
     // tracking if users enter the popover Content,
     // so we can decide whether to close the menu when users leave account icons
@@ -115,26 +112,8 @@ const Header = ({
         }, 100)
     }
 
-    // fetch content for announcement bars
-    useEffect(() => {
-        async function fetchContent() {
-            const anouncementContent = await builder
-                .get(builderConfig.announcementBarModel, {
-                    cacheSeconds: 120
-                })
-                .toPromise()
-            setAnnouncement(anouncementContent)
-        }
-        fetchContent()
-    }, [])
-
     return (
         <Box {...styles.container} {...props}>
-            <BuilderComponent
-                content={announcement}
-                model={builderConfig.announcementBarModel}
-                options={{includeRefs: true}}
-            />
             <Box {...styles.content}>
                 {showLoading && <LoadingSpinner wrapperStyles={{height: '100vh'}} />}
                 <Flex wrap="wrap" alignItems={['baseline', 'baseline', 'baseline', 'center']}>

@@ -35,8 +35,6 @@ import useShopper from '../../commerce-api/hooks/useShopper'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
 import {AuthModal, useAuthModal} from '../../hooks/use-auth-modal'
 import {AddToCartModalProvider} from '../../hooks/use-add-to-cart-modal'
-import useSite from '../../hooks/use-site'
-import useLocale from '../../hooks/use-locale'
 import useWishlist from '../../hooks/use-wishlist'
 
 // Localization
@@ -44,18 +42,27 @@ import {IntlProvider} from 'react-intl'
 
 // Others
 import {watchOnlineStatus, flatten} from '../../utils/utils'
-import {homeUrlBuilder, getPathWithLocale, buildPathWithUrlConfig} from '../../utils/url'
 import {getTargetLocale, fetchTranslations} from '../../utils/locale'
-import {DEFAULT_SITE_TITLE, HOME_HREF, THEME_COLOR} from '../../constants'
+import {
+    DEFAULT_SITE_TITLE,
+    HOME_HREF,
+    THEME_COLOR,
+    CAT_MENU_DEFAULT_NAV_DEPTH,
+    CAT_MENU_DEFAULT_ROOT_CATEGORY,
+    DEFAULT_LOCALE
+} from '../../constants'
 
 import Seo from '../seo'
 import {resolveSiteFromUrl} from '../../utils/site-utils'
-
-const DEFAULT_NAV_DEPTH = 3
-const DEFAULT_ROOT_CATEGORY = 'root'
+import useMultiSite from '../../hooks/use-multi-site'
 
 const App = (props) => {
-    const {children, targetLocale, messages, categories: allCategories = {}} = props
+    const {
+        children,
+        targetLocale = DEFAULT_LOCALE,
+        messages = {},
+        categories: allCategories = {}
+    } = props
 
     const appOrigin = getAppOrigin()
 
@@ -63,17 +70,10 @@ const App = (props) => {
     const location = useLocation()
     const authModal = useAuthModal()
     const customer = useCustomer()
-
-    const site = useSite()
-    const locale = useLocale()
+    const {site, locale, buildUrl} = useMultiSite()
 
     const [isOnline, setIsOnline] = useState(true)
     const styles = useStyleConfig('App')
-
-    const configValues = {
-        locale: locale.alias || locale.id,
-        site: site.alias || site.id
-    }
 
     const {isOpen, onOpen, onClose} = useDisclosure()
 
@@ -115,7 +115,8 @@ const App = (props) => {
 
     const onLogoClick = () => {
         // Goto the home page.
-        const path = homeUrlBuilder(HOME_HREF, {locale, site})
+        const path = buildUrl(HOME_HREF)
+
         history.push(path)
 
         // Close the drawer.
@@ -123,7 +124,7 @@ const App = (props) => {
     }
 
     const onCartClick = () => {
-        const path = buildPathWithUrlConfig('/cart', configValues)
+        const path = buildUrl('/cart')
         history.push(path)
 
         // Close the drawer.
@@ -133,7 +134,7 @@ const App = (props) => {
     const onAccountClick = () => {
         // Link to account page for registered customer, open auth modal otherwise
         if (customer.isRegistered) {
-            const path = buildPathWithUrlConfig('/account', configValues)
+            const path = buildUrl('/account')
             history.push(path)
         } else {
             // if they already are at the login page, do not show login modal
@@ -143,7 +144,7 @@ const App = (props) => {
     }
 
     const onWishlistClick = () => {
-        const path = buildPathWithUrlConfig('/account/wishlist', configValues)
+        const path = buildUrl('/account/wishlist')
         history.push(path)
     }
 
@@ -165,9 +166,9 @@ const App = (props) => {
                 // NOTE: if you update this value, please also update the following npm scripts in `template-retail-react-app/package.json`:
                 // - "extract-default-translations"
                 // - "compile-translations:pseudo"
-                defaultLocale="en-US"
+                defaultLocale={DEFAULT_LOCALE}
             >
-                <CategoriesProvider categories={allCategories}>
+                <CategoriesProvider treeRoot={allCategories} locale={targetLocale}>
                     <CurrencyProvider currency={currency}>
                         <Seo>
                             <meta name="theme-color" content={THEME_COLOR} />
@@ -184,9 +185,7 @@ const App = (props) => {
                                 <link
                                     rel="alternate"
                                     hrefLang={locale.id.toLowerCase()}
-                                    href={`${appOrigin}${getPathWithLocale(locale.id, {
-                                        location
-                                    })}`}
+                                    href={`${appOrigin}${buildUrl(location.pathname)}`}
                                     key={locale.id}
                                 />
                             ))}
@@ -194,9 +193,7 @@ const App = (props) => {
                             <link
                                 rel="alternate"
                                 hrefLang={site.l10n.defaultLocale.slice(0, 2)}
-                                href={`${appOrigin}${getPathWithLocale(site.l10n.defaultLocale, {
-                                    location
-                                })}`}
+                                href={`${appOrigin}${buildUrl(location.pathname)}`}
                             />
                             {/* A wider fallback for user locales that the app does not support */}
                             <link rel="alternate" hrefLang="x-default" href={`${appOrigin}/`} />
@@ -221,12 +218,12 @@ const App = (props) => {
                                                 isOpen={isOpen}
                                                 onClose={onClose}
                                                 onLogoClick={onLogoClick}
-                                                root={allCategories[DEFAULT_ROOT_CATEGORY]}
+                                                locale={locale}
                                             />
                                         </HideOnDesktop>
 
                                         <HideOnMobile>
-                                            <ListMenu root={allCategories[DEFAULT_ROOT_CATEGORY]} />
+                                            <ListMenu locale={locale} />
                                         </HideOnMobile>
                                     </Header>
                                 ) : (
@@ -310,8 +307,8 @@ App.getProps = async ({api, res}) => {
     // Get the root category, this will be used for things like the navigation.
     const rootCategory = await api.shopperProducts.getCategory({
         parameters: {
-            id: DEFAULT_ROOT_CATEGORY,
-            levels: DEFAULT_NAV_DEPTH
+            id: CAT_MENU_DEFAULT_ROOT_CATEGORY,
+            levels: CAT_MENU_DEFAULT_NAV_DEPTH
         }
     })
 
@@ -328,7 +325,7 @@ Learn more with our localization guide. https://sfdc.co/localization-guide
 
     // Flatten the root so we can easily access all the categories throughout
     // the application.
-    const categories = flatten(rootCategory, 'categories')
+    const categories = {root: flatten(rootCategory, 'categories').root}
 
     return {
         targetLocale,

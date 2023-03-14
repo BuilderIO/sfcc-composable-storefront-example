@@ -1,24 +1,61 @@
-### Bug Fixes
+## v2.7.0 (Mar 03, 2023)
+- Add Page Designer ImageTile component [#967](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/967)
+- Add Page Designer ImageWithText component [#991](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/991)
+- Add Page Designer carousel component [#977](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/977)
+- Add Page Designer layout components [#993](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/993)
+- Support the product-set type [#1019](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/1019)
 
-- Various instances of hard-coded text have been replaced with translatable messages (see [Translations](#translations)).
-- Recommended Products tiles now show localized product names, rather than using the default locale.
+## v2.6.0 (Jan 25, 2023)
+- Mega menu fixes [#875](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/875) and [#910](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/910)
+- Cache SLAS callback using request processor [#884](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/884)
+- Fix padding of footer drawer component [#899](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/899)
+- Update createOrder to send SLAS USID [#920](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/920)
+- Fix PropTypes [#924](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/924)
+- Remove unnecessary map statement [#929](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/929)
 
-### Translations
+## v2.5.0 (Jan 5, 2023)
+- Add instanceType to Einstein activity body [#858](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/858)
+- Do not use a proxy to call Einstein [#857](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/857)
+- Einstein handle variants [#867](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/867)
+- Fix cc exp year [#874](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/874)
 
-- Updated text for many fields
-- Added `checkout.message.generic_error`
-- Added `wishlist_primary_action.button.add_to_cart`
-- Added `wishlist_primary_action.button.select_options`
-- Added `global.link.added_to_wishlist.view_wishlist`
-- Added `credit_card_fields.tool_tip.security_code.american_express`
-- Changed `credit_card_fields.tool_tip.security_code` from a template that accepts values to a static string
-- Changed `home.description.contact_our_staff` to `home.description.here_to_help`
-- Changed `home.description.get_you_to_the_right_place` to `home.description.here_to_help_line_2`
-- Combined `product_list.info.removed_from_wishlist` and `recommended_products.info.removed_from_wishlist` into `global.info.removed_from_wishlist`
-- Combined `cart.info.added_to_wishlist`, `product_detail.info.added_to_wishlist`, `product_list.info.added_to_wishlist`, and `recommended_products.info.added_to_wishlist` into `global.info.added_to_wishlist`
+## v2.4.0 (Dec 1, 2022)
+- Dynamic footer Copyright date [#741](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/741)
+- Footer copyright: remove the remaining hardcoded year [#760](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/760)
+- ImageGallery uses image.link when DIS is not set [#786](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/786)
+- Use default locale as target if none is specified [#788](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/788)
+- Password change bug fix [#803](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/803)
+- pwa-kit-dev command for tailing logs [#789](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/789)
+- Update usages of zzrf-001 ODS instance to the new short URL format [#816](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/816)
+
+## v2.3.0 (Oct 27, 2022)
+- Fix locale `alias` by including `locale` object inside the MultiSite Context.  [#716](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/716)
+- Updated translations. [#725](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/725)
+- Add new Einstein API activities. [#714](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/714)
+- Fix search field to recognize `“&”` character. [#736](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/736)
+- Fix filters on search results page. [#742](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/742)
+- Dynamic footer copyright date. [#741](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/741)
+- Bugfix: image gallery thumbnails not working without DIS [#786](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/786)
+- Ensure that a valid target locale is use if none is provided [#788](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/788)
+
+## v2.2.0 (Aug 25, 2022)
+- Update zzrf-001 url [#694](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/694)
+- Optimize Server-side performance [#667](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/667)
+- Remove references to session bridging [#684](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/684)
+
+## v2.1.0 (Jul 05, 2022)
+- Update translations [#643](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/643)
+- Update translations [#653](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/653)
+- Add bundlesize test back into CI [#652](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/652)
+- Fix UI bug on notifications badge [#620](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/620)
 
 ## v2.0.0 (May 16, 2022)
 
+- Update translation docs [#570](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/570)
+- Fixed loading correct amount of skeletons [#576] (https://github.com/SalesforceCommerceCloud/pwa-kit/pull/576)
+- Remove manifest path [#582](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/582)
+- Fix Verbose ShellJS Command [#588](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/588)
+- Drop node 12 support for [#589](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/589)
 - Multi-site, Fix the case when no site aliases is set [#551](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/551)
 - Fix invalid refresh token [#528](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/528)
 - Add valid token check before using refresh token on login [#533](https://github.com/SalesforceCommerceCloud/pwa-kit/pull/533)

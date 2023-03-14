@@ -9,7 +9,7 @@ import {Route, Switch} from 'react-router-dom'
 import {screen, waitFor, within} from '@testing-library/react'
 import user from '@testing-library/user-event'
 import {rest} from 'msw'
-import {renderWithProviders, createPathWithDefaults, setupMockServer} from '../../utils/test-utils'
+import {renderWithProviders, createPathWithDefaults} from '../../utils/test-utils'
 import {
     mockOrderHistory,
     mockedGuestCustomer,
@@ -18,14 +18,9 @@ import {
 } from '../../commerce-api/mock-data'
 import useCustomer from '../../commerce-api/hooks/useCustomer'
 import Account from './index'
+import mockConfig from '../../../config/mocks/default'
 
-jest.mock('../../commerce-api/utils', () => {
-    const originalModule = jest.requireActual('../../commerce-api/utils')
-    return {
-        ...originalModule,
-        isTokenValid: jest.fn().mockReturnValue(true)
-    }
-})
+jest.mock('../../commerce-api/einstein')
 
 const MockedComponent = () => {
     const customer = useCustomer()
@@ -46,17 +41,9 @@ const MockedComponent = () => {
     )
 }
 
-const server = setupMockServer(
-    rest.get('*/products', (req, res, ctx) => res(ctx.delay(0), ctx.json(mockOrderProducts))),
-    rest.get('*/customers/:customerId/orders', (req, res, ctx) =>
-        res(ctx.delay(0), ctx.json(mockOrderHistory))
-    )
-)
-
 // Set up and clean up
 beforeEach(() => {
     jest.resetModules()
-    server.listen({onUnhandledRequest: 'error'})
 
     // Since we're testing some navigation logic, we are using a simple Router
     // around our component. We need to initialize the default route/path here.
@@ -64,23 +51,33 @@ beforeEach(() => {
 })
 afterEach(() => {
     localStorage.clear()
-    server.resetHandlers()
 })
-afterAll(() => server.close())
 
 const expectedBasePath = '/uk/en-GB'
 test('Redirects to login page if the customer is not logged in', async () => {
-    server.use(
+    global.server.use(
         rest.get('*/customers/:customerId', (req, res, ctx) => {
             return res(ctx.delay(0), ctx.status(200), ctx.json(mockedGuestCustomer))
         })
     )
-    renderWithProviders(<MockedComponent />)
+    renderWithProviders(<MockedComponent />, {
+        wrapperProps: {siteAlias: 'uk', appConfig: mockConfig.app}
+    })
     await waitFor(() => expect(window.location.pathname).toEqual(`${expectedBasePath}/login`))
 })
 
 test('Provides navigation for subpages', async () => {
-    renderWithProviders(<MockedComponent />)
+    global.server.use(
+        rest.get('*/products', (req, res, ctx) => {
+            return res(ctx.delay(0), ctx.json(mockOrderProducts))
+        }),
+        rest.get('*/customers/:customerId/orders', (req, res, ctx) => {
+            return res(ctx.delay(0), ctx.json(mockOrderHistory))
+        })
+    )
+    await renderWithProviders(<MockedComponent />, {
+        wrapperProps: {siteAlias: 'uk', appConfig: mockConfig.app}
+    })
     expect(await screen.findByTestId('account-page')).toBeInTheDocument()
 
     const nav = within(screen.getByTestId('account-detail-nav'))
@@ -108,7 +105,9 @@ test('Renders account detail page by default for logged-in customer', async () =
 })
 
 test('Allows customer to sign out', async () => {
-    renderWithProviders(<MockedComponent />)
+    renderWithProviders(<MockedComponent />, {
+        wrapperProps: {siteAlias: 'uk', appConfig: mockConfig.app}
+    })
     expect(await screen.findByTestId('account-detail-page')).toBeInTheDocument()
     user.click(screen.getAllByText(/Log Out/)[0])
     await waitFor(() => {
@@ -117,25 +116,25 @@ test('Allows customer to sign out', async () => {
 })
 
 test('Allows customer to edit profile details', async () => {
-    server.use(
-        rest.get('*/customers/:customerId', (req, res, ctx) =>
-            res(
+    global.server.use(
+        rest.get('*/customers/:customerId', (req, res, ctx) => {
+            return res(
                 ctx.json({
                     ...mockedRegisteredCustomer,
                     firstName: 'Geordi',
                     phoneHome: '(567) 123-5585'
                 })
             )
-        ),
-        rest.patch('*/customers/:customerId', (req, res, ctx) =>
-            res(
+        }),
+        rest.patch('*/customers/:customerId', (req, res, ctx) => {
+            return res(
                 ctx.json({
                     ...mockedRegisteredCustomer,
                     firstName: 'Geordi',
                     phoneHome: '(567) 123-5585'
                 })
             )
-        )
+        })
     )
 
     renderWithProviders(<MockedComponent />)
@@ -152,7 +151,11 @@ test('Allows customer to edit profile details', async () => {
 })
 
 test('Allows customer to update password', async () => {
-    server.use(rest.put('*/password', (req, res, ctx) => res(ctx.json())))
+    global.server.use(
+        rest.put('*/password', (req, res, ctx) => {
+            return res(ctx.json())
+        })
+    )
 
     renderWithProviders(<MockedComponent />)
     expect(await screen.findByTestId('account-page')).toBeInTheDocument()

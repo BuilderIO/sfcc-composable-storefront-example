@@ -55,7 +55,7 @@ import {useLimitUrls, usePageUrls, useSortUrls, useSearchParams} from '../../hoo
 import {useToast} from '../../hooks/use-toast'
 import useWishlist from '../../hooks/use-wishlist'
 import {parse as parseSearchParams} from '../../hooks/use-search-params'
-import {useCategories} from '../../hooks/use-categories'
+import useEinstein from '../../commerce-api/hooks/useEinstein'
 
 // Others
 import {HTTPNotFound} from 'pwa-kit-react-sdk/ssr/universal/errors'
@@ -71,8 +71,6 @@ import {
 } from '../../constants'
 import useNavigation from '../../hooks/use-navigation'
 import LoadingSpinner from '../../components/loading-spinner'
-import builder, {BuilderComponent, useIsPreviewing} from '@builder.io/react'
-import builderConfig from '../../utils/builder'
 
 // NOTE: You can ignore certain refinements on a template level by updating the below
 // list of ignored refinements.
@@ -87,30 +85,22 @@ const ProductList = (props) => {
     const {
         searchQuery,
         productSearchResult,
+        category,
         // eslint-disable-next-line react/prop-types
         staticContext,
         location,
         isLoading,
-        builderCategoryHero,
         ...rest
     } = props
     const {total, sortingOptions} = productSearchResult || {}
-
     const {isOpen, onOpen, onClose} = useDisclosure()
     const [sortOpen, setSortOpen] = useState(false)
     const {formatMessage} = useIntl()
     const navigate = useNavigation()
     const history = useHistory()
     const params = useParams()
-    const {categories} = useCategories()
     const toast = useToast()
-    const isPreviewingInBuilder = useIsPreviewing()
-
-    // Get the current category from global state.
-    let category = undefined
-    if (!searchQuery) {
-        category = categories[params.categoryId]
-    }
+    const einstein = useEinstein()
 
     const basePath = `${location.pathname}${location.search}`
     // Reset scroll position when `isLoaded` becomes `true`.
@@ -182,6 +172,15 @@ const ProductList = (props) => {
         }
     }
 
+    /**************** Einstein ****************/
+    useEffect(() => {
+        if (productSearchResult) {
+            searchQuery
+                ? einstein.sendViewSearch(searchQuery, productSearchResult)
+                : einstein.sendViewCategory(category, productSearchResult)
+        }
+    }, [productSearchResult])
+
     /**************** Filters ****************/
     const [searchParams, {stringify: stringifySearchParams}] = useSearchParams()
     const [filtersLoading, setFiltersLoading] = useState(false)
@@ -222,7 +221,11 @@ const ProductList = (props) => {
             }
         }
 
-        navigate(`/category/${params.categoryId}?${stringifySearchParams(searchParamsCopy)}`)
+        if (!searchQuery) {
+            navigate(`/category/${params.categoryId}?${stringifySearchParams(searchParamsCopy)}`)
+        } else {
+            navigate(`/search?${stringifySearchParams(searchParamsCopy)}`)
+        }
     }
 
     // Clears all filters
@@ -257,13 +260,7 @@ const ProductList = (props) => {
             ) : (
                 <>
                     {/* Header */}
-                    {(isPreviewingInBuilder || builderCategoryHero) && (
-                        <BuilderComponent
-                            options={{includeRefs: true}}
-                            model={builderConfig.categoryHeroModel}
-                            content={builderCategoryHero}
-                        />
-                    )}
+
                     <Stack
                         display={{base: 'none', lg: 'flex'}}
                         direction="row"
@@ -387,9 +384,8 @@ const ProductList = (props) => {
                                           ))
                                     : productSearchResult.hits.map((productSearchItem) => {
                                           const productId = productSearchItem.productId
-                                          const isInWishlist = !!wishlist.findItemByProductId(
-                                              productId
-                                          )
+                                          const isInWishlist =
+                                              !!wishlist.findItemByProductId(productId)
 
                                           return (
                                               <ProductTile
@@ -398,6 +394,19 @@ const ProductList = (props) => {
                                                   product={productSearchItem}
                                                   enableFavourite={true}
                                                   isFavourite={isInWishlist}
+                                                  onClick={() => {
+                                                      if (searchQuery) {
+                                                          einstein.sendClickSearch(
+                                                              searchQuery,
+                                                              productSearchItem
+                                                          )
+                                                      } else if (category) {
+                                                          einstein.sendClickCategory(
+                                                              category,
+                                                              productSearchItem
+                                                          )
+                                                      }
+                                                  }}
                                                   onFavouriteToggle={(isFavourite) => {
                                                       const action = isFavourite
                                                           ? addItemToWishlist
@@ -582,9 +591,6 @@ ProductList.getProps = async ({res, params, location, api}) => {
         searchParams.refine.push(`cgid=${categoryId}`)
     }
 
-    // only search master products
-    searchParams.refine.push('htype=master')
-
     // Set the `cache-control` header values to align with the Commerce API settings.
     if (res) {
         res.set('Cache-Control', `max-age=${MAX_CACHE_AGE}`)
@@ -612,19 +618,7 @@ ProductList.getProps = async ({res, params, location, api}) => {
         throw new HTTPNotFound(category.detail)
     }
 
-    if (category) {
-        const builderCategoryHero = await builder
-            .get(builderConfig.categoryHeroModel, {
-                options: {includeRefs: true},
-                userAttributes: {
-                    category: categoryId
-                }
-            })
-            .toPromise()
-        return {searchQuery, productSearchResult, builderCategoryHero}
-    }
-
-    return {searchQuery: searchQuery, productSearchResult}
+    return {searchQuery: searchQuery, productSearchResult, category}
 }
 
 ProductList.propTypes = {
@@ -649,7 +643,7 @@ ProductList.propTypes = {
     searchQuery: PropTypes.string,
     onAddToWishlistClick: PropTypes.func,
     onRemoveWishlistClick: PropTypes.func,
-    builderCategoryHero: PropTypes.object
+    category: PropTypes.object
 }
 
 export default ProductList

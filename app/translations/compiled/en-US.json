@@ -355,6 +355,12 @@
       "value": "View Cart"
     }
   ],
+  "add_to_cart_modal.recommended_products.title.might_also_like": [
+    {
+      "type": 0,
+      "value": "You Might Also Like"
+    }
+  ],
   "auth_modal.description.now_signed_in": [
     {
       "type": 0,
@@ -770,7 +776,7 @@
   "checkout_footer.message.copyright": [
     {
       "type": 0,
-      "value": "2021 Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed."
+      "value": "Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed."
     }
   ],
   "checkout_header.link.cart": [
@@ -1222,7 +1228,7 @@
   "footer.message.copyright": [
     {
       "type": 0,
-      "value": "2021 Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed."
+      "value": "Salesforce or its affiliates. All rights reserved. This is a demo store only. Orders made WILL NOT be processed."
     }
   ],
   "footer.subscribe.button.sign_up": [
@@ -1573,6 +1579,12 @@
     {
       "type": 0,
       "value": "Sale"
+    }
+  ],
+  "item_price.label.starting_at": [
+    {
+      "type": 0,
+      "value": "Starting at"
     }
   ],
   "lCPCxk": [
@@ -2211,6 +2223,24 @@
       "value": "Coming Soon"
     }
   ],
+  "product_detail.recommended_products.title.complete_set": [
+    {
+      "type": 0,
+      "value": "Complete the Set"
+    }
+  ],
+  "product_detail.recommended_products.title.might_also_like": [
+    {
+      "type": 0,
+      "value": "You might also like"
+    }
+  ],
+  "product_detail.recommended_products.title.recently_viewed": [
+    {
+      "type": 0,
+      "value": "Recently Viewed"
+    }
+  ],
   "product_item.label.quantity": [
     {
       "type": 0,
@@ -2281,6 +2311,24 @@
       "value": "Wishlist"
     }
   ],
+  "product_tile.label.starting_at_price": [
+    {
+      "type": 0,
+      "value": "Starting at"
+    }
+  ],
+  "product_view.button.add_set_to_cart": [
+    {
+      "type": 0,
+      "value": "Add Set to Cart"
+    }
+  ],
+  "product_view.button.add_set_to_wishlist": [
+    {
+      "type": 0,
+      "value": "Add Set to Wishlist"
+    }
+  ],
   "product_view.button.add_to_cart": [
     {
       "type": 0,
@@ -2303,6 +2351,12 @@
     {
       "type": 0,
       "value": "Quantity"
+    }
+  ],
+  "product_view.label.starting_at_price": [
+    {
+      "type": 0,
+      "value": "Starting at"
     }
   ],
   "product_view.link.full_details": [
@@ -3117,16 +3171,28 @@
       "value": "New Password"
     }
   ],
+  "wishlist_primary_action.button.add_set_to_cart": [
+    {
+      "type": 0,
+      "value": "Add Set to Cart"
+    }
+  ],
   "wishlist_primary_action.button.add_to_cart": [
     {
       "type": 0,
       "value": "Add to Cart"
     }
   ],
-  "wishlist_primary_action.button.select_options": [
+  "wishlist_primary_action.button.view_full_details": [
     {
       "type": 0,
-      "value": "Select Options"
+      "value": "View Full Details"
+    }
+  ],
+  "wishlist_primary_action.button.view_options": [
+    {
+      "type": 0,
+      "value": "View Options"
     }
   ],
   "wishlist_primary_action.info.added_to_cart": [

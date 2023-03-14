@@ -65,13 +65,9 @@ const ProductTile = (props) => {
         dynamicImageProps,
         ...rest
     } = props
-    let {currency, image, price, productId} = product
-    if (!image) {
-        image = product.imageGroups?.[0].images?.[0]
-    }
-    if (!productId) {
-        productId = product.id
-    }
+
+    const {currency, image, price, productId, hitType} = product
+
     // ProductTile is used by two components, RecommendedProducts and ProductList.
     // RecommendedProducts provides a localized product name as `name` and non-localized product
     // name as `productName`. ProductList provides a localized name as `productName` and does not
@@ -90,16 +86,18 @@ const ProductTile = (props) => {
             {...rest}
         >
             <Box {...styles.imageWrapper}>
-                <AspectRatio {...styles.image}>
-                    <DynamicImage
-                        src={`${image.disBaseLink || image.link}[?sw={width}&q=60]`}
-                        widths={dynamicImageProps?.widths}
-                        imageProps={{
-                            alt: image.alt,
-                            ...dynamicImageProps?.imageProps
-                        }}
-                    />
-                </AspectRatio>
+                {image && (
+                    <AspectRatio {...styles.image}>
+                        <DynamicImage
+                            src={`${image.disBaseLink || image.link}[?sw={width}&q=60]`}
+                            widths={dynamicImageProps?.widths}
+                            imageProps={{
+                                alt: image.alt,
+                                ...dynamicImageProps?.imageProps
+                            }}
+                        />
+                    </AspectRatio>
+                )}
 
                 {enableFavourite && (
                     <Box
@@ -132,7 +130,12 @@ const ProductTile = (props) => {
             <Text {...styles.title}>{localizedProductName}</Text>
 
             {/* Price */}
-            <Text {...styles.price}>
+            <Text {...styles.price} data-testid="product-tile-price">
+                {hitType === 'set' &&
+                    intl.formatMessage({
+                        id: 'product_tile.label.starting_at_price',
+                        defaultMessage: 'Starting at'
+                    })}{' '}
                 {intl.formatNumber(price, {
                     style: 'currency',
                     currency: currency || activeCurrency
@@ -150,9 +153,7 @@ ProductTile.propTypes = {
      * component.
      */
     product: PropTypes.shape({
-        id: PropTypes.string,
         currency: PropTypes.string,
-        imageGroups: PropTypes.any,
         image: PropTypes.shape({
             alt: PropTypes.string,
             disBaseLink: PropTypes.string,
@@ -171,7 +172,8 @@ ProductTile.propTypes = {
         // See: https://developer.salesforce.com/docs/commerce/einstein-api/references/einstein-api-quick-start-guide?meta=getRecommendations
         // Note: useEinstein() transforms snake_case property names from the API response to camelCase
         productName: PropTypes.string,
-        productId: PropTypes.string
+        productId: PropTypes.string,
+        hitType: PropTypes.string
     }),
     /**
      * Enable adding/removing product as a favourite.

@@ -118,7 +118,6 @@ export default function useCustomer() {
                 }
 
                 const response = await api.shopperCustomers.registerCustomer({body})
-
                 // Check for error json response
                 if (response.detail && response.title && response.type) {
                     throw new Error(response.detail)
@@ -175,8 +174,9 @@ export default function useCustomer() {
              * @param {object} data
              * @param {string} data.currentPassword - The old password.
              * @param {string} data.password - The new password.
+             * @param {string} email - Customer's email
              */
-            async updatePassword(data) {
+            async updatePassword(data, email) {
                 const body = {
                     password: data.password,
                     currentPassword: data.currentPassword
@@ -200,6 +200,14 @@ export default function useCustomer() {
                         throw new Error(json.detail)
                     }
                 }
+
+                // Fetch a new SLAS JWT to update the invalid one in client app state
+                const credentials = {
+                    email: email,
+                    password: data.password
+                }
+
+                await self.login(credentials)
             },
 
             /**
