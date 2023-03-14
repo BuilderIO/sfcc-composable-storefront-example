@@ -20,10 +20,20 @@ module.exports = {
         sites,
         // Commerce api config
         commerceAPI: {
+            /**
+             * 
+Client Id	565d7764-01bf-4a00-8d0c-e6bf2a75334a
+Tenant Id	zyix_001
+Client Name	client-zyix_001-03-14-2023-15-04
+project ID: builder-io-demo
+Short Code:	kv7kzm78
+Organization ID:	f_ecom_zyix_001
+
+             */
             proxyPath: `/mobify/proxy/api`,
             parameters: {
-                clientId: '1d763261-6522-4913-9d52-5d947d3b94c4',
-                organizationId: 'f_ecom_zzte_053',
+                clientId: '565d7764-01bf-4a00-8d0c-e6bf2a75334a',
+                organizationId: 'f_ecom_zyix_001',
                 shortCode: 'kv7kzm78',
                 siteId: 'RefArch'
             }
@@ -55,14 +65,14 @@ module.exports = {
     ],
     // Additional parameters that configure Express app behavior.
     ssrParameters: {
-        ssrFunctionNodeVersion: '14.x',
+        ssrFunctionNodeVersion: '16.x',
         proxyConfigs: [
             {
                 host: 'kv7kzm78.api.commercecloud.salesforce.com',
                 path: 'api'
             },
             {
-                host: 'zzte-053.sandbox.us02.dx.commercecloud.salesforce.com',
+                host: 'zyix-001.us02.dx.commercecloud.salesforce.com',
                 path: 'ocapi'
             },
             {
