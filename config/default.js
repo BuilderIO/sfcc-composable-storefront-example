@@ -72,7 +72,7 @@ Organization ID:	f_ecom_zyix_001
                 path: 'api'
             },
             {
-                host: 'zyix-001.us02.dx.commercecloud.salesforce.com',
+                host: 'zyix-001.dx.commercecloud.salesforce.com',
                 path: 'ocapi'
             },
             {
