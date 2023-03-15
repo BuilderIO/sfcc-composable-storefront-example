@@ -48,12 +48,15 @@ export const MarketingPage = ({page, isLoading}) => {
 MarketingPage.getProps = async ({res, api, location}) => {
     const page = await builder
         .get(builderConfig.pageModel, {
+            apiKey: builderConfig.apiKey,
             url: location.pathname,
             options: {
                 includeRefs: true
             }
         })
-        .toPromise()
+        .toPromise().catch((e) => {
+            console.error('Error getting page', e);
+        })
 
     if (!page && res) {
         res.status(404)

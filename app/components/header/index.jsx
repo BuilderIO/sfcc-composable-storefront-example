@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import React, {useEffect, useRef, useState} from 'react'
-import {BuilderComponent, builder} from '@builder.io/react'
+import {BuilderComponent, builder, useIsPreviewing} from '@builder.io/react'
 import PropTypes from 'prop-types'
 import {useIntl} from 'react-intl'
 import {
@@ -88,6 +88,7 @@ const Header = ({
     const [isDesktop] = useMediaQuery('(min-width: 992px)')
 
     const [announcement, setAnnouncement] = useState()
+    const isPreviewing = useIsPreviewing();
 
     const [showLoading, setShowLoading] = useState(false)
     // tracking if users enter the popover Content,
@@ -130,11 +131,11 @@ const Header = ({
 
     return (
         <Box {...styles.container} {...props}>
-            <BuilderComponent
+            { (announcement || isPreviewing) && <BuilderComponent
                 content={announcement}
                 model={builderConfig.announcementBarModel}
                 options={{includeRefs: true}}
-            />
+            />}
             <Box {...styles.content}>
                 {showLoading && <LoadingSpinner wrapperStyles={{height: '100vh'}} />}
                 <Flex wrap="wrap" alignItems={['baseline', 'baseline', 'baseline', 'center']}>
